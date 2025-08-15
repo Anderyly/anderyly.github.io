@@ -826,8 +826,11 @@ Centos安装命令：根据系统执行框内命令开始安装（大约2分钟�
         document.head.appendChild(customFont);
     }());
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
+    const staticDir = "http://blog.aaayun.cc/"
+
     var pjax = new Pjax({
         selectors: [
             ".main-container",
@@ -835,6 +838,9 @@ Centos安装命令：根据系统执行框内命令开始安装（大约2分钟�
         ]
     })
 </script>
+<div id="dplayer"></div>
+<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 
@@ -861,9 +867,7 @@ Centos安装命令：根据系统执行框内命令开始安装（大约2分钟�
             },
         ]
     });
-
-    console.log(ap)
-        </script>
+ </script>
 <script>
     pjax._handleResponse = pjax.handleResponse;
     pjax.handleResponse = function(responseText, request, href, options) {

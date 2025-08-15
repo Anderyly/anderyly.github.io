@@ -939,8 +939,11 @@ location /vfm-admin/tmp/ {
         document.head.appendChild(customFont);
     }());
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
+    const staticDir = "http://blog.aaayun.cc/"
+
     var pjax = new Pjax({
         selectors: [
             ".main-container",
@@ -948,6 +951,9 @@ location /vfm-admin/tmp/ {
         ]
     })
 </script>
+<div id="dplayer"></div>
+<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 
@@ -974,9 +980,7 @@ location /vfm-admin/tmp/ {
             },
         ]
     });
-
-    console.log(ap)
-        </script>
+ </script>
 <script>
     pjax._handleResponse = pjax.handleResponse;
     pjax.handleResponse = function(responseText, request, href, options) {

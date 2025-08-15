@@ -1035,8 +1035,11 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         document.head.appendChild(customFont);
     }());
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
+    const staticDir = "http://blog.aaayun.cc/"
+
     var pjax = new Pjax({
         selectors: [
             ".main-container",
@@ -1044,6 +1047,9 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         ]
     })
 </script>
+<div id="dplayer"></div>
+<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 
@@ -1070,9 +1076,7 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
             },
         ]
     });
-
-    console.log(ap)
-        </script>
+ </script>
 <script>
     pjax._handleResponse = pjax.handleResponse;
     pjax.handleResponse = function(responseText, request, href, options) {

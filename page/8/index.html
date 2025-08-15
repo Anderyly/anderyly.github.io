@@ -11,7 +11,7 @@
 <meta property='og:description' content="云淡风轻，于事安然">
 <meta property='og:url' content='http://blog.aaayun.cc/'>
 <meta property='og:site_name' content='轻风云'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-15T17:12:30&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-15T18:57:35&#43;08:00 '/>
 <meta name="twitter:title" content="轻风云">
 <meta name="twitter:description" content="云淡风轻，于事安然"><link rel="alternate" type="application/rss&#43;xml" href="http://blog.aaayun.cc/index.xml"><div class="loading">
     <div class="sharingon">
@@ -809,7 +809,7 @@
 
 
             <time>
-                Aug 15, 2025 15:01 &#43;0800
+                Aug 15, 2025 18:57 &#43;0800
             </time>
         </div>
             <div>
@@ -1089,8 +1089,11 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
+    const staticDir = "http://blog.aaayun.cc/"
+
     var pjax = new Pjax({
         selectors: [
             ".main-container",
@@ -1098,6 +1101,9 @@
         ]
     })
 </script>
+<div id="dplayer"></div>
+<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 
@@ -1124,9 +1130,7 @@
             },
         ]
     });
-
-    console.log(ap)
-        </script>
+ </script>
 <script>
     pjax._handleResponse = pjax.handleResponse;
     pjax.handleResponse = function(responseText, request, href, options) {

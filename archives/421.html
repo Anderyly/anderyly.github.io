@@ -764,8 +764,11 @@ PS:loader.io会把测试报告发送到您的注册邮箱！</p>
         document.head.appendChild(customFont);
     }());
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
+    const staticDir = "http://blog.aaayun.cc/"
+
     var pjax = new Pjax({
         selectors: [
             ".main-container",
@@ -773,6 +776,9 @@ PS:loader.io会把测试报告发送到您的注册邮箱！</p>
         ]
     })
 </script>
+<div id="dplayer"></div>
+<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 
@@ -799,9 +805,7 @@ PS:loader.io会把测试报告发送到您的注册邮箱！</p>
             },
         ]
     });
-
-    console.log(ap)
-        </script>
+ </script>
 <script>
     pjax._handleResponse = pjax.handleResponse;
     pjax.handleResponse = function(responseText, request, href, options) {
