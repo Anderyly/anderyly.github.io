@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="对MD5算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。\n在MD5算法中，首先需要对信息进行填充，使其字节长度对512求余的结果等于448。因此，信息的字节长度（Bits Length）将被扩展至N_512+448，即N_64+56个字节（Bytes），N为一个正整数。填充的方法如下，在信息的后面填充一个1和无数个0，直到满足上面的条件时才停止用0对信息的填充。然后，在在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，现在的信息字节长度=N_512+448+64=(N+1)_512，即长度恰好是512的整数倍。这样做的原因是为满足后面处理中对信息长度的要求。\nMD5中有四个32位被称作链接变量（Chaining Variable）的整数参数，他们分别为：A=0x01234567，B=0x89abcdef，C=0xfedcba98，D=0x76543210。\n当设置好这四个链接变量后，就开始进入算法的四轮循环运算。循环的次数是信息中512位信息分组的数目。\n将上面四个链接变量复制到另外四个变量中：A到a，B到b，C到c，D到d。\n主循环有四轮（MD4只有三轮），每轮循环都很相似。第一轮进行16次操作。每次操作对a、b、c和d中的其中三个作一次非线性函数运算，然后将所得结果加上第四个变量，文本的一个子分组和一个常数。再将所得结果向右环移一个不定的数，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。\n以一下是每次操作中用到的四个非线性函数（每轮一个）。\nF(X,Y,Z) =(X&amp;Y)|((~X)&amp;Z)\nG(X,Y,Z) =(X&amp;Z)|(Y&amp;(~Z))\nH(X,Y,Z) =X^Y^Z\nI(X,Y,Z)=Y^(X|(~Z))\n（&amp;是与，|是或，~是非，^是异或）\n这四个函数的说明：如果X、Y和Z的对应位是独立和均匀的，那么结果的每一位也应是独立和均匀的。\nF是一个逐位运算的函数。即，如果X，那么Y，否则Z。函数H是逐位奇偶操作符。\n假设Mj表示消息的第j个子分组（从0到15），&laquo;\nFF(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (F(b, c, d) + Mj + ti) &laquo; s\nGG(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (G(b, c, d) + Mj + ti) &laquo; s\nHH(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (H(b, c, d) + Mj + ti) &laquo; s\nII(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (I(b, c, d) + Mj + ti) &laquo; s\n这四轮（64步）是：\n第一轮\nFF(a, b, c, d, M0, 7, 0xd76aa478)\nFF(d, a, b, c, M1, 12, 0xe8c7b756)\nFF(c, d, a, b, M2, 17, 0x242070db)\nFF(b, c, d, a, M3, 22, 0xc1bdceee)\nFF(a, b, c, d, M4, 7, 0xf57c0faf)\nFF(d, a, b, c, M5, 12, 0x4787c62a)\nFF(c, d, a, b, M6, 17, 0xa8304613)\nFF(b, c, d, a, M7, 22, 0xfd469501)\nFF(a, b, c, d, M8, 7, 0x698098d8)\nFF(d, a, b, c, M9, 12, 0x8b44f7af)\nFF(c, d, a, b, M10, 17, 0xffff5bb1)\nFF(b, c, d, a, M11, 22, 0x895cd7be)\nFF(a, b, c, d, M12, 7, 0x6b901122)\nFF(d, a, b, c, M13, 12, 0xfd987193)\nFF(c, d, a, b, M14, 17, 0xa679438e)\nFF(b, c, d, a, M15, 22, 0x49b40821)\n第二轮\nGG(a, b, c, d, M1, 5, 0xf61e2562)\nGG(d, a, b, c, M6, 9, 0xc040b340)\nGG(c, d, a, b, M11, 14, 0x265e5a51)\nGG(b, c, d, a, M0, 20, 0xe9b6c7aa)\nGG(a, b, c, d, M5, 5, 0xd62f105d)\nGG(d, a, b, c, M10, 9, 0x02441453)\nGG(c, d, a, b, M15, 14, 0xd8a1e681)\nGG(b, c, d, a, M4, 20, 0xe7d3fbc8)\nGG(a, b, c, d, M9, 5, 0x21e1cde6)\nGG(d, a, b, c, M14, 9, 0xc33707d6)\nGG(c, d, a, b, M3, 14, 0xf4d50d87)\nGG(b, c, d, a, M8, 20, 0x455a14ed)\nGG(a, b, c, d, M13, 5, 0xa9e3e905)\nGG(d, a, b, c, M2, 9, 0xfcefa3f8)\nGG(c, d, a, b, M7, 14, 0x676f02d9)\nGG(b, c, d, a, M12, 20, 0x8d2a4c8a)\n第三轮\nHH(a, b, c, d, M5, 4, 0xfffa3942)\nHH(d, a, b, c, M8, 11, 0x8771f681)\nHH(c, d, a, b, M11, 16, 0x6d9d6122)\nHH(b, c, d, a, M14, 23, 0xfde5380c)\nHH(a, b, c, d, M1, 4, 0xa4beea44)\nHH(d, a, b, c, M4, 11, 0x4bdecfa9)\nHH(c, d, a, b, M7, 16, 0xf6bb4b60)\nHH(b, c, d, a, M10, 23, 0xbebfbc70)\nHH(a, b, c, d, M13, 4, 0x289b7ec6)\nHH(d, a, b, c, M0, 11, 0xeaa127fa)\nHH(c, d, a, b, M3, 16, 0xd4ef3085)\nHH(b, c, d, a, M6, 23, 0x04881d05)\nHH(a, b, c, d, M9, 4, 0xd9d4d039)\nHH(d, a, b, c, M12, 11, 0xe6db99e5)\nHH(c, d, a, b, M15, 16, 0x1fa27cf8)\nHH(b, c, d, a, M2, 23, 0xc4ac5665)\n第四轮\nII(a, b, c, d, M0, 6, 0xf4292244)\nII(d, a, b, c, M7, 10, 0x432aff97)\nII(c, d, a, b, M14, 15, 0xab9423a7)\nII(b, c, d, a, M5, 21, 0xfc93a039)\nII(a, b, c, d, M12, 6, 0x655b59c3)\nII(d, a, b, c, M3, 10, 0x8f0ccc92)\nII(c, d, a, b, M10, 15, 0xffeff47d)\nII(b, c, d, a, M1, 21, 0x85845dd1)\nII(a, b, c, d, M8, 6, 0x6fa87e4f)\nII(d, a, b, c, M15, 10, 0xfe2ce6e0)\nII(c, d, a, b, M6, 15, 0xa3014314)\nII(b, c, d, a, M13, 21, 0x4e0811a1)\nII(a, b, c, d, M4, 6, 0xf7537e82)\nII(d, a, b, c, M11, 10, 0xbd3af235)\nII(c, d, a, b, M2, 15, 0x2ad7d2bb)\nII(b, c, d, a, M9, 21, 0xeb86d391)\n常数ti可以如下选择：\n在第i步中，ti是4294967296*abs(sin(i))的整数部分，i的单位是弧度。(4294967296等于2的32次方)\n所有这些完成之后，将A、B、C、D分别加上a、b、c、d。然后用下一分组数据继续运行算法，最后的输出是A、B、C和D的级联。\n当你按照我上面所说的方法实现MD5算法以后，你可以用以下几个信息对你做出来的程序作一个简单的测试，看看程序有没有错误。\nMD5 (“&quot;) = d41d8cd98f00b204e9800998ecf8427e\nMD5 (“a&quot;) = 0cc175b9c0f1b6a831c399e269772661\nMD5 (“abc&quot;) = 900150983cd24fb0d6963f7d28e17f72\nMD5 (“message digest&quot;) = f96b697d7cb7938d525a2f31aaf161d0\nMD5 (“abcdefghijklmnopqrstuvwxyz&quot;) = c3fcd3d76192e4007dfb496cca67e13b\nMD5 (“ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;) =\nd174ab98d277d9f5a5611c2c9f419d9f\n">
+<title>MD5口算算法</title>
+
+<link rel='canonical' href='http://blog.aaayun.cc/archives/429.html'>
+
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="MD5口算算法">
+<meta property='og:description' content="对MD5算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。\n在MD5算法中，首先需要对信息进行填充，使其字节长度对512求余的结果等于448。因此，信息的字节长度（Bits Length）将被扩展至N_512+448，即N_64+56个字节（Bytes），N为一个正整数。填充的方法如下，在信息的后面填充一个1和无数个0，直到满足上面的条件时才停止用0对信息的填充。然后，在在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，现在的信息字节长度=N_512+448+64=(N+1)_512，即长度恰好是512的整数倍。这样做的原因是为满足后面处理中对信息长度的要求。\nMD5中有四个32位被称作链接变量（Chaining Variable）的整数参数，他们分别为：A=0x01234567，B=0x89abcdef，C=0xfedcba98，D=0x76543210。\n当设置好这四个链接变量后，就开始进入算法的四轮循环运算。循环的次数是信息中512位信息分组的数目。\n将上面四个链接变量复制到另外四个变量中：A到a，B到b，C到c，D到d。\n主循环有四轮（MD4只有三轮），每轮循环都很相似。第一轮进行16次操作。每次操作对a、b、c和d中的其中三个作一次非线性函数运算，然后将所得结果加上第四个变量，文本的一个子分组和一个常数。再将所得结果向右环移一个不定的数，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。\n以一下是每次操作中用到的四个非线性函数（每轮一个）。\nF(X,Y,Z) =(X&amp;Y)|((~X)&amp;Z)\nG(X,Y,Z) =(X&amp;Z)|(Y&amp;(~Z))\nH(X,Y,Z) =X^Y^Z\nI(X,Y,Z)=Y^(X|(~Z))\n（&amp;是与，|是或，~是非，^是异或）\n这四个函数的说明：如果X、Y和Z的对应位是独立和均匀的，那么结果的每一位也应是独立和均匀的。\nF是一个逐位运算的函数。即，如果X，那么Y，否则Z。函数H是逐位奇偶操作符。\n假设Mj表示消息的第j个子分组（从0到15），&laquo;\nFF(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (F(b, c, d) + Mj + ti) &laquo; s\nGG(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (G(b, c, d) + Mj + ti) &laquo; s\nHH(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (H(b, c, d) + Mj + ti) &laquo; s\nII(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (I(b, c, d) + Mj + ti) &laquo; s\n这四轮（64步）是：\n第一轮\nFF(a, b, c, d, M0, 7, 0xd76aa478)\nFF(d, a, b, c, M1, 12, 0xe8c7b756)\nFF(c, d, a, b, M2, 17, 0x242070db)\nFF(b, c, d, a, M3, 22, 0xc1bdceee)\nFF(a, b, c, d, M4, 7, 0xf57c0faf)\nFF(d, a, b, c, M5, 12, 0x4787c62a)\nFF(c, d, a, b, M6, 17, 0xa8304613)\nFF(b, c, d, a, M7, 22, 0xfd469501)\nFF(a, b, c, d, M8, 7, 0x698098d8)\nFF(d, a, b, c, M9, 12, 0x8b44f7af)\nFF(c, d, a, b, M10, 17, 0xffff5bb1)\nFF(b, c, d, a, M11, 22, 0x895cd7be)\nFF(a, b, c, d, M12, 7, 0x6b901122)\nFF(d, a, b, c, M13, 12, 0xfd987193)\nFF(c, d, a, b, M14, 17, 0xa679438e)\nFF(b, c, d, a, M15, 22, 0x49b40821)\n第二轮\nGG(a, b, c, d, M1, 5, 0xf61e2562)\nGG(d, a, b, c, M6, 9, 0xc040b340)\nGG(c, d, a, b, M11, 14, 0x265e5a51)\nGG(b, c, d, a, M0, 20, 0xe9b6c7aa)\nGG(a, b, c, d, M5, 5, 0xd62f105d)\nGG(d, a, b, c, M10, 9, 0x02441453)\nGG(c, d, a, b, M15, 14, 0xd8a1e681)\nGG(b, c, d, a, M4, 20, 0xe7d3fbc8)\nGG(a, b, c, d, M9, 5, 0x21e1cde6)\nGG(d, a, b, c, M14, 9, 0xc33707d6)\nGG(c, d, a, b, M3, 14, 0xf4d50d87)\nGG(b, c, d, a, M8, 20, 0x455a14ed)\nGG(a, b, c, d, M13, 5, 0xa9e3e905)\nGG(d, a, b, c, M2, 9, 0xfcefa3f8)\nGG(c, d, a, b, M7, 14, 0x676f02d9)\nGG(b, c, d, a, M12, 20, 0x8d2a4c8a)\n第三轮\nHH(a, b, c, d, M5, 4, 0xfffa3942)\nHH(d, a, b, c, M8, 11, 0x8771f681)\nHH(c, d, a, b, M11, 16, 0x6d9d6122)\nHH(b, c, d, a, M14, 23, 0xfde5380c)\nHH(a, b, c, d, M1, 4, 0xa4beea44)\nHH(d, a, b, c, M4, 11, 0x4bdecfa9)\nHH(c, d, a, b, M7, 16, 0xf6bb4b60)\nHH(b, c, d, a, M10, 23, 0xbebfbc70)\nHH(a, b, c, d, M13, 4, 0x289b7ec6)\nHH(d, a, b, c, M0, 11, 0xeaa127fa)\nHH(c, d, a, b, M3, 16, 0xd4ef3085)\nHH(b, c, d, a, M6, 23, 0x04881d05)\nHH(a, b, c, d, M9, 4, 0xd9d4d039)\nHH(d, a, b, c, M12, 11, 0xe6db99e5)\nHH(c, d, a, b, M15, 16, 0x1fa27cf8)\nHH(b, c, d, a, M2, 23, 0xc4ac5665)\n第四轮\nII(a, b, c, d, M0, 6, 0xf4292244)\nII(d, a, b, c, M7, 10, 0x432aff97)\nII(c, d, a, b, M14, 15, 0xab9423a7)\nII(b, c, d, a, M5, 21, 0xfc93a039)\nII(a, b, c, d, M12, 6, 0x655b59c3)\nII(d, a, b, c, M3, 10, 0x8f0ccc92)\nII(c, d, a, b, M10, 15, 0xffeff47d)\nII(b, c, d, a, M1, 21, 0x85845dd1)\nII(a, b, c, d, M8, 6, 0x6fa87e4f)\nII(d, a, b, c, M15, 10, 0xfe2ce6e0)\nII(c, d, a, b, M6, 15, 0xa3014314)\nII(b, c, d, a, M13, 21, 0x4e0811a1)\nII(a, b, c, d, M4, 6, 0xf7537e82)\nII(d, a, b, c, M11, 10, 0xbd3af235)\nII(c, d, a, b, M2, 15, 0x2ad7d2bb)\nII(b, c, d, a, M9, 21, 0xeb86d391)\n常数ti可以如下选择：\n在第i步中，ti是4294967296*abs(sin(i))的整数部分，i的单位是弧度。(4294967296等于2的32次方)\n所有这些完成之后，将A、B、C、D分别加上a、b、c、d。然后用下一分组数据继续运行算法，最后的输出是A、B、C和D的级联。\n当你按照我上面所说的方法实现MD5算法以后，你可以用以下几个信息对你做出来的程序作一个简单的测试，看看程序有没有错误。\nMD5 (“&quot;) = d41d8cd98f00b204e9800998ecf8427e\nMD5 (“a&quot;) = 0cc175b9c0f1b6a831c399e269772661\nMD5 (“abc&quot;) = 900150983cd24fb0d6963f7d28e17f72\nMD5 (“message digest&quot;) = f96b697d7cb7938d525a2f31aaf161d0\nMD5 (“abcdefghijklmnopqrstuvwxyz&quot;) = c3fcd3d76192e4007dfb496cca67e13b\nMD5 (“ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;) =\nd174ab98d277d9f5a5611c2c9f419d9f\n">
+<meta property='og:url' content='http://blog.aaayun.cc/archives/429.html'>
+<meta property='og:site_name' content='轻风云'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='md5' /><meta property='article:tag' content='算法' /><meta property='article:published_time' content='2019-08-29T06:27:00&#43;00:00'/><meta property='article:modified_time' content='2019-08-29T06:27:00&#43;00:00'/>
+<meta name="twitter:title" content="MD5口算算法">
+<meta name="twitter:description" content="对MD5算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。\n在MD5算法中，首先需要对信息进行填充，使其字节长度对512求余的结果等于448。因此，信息的字节长度（Bits Length）将被扩展至N_512+448，即N_64+56个字节（Bytes），N为一个正整数。填充的方法如下，在信息的后面填充一个1和无数个0，直到满足上面的条件时才停止用0对信息的填充。然后，在在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，现在的信息字节长度=N_512+448+64=(N+1)_512，即长度恰好是512的整数倍。这样做的原因是为满足后面处理中对信息长度的要求。\nMD5中有四个32位被称作链接变量（Chaining Variable）的整数参数，他们分别为：A=0x01234567，B=0x89abcdef，C=0xfedcba98，D=0x76543210。\n当设置好这四个链接变量后，就开始进入算法的四轮循环运算。循环的次数是信息中512位信息分组的数目。\n将上面四个链接变量复制到另外四个变量中：A到a，B到b，C到c，D到d。\n主循环有四轮（MD4只有三轮），每轮循环都很相似。第一轮进行16次操作。每次操作对a、b、c和d中的其中三个作一次非线性函数运算，然后将所得结果加上第四个变量，文本的一个子分组和一个常数。再将所得结果向右环移一个不定的数，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。\n以一下是每次操作中用到的四个非线性函数（每轮一个）。\nF(X,Y,Z) =(X&amp;Y)|((~X)&amp;Z)\nG(X,Y,Z) =(X&amp;Z)|(Y&amp;(~Z))\nH(X,Y,Z) =X^Y^Z\nI(X,Y,Z)=Y^(X|(~Z))\n（&amp;是与，|是或，~是非，^是异或）\n这四个函数的说明：如果X、Y和Z的对应位是独立和均匀的，那么结果的每一位也应是独立和均匀的。\nF是一个逐位运算的函数。即，如果X，那么Y，否则Z。函数H是逐位奇偶操作符。\n假设Mj表示消息的第j个子分组（从0到15），&laquo;\nFF(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (F(b, c, d) + Mj + ti) &laquo; s\nGG(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (G(b, c, d) + Mj + ti) &laquo; s\nHH(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (H(b, c, d) + Mj + ti) &laquo; s\nII(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (I(b, c, d) + Mj + ti) &laquo; s\n这四轮（64步）是：\n第一轮\nFF(a, b, c, d, M0, 7, 0xd76aa478)\nFF(d, a, b, c, M1, 12, 0xe8c7b756)\nFF(c, d, a, b, M2, 17, 0x242070db)\nFF(b, c, d, a, M3, 22, 0xc1bdceee)\nFF(a, b, c, d, M4, 7, 0xf57c0faf)\nFF(d, a, b, c, M5, 12, 0x4787c62a)\nFF(c, d, a, b, M6, 17, 0xa8304613)\nFF(b, c, d, a, M7, 22, 0xfd469501)\nFF(a, b, c, d, M8, 7, 0x698098d8)\nFF(d, a, b, c, M9, 12, 0x8b44f7af)\nFF(c, d, a, b, M10, 17, 0xffff5bb1)\nFF(b, c, d, a, M11, 22, 0x895cd7be)\nFF(a, b, c, d, M12, 7, 0x6b901122)\nFF(d, a, b, c, M13, 12, 0xfd987193)\nFF(c, d, a, b, M14, 17, 0xa679438e)\nFF(b, c, d, a, M15, 22, 0x49b40821)\n第二轮\nGG(a, b, c, d, M1, 5, 0xf61e2562)\nGG(d, a, b, c, M6, 9, 0xc040b340)\nGG(c, d, a, b, M11, 14, 0x265e5a51)\nGG(b, c, d, a, M0, 20, 0xe9b6c7aa)\nGG(a, b, c, d, M5, 5, 0xd62f105d)\nGG(d, a, b, c, M10, 9, 0x02441453)\nGG(c, d, a, b, M15, 14, 0xd8a1e681)\nGG(b, c, d, a, M4, 20, 0xe7d3fbc8)\nGG(a, b, c, d, M9, 5, 0x21e1cde6)\nGG(d, a, b, c, M14, 9, 0xc33707d6)\nGG(c, d, a, b, M3, 14, 0xf4d50d87)\nGG(b, c, d, a, M8, 20, 0x455a14ed)\nGG(a, b, c, d, M13, 5, 0xa9e3e905)\nGG(d, a, b, c, M2, 9, 0xfcefa3f8)\nGG(c, d, a, b, M7, 14, 0x676f02d9)\nGG(b, c, d, a, M12, 20, 0x8d2a4c8a)\n第三轮\nHH(a, b, c, d, M5, 4, 0xfffa3942)\nHH(d, a, b, c, M8, 11, 0x8771f681)\nHH(c, d, a, b, M11, 16, 0x6d9d6122)\nHH(b, c, d, a, M14, 23, 0xfde5380c)\nHH(a, b, c, d, M1, 4, 0xa4beea44)\nHH(d, a, b, c, M4, 11, 0x4bdecfa9)\nHH(c, d, a, b, M7, 16, 0xf6bb4b60)\nHH(b, c, d, a, M10, 23, 0xbebfbc70)\nHH(a, b, c, d, M13, 4, 0x289b7ec6)\nHH(d, a, b, c, M0, 11, 0xeaa127fa)\nHH(c, d, a, b, M3, 16, 0xd4ef3085)\nHH(b, c, d, a, M6, 23, 0x04881d05)\nHH(a, b, c, d, M9, 4, 0xd9d4d039)\nHH(d, a, b, c, M12, 11, 0xe6db99e5)\nHH(c, d, a, b, M15, 16, 0x1fa27cf8)\nHH(b, c, d, a, M2, 23, 0xc4ac5665)\n第四轮\nII(a, b, c, d, M0, 6, 0xf4292244)\nII(d, a, b, c, M7, 10, 0x432aff97)\nII(c, d, a, b, M14, 15, 0xab9423a7)\nII(b, c, d, a, M5, 21, 0xfc93a039)\nII(a, b, c, d, M12, 6, 0x655b59c3)\nII(d, a, b, c, M3, 10, 0x8f0ccc92)\nII(c, d, a, b, M10, 15, 0xffeff47d)\nII(b, c, d, a, M1, 21, 0x85845dd1)\nII(a, b, c, d, M8, 6, 0x6fa87e4f)\nII(d, a, b, c, M15, 10, 0xfe2ce6e0)\nII(c, d, a, b, M6, 15, 0xa3014314)\nII(b, c, d, a, M13, 21, 0x4e0811a1)\nII(a, b, c, d, M4, 6, 0xf7537e82)\nII(d, a, b, c, M11, 10, 0xbd3af235)\nII(c, d, a, b, M2, 15, 0x2ad7d2bb)\nII(b, c, d, a, M9, 21, 0xeb86d391)\n常数ti可以如下选择：\n在第i步中，ti是4294967296*abs(sin(i))的整数部分，i的单位是弧度。(4294967296等于2的32次方)\n所有这些完成之后，将A、B、C、D分别加上a、b、c、d。然后用下一分组数据继续运行算法，最后的输出是A、B、C和D的级联。\n当你按照我上面所说的方法实现MD5算法以后，你可以用以下几个信息对你做出来的程序作一个简单的测试，看看程序有没有错误。\nMD5 (“&quot;) = d41d8cd98f00b204e9800998ecf8427e\nMD5 (“a&quot;) = 0cc175b9c0f1b6a831c399e269772661\nMD5 (“abc&quot;) = 900150983cd24fb0d6963f7d28e17f72\nMD5 (“message digest&quot;) = f96b697d7cb7938d525a2f31aaf161d0\nMD5 (“abcdefghijklmnopqrstuvwxyz&quot;) = c3fcd3d76192e4007dfb496cca67e13b\nMD5 (“ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;) =\nd174ab98d277d9f5a5611c2c9f419d9f\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_3ed2d734dcdfd8a7.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">轻风云</a></h1>
+            <h2 class="site-description">云淡风轻，于事安然</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Anderyly'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友人帐</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/talk/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>留言板</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" >
+                技术教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/archives/429.html">MD5口算算法</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 29, 2019</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>对MD5算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。<br>
+　　 在MD5算法中，首先需要对信息进行填充，使其字节长度对512求余的结果等于448。因此，信息的字节长度（Bits Length）将被扩展至N_512+448，即N_64+56个字节（Bytes），N为一个正整数。填充的方法如下，在信息的后面填充一个1和无数个0，直到满足上面的条件时才停止用0对信息的填充。然后，在在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，现在的信息字节长度=N_512+448+64=(N+1)_512，即长度恰好是512的整数倍。这样做的原因是为满足后面处理中对信息长度的要求。<br>
+　　 MD5中有四个32位被称作链接变量（Chaining Variable）的整数参数，他们分别为：A=0x01234567，B=0x89abcdef，C=0xfedcba98，D=0x76543210。<br>
+　　 当设置好这四个链接变量后，就开始进入算法的四轮循环运算。循环的次数是信息中512位信息分组的数目。<br>
+　　 将上面四个链接变量复制到另外四个变量中：A到a，B到b，C到c，D到d。<br>
+　　 主循环有四轮（MD4只有三轮），每轮循环都很相似。第一轮进行16次操作。每次操作对a、b、c和d中的其中三个作一次非线性函数运算，然后将所得结果加上第四个变量，文本的一个子分组和一个常数。再将所得结果向右环移一个不定的数，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。<br>
+　　 以一下是每次操作中用到的四个非线性函数（每轮一个）。<br>
+　　 F(X,Y,Z) =(X&amp;Y)|((~X)&amp;Z)<br>
+　　 G(X,Y,Z) =(X&amp;Z)|(Y&amp;(~Z))<br>
+　　 H(X,Y,Z) =X^Y^Z<br>
+　　 I(X,Y,Z)=Y^(X|(~Z))<br>
+　　 （&amp;是与，|是或，~是非，^是异或）<br>
+　　 这四个函数的说明：如果X、Y和Z的对应位是独立和均匀的，那么结果的每一位也应是独立和均匀的。<br>
+　　 F是一个逐位运算的函数。即，如果X，那么Y，否则Z。函数H是逐位奇偶操作符。<br>
+　　 假设Mj表示消息的第j个子分组（从0到15），&laquo;<br>
+　　 FF(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (F(b, c, d) + Mj + ti) &laquo; s<br>
+　　 GG(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (G(b, c, d) + Mj + ti) &laquo; s<br>
+　　 HH(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (H(b, c, d) + Mj + ti) &laquo; s<br>
+　　 II(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (I(b, c, d) + Mj + ti) &laquo; s<br>
+　　 这四轮（64步）是：<br>
+　　 第一轮<br>
+　　 FF(a, b, c, d, M0, 7, 0xd76aa478)<br>
+　　 FF(d, a, b, c, M1, 12, 0xe8c7b756)<br>
+　　 FF(c, d, a, b, M2, 17, 0x242070db)<br>
+　　 FF(b, c, d, a, M3, 22, 0xc1bdceee)<br>
+　　 FF(a, b, c, d, M4, 7, 0xf57c0faf)<br>
+　　 FF(d, a, b, c, M5, 12, 0x4787c62a)<br>
+　　 FF(c, d, a, b, M6, 17, 0xa8304613)<br>
+　　 FF(b, c, d, a, M7, 22, 0xfd469501)<br>
+　　 FF(a, b, c, d, M8, 7, 0x698098d8)<br>
+　　 FF(d, a, b, c, M9, 12, 0x8b44f7af)<br>
+　　 FF(c, d, a, b, M10, 17, 0xffff5bb1)<br>
+　　 FF(b, c, d, a, M11, 22, 0x895cd7be)<br>
+　　 FF(a, b, c, d, M12, 7, 0x6b901122)<br>
+　　 FF(d, a, b, c, M13, 12, 0xfd987193)<br>
+　　 FF(c, d, a, b, M14, 17, 0xa679438e)<br>
+　　 FF(b, c, d, a, M15, 22, 0x49b40821)<br>
+　　 第二轮<br>
+　　 GG(a, b, c, d, M1, 5, 0xf61e2562)<br>
+　　 GG(d, a, b, c, M6, 9, 0xc040b340)<br>
+　　 GG(c, d, a, b, M11, 14, 0x265e5a51)<br>
+　　 GG(b, c, d, a, M0, 20, 0xe9b6c7aa)<br>
+　　 GG(a, b, c, d, M5, 5, 0xd62f105d)<br>
+　　 GG(d, a, b, c, M10, 9, 0x02441453)<br>
+　　 GG(c, d, a, b, M15, 14, 0xd8a1e681)<br>
+　　 GG(b, c, d, a, M4, 20, 0xe7d3fbc8)<br>
+　　 GG(a, b, c, d, M9, 5, 0x21e1cde6)<br>
+　　 GG(d, a, b, c, M14, 9, 0xc33707d6)<br>
+　　 GG(c, d, a, b, M3, 14, 0xf4d50d87)<br>
+　　 GG(b, c, d, a, M8, 20, 0x455a14ed)<br>
+　　 GG(a, b, c, d, M13, 5, 0xa9e3e905)<br>
+　　 GG(d, a, b, c, M2, 9, 0xfcefa3f8)<br>
+　　 GG(c, d, a, b, M7, 14, 0x676f02d9)<br>
+　　 GG(b, c, d, a, M12, 20, 0x8d2a4c8a)<br>
+　　 第三轮<br>
+　　 HH(a, b, c, d, M5, 4, 0xfffa3942)<br>
+　　 HH(d, a, b, c, M8, 11, 0x8771f681)<br>
+　　 HH(c, d, a, b, M11, 16, 0x6d9d6122)<br>
+　　 HH(b, c, d, a, M14, 23, 0xfde5380c)<br>
+　　 HH(a, b, c, d, M1, 4, 0xa4beea44)<br>
+　　 HH(d, a, b, c, M4, 11, 0x4bdecfa9)<br>
+　　 HH(c, d, a, b, M7, 16, 0xf6bb4b60)<br>
+　　 HH(b, c, d, a, M10, 23, 0xbebfbc70)<br>
+　　 HH(a, b, c, d, M13, 4, 0x289b7ec6)<br>
+　　 HH(d, a, b, c, M0, 11, 0xeaa127fa)<br>
+　　 HH(c, d, a, b, M3, 16, 0xd4ef3085)<br>
+　　 HH(b, c, d, a, M6, 23, 0x04881d05)<br>
+　　 HH(a, b, c, d, M9, 4, 0xd9d4d039)<br>
+　　 HH(d, a, b, c, M12, 11, 0xe6db99e5)<br>
+　　 HH(c, d, a, b, M15, 16, 0x1fa27cf8)<br>
+　　 HH(b, c, d, a, M2, 23, 0xc4ac5665)<br>
+　　 第四轮<br>
+　　 II(a, b, c, d, M0, 6, 0xf4292244)<br>
+　　 II(d, a, b, c, M7, 10, 0x432aff97)<br>
+　　 II(c, d, a, b, M14, 15, 0xab9423a7)<br>
+　　 II(b, c, d, a, M5, 21, 0xfc93a039)<br>
+　　 II(a, b, c, d, M12, 6, 0x655b59c3)<br>
+　　 II(d, a, b, c, M3, 10, 0x8f0ccc92)<br>
+　　 II(c, d, a, b, M10, 15, 0xffeff47d)<br>
+　　 II(b, c, d, a, M1, 21, 0x85845dd1)<br>
+　　 II(a, b, c, d, M8, 6, 0x6fa87e4f)<br>
+　　 II(d, a, b, c, M15, 10, 0xfe2ce6e0)<br>
+　　 II(c, d, a, b, M6, 15, 0xa3014314)<br>
+　　 II(b, c, d, a, M13, 21, 0x4e0811a1)<br>
+　　 II(a, b, c, d, M4, 6, 0xf7537e82)<br>
+　　 II(d, a, b, c, M11, 10, 0xbd3af235)<br>
+　　 II(c, d, a, b, M2, 15, 0x2ad7d2bb)<br>
+　　 II(b, c, d, a, M9, 21, 0xeb86d391)<br>
+　　 常数ti可以如下选择：<br>
+　　 在第i步中，ti是4294967296*abs(sin(i))的整数部分，i的单位是弧度。(4294967296等于2的32次方)<br>
+　　 所有这些完成之后，将A、B、C、D分别加上a、b、c、d。然后用下一分组数据继续运行算法，最后的输出是A、B、C和D的级联。<br>
+　　 当你按照我上面所说的方法实现MD5算法以后，你可以用以下几个信息对你做出来的程序作一个简单的测试，看看程序有没有错误。<br>
+　　 MD5 (“&quot;) = d41d8cd98f00b204e9800998ecf8427e<br>
+　　 MD5 (“a&quot;) = 0cc175b9c0f1b6a831c399e269772661<br>
+　　 MD5 (“abc&quot;) = 900150983cd24fb0d6963f7d28e17f72<br>
+　　 MD5 (“message digest&quot;) = f96b697d7cb7938d525a2f31aaf161d0<br>
+　　 MD5 (“abcdefghijklmnopqrstuvwxyz&quot;) = c3fcd3d76192e4007dfb496cca67e13b<br>
+　　 MD5 (“ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;) =<br>
+　　 d174ab98d277d9f5a5611c2c9f419d9f</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/md5/">Md5</a>
+        
+            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Aug 29, 2019 06:27 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/archives/973.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">go-swagger 快速入门教程</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/971.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">linux安装或升级protoc</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/967.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">golang实现百度智能小程序用户数据的解密</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/952.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">TP5使用workerman开启websocket服务</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/943.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">centos7系统安装php8</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2015 - 
+        
+        2025 轻风云
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">本网站由<img width="50px" src="https://uss.aaayun.cc/upyun.png">提供cdn加速/云存储服务</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

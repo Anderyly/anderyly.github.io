@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Vfm on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/vfm/</link>
+        <description>Recent content in Vfm on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Fri, 10 Jun 2022 18:02:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/vfm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VFM 3.7.5 源码 – 一个极简的 PHP 私人云盘！</title>
+        <link>http://blog.aaayun.cc/archives/796.html</link>
+        <pubDate>Fri, 10 Jun 2022 18:02:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/796.html</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;博主在网上找了很多免费版本只有这款是最新的&lt;/p&gt;
+&lt;p&gt;现在的个人数据越来越多，数据交互变得频繁。每当有需要临时存储的数据而身边又没有合适的存储介质，或者家里或工作中需要下载的文件，都是非常不方便的。这时候你就需要使用通用网盘了。有很多服务提供商提供云存储，但一般你需要支付空间或会员制度。免费云盘速度慢，内容有限。也有很多私有的网盘程序，但是比较臃肿，对服务器的要求也比较高。那么为什么不用VFM来搭建一个轻量级简单的私有云盘呢？&lt;/p&gt;
+&lt;p&gt;VFM是外国个人团队的付费作品。作为私有云盘，其功能可以涵盖方方面面。存储空间的容量和下载速度只取决于你家的建筑环境(VPS)。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;开始安装&#34;&gt;开始安装
+&lt;/h3&gt;&lt;h3 id=&#34;环境需要&#34;&gt;环境需要
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;硬件配置不低于单核 512M 内存及 50M 磁盘空间。&lt;/li&gt;
+&lt;li&gt;系统推荐使用 Centos。&lt;/li&gt;
+&lt;li&gt;WEB 端使用 Apache 与 PHP（PHP 需要高于 5.5 的版本）。&lt;/li&gt;
+&lt;li&gt;VFM 源码。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;配置-vfm&#34;&gt;配置 VFM
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;系统及环境都配置好之后将 VFM 上传至 WEB 根目录，并确保下图红框内文件是 755 权限（如果权限不足会导致无法更改配置及创建文件夹和添加用户）。&lt;/li&gt;
+&lt;li&gt;打开预设的 WEB 地址并输入账户密码进入后台设置，默认账户 admin 密码 password。&lt;/li&gt;
+&lt;li&gt;进入后台之后可以将语言更改为中文并自定义站点名称，也可以根据需要设置伪静态（漂亮的链接）或者直链支持。&lt;/li&gt;
+&lt;li&gt;权限部分可以根据自己的需求进行更改，比如你有多用户需求就需要设置 admin 账户的权限，有远程上传的需求就需要开启功能并设置上传文件后缀限制。&lt;/li&gt;
+&lt;li&gt;这里是一些基本设置，是否开启注册（开启注册需要同时启用下方的电邮选项并填入信息）及文件分享设置。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;伪静态设置&#34;&gt;伪静态设置
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;如果你用的是apache则不需要设置&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;location / {
+    index index.php;
+    if (!-e $request_filename) {
+            rewrite /download/(.*)/sh/(.*)/share/(.*) /vfm-admin/vfm-downloader.php?q=$1&amp;amp;sh=$2&amp;amp;share=$3 last;
+    }
+    rewrite /download/(.*)/h/(.*) /vfm-admin/vfm-downloader.php?q=$1&amp;amp;h=$2 last;
+    rewrite /download/zip/(.*)/n/(.*) /vfm-admin/vfm-downloader.php?zip=$1&amp;amp;n=$2 last;
+}
+
+location /uploads/ {
+    deny    all;
+}
+
+location /vfm-admin/_content1/ {
+    deny    all;
+}
+
+location /vfm-admin/tmp/ {
+    deny    all;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;vfm-详细特征&#34;&gt;VFM 详细特征
+&lt;/h3&gt;&lt;h3 id=&#34;文件和文件夹管理&#34;&gt;文件和文件夹管理
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;文件夹树导航&lt;/li&gt;
+&lt;li&gt;重命名文件和文件夹&lt;/li&gt;
+&lt;li&gt;按名称，日期和大小排序的项目&lt;/li&gt;
+&lt;li&gt;分页&lt;/li&gt;
+&lt;li&gt;下载文件夹&lt;/li&gt;
+&lt;li&gt;集体行动&lt;/li&gt;
+&lt;li&gt;下载多个文件为.zip 档案&lt;/li&gt;
+&lt;li&gt;删除文件和文件夹&lt;/li&gt;
+&lt;li&gt;通过目录移动文件&lt;/li&gt;
+&lt;li&gt;通过目录复制文件&lt;/li&gt;
+&lt;li&gt;服务器端通过 Ajax 处理列表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;用户&#34;&gt;用户
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;具有自定义权限的多个角色&lt;/li&gt;
+&lt;li&gt;为每个用户分配一个或多个特定目录&lt;/li&gt;
+&lt;li&gt;每个用户可选的最大可用空间&lt;/li&gt;
+&lt;li&gt;用户注册（可选）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;用户面板&#34;&gt;用户面板
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;个人资料图片和默认头像&lt;/li&gt;
+&lt;li&gt;找回密码&lt;/li&gt;
+&lt;li&gt;用户之间上传通知&lt;/li&gt;
+&lt;li&gt;向新用户发送电子邮件通知&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;上传&#34;&gt;上传
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;上传 BIG 文件&lt;/li&gt;
+&lt;li&gt;远程上传器&lt;/li&gt;
+&lt;li&gt;暂停 / 恢复&lt;/li&gt;
+&lt;li&gt;拖放上传器 *&lt;/li&gt;
+&lt;li&gt;多个文件上传 *&lt;/li&gt;
+&lt;li&gt;上传进度 *&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;文件共享&#34;&gt;文件共享
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;电子邮件表格&lt;/li&gt;
+&lt;li&gt;链接到期时间&lt;/li&gt;
+&lt;li&gt;可选的密码保护链接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;媒体&#34;&gt;媒体
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;快速图像预览 *&lt;/li&gt;
+&lt;li&gt;内联缩略图&lt;/li&gt;
+&lt;li&gt;音频播放器&lt;/li&gt;
+&lt;li&gt;视频播放器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;搜索&#34;&gt;搜索
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;全球搜索&lt;/li&gt;
+&lt;li&gt;快速搜索模块&lt;/li&gt;
+&lt;li&gt;归档地图导航&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安全&#34;&gt;安全
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;IP 黑名单 / 白名单&lt;/li&gt;
+&lt;li&gt;用于登录和共享链接的可选 CAPTCHA 安全代码&lt;/li&gt;
+&lt;li&gt;预防的热门链接 *&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;统计&#34;&gt;统计
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;每日 / 每周 / 每月报告&lt;/li&gt;
+&lt;li&gt;日期范围的趋势图表&lt;/li&gt;
+&lt;li&gt;将日志导出为.csv&lt;/li&gt;
+&lt;li&gt;任何活动的可选电子邮件通知&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;国际&#34;&gt;国际
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;多语言（包括 16+）&lt;/li&gt;
+&lt;li&gt;RTL 支持&lt;/li&gt;
+&lt;li&gt;翻译编辑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;样式&#34;&gt;样式
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;包括 25 多张皮肤&lt;/li&gt;
+&lt;li&gt;可定制的徽标，标题，说明&lt;/li&gt;
+&lt;li&gt;可定制的警报&lt;/li&gt;
+&lt;li&gt;自定义电子邮件 HTML 模板&lt;/li&gt;
+&lt;li&gt;自定义管理面板配色方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;下载地址&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/2022/06/20230911024737443.zip&#34;  title=&#34;veno-file-manager-v3.7.5&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;veno-file-manager-v3.7.5&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>表白墙 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E8%A1%A8%E7%99%BD%E5%A2%99/</link>
+        <description>Recent content in 表白墙 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Wed, 27 Jun 2018 21:59:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E8%A1%A8%E7%99%BD%E5%A2%99/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[二开]校园表白墙</title>
+        <link>http://blog.aaayun.cc/archives/108.html</link>
+        <pubDate>Wed, 27 Jun 2018 21:59:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/108.html</guid>
+        <description>&lt;p&gt;截图预览:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/27/791653405341689.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+此程序由云青二开，优化后台代码以及支持php5.3以上支持(原开发者后台开发手法太粗糙，函数乱用)&lt;/p&gt;
+&lt;p&gt;程序原先为1.0版本，现在为1.1版本，后续有空将会更新&lt;/p&gt;
+&lt;p&gt;【安装说明】&lt;/p&gt;
+&lt;p&gt;1.修改数据库配置文件“/include/config.php”，配置好数据库信息&lt;/p&gt;
+&lt;p&gt;2.将数据库文件“bb.sql”上传到数据库&lt;/p&gt;
+&lt;p&gt;3.将程序的全部目录及文件传输至网站主机根目录&lt;/p&gt;
+&lt;p&gt;4.进入后台域名/admin/，配置网站信息&lt;/p&gt;
+&lt;p&gt;备注：&lt;br&gt;
+后台账号：admin&lt;br&gt;
+后台密码：admin&lt;br&gt;
+后台目录：/admin（可自行修改）&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/2018/06/27/796051647459991.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载直通车&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>情感 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E6%83%85%E6%84%9F/</link>
+        <description>Recent content in 情感 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Fri, 20 Sep 2019 09:01:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E6%83%85%E6%84%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>现在的男生为什么不追女生?</title>
+        <link>http://blog.aaayun.cc/archives/474.html</link>
+        <pubDate>Fri, 20 Sep 2019 09:01:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/474.html</guid>
+        <description>&lt;p&gt;转载知乎&lt;/p&gt;
+&lt;p&gt;我发了一个请求，请求方式、参数、路径写的很清楚了,并且请求了很多次!&lt;br&gt;
+她并没有响应数据，所以我不知道怎么显示数据，继续又发了请求，她响应了个404,我觉得我的路径有问题，经她闺蜜指点，我应该先和她成为好朋友，这次我换了个参数:情人节那天发了个520,这次给我响应了，登上主页面了&lt;br&gt;
+星巴克咖啡厅当面了解了下，回家我对我各种状况进行了增删查改，隔了几天又发了请求，这次她显示权限不足，我又在自身找bug,不经意间发现有好几个人同时再给她发请求，且都得到回应了&lt;br&gt;
+最后我知道我这样的初级程序猿处理不了这样的高并发的问题，不能保证线程安全&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在开发过程中，我们有时会遇到这样的问题，将 2022-10-22T08:18:46+08:00 转成 2022-10-22 08:18:46，怎么解决这个问题？\n解决这个问题，最好不要用字符串截取，或者说字符串截取是最笨的方法，这应该是时间格式化的问题。\n我们先看一下 golang time 包中支持的 format 格式：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; UnixDate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RubyDate = &#34;Mon Jan 02 15:04:05 -0700 2006&#34; RFC822 = &#34;02 Jan 06 15:04 MST&#34; RFC822Z = &#34;02 Jan 06 15:04 -0700&#34; // RFC822 with numeric zone RFC850 = &#34;Monday, 02-Jan-06 15:04:05 MST&#34; RFC1123 = &#34;Mon, 02 Jan 2006 15:04:05 MST&#34; RFC1123Z = &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; // RFC1123 with numeric zone RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; RFC3339Nano = &#34;2006-01-02T15:04:05.999999999Z07:00&#34; Kitchen = &#34;3:04PM&#34; // Handy time stamps. Stamp = &#34;Jan _2 15:04:05&#34; StampMilli = &#34;Jan _2 15:04:05.000&#34; StampMicro = &#34;Jan _2 15:04:05.000000&#34; StampNano = &#34;Jan _2 15:04:05.000000000&#34; ) 我们找到了 RFC3339 ，那就很简单了，我们封装一个方法 RFC3339ToDateTime，见下面代码\n">
+<title>golang中time.RFC3339时间格式化</title>
+
+<link rel='canonical' href='http://blog.aaayun.cc/archives/914.html'>
+
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="golang中time.RFC3339时间格式化">
+<meta property='og:description' content="在开发过程中，我们有时会遇到这样的问题，将 2022-10-22T08:18:46+08:00 转成 2022-10-22 08:18:46，怎么解决这个问题？\n解决这个问题，最好不要用字符串截取，或者说字符串截取是最笨的方法，这应该是时间格式化的问题。\n我们先看一下 golang time 包中支持的 format 格式：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; UnixDate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RubyDate = &#34;Mon Jan 02 15:04:05 -0700 2006&#34; RFC822 = &#34;02 Jan 06 15:04 MST&#34; RFC822Z = &#34;02 Jan 06 15:04 -0700&#34; // RFC822 with numeric zone RFC850 = &#34;Monday, 02-Jan-06 15:04:05 MST&#34; RFC1123 = &#34;Mon, 02 Jan 2006 15:04:05 MST&#34; RFC1123Z = &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; // RFC1123 with numeric zone RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; RFC3339Nano = &#34;2006-01-02T15:04:05.999999999Z07:00&#34; Kitchen = &#34;3:04PM&#34; // Handy time stamps. Stamp = &#34;Jan _2 15:04:05&#34; StampMilli = &#34;Jan _2 15:04:05.000&#34; StampMicro = &#34;Jan _2 15:04:05.000000&#34; StampNano = &#34;Jan _2 15:04:05.000000000&#34; ) 我们找到了 RFC3339 ，那就很简单了，我们封装一个方法 RFC3339ToDateTime，见下面代码\n">
+<meta property='og:url' content='http://blog.aaayun.cc/archives/914.html'>
+<meta property='og:site_name' content='轻风云'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='go' /><meta property='article:tag' content='time' /><meta property='article:published_time' content='2022-10-26T17:07:10&#43;00:00'/><meta property='article:modified_time' content='2022-10-26T17:07:10&#43;00:00'/>
+<meta name="twitter:title" content="golang中time.RFC3339时间格式化">
+<meta name="twitter:description" content="在开发过程中，我们有时会遇到这样的问题，将 2022-10-22T08:18:46+08:00 转成 2022-10-22 08:18:46，怎么解决这个问题？\n解决这个问题，最好不要用字符串截取，或者说字符串截取是最笨的方法，这应该是时间格式化的问题。\n我们先看一下 golang time 包中支持的 format 格式：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; UnixDate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RubyDate = &#34;Mon Jan 02 15:04:05 -0700 2006&#34; RFC822 = &#34;02 Jan 06 15:04 MST&#34; RFC822Z = &#34;02 Jan 06 15:04 -0700&#34; // RFC822 with numeric zone RFC850 = &#34;Monday, 02-Jan-06 15:04:05 MST&#34; RFC1123 = &#34;Mon, 02 Jan 2006 15:04:05 MST&#34; RFC1123Z = &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; // RFC1123 with numeric zone RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; RFC3339Nano = &#34;2006-01-02T15:04:05.999999999Z07:00&#34; Kitchen = &#34;3:04PM&#34; // Handy time stamps. Stamp = &#34;Jan _2 15:04:05&#34; StampMilli = &#34;Jan _2 15:04:05.000&#34; StampMicro = &#34;Jan _2 15:04:05.000000&#34; StampNano = &#34;Jan _2 15:04:05.000000000&#34; ) 我们找到了 RFC3339 ，那就很简单了，我们封装一个方法 RFC3339ToDateTime，见下面代码\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_3ed2d734dcdfd8a7.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">轻风云</a></h1>
+            <h2 class="site-description">云淡风轻，于事安然</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Anderyly'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友人帐</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/talk/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>留言板</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" >
+                技术教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/archives/914.html">golang中time.RFC3339时间格式化</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 26, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>在开发过程中，我们有时会遇到这样的问题，将 2022-10-22T08:18:46+08:00 转成 2022-10-22 08:18:46，怎么解决这个问题？</p>
+<p>解决这个问题，最好不要用字符串截取，或者说字符串截取是最笨的方法，这应该是时间格式化的问题。</p>
+<p>我们先看一下 golang time 包中支持的 format 格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">ANSIC</span>       <span class="p">=</span> <span class="s">&#34;Mon Jan _2 15:04:05 2006&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">UnixDate</span>    <span class="p">=</span> <span class="s">&#34;Mon Jan _2 15:04:05 MST 2006&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">RubyDate</span>    <span class="p">=</span> <span class="s">&#34;Mon Jan 02 15:04:05 -0700 2006&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">RFC822</span>      <span class="p">=</span> <span class="s">&#34;02 Jan 06 15:04 MST&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">RFC822Z</span>     <span class="p">=</span> <span class="s">&#34;02 Jan 06 15:04 -0700&#34;</span> <span class="c1">// RFC822 with numeric zone</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">RFC850</span>      <span class="p">=</span> <span class="s">&#34;Monday, 02-Jan-06 15:04:05 MST&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">RFC1123</span>     <span class="p">=</span> <span class="s">&#34;Mon, 02 Jan 2006 15:04:05 MST&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">RFC1123Z</span>    <span class="p">=</span> <span class="s">&#34;Mon, 02 Jan 2006 15:04:05 -0700&#34;</span> <span class="c1">// RFC1123 with numeric zone</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">RFC3339</span>     <span class="p">=</span> <span class="s">&#34;2006-01-02T15:04:05Z07:00&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">RFC3339Nano</span> <span class="p">=</span> <span class="s">&#34;2006-01-02T15:04:05.999999999Z07:00&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Kitchen</span>     <span class="p">=</span> <span class="s">&#34;3:04PM&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Handy time stamps.</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Stamp</span>      <span class="p">=</span> <span class="s">&#34;Jan _2 15:04:05&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">StampMilli</span> <span class="p">=</span> <span class="s">&#34;Jan _2 15:04:05.000&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">StampMicro</span> <span class="p">=</span> <span class="s">&#34;Jan _2 15:04:05.000000&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">StampNano</span>  <span class="p">=</span> <span class="s">&#34;Jan _2 15:04:05.000000000&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们找到了 RFC3339 ，那就很简单了，我们封装一个方法 RFC3339ToDateTime，见下面代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">lib</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;time&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">_</span> <span class="nx">Time</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">timer</span><span class="p">)(</span><span class="kc">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">cstLayout</span> <span class="p">=</span> <span class="s">&#34;2006-01-02 15:04:05&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Time</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">RFC3339ToDateTime</span><span class="p">(</span><span class="nx">value</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">timer</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Cst</span> <span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Location</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">NewTime</span><span class="p">()</span> <span class="nx">Time</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">cst</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">LoadLocation</span><span class="p">(</span><span class="s">&#34;Asia/Shanghai&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">timer</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Cst</span><span class="p">:</span> <span class="nx">cst</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">con</span> <span class="o">*</span><span class="nx">timer</span><span class="p">)</span> <span class="nf">RFC3339ToDateTime</span><span class="p">(</span><span class="nx">value</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">ts</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Parse</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">RFC3339</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">ts</span><span class="p">.</span><span class="nf">In</span><span class="p">(</span><span class="nx">con</span><span class="p">.</span><span class="nx">Cst</span><span class="p">).</span><span class="nf">Format</span><span class="p">(</span><span class="nx">cstLayout</span><span class="p">),</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行一下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="nx">v</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">lib</span><span class="p">.</span><span class="nf">NewTime</span><span class="p">().</span><span class="nf">RFC3339ToDateTime</span><span class="p">(</span><span class="s">&#34;2022-10-22T08:18:46+08:00&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">08</span> <span class="mi">08</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">46</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>小结</p></blockquote>
+<p>同理，若遇到 RFC3339Nano、RFC822、RFC1123 等格式，也可以使用类似的方法，只需要在 time.Parse() 中指定时间格式即可。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/go/">Go</a>
+        
+            <a href="/tags/time/">Time</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Oct 26, 2022 17:07 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/archives/799.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">golang使用宝塔API快速建站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/709.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">golang cron v3 定时任务实现</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/674.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">gin渲染多层目录下模板</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/657.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">golang实现windows下切换代理</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/641.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">golang实现CC多线程测压</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2015 - 
+        
+        2025 轻风云
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">本网站由<img width="50px" src="https://uss.aaayun.cc/upyun.png">提供cdn加速/云存储服务</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

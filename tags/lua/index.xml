@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Lua on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/lua/</link>
+        <description>Recent content in Lua on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Wed, 06 Jan 2021 04:34:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/lua/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>csgo罗技鼠标宏</title>
+        <link>http://blog.aaayun.cc/archives/524.html</link>
+        <pubDate>Wed, 06 Jan 2021 04:34:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/524.html</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;开源，无加密&lt;/p&gt;
+&lt;p&gt;目前，我们已经写了一个AK，你可以试试看，效果绝对不错&lt;/p&gt;
+&lt;p&gt;如果没有响应，我们需要启动Logitech驱动程序管理员&lt;/p&gt;
+&lt;h2 id=&#34;下载地址&#34;&gt;下载地址
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/2021/01/05/500771754020676.rar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CSGO罗技lua鼠标宏.rar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2021/01/05/502113105936700.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

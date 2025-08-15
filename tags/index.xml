@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/</link>
+        <description>Recent content in Tags on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Tue, 30 May 2023 13:20:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Golang</title>
+        <link>http://blog.aaayun.cc/tags/golang/</link>
+        <pubDate>Tue, 30 May 2023 13:20:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/golang/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Swagger</title>
+        <link>http://blog.aaayun.cc/tags/swagger/</link>
+        <pubDate>Tue, 30 May 2023 13:20:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/swagger/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Linux</title>
+        <link>http://blog.aaayun.cc/tags/linux/</link>
+        <pubDate>Fri, 19 May 2023 18:34:59 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/linux/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Protoc</title>
+        <link>http://blog.aaayun.cc/tags/protoc/</link>
+        <pubDate>Fri, 19 May 2023 18:34:59 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/protoc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>百度</title>
+        <link>http://blog.aaayun.cc/tags/%E7%99%BE%E5%BA%A6/</link>
+        <pubDate>Sat, 18 Mar 2023 10:42:47 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%99%BE%E5%BA%A6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>小程序</title>
+        <link>http://blog.aaayun.cc/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+        <pubDate>Sat, 18 Mar 2023 10:42:47 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>PHP</title>
+        <link>http://blog.aaayun.cc/tags/php/</link>
+        <pubDate>Mon, 05 Dec 2022 15:34:45 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/php/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Thinkphp</title>
+        <link>http://blog.aaayun.cc/tags/thinkphp/</link>
+        <pubDate>Mon, 05 Dec 2022 15:34:45 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/thinkphp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Websocket</title>
+        <link>http://blog.aaayun.cc/tags/websocket/</link>
+        <pubDate>Mon, 05 Dec 2022 15:34:45 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/websocket/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Workman</title>
+        <link>http://blog.aaayun.cc/tags/workman/</link>
+        <pubDate>Mon, 05 Dec 2022 15:34:45 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/workman/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Frp</title>
+        <link>http://blog.aaayun.cc/tags/frp/</link>
+        <pubDate>Fri, 02 Dec 2022 15:43:55 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/frp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>内网穿透</title>
+        <link>http://blog.aaayun.cc/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+        <pubDate>Fri, 02 Dec 2022 15:43:55 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Centos</title>
+        <link>http://blog.aaayun.cc/tags/centos/</link>
+        <pubDate>Thu, 01 Dec 2022 15:28:12 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/centos/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Cloudflare</title>
+        <link>http://blog.aaayun.cc/tags/cloudflare/</link>
+        <pubDate>Tue, 01 Nov 2022 17:23:32 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/cloudflare/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Go</title>
+        <link>http://blog.aaayun.cc/tags/go/</link>
+        <pubDate>Wed, 26 Oct 2022 17:07:10 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/go/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Time</title>
+        <link>http://blog.aaayun.cc/tags/time/</link>
+        <pubDate>Wed, 26 Oct 2022 17:07:10 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/time/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>扫码</title>
+        <link>http://blog.aaayun.cc/tags/%E6%89%AB%E7%A0%81/</link>
+        <pubDate>Fri, 23 Sep 2022 16:28:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%89%AB%E7%A0%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>微信</title>
+        <link>http://blog.aaayun.cc/tags/%E5%BE%AE%E4%BF%A1/</link>
+        <pubDate>Fri, 23 Sep 2022 16:28:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%BE%AE%E4%BF%A1/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Windows</title>
+        <link>http://blog.aaayun.cc/tags/windows/</link>
+        <pubDate>Sat, 17 Sep 2022 10:09:43 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/windows/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>激活</title>
+        <link>http://blog.aaayun.cc/tags/%E6%BF%80%E6%B4%BB/</link>
+        <pubDate>Sat, 17 Sep 2022 10:09:43 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%BF%80%E6%B4%BB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Navicat</title>
+        <link>http://blog.aaayun.cc/tags/navicat/</link>
+        <pubDate>Mon, 05 Sep 2022 10:48:46 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/navicat/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Ssh</title>
+        <link>http://blog.aaayun.cc/tags/ssh/</link>
+        <pubDate>Wed, 31 Aug 2022 09:32:13 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/ssh/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>框架</title>
+        <link>http://blog.aaayun.cc/tags/%E6%A1%86%E6%9E%B6/</link>
+        <pubDate>Thu, 16 Jun 2022 15:29:42 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%A1%86%E6%9E%B6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vfm</title>
+        <link>http://blog.aaayun.cc/tags/vfm/</link>
+        <pubDate>Fri, 10 Jun 2022 18:02:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/vfm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>免费</title>
+        <link>http://blog.aaayun.cc/tags/%E5%85%8D%E8%B4%B9/</link>
+        <pubDate>Fri, 10 Jun 2022 18:02:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%85%8D%E8%B4%B9/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>宝塔</title>
+        <link>http://blog.aaayun.cc/tags/%E5%AE%9D%E5%A1%94/</link>
+        <pubDate>Fri, 10 Jun 2022 10:17:24 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%AE%9D%E5%A1%94/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Centos7</title>
+        <link>http://blog.aaayun.cc/tags/centos7/</link>
+        <pubDate>Mon, 23 May 2022 19:39:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/centos7/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Pptp</title>
+        <link>http://blog.aaayun.cc/tags/pptp/</link>
+        <pubDate>Mon, 23 May 2022 19:39:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/pptp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>活着</title>
+        <link>http://blog.aaayun.cc/tags/%E6%B4%BB%E7%9D%80/</link>
+        <pubDate>Sat, 21 May 2022 17:40:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%B4%BB%E7%9D%80/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>罗翔</title>
+        <link>http://blog.aaayun.cc/tags/%E7%BD%97%E7%BF%94/</link>
+        <pubDate>Sat, 21 May 2022 17:40:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%BD%97%E7%BF%94/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>人生</title>
+        <link>http://blog.aaayun.cc/tags/%E4%BA%BA%E7%94%9F/</link>
+        <pubDate>Sat, 21 May 2022 17:40:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E4%BA%BA%E7%94%9F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>2021</title>
+        <link>http://blog.aaayun.cc/tags/2021/</link>
+        <pubDate>Sat, 05 Mar 2022 23:41:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/2021/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>JetBrains</title>
+        <link>http://blog.aaayun.cc/tags/jetbrains/</link>
+        <pubDate>Sat, 05 Mar 2022 23:41:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/jetbrains/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>客服</title>
+        <link>http://blog.aaayun.cc/tags/%E5%AE%A2%E6%9C%8D/</link>
+        <pubDate>Mon, 14 Feb 2022 17:56:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%AE%A2%E6%9C%8D/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Deepin</title>
+        <link>http://blog.aaayun.cc/tags/deepin/</link>
+        <pubDate>Tue, 14 Dec 2021 22:28:52 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/deepin/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Shell</title>
+        <link>http://blog.aaayun.cc/tags/shell/</link>
+        <pubDate>Tue, 14 Dec 2021 22:28:52 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/shell/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>开机自启</title>
+        <link>http://blog.aaayun.cc/tags/%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</link>
+        <pubDate>Tue, 14 Dec 2021 22:28:52 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Uniapp</title>
+        <link>http://blog.aaayun.cc/tags/uniapp/</link>
+        <pubDate>Thu, 18 Nov 2021 02:51:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/uniapp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>原创</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8E%9F%E5%88%9B/</link>
+        <pubDate>Thu, 18 Nov 2021 02:51:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%8E%9F%E5%88%9B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>源码</title>
+        <link>http://blog.aaayun.cc/tags/%E6%BA%90%E7%A0%81/</link>
+        <pubDate>Thu, 18 Nov 2021 02:51:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%BA%90%E7%A0%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>采集</title>
+        <link>http://blog.aaayun.cc/tags/%E9%87%87%E9%9B%86/</link>
+        <pubDate>Mon, 11 Oct 2021 15:14:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%87%87%E9%9B%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>相册</title>
+        <link>http://blog.aaayun.cc/tags/%E7%9B%B8%E5%86%8C/</link>
+        <pubDate>Wed, 15 Sep 2021 22:37:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%9B%B8%E5%86%8C/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mysql</title>
+        <link>http://blog.aaayun.cc/tags/mysql/</link>
+        <pubDate>Sat, 17 Jul 2021 19:01:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/mysql/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Cron</title>
+        <link>http://blog.aaayun.cc/tags/cron/</link>
+        <pubDate>Sat, 10 Jul 2021 01:42:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/cron/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Kms</title>
+        <link>http://blog.aaayun.cc/tags/kms/</link>
+        <pubDate>Sat, 03 Jul 2021 20:02:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/kms/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Office</title>
+        <link>http://blog.aaayun.cc/tags/office/</link>
+        <pubDate>Sat, 03 Jul 2021 20:02:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/office/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Java</title>
+        <link>http://blog.aaayun.cc/tags/java/</link>
+        <pubDate>Mon, 21 Jun 2021 18:27:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/java/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Gin</title>
+        <link>http://blog.aaayun.cc/tags/gin/</link>
+        <pubDate>Fri, 18 Jun 2021 10:04:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/gin/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Walk</title>
+        <link>http://blog.aaayun.cc/tags/walk/</link>
+        <pubDate>Tue, 11 May 2021 23:42:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/walk/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>代理</title>
+        <link>http://blog.aaayun.cc/tags/%E4%BB%A3%E7%90%86/</link>
+        <pubDate>Tue, 11 May 2021 23:42:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E4%BB%A3%E7%90%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Pdo</title>
+        <link>http://blog.aaayun.cc/tags/pdo/</link>
+        <pubDate>Fri, 07 May 2021 19:57:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/pdo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Cc</title>
+        <link>http://blog.aaayun.cc/tags/cc/</link>
+        <pubDate>Fri, 30 Apr 2021 00:59:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/cc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>解析</title>
+        <link>http://blog.aaayun.cc/tags/%E8%A7%A3%E6%9E%90/</link>
+        <pubDate>Sat, 24 Apr 2021 01:32:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%A7%A3%E6%9E%90/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>视频</title>
+        <link>http://blog.aaayun.cc/tags/%E8%A7%86%E9%A2%91/</link>
+        <pubDate>Sat, 24 Apr 2021 01:32:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%A7%86%E9%A2%91/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>影视</title>
+        <link>http://blog.aaayun.cc/tags/%E5%BD%B1%E8%A7%86/</link>
+        <pubDate>Fri, 23 Apr 2021 00:50:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%BD%B1%E8%A7%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>IP</title>
+        <link>http://blog.aaayun.cc/tags/ip/</link>
+        <pubDate>Wed, 21 Apr 2021 01:01:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/ip/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Gcc</title>
+        <link>http://blog.aaayun.cc/tags/gcc/</link>
+        <pubDate>Wed, 31 Mar 2021 00:08:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/gcc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Nginx</title>
+        <link>http://blog.aaayun.cc/tags/nginx/</link>
+        <pubDate>Fri, 26 Mar 2021 18:58:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/nginx/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>编译</title>
+        <link>http://blog.aaayun.cc/tags/%E7%BC%96%E8%AF%91/</link>
+        <pubDate>Fri, 26 Mar 2021 18:58:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%BC%96%E8%AF%91/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>破解</title>
+        <link>http://blog.aaayun.cc/tags/%E7%A0%B4%E8%A7%A3/</link>
+        <pubDate>Fri, 19 Mar 2021 21:55:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%A0%B4%E8%A7%A3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Make</title>
+        <link>http://blog.aaayun.cc/tags/make/</link>
+        <pubDate>Fri, 19 Mar 2021 18:36:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/make/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>二维码</title>
+        <link>http://blog.aaayun.cc/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/</link>
+        <pubDate>Wed, 03 Mar 2021 02:18:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>监控</title>
+        <link>http://blog.aaayun.cc/tags/%E7%9B%91%E6%8E%A7/</link>
+        <pubDate>Mon, 25 Jan 2021 07:07:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%9B%91%E6%8E%A7/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Csgo</title>
+        <link>http://blog.aaayun.cc/tags/csgo/</link>
+        <pubDate>Wed, 06 Jan 2021 04:34:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/csgo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Lua</title>
+        <link>http://blog.aaayun.cc/tags/lua/</link>
+        <pubDate>Wed, 06 Jan 2021 04:34:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/lua/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>鼠标宏</title>
+        <link>http://blog.aaayun.cc/tags/%E9%BC%A0%E6%A0%87%E5%AE%8F/</link>
+        <pubDate>Wed, 06 Jan 2021 04:34:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%BC%A0%E6%A0%87%E5%AE%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>专业版</title>
+        <link>http://blog.aaayun.cc/tags/%E4%B8%93%E4%B8%9A%E7%89%88/</link>
+        <pubDate>Tue, 25 Aug 2020 11:31:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E4%B8%93%E4%B8%9A%E7%89%88/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>可视化</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+        <pubDate>Mon, 16 Mar 2020 09:41:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>脚本</title>
+        <link>http://blog.aaayun.cc/tags/%E8%84%9A%E6%9C%AC/</link>
+        <pubDate>Wed, 25 Dec 2019 18:54:57 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%84%9A%E6%9C%AC/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>营销</title>
+        <link>http://blog.aaayun.cc/tags/%E8%90%A5%E9%94%80/</link>
+        <pubDate>Mon, 04 Nov 2019 23:27:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%90%A5%E9%94%80/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>SDK</title>
+        <link>http://blog.aaayun.cc/tags/sdk/</link>
+        <pubDate>Mon, 04 Nov 2019 22:56:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/sdk/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>支付</title>
+        <link>http://blog.aaayun.cc/tags/%E6%94%AF%E4%BB%98/</link>
+        <pubDate>Mon, 04 Nov 2019 22:56:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%94%AF%E4%BB%98/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>支付宝</title>
+        <link>http://blog.aaayun.cc/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</link>
+        <pubDate>Mon, 04 Nov 2019 22:56:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>云豹</title>
+        <link>http://blog.aaayun.cc/tags/%E4%BA%91%E8%B1%B9/</link>
+        <pubDate>Fri, 11 Oct 2019 06:48:20 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E4%BA%91%E8%B1%B9/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>直播</title>
+        <link>http://blog.aaayun.cc/tags/%E7%9B%B4%E6%92%AD/</link>
+        <pubDate>Fri, 11 Oct 2019 06:48:20 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%9B%B4%E6%92%AD/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>主播</title>
+        <link>http://blog.aaayun.cc/tags/%E4%B8%BB%E6%92%AD/</link>
+        <pubDate>Fri, 11 Oct 2019 06:48:20 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E4%B8%BB%E6%92%AD/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>心情</title>
+        <link>http://blog.aaayun.cc/tags/%E5%BF%83%E6%83%85/</link>
+        <pubDate>Thu, 10 Oct 2019 06:26:35 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%BF%83%E6%83%85/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>排序</title>
+        <link>http://blog.aaayun.cc/tags/%E6%8E%92%E5%BA%8F/</link>
+        <pubDate>Fri, 27 Sep 2019 17:42:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%8E%92%E5%BA%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>主键</title>
+        <link>http://blog.aaayun.cc/tags/%E4%B8%BB%E9%94%AE/</link>
+        <pubDate>Fri, 27 Sep 2019 17:42:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E4%B8%BB%E9%94%AE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>自增</title>
+        <link>http://blog.aaayun.cc/tags/%E8%87%AA%E5%A2%9E/</link>
+        <pubDate>Fri, 27 Sep 2019 17:42:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%87%AA%E5%A2%9E/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>远程</title>
+        <link>http://blog.aaayun.cc/tags/%E8%BF%9C%E7%A8%8B/</link>
+        <pubDate>Mon, 23 Sep 2019 23:15:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%BF%9C%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>情感</title>
+        <link>http://blog.aaayun.cc/tags/%E6%83%85%E6%84%9F/</link>
+        <pubDate>Fri, 20 Sep 2019 09:01:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%83%85%E6%84%9F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>短视频</title>
+        <link>http://blog.aaayun.cc/tags/%E7%9F%AD%E8%A7%86%E9%A2%91/</link>
+        <pubDate>Fri, 20 Sep 2019 02:32:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%9F%AD%E8%A7%86%E9%A2%91/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Nodejs</title>
+        <link>http://blog.aaayun.cc/tags/nodejs/</link>
+        <pubDate>Wed, 18 Sep 2019 23:52:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/nodejs/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Bash</title>
+        <link>http://blog.aaayun.cc/tags/bash/</link>
+        <pubDate>Thu, 12 Sep 2019 18:03:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/bash/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Svn</title>
+        <link>http://blog.aaayun.cc/tags/svn/</link>
+        <pubDate>Thu, 12 Sep 2019 18:03:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/svn/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>防红</title>
+        <link>http://blog.aaayun.cc/tags/%E9%98%B2%E7%BA%A2/</link>
+        <pubDate>Mon, 09 Sep 2019 18:50:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%98%B2%E7%BA%A2/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>谷歌</title>
+        <link>http://blog.aaayun.cc/tags/%E8%B0%B7%E6%AD%8C/</link>
+        <pubDate>Sat, 07 Sep 2019 23:33:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%B0%B7%E6%AD%8C/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>科学上网</title>
+        <link>http://blog.aaayun.cc/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
+        <pubDate>Sat, 07 Sep 2019 23:33:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>404</title>
+        <link>http://blog.aaayun.cc/tags/404/</link>
+        <pubDate>Sat, 07 Sep 2019 22:21:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/404/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Html</title>
+        <link>http://blog.aaayun.cc/tags/html/</link>
+        <pubDate>Sat, 07 Sep 2019 22:21:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/html/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>动画</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8A%A8%E7%94%BB/</link>
+        <pubDate>Sat, 07 Sep 2019 22:21:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%8A%A8%E7%94%BB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>响应式</title>
+        <link>http://blog.aaayun.cc/tags/%E5%93%8D%E5%BA%94%E5%BC%8F/</link>
+        <pubDate>Sat, 07 Sep 2019 22:21:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%93%8D%E5%BA%94%E5%BC%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Cookie</title>
+        <link>http://blog.aaayun.cc/tags/cookie/</link>
+        <pubDate>Fri, 06 Sep 2019 19:43:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/cookie/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>跨域</title>
+        <link>http://blog.aaayun.cc/tags/%E8%B7%A8%E5%9F%9F/</link>
+        <pubDate>Fri, 06 Sep 2019 19:43:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%B7%A8%E5%9F%9F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Md5</title>
+        <link>http://blog.aaayun.cc/tags/md5/</link>
+        <pubDate>Thu, 29 Aug 2019 06:27:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/md5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>算法</title>
+        <link>http://blog.aaayun.cc/tags/%E7%AE%97%E6%B3%95/</link>
+        <pubDate>Thu, 29 Aug 2019 06:27:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%AE%97%E6%B3%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Des</title>
+        <link>http://blog.aaayun.cc/tags/des/</link>
+        <pubDate>Wed, 28 Aug 2019 00:16:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/des/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>加解密</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/</link>
+        <pubDate>Wed, 28 Aug 2019 00:16:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mcrypt</title>
+        <link>http://blog.aaayun.cc/tags/mcrypt/</link>
+        <pubDate>Wed, 28 Aug 2019 00:12:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/mcrypt/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Loader</title>
+        <link>http://blog.aaayun.cc/tags/loader/</link>
+        <pubDate>Tue, 27 Aug 2019 19:36:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/loader/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>压力测试</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Tue, 27 Aug 2019 19:36:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>旗下</title>
+        <link>http://blog.aaayun.cc/tags/%E6%97%97%E4%B8%8B/</link>
+        <pubDate>Tue, 27 Aug 2019 09:00:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%97%97%E4%B8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>骗子</title>
+        <link>http://blog.aaayun.cc/tags/%E9%AA%97%E5%AD%90/</link>
+        <pubDate>Sat, 17 Aug 2019 04:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%AA%97%E5%AD%90/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Axure</title>
+        <link>http://blog.aaayun.cc/tags/axure/</link>
+        <pubDate>Tue, 23 Jul 2019 19:50:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/axure/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>注册码</title>
+        <link>http://blog.aaayun.cc/tags/%E6%B3%A8%E5%86%8C%E7%A0%81/</link>
+        <pubDate>Tue, 23 Jul 2019 19:50:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%B3%A8%E5%86%8C%E7%A0%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Redis</title>
+        <link>http://blog.aaayun.cc/tags/redis/</link>
+        <pubDate>Thu, 11 Jul 2019 19:36:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/redis/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>连贯</title>
+        <link>http://blog.aaayun.cc/tags/%E8%BF%9E%E8%B4%AF/</link>
+        <pubDate>Sun, 30 Jun 2019 00:31:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%BF%9E%E8%B4%AF/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>微博</title>
+        <link>http://blog.aaayun.cc/tags/%E5%BE%AE%E5%8D%9A/</link>
+        <pubDate>Mon, 22 Apr 2019 23:09:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%BE%AE%E5%8D%9A/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>POST</title>
+        <link>http://blog.aaayun.cc/tags/post/</link>
+        <pubDate>Tue, 09 Apr 2019 18:39:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/post/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>请求</title>
+        <link>http://blog.aaayun.cc/tags/%E8%AF%B7%E6%B1%82/</link>
+        <pubDate>Tue, 09 Apr 2019 18:39:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%AF%B7%E6%B1%82/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>通信</title>
+        <link>http://blog.aaayun.cc/tags/%E9%80%9A%E4%BF%A1/</link>
+        <pubDate>Wed, 03 Apr 2019 23:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%80%9A%E4%BF%A1/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>配置</title>
+        <link>http://blog.aaayun.cc/tags/%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Wed, 03 Apr 2019 18:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%85%8D%E7%BD%AE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>故事</title>
+        <link>http://blog.aaayun.cc/tags/%E6%95%85%E4%BA%8B/</link>
+        <pubDate>Fri, 22 Mar 2019 19:13:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%95%85%E4%BA%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Sublime</title>
+        <link>http://blog.aaayun.cc/tags/sublime/</link>
+        <pubDate>Thu, 14 Feb 2019 22:23:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/sublime/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>输入</title>
+        <link>http://blog.aaayun.cc/tags/%E8%BE%93%E5%85%A5/</link>
+        <pubDate>Thu, 14 Feb 2019 22:23:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%BE%93%E5%85%A5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>雪</title>
+        <link>http://blog.aaayun.cc/tags/%E9%9B%AA/</link>
+        <pubDate>Wed, 13 Feb 2019 11:13:12 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%9B%AA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Fedora</title>
+        <link>http://blog.aaayun.cc/tags/fedora/</link>
+        <pubDate>Fri, 01 Feb 2019 23:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/fedora/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>音乐</title>
+        <link>http://blog.aaayun.cc/tags/%E9%9F%B3%E4%B9%90/</link>
+        <pubDate>Fri, 01 Feb 2019 23:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%9F%B3%E4%B9%90/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Wps</title>
+        <link>http://blog.aaayun.cc/tags/wps/</link>
+        <pubDate>Fri, 01 Feb 2019 22:38:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/wps/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Chrome</title>
+        <link>http://blog.aaayun.cc/tags/chrome/</link>
+        <pubDate>Fri, 01 Feb 2019 21:57:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/chrome/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>API</title>
+        <link>http://blog.aaayun.cc/tags/api/</link>
+        <pubDate>Sun, 27 Jan 2019 12:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/api/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>壁纸</title>
+        <link>http://blog.aaayun.cc/tags/%E5%A3%81%E7%BA%B8/</link>
+        <pubDate>Sun, 27 Jan 2019 12:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%A3%81%E7%BA%B8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>高清</title>
+        <link>http://blog.aaayun.cc/tags/%E9%AB%98%E6%B8%85/</link>
+        <pubDate>Sun, 27 Jan 2019 12:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%AB%98%E6%B8%85/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>图片</title>
+        <link>http://blog.aaayun.cc/tags/%E5%9B%BE%E7%89%87/</link>
+        <pubDate>Sun, 27 Jan 2019 12:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%9B%BE%E7%89%87/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>星座</title>
+        <link>http://blog.aaayun.cc/tags/%E6%98%9F%E5%BA%A7/</link>
+        <pubDate>Wed, 23 Jan 2019 00:08:12 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%98%9F%E5%BA%A7/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>导航网</title>
+        <link>http://blog.aaayun.cc/tags/%E5%AF%BC%E8%88%AA%E7%BD%91/</link>
+        <pubDate>Mon, 14 Jan 2019 19:07:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%AF%BC%E8%88%AA%E7%BD%91/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>WHMCS</title>
+        <link>http://blog.aaayun.cc/tags/whmcs/</link>
+        <pubDate>Wed, 02 Jan 2019 18:58:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/whmcs/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>绿色版</title>
+        <link>http://blog.aaayun.cc/tags/%E7%BB%BF%E8%89%B2%E7%89%88/</link>
+        <pubDate>Wed, 02 Jan 2019 18:58:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%BB%BF%E8%89%B2%E7%89%88/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>福利</title>
+        <link>http://blog.aaayun.cc/tags/%E7%A6%8F%E5%88%A9/</link>
+        <pubDate>Tue, 25 Dec 2018 22:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%A6%8F%E5%88%A9/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>映画</title>
+        <link>http://blog.aaayun.cc/tags/%E6%98%A0%E7%94%BB/</link>
+        <pubDate>Tue, 25 Dec 2018 22:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%98%A0%E7%94%BB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CSRF</title>
+        <link>http://blog.aaayun.cc/tags/csrf/</link>
+        <pubDate>Sat, 22 Dec 2018 22:05:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/csrf/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Phpmyadmin</title>
+        <link>http://blog.aaayun.cc/tags/phpmyadmin/</link>
+        <pubDate>Sat, 22 Dec 2018 22:05:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/phpmyadmin/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>加速器</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8A%A0%E9%80%9F%E5%99%A8/</link>
+        <pubDate>Sat, 22 Dec 2018 22:01:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%8A%A0%E9%80%9F%E5%99%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>App</title>
+        <link>http://blog.aaayun.cc/tags/app/</link>
+        <pubDate>Thu, 20 Dec 2018 18:13:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/app/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>老司机</title>
+        <link>http://blog.aaayun.cc/tags/%E8%80%81%E5%8F%B8%E6%9C%BA/</link>
+        <pubDate>Thu, 20 Dec 2018 18:13:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%80%81%E5%8F%B8%E6%9C%BA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>美女</title>
+        <link>http://blog.aaayun.cc/tags/%E7%BE%8E%E5%A5%B3/</link>
+        <pubDate>Fri, 14 Dec 2018 01:41:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%BE%8E%E5%A5%B3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>性感</title>
+        <link>http://blog.aaayun.cc/tags/%E6%80%A7%E6%84%9F/</link>
+        <pubDate>Fri, 14 Dec 2018 01:41:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%80%A7%E6%84%9F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>图床</title>
+        <link>http://blog.aaayun.cc/tags/%E5%9B%BE%E5%BA%8A/</link>
+        <pubDate>Tue, 11 Dec 2018 23:17:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%9B%BE%E5%BA%8A/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>同学录</title>
+        <link>http://blog.aaayun.cc/tags/%E5%90%8C%E5%AD%A6%E5%BD%95/</link>
+        <pubDate>Tue, 11 Dec 2018 18:50:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%90%8C%E5%AD%A6%E5%BD%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>接口</title>
+        <link>http://blog.aaayun.cc/tags/%E6%8E%A5%E5%8F%A3/</link>
+        <pubDate>Tue, 11 Dec 2018 01:30:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%8E%A5%E5%8F%A3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>随机</title>
+        <link>http://blog.aaayun.cc/tags/%E9%9A%8F%E6%9C%BA/</link>
+        <pubDate>Tue, 11 Dec 2018 01:30:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E9%9A%8F%E6%9C%BA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Ssl</title>
+        <link>http://blog.aaayun.cc/tags/ssl/</link>
+        <pubDate>Tue, 11 Dec 2018 00:18:08 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/ssl/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>笑话</title>
+        <link>http://blog.aaayun.cc/tags/%E7%AC%91%E8%AF%9D/</link>
+        <pubDate>Mon, 10 Dec 2018 05:20:23 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%AC%91%E8%AF%9D/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Kali</title>
+        <link>http://blog.aaayun.cc/tags/kali/</link>
+        <pubDate>Sat, 08 Dec 2018 22:20:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/kali/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>更新源</title>
+        <link>http://blog.aaayun.cc/tags/%E6%9B%B4%E6%96%B0%E6%BA%90/</link>
+        <pubDate>Sat, 08 Dec 2018 22:20:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%9B%B4%E6%96%B0%E6%BA%90/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>http://blog.aaayun.cc/tags/%E6%90%9C%E7%B4%A2/</link>
+        <pubDate>Sat, 01 Dec 2018 22:22:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%90%9C%E7%B4%A2/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>网盘</title>
+        <link>http://blog.aaayun.cc/tags/%E7%BD%91%E7%9B%98/</link>
+        <pubDate>Sat, 01 Dec 2018 22:22:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%BD%91%E7%9B%98/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Aria2</title>
+        <link>http://blog.aaayun.cc/tags/aria2/</link>
+        <pubDate>Mon, 12 Nov 2018 23:02:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/aria2/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hls</title>
+        <link>http://blog.aaayun.cc/tags/hls/</link>
+        <pubDate>Sun, 09 Sep 2018 08:06:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/hls/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>扒站</title>
+        <link>http://blog.aaayun.cc/tags/%E6%89%92%E7%AB%99/</link>
+        <pubDate>Sun, 09 Sep 2018 08:06:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%89%92%E7%AB%99/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>抓包</title>
+        <link>http://blog.aaayun.cc/tags/%E6%8A%93%E5%8C%85/</link>
+        <pubDate>Sun, 09 Sep 2018 08:06:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%8A%93%E5%8C%85/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>QQ</title>
+        <link>http://blog.aaayun.cc/tags/qq/</link>
+        <pubDate>Fri, 07 Sep 2018 03:03:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/qq/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>生活</title>
+        <link>http://blog.aaayun.cc/tags/%E7%94%9F%E6%B4%BB/</link>
+        <pubDate>Wed, 01 Aug 2018 21:24:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%94%9F%E6%B4%BB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>状态</title>
+        <link>http://blog.aaayun.cc/tags/%E7%8A%B6%E6%80%81/</link>
+        <pubDate>Wed, 01 Aug 2018 21:24:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%8A%B6%E6%80%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>域名</title>
+        <link>http://blog.aaayun.cc/tags/%E5%9F%9F%E5%90%8D/</link>
+        <pubDate>Sun, 22 Jul 2018 22:24:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%9F%9F%E5%90%8D/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>表白墙</title>
+        <link>http://blog.aaayun.cc/tags/%E8%A1%A8%E7%99%BD%E5%A2%99/</link>
+        <pubDate>Wed, 27 Jun 2018 21:59:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%A1%A8%E7%99%BD%E5%A2%99/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>二开</title>
+        <link>http://blog.aaayun.cc/tags/%E4%BA%8C%E5%BC%80/</link>
+        <pubDate>Wed, 27 Jun 2018 21:59:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E4%BA%8C%E5%BC%80/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>蜜汁姿势</title>
+        <link>http://blog.aaayun.cc/tags/%E8%9C%9C%E6%B1%81%E5%A7%BF%E5%8A%BF/</link>
+        <pubDate>Tue, 05 Jun 2018 07:55:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E8%9C%9C%E6%B1%81%E5%A7%BF%E5%8A%BF/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>授权</title>
+        <link>http://blog.aaayun.cc/tags/%E6%8E%88%E6%9D%83/</link>
+        <pubDate>Tue, 29 May 2018 00:56:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%8E%88%E6%9D%83/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>半中心化</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8D%8A%E4%B8%AD%E5%BF%83%E5%8C%96/</link>
+        <pubDate>Tue, 08 May 2018 00:13:16 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%8D%8A%E4%B8%AD%E5%BF%83%E5%8C%96/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>区块链</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
+        <pubDate>Tue, 08 May 2018 00:13:16 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>http://blog.aaayun.cc/tags/python/</link>
+        <pubDate>Tue, 24 Apr 2018 00:11:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/python/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>大数据</title>
+        <link>http://blog.aaayun.cc/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link>
+        <pubDate>Tue, 24 Apr 2018 00:11:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>教程</title>
+        <link>http://blog.aaayun.cc/tags/%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Tue, 24 Apr 2018 00:11:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%95%99%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>游戏</title>
+        <link>http://blog.aaayun.cc/tags/%E6%B8%B8%E6%88%8F/</link>
+        <pubDate>Tue, 24 Apr 2018 00:07:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E6%B8%B8%E6%88%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>经历</title>
+        <link>http://blog.aaayun.cc/tags/%E7%BB%8F%E5%8E%86/</link>
+        <pubDate>Sun, 08 Apr 2018 19:05:29 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/%E7%BB%8F%E5%8E%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Lamp</title>
+        <link>http://blog.aaayun.cc/tags/lamp/</link>
+        <pubDate>Mon, 26 Mar 2018 06:03:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/lamp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Ntfs</title>
+        <link>http://blog.aaayun.cc/tags/ntfs/</link>
+        <pubDate>Mon, 26 Mar 2018 05:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/tags/ntfs/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

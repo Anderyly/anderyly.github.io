@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>算法 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E7%AE%97%E6%B3%95/</link>
+        <description>Recent content in 算法 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Thu, 29 Aug 2019 06:27:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>MD5口算算法</title>
+        <link>http://blog.aaayun.cc/archives/429.html</link>
+        <pubDate>Thu, 29 Aug 2019 06:27:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/429.html</guid>
+        <description>&lt;p&gt;对MD5算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。&lt;br&gt;
+　　 在MD5算法中，首先需要对信息进行填充，使其字节长度对512求余的结果等于448。因此，信息的字节长度（Bits Length）将被扩展至N_512+448，即N_64+56个字节（Bytes），N为一个正整数。填充的方法如下，在信息的后面填充一个1和无数个0，直到满足上面的条件时才停止用0对信息的填充。然后，在在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，现在的信息字节长度=N_512+448+64=(N+1)_512，即长度恰好是512的整数倍。这样做的原因是为满足后面处理中对信息长度的要求。&lt;br&gt;
+　　 MD5中有四个32位被称作链接变量（Chaining Variable）的整数参数，他们分别为：A=0x01234567，B=0x89abcdef，C=0xfedcba98，D=0x76543210。&lt;br&gt;
+　　 当设置好这四个链接变量后，就开始进入算法的四轮循环运算。循环的次数是信息中512位信息分组的数目。&lt;br&gt;
+　　 将上面四个链接变量复制到另外四个变量中：A到a，B到b，C到c，D到d。&lt;br&gt;
+　　 主循环有四轮（MD4只有三轮），每轮循环都很相似。第一轮进行16次操作。每次操作对a、b、c和d中的其中三个作一次非线性函数运算，然后将所得结果加上第四个变量，文本的一个子分组和一个常数。再将所得结果向右环移一个不定的数，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。&lt;br&gt;
+　　 以一下是每次操作中用到的四个非线性函数（每轮一个）。&lt;br&gt;
+　　 F(X,Y,Z) =(X&amp;amp;Y)|((~X)&amp;amp;Z)&lt;br&gt;
+　　 G(X,Y,Z) =(X&amp;amp;Z)|(Y&amp;amp;(~Z))&lt;br&gt;
+　　 H(X,Y,Z) =X^Y^Z&lt;br&gt;
+　　 I(X,Y,Z)=Y^(X|(~Z))&lt;br&gt;
+　　 （&amp;amp;是与，|是或，~是非，^是异或）&lt;br&gt;
+　　 这四个函数的说明：如果X、Y和Z的对应位是独立和均匀的，那么结果的每一位也应是独立和均匀的。&lt;br&gt;
+　　 F是一个逐位运算的函数。即，如果X，那么Y，否则Z。函数H是逐位奇偶操作符。&lt;br&gt;
+　　 假设Mj表示消息的第j个子分组（从0到15），&amp;laquo;&lt;br&gt;
+　　 FF(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (F(b, c, d) + Mj + ti) &amp;laquo; s&lt;br&gt;
+　　 GG(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (G(b, c, d) + Mj + ti) &amp;laquo; s&lt;br&gt;
+　　 HH(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (H(b, c, d) + Mj + ti) &amp;laquo; s&lt;br&gt;
+　　 II(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (I(b, c, d) + Mj + ti) &amp;laquo; s&lt;br&gt;
+　　 这四轮（64步）是：&lt;br&gt;
+　　 第一轮&lt;br&gt;
+　　 FF(a, b, c, d, M0, 7, 0xd76aa478)&lt;br&gt;
+　　 FF(d, a, b, c, M1, 12, 0xe8c7b756)&lt;br&gt;
+　　 FF(c, d, a, b, M2, 17, 0x242070db)&lt;br&gt;
+　　 FF(b, c, d, a, M3, 22, 0xc1bdceee)&lt;br&gt;
+　　 FF(a, b, c, d, M4, 7, 0xf57c0faf)&lt;br&gt;
+　　 FF(d, a, b, c, M5, 12, 0x4787c62a)&lt;br&gt;
+　　 FF(c, d, a, b, M6, 17, 0xa8304613)&lt;br&gt;
+　　 FF(b, c, d, a, M7, 22, 0xfd469501)&lt;br&gt;
+　　 FF(a, b, c, d, M8, 7, 0x698098d8)&lt;br&gt;
+　　 FF(d, a, b, c, M9, 12, 0x8b44f7af)&lt;br&gt;
+　　 FF(c, d, a, b, M10, 17, 0xffff5bb1)&lt;br&gt;
+　　 FF(b, c, d, a, M11, 22, 0x895cd7be)&lt;br&gt;
+　　 FF(a, b, c, d, M12, 7, 0x6b901122)&lt;br&gt;
+　　 FF(d, a, b, c, M13, 12, 0xfd987193)&lt;br&gt;
+　　 FF(c, d, a, b, M14, 17, 0xa679438e)&lt;br&gt;
+　　 FF(b, c, d, a, M15, 22, 0x49b40821)&lt;br&gt;
+　　 第二轮&lt;br&gt;
+　　 GG(a, b, c, d, M1, 5, 0xf61e2562)&lt;br&gt;
+　　 GG(d, a, b, c, M6, 9, 0xc040b340)&lt;br&gt;
+　　 GG(c, d, a, b, M11, 14, 0x265e5a51)&lt;br&gt;
+　　 GG(b, c, d, a, M0, 20, 0xe9b6c7aa)&lt;br&gt;
+　　 GG(a, b, c, d, M5, 5, 0xd62f105d)&lt;br&gt;
+　　 GG(d, a, b, c, M10, 9, 0x02441453)&lt;br&gt;
+　　 GG(c, d, a, b, M15, 14, 0xd8a1e681)&lt;br&gt;
+　　 GG(b, c, d, a, M4, 20, 0xe7d3fbc8)&lt;br&gt;
+　　 GG(a, b, c, d, M9, 5, 0x21e1cde6)&lt;br&gt;
+　　 GG(d, a, b, c, M14, 9, 0xc33707d6)&lt;br&gt;
+　　 GG(c, d, a, b, M3, 14, 0xf4d50d87)&lt;br&gt;
+　　 GG(b, c, d, a, M8, 20, 0x455a14ed)&lt;br&gt;
+　　 GG(a, b, c, d, M13, 5, 0xa9e3e905)&lt;br&gt;
+　　 GG(d, a, b, c, M2, 9, 0xfcefa3f8)&lt;br&gt;
+　　 GG(c, d, a, b, M7, 14, 0x676f02d9)&lt;br&gt;
+　　 GG(b, c, d, a, M12, 20, 0x8d2a4c8a)&lt;br&gt;
+　　 第三轮&lt;br&gt;
+　　 HH(a, b, c, d, M5, 4, 0xfffa3942)&lt;br&gt;
+　　 HH(d, a, b, c, M8, 11, 0x8771f681)&lt;br&gt;
+　　 HH(c, d, a, b, M11, 16, 0x6d9d6122)&lt;br&gt;
+　　 HH(b, c, d, a, M14, 23, 0xfde5380c)&lt;br&gt;
+　　 HH(a, b, c, d, M1, 4, 0xa4beea44)&lt;br&gt;
+　　 HH(d, a, b, c, M4, 11, 0x4bdecfa9)&lt;br&gt;
+　　 HH(c, d, a, b, M7, 16, 0xf6bb4b60)&lt;br&gt;
+　　 HH(b, c, d, a, M10, 23, 0xbebfbc70)&lt;br&gt;
+　　 HH(a, b, c, d, M13, 4, 0x289b7ec6)&lt;br&gt;
+　　 HH(d, a, b, c, M0, 11, 0xeaa127fa)&lt;br&gt;
+　　 HH(c, d, a, b, M3, 16, 0xd4ef3085)&lt;br&gt;
+　　 HH(b, c, d, a, M6, 23, 0x04881d05)&lt;br&gt;
+　　 HH(a, b, c, d, M9, 4, 0xd9d4d039)&lt;br&gt;
+　　 HH(d, a, b, c, M12, 11, 0xe6db99e5)&lt;br&gt;
+　　 HH(c, d, a, b, M15, 16, 0x1fa27cf8)&lt;br&gt;
+　　 HH(b, c, d, a, M2, 23, 0xc4ac5665)&lt;br&gt;
+　　 第四轮&lt;br&gt;
+　　 II(a, b, c, d, M0, 6, 0xf4292244)&lt;br&gt;
+　　 II(d, a, b, c, M7, 10, 0x432aff97)&lt;br&gt;
+　　 II(c, d, a, b, M14, 15, 0xab9423a7)&lt;br&gt;
+　　 II(b, c, d, a, M5, 21, 0xfc93a039)&lt;br&gt;
+　　 II(a, b, c, d, M12, 6, 0x655b59c3)&lt;br&gt;
+　　 II(d, a, b, c, M3, 10, 0x8f0ccc92)&lt;br&gt;
+　　 II(c, d, a, b, M10, 15, 0xffeff47d)&lt;br&gt;
+　　 II(b, c, d, a, M1, 21, 0x85845dd1)&lt;br&gt;
+　　 II(a, b, c, d, M8, 6, 0x6fa87e4f)&lt;br&gt;
+　　 II(d, a, b, c, M15, 10, 0xfe2ce6e0)&lt;br&gt;
+　　 II(c, d, a, b, M6, 15, 0xa3014314)&lt;br&gt;
+　　 II(b, c, d, a, M13, 21, 0x4e0811a1)&lt;br&gt;
+　　 II(a, b, c, d, M4, 6, 0xf7537e82)&lt;br&gt;
+　　 II(d, a, b, c, M11, 10, 0xbd3af235)&lt;br&gt;
+　　 II(c, d, a, b, M2, 15, 0x2ad7d2bb)&lt;br&gt;
+　　 II(b, c, d, a, M9, 21, 0xeb86d391)&lt;br&gt;
+　　 常数ti可以如下选择：&lt;br&gt;
+　　 在第i步中，ti是4294967296*abs(sin(i))的整数部分，i的单位是弧度。(4294967296等于2的32次方)&lt;br&gt;
+　　 所有这些完成之后，将A、B、C、D分别加上a、b、c、d。然后用下一分组数据继续运行算法，最后的输出是A、B、C和D的级联。&lt;br&gt;
+　　 当你按照我上面所说的方法实现MD5算法以后，你可以用以下几个信息对你做出来的程序作一个简单的测试，看看程序有没有错误。&lt;br&gt;
+　　 MD5 (“&amp;quot;) = d41d8cd98f00b204e9800998ecf8427e&lt;br&gt;
+　　 MD5 (“a&amp;quot;) = 0cc175b9c0f1b6a831c399e269772661&lt;br&gt;
+　　 MD5 (“abc&amp;quot;) = 900150983cd24fb0d6963f7d28e17f72&lt;br&gt;
+　　 MD5 (“message digest&amp;quot;) = f96b697d7cb7938d525a2f31aaf161d0&lt;br&gt;
+　　 MD5 (“abcdefghijklmnopqrstuvwxyz&amp;quot;) = c3fcd3d76192e4007dfb496cca67e13b&lt;br&gt;
+　　 MD5 (“ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&amp;quot;) =&lt;br&gt;
+　　 d174ab98d277d9f5a5611c2c9f419d9f&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

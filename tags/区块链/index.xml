@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>区块链 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
+        <description>Recent content in 区块链 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Tue, 08 May 2018 00:13:16 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>半中心化区块链</title>
+        <link>http://blog.aaayun.cc/archives/75.html</link>
+        <pubDate>Tue, 08 May 2018 00:13:16 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/75.html</guid>
+        <description>&lt;p&gt;构思一个半中心化区块链，由于没有xmind就码字了&lt;/p&gt;
+&lt;p&gt;1.管理员在服务器增加n个区块，并设置简易度&lt;br&gt;
+2.用户在客户端注册账号取得钱包地址、私匙及公匙&lt;br&gt;
+3.用户客户端选择区块并进行hash计算，成功计算将提交服务器进行随机奖励至钱包&lt;br&gt;
+4.交易、挖矿信息以对称式加密提交区块浏览器中，并以p2p形式传给其它用户保存至本地形成所谓的账本&lt;br&gt;
+5.交易转账须查找账本记录，51%账本记录无异议将成功交易，并扣除旷工费&lt;/p&gt;
+&lt;p&gt;区块可以创建在百度贴吧等平台，这样大大减少服务器成本又能实现cc攻击&lt;/p&gt;
+&lt;p&gt;整个过程实现须使用php、java或易语言及易安卓&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>vax虚拟币系统PHP源码</title>
+        <link>http://blog.aaayun.cc/archives/40.html</link>
+        <pubDate>Thu, 29 Mar 2018 20:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/40.html</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;此源码已停止更新，仍可下载使用**&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;程序用途&lt;br&gt;
+生产自己的代币用于交易&lt;/p&gt;
+&lt;p&gt;博主本人也是一个PHP爱好者，最近看区块链这块很火，于是分别在GEC、HBC等平台注册了几个账号，分析了他们的运行原理发现并不难做出来，于是自己就开发了一个开源程序，供大家参考，目前暂未发现bug，好了废话不多说，来介绍本系统：&lt;/p&gt;
+&lt;p&gt;使用bs框架快速开发后台，前台采集hbc模板（博主不会前端），采用session，引入360安全脚本，使用短信sdk，因为zc原因，不采用充值及线上交易，全自动化跌涨&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/03/29/966842547226500.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;br&gt;
+1.修改 /cron/sms.php 填写短信sdk密匙，这里使用的是100sms短信平台的sdk&lt;br&gt;
+2.源码上传网站根目录，访问 域名/install/ 一键自动安装&lt;br&gt;
+访问 监控 域名/admin 进入后台设置监控密匙&lt;br&gt;
+（后台初始账号：admin 密码：123456）&lt;br&gt;
+3.监控 域名/cron/date.php?key=你的密匙&lt;br&gt;
+4.监控 域名/cron/host.php?key=你的密匙&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/2018/03/29/967912371833167.gz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点我下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;邮箱：&lt;a class=&#34;link&#34; href=&#34;mailto:admin@aaayun.cc&#34; &gt;admin@aaayun.cc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注：源码开源免费，如果想找博主增加功能需收费&lt;br&gt;
+此源码由Anderyly发布，未经授权禁止商业用途&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

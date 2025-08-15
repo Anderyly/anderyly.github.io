@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>谈天说地 on 轻风云</title>
+        <link>http://blog.aaayun.cc/categories/%E8%B0%88%E5%A4%A9%E8%AF%B4%E5%9C%B0/</link>
+        <description>Recent content in 谈天说地 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Fri, 02 Dec 2022 15:43:55 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/categories/%E8%B0%88%E5%A4%A9%E8%AF%B4%E5%9C%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>最好用的完全开源的内网穿透工具frps</title>
+        <link>http://blog.aaayun.cc/archives/947.html</link>
+        <pubDate>Fri, 02 Dec 2022 15:43:55 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/947.html</guid>
+        <description>&lt;h2 id=&#34;前期准备&#34;&gt;前期准备：
+&lt;/h2&gt;&lt;p&gt;首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。&lt;/p&gt;
+&lt;p&gt;本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。&lt;/p&gt;
+&lt;h2 id=&#34;服务端linux搭建步骤&#34;&gt;服务端(Linux)搭建步骤
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载服务端的&lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp/releases&#34;  title=&#34;frp&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;frp&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用tar命令解压下载成功的压缩包文件:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;```shell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;tar -zxvf frp_0.45.0_linux_arm64.tar.gz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  3. 使用cd命令进入解压出来的文件夹:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ```shell
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv frp_0.45.0_linux_arm64 frp &amp;amp;&amp;amp; cd frp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;修改服务器配置文件(frps.ini):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;```shell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;vim fros.ini&lt;/p&gt;
+&lt;h1 id=&#34;编辑&#34;&gt;编辑
+&lt;/h1&gt;&lt;p&gt;[common]
+bind_port = 7000
+vhost_http_port = 88
+vhost_https_port = 89
+#与客户端通信的令牌
+token = 57854
+dashboard_user  = admin
+#dashboard 密码
+dashboard_pwd = admin
+#dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500
+dashboard_port = 7500&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  5. 启动frp服务端，让frp在后台运行:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ```shell
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nohup ./frps -c frps.ini &amp;amp;  &amp;gt; frp.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。&lt;/p&gt;
+&lt;h2 id=&#34;客户端搭建步骤&#34;&gt;客户端搭建步骤
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载客户端的frp，在上文地址下载最新windows压缩包&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压下载成功的压缩包&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑frpc.ini文件，内容如下：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;```ini
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[common]
+server_addr = x.x.x.x  #公网ip
+server_port = 7000
+#与服务端通信的令牌
+token = 57854
+[mysql]
+type = tcp
+#local_ip = 127.0.0.1
+local_port = 3306  #本地mysql端口
+remote_port = 3366 #印射公网端口
+#连接Windows远程桌面的
+[rdp]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389
+remote_port = 3389
+custom_domains = x.x.x.x  #公网ip或域名
+[web01]
+type = http
+local_ip = 127.0.0.1
+local_port = 80
+locations  = /
+custom_domains =  x.x.x.x  #公网ip或域名
+[web02]
+type = http
+local_ip =  127.0.0.1
+local_port = 8090
+locations  = /cardmanager
+custom_domains =  x.x.x.x  #公网ip或域名
+#通过tcp来连接svn
+[svn]
+type = tcp
+local_ip =127.0.0.1
+local_port = 81
+remote_port = 9000&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  4. 启动frp客户端：  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    在目录下打开cmd命令窗口，执行如下命令：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ```cmd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;frpc.exe -c frpc.ini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;到此，客户端的搭建已经完成。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>爱</title>
+        <link>http://blog.aaayun.cc/archives/930.html</link>
+        <pubDate>Thu, 24 Nov 2022 11:22:14 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/930.html</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032054894.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032011378.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032012854-scaled.jpeg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032017350-scaled.jpeg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;4&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032023690-scaled.jpeg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;5&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032028113-scaled.jpeg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;6&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032035142-scaled.jpeg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;7&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032040682-scaled.jpeg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;8&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032047963-scaled.jpeg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;9&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>人生</title>
+        <link>http://blog.aaayun.cc/archives/788.html</link>
+        <pubDate>Sat, 21 May 2022 17:40:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/788.html</guid>
+        <description>&lt;p&gt;{dplayer src=&amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2022/05/1024311815.mp4%22/%7d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://uss.aaayun.cc/typecho/uploads/2022/05/1024311815.mp4&#34;/}&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>人生</title>
+        <link>http://blog.aaayun.cc/archives/604.html</link>
+        <pubDate>Tue, 23 Mar 2021 05:07:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/604.html</guid>
+        <description>&lt;p&gt;死亡是终点，但不是目的。人生不就像是一场旅行吗？每个人可能都有各自的目的地(不同的死因)。但是，旅行的意义就是在于享受旅程，享受当下啊！！人生不也一样啊？&lt;/p&gt;
+&lt;p&gt;{dplayer src=&amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/32470077.mp4%22/%7d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://uss.aaayun.cc/typecho/uploads/2021/03/32470077.mp4&#34;/}&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>悲情客</title>
+        <link>http://blog.aaayun.cc/archives/601.html</link>
+        <pubDate>Sun, 21 Mar 2021 08:52:28 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/601.html</guid>
+        <description>&lt;p&gt;人间若无悲情客，何来诗者赋年华&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>言卿</title>
+        <link>http://blog.aaayun.cc/archives/491.html</link>
+        <pubDate>Sat, 02 Nov 2019 08:19:21 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/491.html</guid>
+        <description>&lt;p&gt;阅尽人间三千愿 处处何人处处卿&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>前程似锦</title>
+        <link>http://blog.aaayun.cc/archives/487.html</link>
+        <pubDate>Thu, 10 Oct 2019 06:26:35 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/487.html</guid>
+        <description>&lt;p&gt;生如蝼蚁，当立鸿鹄之志，命薄如纸，却有不屈之心，未来可期，祝你我飞黄腾达&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>难</title>
+        <link>http://blog.aaayun.cc/archives/486.html</link>
+        <pubDate>Tue, 08 Oct 2019 04:20:01 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/486.html</guid>
+        <description>&lt;p&gt;仗义多为屠狗辈，负心多是读书人&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>轻风拂</title>
+        <link>http://blog.aaayun.cc/archives/478.html</link>
+        <pubDate>Tue, 24 Sep 2019 19:56:15 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/478.html</guid>
+        <description>&lt;p&gt;轻风拂，傍山晓晚，烟胧伊人倩影。清波碧漾，素手褪红裳，却作弯身掬水，何见芊芊玉足踏意来&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>现在的男生为什么不追女生?</title>
+        <link>http://blog.aaayun.cc/archives/474.html</link>
+        <pubDate>Fri, 20 Sep 2019 09:01:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/474.html</guid>
+        <description>&lt;p&gt;转载知乎&lt;/p&gt;
+&lt;p&gt;我发了一个请求，请求方式、参数、路径写的很清楚了,并且请求了很多次!&lt;br&gt;
+她并没有响应数据，所以我不知道怎么显示数据，继续又发了请求，她响应了个404,我觉得我的路径有问题，经她闺蜜指点，我应该先和她成为好朋友，这次我换了个参数:情人节那天发了个520,这次给我响应了，登上主页面了&lt;br&gt;
+星巴克咖啡厅当面了解了下，回家我对我各种状况进行了增删查改，隔了几天又发了请求，这次她显示权限不足，我又在自身找bug,不经意间发现有好几个人同时再给她发请求，且都得到回应了&lt;br&gt;
+最后我知道我这样的初级程序猿处理不了这样的高并发的问题，不能保证线程安全&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>情 殇</title>
+        <link>http://blog.aaayun.cc/archives/448.html</link>
+        <pubDate>Sun, 08 Sep 2019 09:11:31 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/448.html</guid>
+        <description>&lt;p&gt;心有苍穹人先走，三年泪水杯中流&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>轻风云影视</title>
+        <link>http://blog.aaayun.cc/archives/420.html</link>
+        <pubDate>Tue, 27 Aug 2019 09:00:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/420.html</guid>
+        <description>&lt;p&gt;因为无聊用苹果cms做了个视频采集站点 里面的各大影视都可以免费观看 已经稳定运行两个月了&lt;/p&gt;
+&lt;p&gt;注:视频资源来源于互联网，本平台只是做收集处理，如侵犯了您的版权请联系我们删除&lt;/p&gt;
+&lt;p&gt;邮箱:admin@aaayun.cc&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://v.aaayun.cc/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;轻风云影视&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>揭露一个恶心的公司</title>
+        <link>http://blog.aaayun.cc/archives/415.html</link>
+        <pubDate>Sat, 17 Aug 2019 04:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/415.html</guid>
+        <description>&lt;p&gt;之前博主在江苏凯博公司(又称蜂鸟传媒)做过后端开发&lt;br&gt;
+四月十号去面试，十二号工作的，因为有急事所以在七月十七号晚辞职了，那天正好完成了cms管理框架。&lt;br&gt;
+之后领导也同意了我辞职的事，并说余下的工资下个月十号结清，说了抱歉便走了&lt;/p&gt;
+&lt;p&gt;等到八月十号没有发工资，于是便等了两天问&lt;/p&gt;
+&lt;p&gt;工资不想发就直说，何必找这种不切实际的借口，代码看不懂？公司phper全死了吗&lt;/p&gt;
+&lt;p&gt;由于一些原因，只展示博主写的框架&lt;br&gt;
+[项目地址][1]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/08/16/573712991966818.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+[1]: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Anderyly/AYPHP&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Anderyly/AYPHP&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>病</title>
+        <link>http://blog.aaayun.cc/archives/413.html</link>
+        <pubDate>Tue, 30 Jul 2019 06:45:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/413.html</guid>
+        <description>&lt;p&gt;男孩患了疾病&lt;br&gt;
+医生说活不了多久了&lt;br&gt;
+女孩听到这句话时&lt;br&gt;
+心凉了&lt;br&gt;
+眼看着男孩躺着病床上&lt;br&gt;
+一天天的虚弱&lt;br&gt;
+女孩真的很难过&lt;br&gt;
+很伤心 很绝望&lt;br&gt;
+终于&lt;br&gt;
+男孩的主治医师&lt;br&gt;
+找到了需要移植的心脏&lt;br&gt;
+女孩笑了 男孩父母笑了&lt;br&gt;
+因为男孩不用去另一个世界了&lt;br&gt;
+出乎意料的是&lt;br&gt;
+男孩不同意移植&lt;br&gt;
+态度异常的坚定&lt;br&gt;
+男孩的父母和女孩一直追问&lt;br&gt;
+男孩只是摇摇头&lt;br&gt;
+就算死亡 我也不换&lt;br&gt;
+男孩的父母想不通&lt;br&gt;
+女孩更想不通&lt;br&gt;
+他们一直劝男孩&lt;br&gt;
+男孩还是死活不肯&lt;br&gt;
+终于……&lt;br&gt;
+在一天的阳光明媚的凌晨&lt;br&gt;
+男孩离开了这个世界&lt;br&gt;
+女孩哭了&lt;br&gt;
+同时女孩也恨男孩&lt;br&gt;
+为什么丢弃她&lt;br&gt;
+为什么不要她了&lt;br&gt;
+为什么！&lt;br&gt;
+没有人能回复女孩&lt;br&gt;
+当女孩去了男孩病床边&lt;br&gt;
+收拾他的东西时&lt;br&gt;
+在日记本上看到了这样一句话&lt;br&gt;
+用别人的心爱你&lt;br&gt;
+我做不到&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>十七岁与二十五岁的不同</title>
+        <link>http://blog.aaayun.cc/archives/390.html</link>
+        <pubDate>Thu, 13 Jun 2019 08:43:56 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/390.html</guid>
+        <description>&lt;p&gt;我也想谈恋爱，可我不想再分手了&lt;/p&gt;
+&lt;p&gt;17岁失恋了&lt;br&gt;
+可以躲在厕所里哭&lt;br&gt;
+可以在ktv喝酒唱通宵&lt;br&gt;
+可以哭得昏天暗地&lt;br&gt;
+可以发誓以后和他老死不相往来&lt;br&gt;
+然后重新开始&lt;br&gt;
+像没有受过伤一样&lt;br&gt;
+22岁失恋了&lt;br&gt;
+一夜未眠 一夜游荡&lt;br&gt;
+第二天却还要假装没事&lt;br&gt;
+因为你还要工作&lt;br&gt;
+还要生活&lt;br&gt;
+你面无表情&lt;br&gt;
+可你知道你心里已经塌了&lt;br&gt;
+25岁&lt;br&gt;
+你想过无数次&lt;br&gt;
+要不索性回到十七岁&lt;br&gt;
+再轰轰烈烈的爱一次&lt;br&gt;
+可是你清楚的知道&lt;br&gt;
+你已经老得不能再失恋一次了&lt;br&gt;
+第一次恋爱&lt;br&gt;
+心里住了梅花鹿&lt;br&gt;
+连看他一眼都小鹿乱撞&lt;/p&gt;
+&lt;p&gt;后来心里生了一条蛇&lt;br&gt;
+一有人靠近就摇起尾巴&lt;br&gt;
+告诉别人你很危险更没有耐心&lt;/p&gt;
+&lt;p&gt;也曾小鹿乱撞，后来撞死了。&lt;/p&gt;
+&lt;p&gt;我也想谈恋爱，可我不想再分手了。&lt;/p&gt;
+&lt;p&gt;经常有人问我&lt;br&gt;
+为什么不谈恋爱&lt;/p&gt;
+&lt;p&gt;其实我也想谈恋爱啊&lt;br&gt;
+只是我再也不想分手了&lt;/p&gt;
+&lt;p&gt;其实身边也不缺追求者&lt;br&gt;
+只是每次想答应的时候&lt;br&gt;
+都会胆怯 害怕&lt;br&gt;
+然后习惯性的拒绝&lt;/p&gt;
+&lt;p&gt;爱一个人的成本太高了&lt;br&gt;
+要耗上大把时间和精力&lt;/p&gt;
+&lt;p&gt;还不一定会有回报&lt;/p&gt;
+&lt;p&gt;大概是件稳赔不赚的事&lt;/p&gt;
+&lt;p&gt;所以怕了吧&lt;/p&gt;
+&lt;p&gt;两个人在一起很简单&lt;br&gt;
+相互喜欢就好&lt;/p&gt;
+&lt;p&gt;但是分开&lt;br&gt;
+却要耗尽毕生的精力&lt;/p&gt;
+&lt;p&gt;你花了大把的时间和精力去习惯了解一个人&lt;br&gt;
+最后却还是要分开&lt;br&gt;
+真的很累&lt;/p&gt;
+&lt;p&gt;我好不容易从上一段感情中活过来，不想再送死了。&lt;/p&gt;
+&lt;p&gt;我知道，我们都到了害怕失恋的年纪。&lt;/p&gt;
+&lt;p&gt;有人说&lt;br&gt;
+爱情是属于那些即使灰心失望&lt;br&gt;
+却仍继续期待的人&lt;/p&gt;
+&lt;p&gt;是属于那些被出卖欺骗&lt;br&gt;
+却仍坚信美好的人&lt;/p&gt;
+&lt;p&gt;是属于那些纵然伤痕累累&lt;br&gt;
+却仍渴求爱的人&lt;/p&gt;
+&lt;p&gt;而不是我们抱着&lt;br&gt;
+我已经老得不能再失恋一次&lt;br&gt;
+这种糟糕心态的人&lt;/p&gt;
+&lt;p&gt;可是&lt;br&gt;
+我真的没有精力再失恋一次了&lt;/p&gt;
+&lt;p&gt;要么不开始&lt;br&gt;
+要么一辈子&lt;/p&gt;
+&lt;p&gt;我不想再分手了&lt;br&gt;
+我想找个人一直一直在一起&lt;/p&gt;
+&lt;p&gt;我不用你有多完美&lt;br&gt;
+我只希望我们能永远不分开&lt;/p&gt;
+&lt;p&gt;我想谈一场不分手的恋爱&lt;br&gt;
+我再也不想分手了。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>幸</title>
+        <link>http://blog.aaayun.cc/archives/389.html</link>
+        <pubDate>Sat, 18 May 2019 19:24:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/389.html</guid>
+        <description>&lt;p&gt;余之一生，最幸，莫过于汝&lt;br&gt;
+总角十九载，于花开之时，共结秦晋之缘&lt;br&gt;
+执笔而添灯，剑舞而酒温&lt;br&gt;
+天长之言，行书以鉴&lt;br&gt;
+余之一生，最悔，亦汝&lt;br&gt;
+少而轻狂，自矜学才不浅&lt;br&gt;
+当一搏权贵世位，以治汝之疾痛&lt;br&gt;
+琼月下，曰：三载而归&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>一首歌一个故事 | 盗将行（很凄美的一个故事）</title>
+        <link>http://blog.aaayun.cc/archives/360.html</link>
+        <pubDate>Fri, 22 Mar 2019 19:13:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/360.html</guid>
+        <description>&lt;p&gt;{music id=&amp;ldquo;574566207&amp;rdquo; color=&amp;quot;#19facd&amp;quot; autoplay=&amp;ldquo;autoplay&amp;rdquo;/}&lt;/p&gt;
+&lt;p&gt;宋徽宗二十年，一劫富济贫，看不惯贪官污吏，通过盗窃贪官钱财施予平民百姓的盗窃，在一次纵马逃城时带起一女子裙边，看官兵并未追来，就下马致歉，没想到一眼定情，便暗下决心不再为盗，取其为妻。&lt;/p&gt;
+&lt;p&gt;天随人愿，大盗盗得了女子的心，共渡了三年神仙眷侣般的生活，陪女子小巷吃面，谈笑飞雪，还不惜用夜明珠做弹珠弹落山雀……&lt;/p&gt;
+&lt;p&gt;公元1126年，大盗决定娶女子为妻，听闻南京王府有一玉簪，得之赠予心爱之人，可与其永世不分，大盗欲窃之，便辞别女子并道明数日后迎娶她，轻装踏上南京的路。待窃簪返途，听闻金军攻陷汴梁，一路烧杀抢掠，民不聊生，大盗马不停蹄赶回汴梁，心中期盼女子一切安好，却还是不得不接受她已命丧黄泉的现实，大盗肝肠寸断，悔不该留她一人在汴梁孤援无助，也恨自己盗即为盗，或许无论是否劫富济贫，终有报应。&lt;br&gt;
+但一腔恨意无法消停，大盗就此弃盗从军，带着对女子的留恋，战场杀敌勇猛如虎，最终金军打败，大盗射杀了完颜克图，也因此被封为护国大将军，可于钱财官爵他终无眷恋，便于朝堂之上辞官返故，回到了之前和女子共渡的弄堂小巷，当起了说书人。&lt;/p&gt;
+&lt;p&gt;每日堂前座无虚席，百姓都爱在大盗的“一笑轩”里听着他讲一个盗贼、一个将军和一个女子的故事，每每众人四散，却徒留这说书人后堂泪流满面，望着女子在庭院中种下的枇杷树，那支挂在树梢始终未送出的玉簪，那玉簪也讲述着大盗说尽生平事，却终究走不出自己的故事…&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>雪</title>
+        <link>http://blog.aaayun.cc/archives/328.html</link>
+        <pubDate>Wed, 13 Feb 2019 11:13:12 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/328.html</guid>
+        <description>&lt;p&gt;“好想变成雪啊，这样就可以落在姑娘的肩上了……”&lt;br&gt;
+“若是姑娘撑了伞呢？”&lt;br&gt;
+“那就落在姑娘的红伞上，静载一路的月光。”&lt;br&gt;
+“若是姑娘将雪拂去……”&lt;br&gt;
+“那就任她拂去，能在她的手掌上停留一刻，便足矣。”&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>轻风云防红免责声明</title>
+        <link>http://blog.aaayun.cc/archives/301.html</link>
+        <pubDate>Mon, 21 Jan 2019 18:31:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/301.html</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/01/21/378292151834982.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;防红短连接不得用于任何违反《中华人民共和国网络安全法》的网站&lt;/p&gt;
+&lt;p&gt;防红短连接均由用户生成，轻风云防红不承担任何法律责任。&lt;/p&gt;
+&lt;p&gt;防红短连接仅仅用于被误报毒，短暂提供防红访问服务。&lt;/p&gt;
+&lt;p&gt;JG防红定期核查违法的链接并拉黑，并上报公安机关网络平台。&lt;/p&gt;
+&lt;p&gt;若你发现防红短连接存在违法行为，请联系博主本人，我们将拉黑该域名，并上报公安系统。&lt;/p&gt;
+&lt;p&gt;防红工具网站：&lt;a class=&#34;link&#34; href=&#34;https://url.qfy.kim/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://url.qfy.kim/&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>解释</title>
+        <link>http://blog.aaayun.cc/archives/179.html</link>
+        <pubDate>Mon, 10 Dec 2018 05:20:23 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/179.html</guid>
+        <description>&lt;p&gt;老实人：“为什么你们女人都喜欢油腔滑调的男人，不喜欢我们老实人？”&lt;br&gt;
+女神：“你们老实人根本不解风情。”&lt;br&gt;
+老实人：“我们又怎样不解风情了，你现在给我解释清楚。”&lt;br&gt;
+女神：“你晚上到我家，我慢慢解释给你听。”&lt;br&gt;
+老实人：“我现在就要听你解释！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>轻风云影视</title>
+        <link>http://blog.aaayun.cc/archives/153.html</link>
+        <pubDate>Fri, 23 Nov 2018 19:10:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/153.html</guid>
+        <description>&lt;p&gt;今天正式开启影视平台，该网站为视频二次解析，如有侵权请联系我下架&lt;br&gt;
+轻风云影视：&lt;a class=&#34;link&#34; href=&#34;https://v.qfy.kim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://v.qfy.kim&lt;/a&gt;&lt;br&gt;
+邮箱:admin@aaayun.cc&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>揭露一个小骗子</title>
+        <link>http://blog.aaayun.cc/archives/126.html</link>
+        <pubDate>Fri, 07 Sep 2018 03:03:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/126.html</guid>
+        <description>&lt;p&gt;我们是附近互相喜欢认识的，成为好友时间为5号，过了一天，刚下班和我要钱冲个会员，可以，但给我理由啊，虽然化妆后有点漂亮，但我还是需要一个让我信服的理由。有图有真相&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/09/06/318302041036568.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>生活状态</title>
+        <link>http://blog.aaayun.cc/archives/118.html</link>
+        <pubDate>Wed, 01 Aug 2018 21:24:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/118.html</guid>
+        <description>&lt;p&gt;这是不是你现在的生活状态，别不承认&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/08/01/011223145939381.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/08/01/011604189652450.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/08/01/01166417487014.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/08/01/011712586541826.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/08/01/011762776885810.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/08/01/01180417487014.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>开启接单</title>
+        <link>http://blog.aaayun.cc/archives/114.html</link>
+        <pubDate>Sun, 15 Jul 2018 22:40:10 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/114.html</guid>
+        <description>&lt;p&gt;正式开启接单模式:&lt;/p&gt;
+&lt;p&gt;动态网站、二次开发、环境搭建、数据库优化、源码搭建&lt;/p&gt;
+&lt;p&gt;联系方式:&lt;br&gt;
+meto:云青&lt;br&gt;
+phone:17712945530&lt;br&gt;
+wechat:Anderyly&lt;br&gt;
+mail:admin@aaayun.cc&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>建立博客的意义</title>
+        <link>http://blog.aaayun.cc/archives/113.html</link>
+        <pubDate>Thu, 28 Jun 2018 01:31:23 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/113.html</guid>
+        <description>&lt;p&gt;甲:建立博客的意义何在?&lt;br&gt;
+乙:单身程序狗解决了一个技术难题后没有妹子可以炫耀或夸一下自己怎么办?&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>当处男和处女在一起嘿嘿是什么体验？</title>
+        <link>http://blog.aaayun.cc/archives/95.html</link>
+        <pubDate>Tue, 05 Jun 2018 07:55:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/95.html</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/04/277233428793747.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/04/277421448978539.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img1&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>插手</title>
+        <link>http://blog.aaayun.cc/archives/66.html</link>
+        <pubDate>Tue, 24 Apr 2018 00:07:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/66.html</guid>
+        <description>&lt;p&gt;一年前我就不应该插手稻香村的事情&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>学习经历</title>
+        <link>http://blog.aaayun.cc/archives/63.html</link>
+        <pubDate>Sun, 08 Apr 2018 19:05:29 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/63.html</guid>
+        <description>&lt;p&gt;2014年初入C语言门槛，因为底层开发不喜欢放弃了&lt;br&gt;
+2015年进攻VB，因为VB的兼容性太差放弃了&lt;br&gt;
+2016年上旬进攻易语言和易安卓，最后放弃了，因为各大厂商都报毒，强制性删除源文件&lt;br&gt;
+2016年下旬，进攻java，但Java效率低太繁琐虽然跨平台但最后还是放弃了&lt;br&gt;
+2017年进攻PHP，感觉找到了正确的方向，一直到现在仍在不断深入&lt;/p&gt;
+&lt;p&gt;有人说你学这么多语言思维不混乱吗？答案是会的，但只要熟悉了，你就会发现这种错误会慢慢减少，而且大部分语言初入时变量的定义和使用都差不多&lt;/p&gt;
+&lt;p&gt;现在，最好的学习方向是Python，现在很火，你可以赶赶热潮过去分一口汤，Python可以做大数据开发也可以开发网站等，用途广泛&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>关于博客</title>
+        <link>http://blog.aaayun.cc/archives/7.html</link>
+        <pubDate>Sat, 17 Mar 2018 20:03:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/7.html</guid>
+        <description>&lt;p&gt;轻风云博客已经存于二年多了，这两年多的时间博客经历了大大小小的曲折，从原先的十七之家(17my.net)变成现在的地址，换了不少服务器，丢失了绝大数数据，从现在起，全新使用博客，不再使用之前的数据&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

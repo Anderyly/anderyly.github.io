@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Wps on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/wps/</link>
+        <description>Recent content in Wps on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Fri, 01 Feb 2019 22:38:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/wps/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>fedora29安装wps</title>
+        <link>http://blog.aaayun.cc/archives/321.html</link>
+        <pubDate>Fri, 01 Feb 2019 22:38:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/321.html</guid>
+        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office-10.1.0.6757-1.x86_64.rpm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点我下载rpm包&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;进入命令行执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# dnf localinstall wps-office-10.1.0.6757-1.x86_64.rpm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里我使用dnf localinstall而不使用rpm，因为需要解决依赖关系&lt;/p&gt;
+&lt;p&gt;打开word会提示缺失字体，点击&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/2019/02/01/030964091940664.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;这里&lt;/a&gt;下载缺失的字体&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# mv wps_symbol_fonts /usr/share/fonts/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# cd /usr/share/fonts/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# mkfontscale&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# mkfontdir&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# fc-cache&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;完成后寻找.doc/.docx/.ppt/.pptx/.exl/.exlx文件，右击属性 -&amp;gt;打开方式选择默认打开方式为WPS并设置为默认。至于其他缺少的黑体宋体楷体等等字体，从其他windows电脑的的字体文件夹里复制字体，粘贴到/usr/share/fonts/，重新执行上一步。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>WPS Office 2016 专业版/专业增强版/绿色精简版本</title>
+        <link>http://blog.aaayun.cc/archives/266.html</link>
+        <pubDate>Fri, 28 Dec 2018 21:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/266.html</guid>
+        <description>&lt;p&gt;经过测试后发布，资源来自网络。&lt;br&gt;
+此为某地方ZF购买的正版序列号，可终身有效激活！&lt;br&gt;
+THUV2-32HH7-6NMHN-PTX7Y-QQCTH&lt;br&gt;
+WPS Office Pro 2016 (10.8.0.6423)绿色精简版本&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1kVyuw5p&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pan.baidu.com/s/1kVyuw5p&lt;/a&gt;&lt;br&gt;
+WPS Office Pro 2016 专业版 (10.8.0.6206) 官方下载地址&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://wdl1.cache.wps.cn/wps/download/ep/WPS2016Pro_normal.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://wdl1.cache.wps.cn/wps/download/ep/WPS2016Pro_normal.exe&lt;/a&gt;&lt;br&gt;
+WPS Office Pro Plus 2016 专业增强版 (10.8.0.6206) 官方下载地址（带 VBA）&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://wdl1.cache.wps.cn/wps/download/ep/WPS2016ProPlus_normal.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://wdl1.cache.wps.cn/wps/download/ep/WPS2016ProPlus_normal.exe&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

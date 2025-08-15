@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cloudflare on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/cloudflare/</link>
+        <description>Recent content in Cloudflare on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Tue, 01 Nov 2022 17:23:32 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Cloudflare国内自选IP节点整理收录</title>
+        <link>http://blog.aaayun.cc/archives/925.html</link>
+        <pubDate>Tue, 01 Nov 2022 17:23:32 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/925.html</guid>
+        <description>&lt;h2 id=&#34;什么是自选ip&#34;&gt;什么是自选IP？
+&lt;/h2&gt;&lt;p&gt;一般来说为了达到隐藏自身 IP，我们都会选择一些 CDN 服务，目前用的最多的免费 CDN 是 Cloudflare。但是正常情况下 Cloudflare 是不能自己选择IP，有时候分配给我们的 IP 可能表现不佳，也只能将就着用。但是我们都希望可以用上 CF 比较快的 IP。那么自选IP，就显得很必要了。&lt;br&gt;
+所以这篇文章，苏苏就跟大家聊聊怎么自定义 CF 的节点。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;官网列表：&lt;a class=&#34;link&#34; href=&#34;https://www.cloudflare.com/zh-cn/ips/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.cloudflare.com/zh-cn/ips/&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;测试最优前10&#34;&gt;测试最优前10
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;104.16.160.1/24
+162.159.209.4/103
+104.24.0.0/14
+108.162.192.0/18
+104.20.157.0/24
+162.159.210.4/103
+141.101.115.0/254
+172.64.0.0/13
+162.159.208.4/103
+162.159.211.4/103
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;cfip白名单&#34;&gt;CFIP白名单
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;173.245.48.0/20
+103.21.244.0/22
+103.22.200.0/22
+103.31.4.0/22
+141.101.64.0/18
+108.162.192.0/18
+190.93.240.0/20
+188.114.96.0/20
+197.234.240.0/22
+198.41.128.0/17
+162.158.0.0/15
+104.16.0.0/12
+172.64.0.0/13
+131.0.72.0/22
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;百度云加速与cloudflare合作节点&#34;&gt;百度云加速与Cloudflare合作节点
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;162.159.211.4-103
+103.21.244.0/22
+103.22.200.0/22
+103.31.4.0/22
+104.16.0.0/12
+108.162.192.0/18
+131.0.72.0/22
+141.101.64.0/18
+162.158.0.0/15
+172.64.0.0/13
+173.245.48.0/20
+188.114.96.0/20
+190.93.240.0/20
+197.234.240.0/22
+198.41.128.0/17
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;cloudflare-百度云合作-ip&#34;&gt;CloudFlare 百度云合作 IP
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;162.159.208.4-162.159.208.103
+162.159.209.4-162.159.209.103
+162.159.210.4-162.159.210.103
+162.159.211.4-162.159.211.103
+
+各线路推荐列表：
+
+电信：推荐走圣何塞，例：104.16.160.* 或者上面的百度云合作 ip。
+移动：推荐走移动香港，例：172.64.32.*、141.101.115.* 或者 104.23.240.0-104.23.243.254。
+联通：没发布什么好线路，可走圣何塞。例：104.16.160.* 或者 104.23.240.0-104.23.243.254。也可以试一下走亚特兰大 108.162.236.*（日前不可用）。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;qi推荐&#34;&gt;Qi推荐
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;108.162.236.1/24 联通 走美国
+172.64.32.1/24 移动 走香港
+104.16.160.1/24 电信 走美国洛杉矶
+———
+172.64.0.0/24 电信 美国旧金山
+104.20.157.0/24 联通 走日本
+104.28.14.0/24 移动 走新加坡
+（联通移动推荐节点）
+104.23.240.0-104.23.243.254
+（电信推荐百度云合作ip）
+162.159.208.4-162.159.208.103
+162.159.209.4-162.159.209.103
+162.159.210.4-162.159.210.103
+162.159.211.4-162.159.211.103
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;适合电信的节点&#34;&gt;适合电信的节点
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;104.23.240.*
+走欧洲各国出口 英国德国荷兰等 延迟比美国高一些 适合源站在欧洲的网站
+172.64.32.*
+虽然去程走新加坡，但是回程线路的绕路的，实际效果不好，不推荐
+104.16.160.*
+圣何塞的线路，比洛杉矶要快一点，推荐
+108.162.236.*
+亚特兰大线路，延迟稳定，但是延迟较高
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;适合移动的节点&#34;&gt;适合移动的节点
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;162.158.133.* 走的丹麦，这一段ip只有部分能用，可以自己试一下。绕美国。
+198.41.214.*
+198.41.212.*
+198.41.208.*
+198.41.209.*
+172.64.32.*
+141.101.115.*移动走香港的IP段有很多，以上并不是全部。CF移动走香港的分直连和走ntt的效果都挺不错的，不过部分地区晚上还是会丢包。
+172.64.0. *这是走圣何塞的，一般用香港的就行
+172.64.16.* 欧洲线路.绕
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.0.0.1效果较好&lt;br&gt;
+大多数省直接使用1.0.0.0即可，延迟低，丢包少&lt;br&gt;
+少部分还是需要换ip&lt;br&gt;
+新加坡 172.64.32.0-172.64.47.254&lt;/p&gt;&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

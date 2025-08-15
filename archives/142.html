@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Restful API是目前比较成熟的一套互联网应用程序的API设计理念，Rest是一组架构约束条件和原则，如何Rest约束条件和原则的架构，我们就称为Restful架构，Restful架构具有结构清晰、符合标准、易于理解以及扩展方便等特点，受到越来越多网站的采用！\nRestful API接口规范包括以下部分：\n一、协议\nAPI与用户的通信协议，总是使用HTTPs协议。\n二、域名\n应该尽量将API部署在专用域名之下，如https://api.oldboyedu.com；如果确定API很简单，不会有进一步扩展，可以考虑放在主域名下，如https://oldboyedu.com/api/。\n三、版本\n可以将版本号放在HTTP头信息中，也可以放入URL中，如https://api.oldboyedu.com/v1/\n四、路径\n路径是一种地址，在互联网上表现为网址，在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的&quot;集合&quot;（collection），所以API中的名词也应该使用复数，如https://api.oldboyedu.com/v1/students。\n五、HTTP动词\n对于资源的具体操作类型，由HTTP动词表示，HTTP动词主要有以下几种，括号中对应的是SQL命令。\nGET（SELECT）：从服务器取出资源（一项或多项）； POST（CREATE）：在服务器新建一个资源； PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）； PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）； DELETE（DELETE）：从服务器删除资源； HEAD：获取资源的元数据； OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。 六、过滤信息\n如果记录数量很多，服务器不可能都将它们返回给用户，API会提供参数，过滤返回结果，常见的参数有：\n?limit=20：指定返回记录的数量为20； ?offset=8：指定返回记录的开始位置为8； ?page=1&amp;per_page=50：指定第1页，以及每页的记录数为50； ?sortby=name&amp;order=asc：指定返回结果按照name属性进行升序排序； ?animal_type_id=2：指定筛选条件。 七、状态码\n服务器会向用户返回状态码和提示信息，以下是常用的一些状态码：\n200 OK – [GET]：服务器成功返回用户请求的数据； 201 CREATED – [POST/PUT/PATCH]：用户新建或修改数据成功； 202 Accepted – [*]：表示一个请求已经进入后台排队（异步任务）； 204 NO CONTENT – [DELETE]：用户删除数据成功； 400 INVALID REQUEST – [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作； 401 Unauthorized – [*]：表示用户没有权限（令牌、用户名、密码错误）； 403 Forbidden – [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的； 404 NOT FOUND – [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作； 406 Not Acceptable – [GET]：用户请求的格式不可得； 410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的； 422 Unprocesable entity – [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误； 500 INTERNAL SERVER ERROR – [*]：服务器发生错误，用户将无法判断发出的请求是否成功。 八、错误处理\n">
+<title>Restful API规范详解</title>
+
+<link rel='canonical' href='http://blog.aaayun.cc/archives/142.html'>
+
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Restful API规范详解">
+<meta property='og:description' content="Restful API是目前比较成熟的一套互联网应用程序的API设计理念，Rest是一组架构约束条件和原则，如何Rest约束条件和原则的架构，我们就称为Restful架构，Restful架构具有结构清晰、符合标准、易于理解以及扩展方便等特点，受到越来越多网站的采用！\nRestful API接口规范包括以下部分：\n一、协议\nAPI与用户的通信协议，总是使用HTTPs协议。\n二、域名\n应该尽量将API部署在专用域名之下，如https://api.oldboyedu.com；如果确定API很简单，不会有进一步扩展，可以考虑放在主域名下，如https://oldboyedu.com/api/。\n三、版本\n可以将版本号放在HTTP头信息中，也可以放入URL中，如https://api.oldboyedu.com/v1/\n四、路径\n路径是一种地址，在互联网上表现为网址，在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的&quot;集合&quot;（collection），所以API中的名词也应该使用复数，如https://api.oldboyedu.com/v1/students。\n五、HTTP动词\n对于资源的具体操作类型，由HTTP动词表示，HTTP动词主要有以下几种，括号中对应的是SQL命令。\nGET（SELECT）：从服务器取出资源（一项或多项）； POST（CREATE）：在服务器新建一个资源； PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）； PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）； DELETE（DELETE）：从服务器删除资源； HEAD：获取资源的元数据； OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。 六、过滤信息\n如果记录数量很多，服务器不可能都将它们返回给用户，API会提供参数，过滤返回结果，常见的参数有：\n?limit=20：指定返回记录的数量为20； ?offset=8：指定返回记录的开始位置为8； ?page=1&amp;per_page=50：指定第1页，以及每页的记录数为50； ?sortby=name&amp;order=asc：指定返回结果按照name属性进行升序排序； ?animal_type_id=2：指定筛选条件。 七、状态码\n服务器会向用户返回状态码和提示信息，以下是常用的一些状态码：\n200 OK – [GET]：服务器成功返回用户请求的数据； 201 CREATED – [POST/PUT/PATCH]：用户新建或修改数据成功； 202 Accepted – [*]：表示一个请求已经进入后台排队（异步任务）； 204 NO CONTENT – [DELETE]：用户删除数据成功； 400 INVALID REQUEST – [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作； 401 Unauthorized – [*]：表示用户没有权限（令牌、用户名、密码错误）； 403 Forbidden – [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的； 404 NOT FOUND – [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作； 406 Not Acceptable – [GET]：用户请求的格式不可得； 410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的； 422 Unprocesable entity – [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误； 500 INTERNAL SERVER ERROR – [*]：服务器发生错误，用户将无法判断发出的请求是否成功。 八、错误处理\n">
+<meta property='og:url' content='http://blog.aaayun.cc/archives/142.html'>
+<meta property='og:site_name' content='轻风云'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='API' /><meta property='article:tag' content='PHP' /><meta property='article:published_time' content='2018-10-21T04:37:00&#43;00:00'/><meta property='article:modified_time' content='2018-10-21T04:37:00&#43;00:00'/>
+<meta name="twitter:title" content="Restful API规范详解">
+<meta name="twitter:description" content="Restful API是目前比较成熟的一套互联网应用程序的API设计理念，Rest是一组架构约束条件和原则，如何Rest约束条件和原则的架构，我们就称为Restful架构，Restful架构具有结构清晰、符合标准、易于理解以及扩展方便等特点，受到越来越多网站的采用！\nRestful API接口规范包括以下部分：\n一、协议\nAPI与用户的通信协议，总是使用HTTPs协议。\n二、域名\n应该尽量将API部署在专用域名之下，如https://api.oldboyedu.com；如果确定API很简单，不会有进一步扩展，可以考虑放在主域名下，如https://oldboyedu.com/api/。\n三、版本\n可以将版本号放在HTTP头信息中，也可以放入URL中，如https://api.oldboyedu.com/v1/\n四、路径\n路径是一种地址，在互联网上表现为网址，在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的&quot;集合&quot;（collection），所以API中的名词也应该使用复数，如https://api.oldboyedu.com/v1/students。\n五、HTTP动词\n对于资源的具体操作类型，由HTTP动词表示，HTTP动词主要有以下几种，括号中对应的是SQL命令。\nGET（SELECT）：从服务器取出资源（一项或多项）； POST（CREATE）：在服务器新建一个资源； PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）； PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）； DELETE（DELETE）：从服务器删除资源； HEAD：获取资源的元数据； OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。 六、过滤信息\n如果记录数量很多，服务器不可能都将它们返回给用户，API会提供参数，过滤返回结果，常见的参数有：\n?limit=20：指定返回记录的数量为20； ?offset=8：指定返回记录的开始位置为8； ?page=1&amp;per_page=50：指定第1页，以及每页的记录数为50； ?sortby=name&amp;order=asc：指定返回结果按照name属性进行升序排序； ?animal_type_id=2：指定筛选条件。 七、状态码\n服务器会向用户返回状态码和提示信息，以下是常用的一些状态码：\n200 OK – [GET]：服务器成功返回用户请求的数据； 201 CREATED – [POST/PUT/PATCH]：用户新建或修改数据成功； 202 Accepted – [*]：表示一个请求已经进入后台排队（异步任务）； 204 NO CONTENT – [DELETE]：用户删除数据成功； 400 INVALID REQUEST – [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作； 401 Unauthorized – [*]：表示用户没有权限（令牌、用户名、密码错误）； 403 Forbidden – [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的； 404 NOT FOUND – [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作； 406 Not Acceptable – [GET]：用户请求的格式不可得； 410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的； 422 Unprocesable entity – [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误； 500 INTERNAL SERVER ERROR – [*]：服务器发生错误，用户将无法判断发出的请求是否成功。 八、错误处理\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_3ed2d734dcdfd8a7.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">轻风云</a></h1>
+            <h2 class="site-description">云淡风轻，于事安然</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Anderyly'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友人帐</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/talk/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>留言板</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" >
+                技术教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/archives/142.html">Restful API规范详解</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 21, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Restful API是目前比较成熟的一套互联网应用程序的API设计理念，Rest是一组架构约束条件和原则，如何Rest约束条件和原则的架构，我们就称为Restful架构，Restful架构具有结构清晰、符合标准、易于理解以及扩展方便等特点，受到越来越多网站的采用！</p>
+<p>Restful API接口规范包括以下部分：</p>
+<p>一、协议</p>
+<p>API与用户的通信协议，总是使用HTTPs协议。</p>
+<p>二、域名</p>
+<p>应该尽量将API部署在专用域名之下，如<a class="link" href="https://api.oldboyedu.com"  target="_blank" rel="noopener"
+    >https://api.oldboyedu.com</a>；如果确定API很简单，不会有进一步扩展，可以考虑放在主域名下，如<a class="link" href="https://oldboyedu.com/api/"  target="_blank" rel="noopener"
+    >https://oldboyedu.com/api/</a>。</p>
+<p>三、版本</p>
+<p>可以将版本号放在HTTP头信息中，也可以放入URL中，如<a class="link" href="https://api.oldboyedu.com/v1/"  target="_blank" rel="noopener"
+    >https://api.oldboyedu.com/v1/</a></p>
+<p>四、路径</p>
+<p>路径是一种地址，在互联网上表现为网址，在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的&quot;集合&quot;（collection），所以API中的名词也应该使用复数，如<a class="link" href="https://api.oldboyedu.com/v1/students"  target="_blank" rel="noopener"
+    >https://api.oldboyedu.com/v1/students</a>。</p>
+<p>五、HTTP动词</p>
+<p>对于资源的具体操作类型，由HTTP动词表示，HTTP动词主要有以下几种，括号中对应的是SQL命令。</p>
+<ol>
+<li>GET（SELECT）：从服务器取出资源（一项或多项）；</li>
+<li>POST（CREATE）：在服务器新建一个资源；</li>
+<li>PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）；</li>
+<li>PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）；</li>
+<li>DELETE（DELETE）：从服务器删除资源；</li>
+<li>HEAD：获取资源的元数据；</li>
+<li>OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。</li>
+</ol>
+<p>六、过滤信息</p>
+<p>如果记录数量很多，服务器不可能都将它们返回给用户，API会提供参数，过滤返回结果，常见的参数有：</p>
+<ol>
+<li>?limit=20：指定返回记录的数量为20；</li>
+<li>?offset=8：指定返回记录的开始位置为8；</li>
+<li>?page=1&amp;per_page=50：指定第1页，以及每页的记录数为50；</li>
+<li>?sortby=name&amp;order=asc：指定返回结果按照name属性进行升序排序；</li>
+<li>?animal_type_id=2：指定筛选条件。</li>
+</ol>
+<p>七、状态码</p>
+<p>服务器会向用户返回状态码和提示信息，以下是常用的一些状态码：</p>
+<ol>
+<li>200 OK – [GET]：服务器成功返回用户请求的数据；</li>
+<li>201 CREATED – [POST/PUT/PATCH]：用户新建或修改数据成功；</li>
+<li>202 Accepted – [*]：表示一个请求已经进入后台排队（异步任务）；</li>
+<li>204 NO CONTENT – [DELETE]：用户删除数据成功；</li>
+<li>400 INVALID REQUEST – [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作；</li>
+<li>401 Unauthorized – [*]：表示用户没有权限（令牌、用户名、密码错误）；</li>
+<li>403 Forbidden – [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的；</li>
+<li>404 NOT FOUND – [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作；</li>
+<li>406 Not Acceptable – [GET]：用户请求的格式不可得；</li>
+<li>410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的；</li>
+<li>422 Unprocesable entity – [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误；</li>
+<li>500 INTERNAL SERVER ERROR – [*]：服务器发生错误，用户将无法判断发出的请求是否成功。</li>
+</ol>
+<p>八、错误处理</p>
+<p>如果状态码是4xx，就会向用户返回出错信息，一般来说，返回的信息中将error作为键名，出错信息作为键值。</p>
+<p>九、返回结果</p>
+<p>针对不同操作，服务器向用户返回的结果应该符合以下规范：</p>
+<ol>
+<li>GET /collection：返回资源对象的列表（数组）；</li>
+<li>GET /collection/resource：返回单个资源对象；</li>
+<li>POST /collection：返回新生成的资源对象；</li>
+<li>PUT /collection/resource：返回完整的资源对象；</li>
+<li>PATCH /collection/resource：返回完整的资源对象；</li>
+<li>DELETE /collection/resource：返回一个空文档。</li>
+</ol>
+<p>十、Hypermedia API</p>
+<p>RESTful API最好做到Hypermedia，即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么。</p>
+<p>以上是Restful API设计应遵循的十大规范，除此之外，Restful API还需注意身份认证应该使用OAuth 2.0框架，服务器返回的数据格式，应该尽量使用JSON，避免使用XML。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/api/">API</a>
+        
+            <a href="/tags/php/">PHP</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Oct 21, 2018 04:37 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/archives/208.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP360随机壁纸图片接口，PHP随机图片API</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/952.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">TP5使用workerman开启websocket服务</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/943.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">centos7系统安装php8</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/842.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AYPHP轻量级框架</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/770.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">基于PHP实现微信小程序客服消息功能</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2015 - 
+        
+        2025 轻风云
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">本网站由<img width="50px" src="https://uss.aaayun.cc/upyun.png">提供cdn加速/云存储服务</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

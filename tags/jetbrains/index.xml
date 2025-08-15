@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>JetBrains on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/jetbrains/</link>
+        <description>Recent content in JetBrains on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Sat, 05 Mar 2022 23:41:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/jetbrains/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>最新idea激活2021版</title>
+        <link>http://blog.aaayun.cc/archives/773.html</link>
+        <pubDate>Sat, 05 Mar 2022 23:41:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/773.html</guid>
+        <description>&lt;p&gt;找了很多版本都是2020.1激活的，比如像phpstorm2020版就没有php8提示，废话不多说下面开始&lt;/p&gt;
+&lt;p&gt;此激活方式支持jb公司的 &lt;strong&gt;2021&lt;/strong&gt; 后所有产品&lt;/p&gt;
+&lt;p&gt;1.下载激活文件，并解压到一个路径下&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/3737521613.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ja-netfilter.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.使用激活码进入ide&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/3340052703.txt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;key.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.进入配置文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/1808372138.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;4.修改并保存 重启ide&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-javaagent:第一步解压文件后的路径\ja-netfilter.jar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/3942039631.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;5.成功&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/1611934153.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>IDE Eval Resetter：JetBrains 全家桶无限试用插件</title>
+        <link>http://blog.aaayun.cc/archives/739.html</link>
+        <pubDate>Wed, 15 Sep 2021 01:15:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/739.html</guid>
+        <description>&lt;h2 id=&#34;一介绍&#34;&gt;一、介绍
+&lt;/h2&gt;&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/pengzhile/ide-eval-resetter&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://gitee.com/pengzhile/ide-eval-resetter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目功能：JetBrains 所有产品都有 30 天试用，这个插件的作用就是重置这个试用时间，让你无限试用，也算是另类的 JetBrains 激活方式。&lt;/p&gt;
+&lt;p&gt;支持的 JetBrains 产品，基本全系列都支持了：&lt;/p&gt;
+&lt;p&gt;IntelliJ IDEA&lt;br&gt;
+AppCode&lt;br&gt;
+CLion&lt;br&gt;
+DataGrip&lt;br&gt;
+GoLand&lt;br&gt;
+PhpStorm&lt;br&gt;
+PyCharm&lt;br&gt;
+Rider&lt;br&gt;
+RubyMine&lt;br&gt;
+WebStorm&lt;/p&gt;
+&lt;h2 id=&#34;二使用方法&#34;&gt;二、使用方法
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;下载插件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;下载地址： &lt;a class=&#34;link&#34; href=&#34;https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装插件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;直接下载插件 zip 包（macOS 可能会自动解压，然后把 zip 包丢进回收站）&lt;br&gt;
+通常可以直接把 zip 包拖进 IDE 的窗口来进行插件的安装。如果无法拖动安装，你可以在Settings/Preferences… -&amp;gt; Plugins 里手动安装插件（Install Plugin From Disk…）&lt;br&gt;
+插件会提示安装成功&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用插件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;成功安装插件后，在 帮助 下会多一个 Eval Reset 按钮，如下图所示：&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/09/2831349892.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;jetbrains 试用&lt;br&gt;
+一般来说，在 IDE 窗口切出去或切回来时（窗口失去/得到焦点）会触发事件，检测是否长时间（25 天）没有重置，给通知让你选择。（初次安装因为无法获取上次重置时间，会直接给予提示）&lt;/p&gt;
+&lt;p&gt;也可以手动唤出插件的主界面：&lt;/p&gt;
+&lt;p&gt;如果 IDE 没有打开项目，在Welcome界面点击菜单：Get Help -&amp;gt; Eval Reset&lt;br&gt;
+如果 IDE 打开了项目，点击菜单：Help -&amp;gt; Eval Reset&lt;br&gt;
+唤出的插件主界面中包含了一些显示信息，2 个按钮，1 个勾选项：&lt;/p&gt;
+&lt;p&gt;按钮：Reload 用来刷新界面上的显示信息。&lt;br&gt;
+按钮：Reset 点击会询问是否重置试用信息并重启 IDE。选择 Yes 则执行重置操作并重启 IDE 生效，选择 No 则什么也不做。（此为手动重置方式）&lt;br&gt;
+勾选项：Auto reset before per restart 如果勾选了，则自勾选后每次重启/退出 IDE 时会自动重置试用信息，你无需做额外的事情。（此为自动重置方式）&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

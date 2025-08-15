@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>远程 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E8%BF%9C%E7%A8%8B/</link>
+        <description>Recent content in 远程 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Mon, 23 Sep 2019 23:15:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E8%BF%9C%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux下通过rdesktop远程windows</title>
+        <link>http://blog.aaayun.cc/archives/476.html</link>
+        <pubDate>Mon, 23 Sep 2019 23:15:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/476.html</guid>
+        <description>&lt;p&gt;linux下利用rdesktop命令远程连接windows&lt;/p&gt;
+&lt;p&gt;博主本人使用的是centos7.4其它版本请自测&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# yum install rdesktop -y&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# rdesktop -u administrator -d contoso -p 密码 IP -g 1920x1080 -D&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;常用选项：&lt;/p&gt;
+&lt;p&gt;-u：指定User；&lt;/p&gt;
+&lt;p&gt;-d：指定域；&lt;/p&gt;
+&lt;p&gt;-p：指定密码（不指定密码则在远程时输入）；&lt;/p&gt;
+&lt;p&gt;-g：指定分辨率；&lt;/p&gt;
+&lt;p&gt;-D：远程后不显示标题栏；&lt;/p&gt;
+&lt;p&gt;-f：远程后全屏显示桌面（ctrl+alt+enter退出全屏模式）；&lt;/p&gt;
+&lt;p&gt;-r disk:&lt;sharename&gt;=/home/superlong：将本机（Linux）上的/home/superlong目录映射到Win7上，传输文件更方便；&lt;/p&gt;
+&lt;p&gt;-r clipboard:PRIMARYCLIPBOARD：Linux和Windows系统相互可以实现复制和粘贴（实际不添加此选项也可复制粘贴）；&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

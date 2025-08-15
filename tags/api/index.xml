@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>API on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/api/</link>
+        <description>Recent content in API on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Sun, 27 Jan 2019 12:47:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/api/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>必应获取每日高清壁纸API代码</title>
+        <link>http://blog.aaayun.cc/archives/314.html</link>
+        <pubDate>Sun, 27 Jan 2019 12:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/314.html</guid>
+        <description>&lt;p&gt;话不多说直接上代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$str&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;file_get_contents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;http://cn.bing.com/HPImageArchive.aspx?idx=0&amp;amp;n=1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/&amp;lt;url&amp;gt;(.+?)&amp;lt;\/url&amp;gt;/ies&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$matches&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nv&#34;&gt;$imgurl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;http://cn.bing.com&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$matches&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nv&#34;&gt;$imgurl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;修改为你自己的默认图片地址&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Location: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;$imgurl&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>PHP获取toopen性感美女随机图片，PHP接口</title>
+        <link>http://blog.aaayun.cc/archives/218.html</link>
+        <pubDate>Fri, 14 Dec 2018 01:41:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/218.html</guid>
+        <description>&lt;p&gt;接口地址：&lt;a class=&#34;link&#34; href=&#34;https://api.aaayun.cc/?type=Image&amp;amp;file=TooPenRand&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://api.aaayun.cc/?type=Image&amp;file=TooPenRand&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;实现很简单，如需要源码，请留言&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/13/94257146985769.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>PHP360随机壁纸图片接口，PHP随机图片API</title>
+        <link>http://blog.aaayun.cc/archives/208.html</link>
+        <pubDate>Thu, 13 Dec 2018 18:00:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/208.html</guid>
+        <description>&lt;p&gt;接口地址：&lt;a class=&#34;link&#34; href=&#34;https://api.aaayun.cc/?type=Image&amp;amp;file=QiHooRand&amp;amp;cid=26&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://api.aaayun.cc/?type=Image&amp;file=QiHooRand&amp;cid=26&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参数cid可变:&lt;/p&gt;
+&lt;p&gt;游戏人物：5 美女模特：6 影视：7 风景：9 时尚：10&lt;br&gt;
+明星：11 汽车：12 萌宠：14 小清新：15 体育：16&lt;br&gt;
+儿童：18 壁纸：29 爱情：30 文字：35 4k图片：36&lt;br&gt;
+军事：22&lt;/p&gt;
+&lt;p&gt;其它参数自己试试吧&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/13/663943173317460.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Restful API规范详解</title>
+        <link>http://blog.aaayun.cc/archives/142.html</link>
+        <pubDate>Sun, 21 Oct 2018 04:37:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/142.html</guid>
+        <description>&lt;p&gt;Restful API是目前比较成熟的一套互联网应用程序的API设计理念，Rest是一组架构约束条件和原则，如何Rest约束条件和原则的架构，我们就称为Restful架构，Restful架构具有结构清晰、符合标准、易于理解以及扩展方便等特点，受到越来越多网站的采用！&lt;/p&gt;
+&lt;p&gt;Restful API接口规范包括以下部分：&lt;/p&gt;
+&lt;p&gt;一、协议&lt;/p&gt;
+&lt;p&gt;API与用户的通信协议，总是使用HTTPs协议。&lt;/p&gt;
+&lt;p&gt;二、域名&lt;/p&gt;
+&lt;p&gt;应该尽量将API部署在专用域名之下，如&lt;a class=&#34;link&#34; href=&#34;https://api.oldboyedu.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://api.oldboyedu.com&lt;/a&gt;；如果确定API很简单，不会有进一步扩展，可以考虑放在主域名下，如&lt;a class=&#34;link&#34; href=&#34;https://oldboyedu.com/api/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://oldboyedu.com/api/&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;三、版本&lt;/p&gt;
+&lt;p&gt;可以将版本号放在HTTP头信息中，也可以放入URL中，如&lt;a class=&#34;link&#34; href=&#34;https://api.oldboyedu.com/v1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://api.oldboyedu.com/v1/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;四、路径&lt;/p&gt;
+&lt;p&gt;路径是一种地址，在互联网上表现为网址，在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的&amp;quot;集合&amp;quot;（collection），所以API中的名词也应该使用复数，如&lt;a class=&#34;link&#34; href=&#34;https://api.oldboyedu.com/v1/students&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://api.oldboyedu.com/v1/students&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;五、HTTP动词&lt;/p&gt;
+&lt;p&gt;对于资源的具体操作类型，由HTTP动词表示，HTTP动词主要有以下几种，括号中对应的是SQL命令。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GET（SELECT）：从服务器取出资源（一项或多项）；&lt;/li&gt;
+&lt;li&gt;POST（CREATE）：在服务器新建一个资源；&lt;/li&gt;
+&lt;li&gt;PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）；&lt;/li&gt;
+&lt;li&gt;PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）；&lt;/li&gt;
+&lt;li&gt;DELETE（DELETE）：从服务器删除资源；&lt;/li&gt;
+&lt;li&gt;HEAD：获取资源的元数据；&lt;/li&gt;
+&lt;li&gt;OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;六、过滤信息&lt;/p&gt;
+&lt;p&gt;如果记录数量很多，服务器不可能都将它们返回给用户，API会提供参数，过滤返回结果，常见的参数有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;?limit=20：指定返回记录的数量为20；&lt;/li&gt;
+&lt;li&gt;?offset=8：指定返回记录的开始位置为8；&lt;/li&gt;
+&lt;li&gt;?page=1&amp;amp;per_page=50：指定第1页，以及每页的记录数为50；&lt;/li&gt;
+&lt;li&gt;?sortby=name&amp;amp;order=asc：指定返回结果按照name属性进行升序排序；&lt;/li&gt;
+&lt;li&gt;?animal_type_id=2：指定筛选条件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;七、状态码&lt;/p&gt;
+&lt;p&gt;服务器会向用户返回状态码和提示信息，以下是常用的一些状态码：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;200 OK – [GET]：服务器成功返回用户请求的数据；&lt;/li&gt;
+&lt;li&gt;201 CREATED – [POST/PUT/PATCH]：用户新建或修改数据成功；&lt;/li&gt;
+&lt;li&gt;202 Accepted – [*]：表示一个请求已经进入后台排队（异步任务）；&lt;/li&gt;
+&lt;li&gt;204 NO CONTENT – [DELETE]：用户删除数据成功；&lt;/li&gt;
+&lt;li&gt;400 INVALID REQUEST – [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作；&lt;/li&gt;
+&lt;li&gt;401 Unauthorized – [*]：表示用户没有权限（令牌、用户名、密码错误）；&lt;/li&gt;
+&lt;li&gt;403 Forbidden – [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的；&lt;/li&gt;
+&lt;li&gt;404 NOT FOUND – [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作；&lt;/li&gt;
+&lt;li&gt;406 Not Acceptable – [GET]：用户请求的格式不可得；&lt;/li&gt;
+&lt;li&gt;410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的；&lt;/li&gt;
+&lt;li&gt;422 Unprocesable entity – [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误；&lt;/li&gt;
+&lt;li&gt;500 INTERNAL SERVER ERROR – [*]：服务器发生错误，用户将无法判断发出的请求是否成功。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;八、错误处理&lt;/p&gt;
+&lt;p&gt;如果状态码是4xx，就会向用户返回出错信息，一般来说，返回的信息中将error作为键名，出错信息作为键值。&lt;/p&gt;
+&lt;p&gt;九、返回结果&lt;/p&gt;
+&lt;p&gt;针对不同操作，服务器向用户返回的结果应该符合以下规范：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GET /collection：返回资源对象的列表（数组）；&lt;/li&gt;
+&lt;li&gt;GET /collection/resource：返回单个资源对象；&lt;/li&gt;
+&lt;li&gt;POST /collection：返回新生成的资源对象；&lt;/li&gt;
+&lt;li&gt;PUT /collection/resource：返回完整的资源对象；&lt;/li&gt;
+&lt;li&gt;PATCH /collection/resource：返回完整的资源对象；&lt;/li&gt;
+&lt;li&gt;DELETE /collection/resource：返回一个空文档。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;十、Hypermedia API&lt;/p&gt;
+&lt;p&gt;RESTful API最好做到Hypermedia，即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么。&lt;/p&gt;
+&lt;p&gt;以上是Restful API设计应遵循的十大规范，除此之外，Restful API还需注意身份认证应该使用OAuth 2.0框架，服务器返回的数据格式，应该尽量使用JSON，避免使用XML。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>激活 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E6%BF%80%E6%B4%BB/</link>
+        <description>Recent content in 激活 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Sat, 17 Sep 2022 10:09:43 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E6%BF%80%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows Server 2022 KMS 激活序列号</title>
+        <link>http://blog.aaayun.cc/archives/894.html</link>
+        <pubDate>Sat, 17 Sep 2022 10:09:43 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/894.html</guid>
+        <description>&lt;div class=&#39;fancybox-wrapper lazyload-container-unload&#39; data-fancybox=&#39;post-images&#39; href=&#39;https://uss.aaayun.cc/2022/09/20220917020648240.png&#39;&gt;
+  &lt;img class=&#34;lazyload lazyload-style-1&#34; src=&#34;data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+&#34;  decoding=&#34;async&#34; data-original=&#34;https://uss.aaayun.cc/2022/09/20220917020648240.png&#34; src=&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC&#34; alt=&#34;&#34; /&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Server2022 零售版：&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;RGN6B-MCPWX-6K6GK-HKM33-7VCXY&lt;/strong&gt; – Standard 标准版（非图形界面和桌面体验）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;DNVBD-FCT8Y-TQT8Q-HGQ34-QGRRV&lt;/strong&gt; – Datacenter 数据中心版（非图形界面和桌面体验）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Server2022 GVLK版：&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;VDYBN-27WPP-V4HQT-9VMD4-VMK7H&lt;/strong&gt; – Standard 标准版（非图形界面和桌面体验）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;WX4NM-KYWYW-QJJR4-XV3QB-6VM33&lt;/strong&gt; – Datacenter 数据中心版（非图形界面和桌面体验）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以管理员身份运行powershell或cmd，输入以下命令激活&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;KMS激活server2022命令：&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;slmgr -ipk WX4NM-KYWYW-QJJR4-XV3QB-6VM33
+slmgr -skms kms.0t.net.cn
+slmgr -ato
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        <item>
+        <title>Navicat Premium for Win v16.0.14 完美激活</title>
+        <link>http://blog.aaayun.cc/archives/874.html</link>
+        <pubDate>Mon, 05 Sep 2022 10:48:46 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/874.html</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;首先去官网下载对应的版本并安装，选择自己的安装路径&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023856797.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;下载激活工具&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/2022/09/20220905023914713.zip&#34;  title=&#34;NavicatCracker&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NavicatCracker&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;断开网络&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择安装路径并点击Path&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023858675.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023900835.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;生成激活码&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023902114.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;4&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开Navicat16并填入刚才生成的激活码点击激活&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023904493.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;5&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;选择手动激活&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023906367.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;6&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;将 Navicat 给的请求码复制到注册机中，点击进行激活.复制激活码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023907523.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;7&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023907523.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;8&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;激活成功&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023910597.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;9&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023911492.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;10&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>最新idea激活2021版</title>
+        <link>http://blog.aaayun.cc/archives/773.html</link>
+        <pubDate>Sat, 05 Mar 2022 23:41:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/773.html</guid>
+        <description>&lt;p&gt;找了很多版本都是2020.1激活的，比如像phpstorm2020版就没有php8提示，废话不多说下面开始&lt;/p&gt;
+&lt;p&gt;此激活方式支持jb公司的 &lt;strong&gt;2021&lt;/strong&gt; 后所有产品&lt;/p&gt;
+&lt;p&gt;1.下载激活文件，并解压到一个路径下&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/3737521613.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ja-netfilter.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.使用激活码进入ide&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/3340052703.txt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;key.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.进入配置文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/1808372138.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;4.修改并保存 重启ide&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-javaagent:第一步解压文件后的路径\ja-netfilter.jar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/3942039631.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;5.成功&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2022/03/1611934153.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>IDE Eval Resetter：JetBrains 全家桶无限试用插件</title>
+        <link>http://blog.aaayun.cc/archives/739.html</link>
+        <pubDate>Wed, 15 Sep 2021 01:15:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/739.html</guid>
+        <description>&lt;h2 id=&#34;一介绍&#34;&gt;一、介绍
+&lt;/h2&gt;&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/pengzhile/ide-eval-resetter&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://gitee.com/pengzhile/ide-eval-resetter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目功能：JetBrains 所有产品都有 30 天试用，这个插件的作用就是重置这个试用时间，让你无限试用，也算是另类的 JetBrains 激活方式。&lt;/p&gt;
+&lt;p&gt;支持的 JetBrains 产品，基本全系列都支持了：&lt;/p&gt;
+&lt;p&gt;IntelliJ IDEA&lt;br&gt;
+AppCode&lt;br&gt;
+CLion&lt;br&gt;
+DataGrip&lt;br&gt;
+GoLand&lt;br&gt;
+PhpStorm&lt;br&gt;
+PyCharm&lt;br&gt;
+Rider&lt;br&gt;
+RubyMine&lt;br&gt;
+WebStorm&lt;/p&gt;
+&lt;h2 id=&#34;二使用方法&#34;&gt;二、使用方法
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;下载插件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;下载地址： &lt;a class=&#34;link&#34; href=&#34;https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://plugins.zhile.io/files/ide-eval-resetter-2.1.6.zip&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装插件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;直接下载插件 zip 包（macOS 可能会自动解压，然后把 zip 包丢进回收站）&lt;br&gt;
+通常可以直接把 zip 包拖进 IDE 的窗口来进行插件的安装。如果无法拖动安装，你可以在Settings/Preferences… -&amp;gt; Plugins 里手动安装插件（Install Plugin From Disk…）&lt;br&gt;
+插件会提示安装成功&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用插件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;成功安装插件后，在 帮助 下会多一个 Eval Reset 按钮，如下图所示：&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/09/2831349892.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;jetbrains 试用&lt;br&gt;
+一般来说，在 IDE 窗口切出去或切回来时（窗口失去/得到焦点）会触发事件，检测是否长时间（25 天）没有重置，给通知让你选择。（初次安装因为无法获取上次重置时间，会直接给予提示）&lt;/p&gt;
+&lt;p&gt;也可以手动唤出插件的主界面：&lt;/p&gt;
+&lt;p&gt;如果 IDE 没有打开项目，在Welcome界面点击菜单：Get Help -&amp;gt; Eval Reset&lt;br&gt;
+如果 IDE 打开了项目，点击菜单：Help -&amp;gt; Eval Reset&lt;br&gt;
+唤出的插件主界面中包含了一些显示信息，2 个按钮，1 个勾选项：&lt;/p&gt;
+&lt;p&gt;按钮：Reload 用来刷新界面上的显示信息。&lt;br&gt;
+按钮：Reset 点击会询问是否重置试用信息并重启 IDE。选择 Yes 则执行重置操作并重启 IDE 生效，选择 No 则什么也不做。（此为手动重置方式）&lt;br&gt;
+勾选项：Auto reset before per restart 如果勾选了，则自勾选后每次重启/退出 IDE 时会自动重置试用信息，你无需做额外的事情。（此为自动重置方式）&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>HEU KMS Activator v23.1.0 win10 office2019激活工具</title>
+        <link>http://blog.aaayun.cc/archives/705.html</link>
+        <pubDate>Sat, 03 Jul 2021 20:02:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/705.html</guid>
+        <description>&lt;p&gt;如今，市面上有很多不同的激活工具，包括kms激活工具和win10数字权利激活两种。kms激活工具通用性强，但需要180天循环激活。数字权利激活属于永久激活，但只支持win10系统。两者可以说，各有优缺点。&lt;/p&gt;
+&lt;p&gt;系统迷之前分享过一款功能比较全面的激活工具，具体详见《KMS Tools v2020 kms激活工具 win10激活工具下载》。它几乎支持所有版本的Windows和Office激活，有需要的朋友，可以下载试试。&lt;/p&gt;
+&lt;p&gt;这次，我们再给大家补充一款kms激活工具，软件名叫HEU KMS Activator。很多年前，该工具在网上非常火，可惜后来作者停止更新维护，也就不能用了。让人没想到的是，如今它竟然又复活，推出了全新的版本。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/07/3549921151.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;（HEU KMS Activator）&lt;/p&gt;
+&lt;p&gt;HEU KMS Activator是网友知彼而知己制作的一款kms激活工具。它可以激活win10、office2019、office2016等版本的应用。由于kms激活的有效期只有180天，所以它支持创建自动续期任务。&lt;/p&gt;
+&lt;p&gt;另外，软件集成了将Office零售版转换成VOL版的功能，方便下错版本的朋友用kms进行激活。激活完成后，你可以在工具内查看Windows和Office的激活状态，非常方便。&lt;/p&gt;
+&lt;p&gt;HEU KMS Activator原生免费无广告，没有任何捆绑的内容，绝对纯净安全。它在所有激活工具中，算是比较小巧好用的了，强烈推荐大家试试。需要注意的是，使用前必须先关闭杀毒软件，防止激活失败。&lt;/p&gt;
+&lt;p&gt;更新：v20以上版本重新设计了UI界面，优化了KMS服务器。&lt;/p&gt;
+&lt;p&gt;下载：&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/07/407564694.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HEU KMS Activator v23.1.0.zip&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Win10数字激活神器HWIDGen v9.32 汉化版</title>
+        <link>http://blog.aaayun.cc/archives/97.html</link>
+        <pubDate>Sat, 26 May 2018 17:12:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/97.html</guid>
+        <description>&lt;p&gt;HWIDGEN是一款由国外Nsane论坛会员s1ave77制作的Windows 10数字权利激活工具，这款Win10数字权利获取工具，可以自动获取Windows 10 数字许可证激活，无需产品密钥，以最简单的方式永久激活。&lt;/p&gt;
+&lt;p&gt;什么是“数字权利激活”？数字许可证激活是 Windows 10 中新加入的激活方式，是一种授权方法的分类。数字许可证会记录您的硬件设备信息，只要在CPU和主板设备没有更换的情况下就可以连接微软服务器自动永久性的激活系统，重新安装系统时无需再次输入产品密钥，安装后会自动永久激活。“数字权利激活”在不更换电脑硬件的情况下一直有效，无论您安装的系统是正式版还是预览版，不影响永久激活效果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/05/61127725288621.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;支持Windows 10 版本 (SKUs):
+Core (Home) (N)
+CoreSingleLanguage (N)
+Professional (N)
+ProfessionalEducation (N)
+ProfessionalWorkstation (N)
+Education (N)
+Enterprise (N)
+EnterpriseS (N)
+新版变化
+[Windows 10] Digital License (HWID) Generation without KMS or predecessor install/upgrade
+&amp;lt;URL_ADDRESS&lt;a class=&#34;link&#34; href=&#34;http://www.nsaneforums.com/topic/312871-windows-10-digital-license-hwid-generation-without-kms-or-predecessor-installupgrade/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.nsaneforums.com/topic/312871-windows-10-digital-license-hwid-generation-without-kms-or-predecessor-installupgrade/&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/2018/06/05/612663433449565.7z&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载直通车&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

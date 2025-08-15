@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>扒站 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E6%89%92%E7%AB%99/</link>
+        <description>Recent content in 扒站 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Sun, 09 Sep 2018 08:06:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E6%89%92%E7%AB%99/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>一次差点放弃的抓包</title>
+        <link>http://blog.aaayun.cc/archives/129.html</link>
+        <pubDate>Sun, 09 Sep 2018 08:06:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/129.html</guid>
+        <description>&lt;p&gt;本人好友(骚木)给了一个网站发现视频资源不错，准备给扒下来&lt;/p&gt;
+&lt;p&gt;准备编辑器、fd、浏览器&lt;/p&gt;
+&lt;p&gt;1.启动fd，访问视频站，看一段视频，让它发送包，先放着不动&lt;/p&gt;
+&lt;p&gt;2.查看源码执行ctrl+f输入video查找，播放器src指向.m3u8文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/09/09/22789461393430.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;3.下载后用编辑器打开，咦，这是什么格式，查阅google资料，原来是hls视频&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/09/09/227982283536773.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;4.看一下抓的包，原来是把第3步最后一行作为参数，继续去浏览器下载，果然如此，把.ts文件全部下载本地就能整合成视频了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/09/09/228003145190393.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;5.仔细看了一下发送的请求并返回的包，咦，这是什么，怎么有一行字符串，返回第4步看了一下差点漏了这一行：&lt;/p&gt;
+&lt;h1 id=&#34;ext-x-keymethodaes-128urikeykey&#34;&gt;EXT-X-KEY:METHOD=AES-128,URI=&amp;ldquo;key.key&amp;rdquo;
+&lt;/h1&gt;&lt;p&gt;上帝请原谅我看不懂，大概意思是经过aes-128加密的，那一行字符串应该就是秘钥&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/09/09/228072148139409.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;抓包到此结束接下来用python获取文件并多线程下载，下载完成后用秘钥解密整合ts就成mp4啦&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Make on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/make/</link>
+        <description>Recent content in Make on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Fri, 19 Mar 2021 18:36:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/make/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows10安装GCC和Make工具</title>
+        <link>http://blog.aaayun.cc/archives/589.html</link>
+        <pubDate>Fri, 19 Mar 2021 18:36:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/589.html</guid>
+        <description>&lt;h2 id=&#34;windows10安装gcc和make工具&#34;&gt;Windows10安装GCC和Make工具
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;下载并安装Windows版的&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1222272972.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cygwin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;解压并双击setup-x86_64.exe，启动cygwin安装&lt;/li&gt;
+&lt;li&gt;选择Install from internet&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3077026335.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;填写163镜像：&lt;a class=&#34;link&#34; href=&#34;http://mirrors.163.com/cygwin/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://mirrors.163.com/cygwin/&lt;/a&gt; 并按“add”按钮&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2744567776.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;选择安装gcc
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1824036224.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;选择安装make，完成选择后按“下一步”按钮，完成安装&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1499138414.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;4.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;启动cygwin，键入命令：“make -v”和“gcc -v”，若运行成功，证明在Windows10安装GCC和Make工具成功！&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1452351827.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;5.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

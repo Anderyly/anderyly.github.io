@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Windows on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/windows/</link>
+        <description>Recent content in Windows on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Sat, 17 Sep 2022 10:09:43 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows Server 2022 KMS 激活序列号</title>
+        <link>http://blog.aaayun.cc/archives/894.html</link>
+        <pubDate>Sat, 17 Sep 2022 10:09:43 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/894.html</guid>
+        <description>&lt;div class=&#39;fancybox-wrapper lazyload-container-unload&#39; data-fancybox=&#39;post-images&#39; href=&#39;https://uss.aaayun.cc/2022/09/20220917020648240.png&#39;&gt;
+  &lt;img class=&#34;lazyload lazyload-style-1&#34; src=&#34;data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+&#34;  decoding=&#34;async&#34; data-original=&#34;https://uss.aaayun.cc/2022/09/20220917020648240.png&#34; src=&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC&#34; alt=&#34;&#34; /&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Server2022 零售版：&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;RGN6B-MCPWX-6K6GK-HKM33-7VCXY&lt;/strong&gt; – Standard 标准版（非图形界面和桌面体验）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;DNVBD-FCT8Y-TQT8Q-HGQ34-QGRRV&lt;/strong&gt; – Datacenter 数据中心版（非图形界面和桌面体验）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Server2022 GVLK版：&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;VDYBN-27WPP-V4HQT-9VMD4-VMK7H&lt;/strong&gt; – Standard 标准版（非图形界面和桌面体验）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;WX4NM-KYWYW-QJJR4-XV3QB-6VM33&lt;/strong&gt; – Datacenter 数据中心版（非图形界面和桌面体验）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以管理员身份运行powershell或cmd，输入以下命令激活&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;KMS激活server2022命令：&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;slmgr -ipk WX4NM-KYWYW-QJJR4-XV3QB-6VM33
+slmgr -skms kms.0t.net.cn
+slmgr -ato
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        <item>
+        <title>Navicat Premium for Win v16.0.14 完美激活</title>
+        <link>http://blog.aaayun.cc/archives/874.html</link>
+        <pubDate>Mon, 05 Sep 2022 10:48:46 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/874.html</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;首先去官网下载对应的版本并安装，选择自己的安装路径&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023856797.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;下载激活工具&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/2022/09/20220905023914713.zip&#34;  title=&#34;NavicatCracker&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NavicatCracker&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;断开网络&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择安装路径并点击Path&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023858675.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023900835.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;生成激活码&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023902114.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;4&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开Navicat16并填入刚才生成的激活码点击激活&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023904493.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;5&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;选择手动激活&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023906367.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;6&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;将 Navicat 给的请求码复制到注册机中，点击进行激活.复制激活码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023907523.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;7&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023907523.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;8&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;激活成功&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023910597.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;9&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/09/20220905023911492.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;10&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>win11自带SSH免密登录Linux</title>
+        <link>http://blog.aaayun.cc/archives/859.html</link>
+        <pubDate>Wed, 31 Aug 2022 09:32:13 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/859.html</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;使用win11自带的SSH工具登录Linux，不需要每次都输入密码。网上找了很多教程才找到合适的，重新整理和操作并记录下来，给相同需求的小伙伴提供参考。（所有的操作都是在win11的CMD命令行）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;生成公钥文件&#34;&gt;生成公钥文件
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t rsa -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;admin@aaayun.cc&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;上传公钥文件win11&#34;&gt;上传公钥文件（win11）
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;找到自己的公钥路径 (C:\Users\你的用户名.ssh)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp C:&lt;span class=&#34;se&#34;&gt;\U&lt;/span&gt;sers&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;nderyly&lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt;ssh&lt;span class=&#34;se&#34;&gt;\i&lt;/span&gt;d_rsa.pub root@192.168.2.222:~/.ssh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;重命名公钥文件&#34;&gt;重命名公钥文件
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;登录linux，此时仍需要密码登陆&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;```shell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ssh &lt;a class=&#34;link&#34; href=&#34;mailto:root@192.168.2.222&#34; &gt;root@192.168.2.222&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  2. 重命名公钥文件
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ```shell
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd /root/.ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv id_rsa.pub authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;修改文件权限&#34;&gt;修改文件权限
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;修改文件权限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;```shell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;chmod 600 authorized_keys
+chmod 700 /root/.ssh&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  2. 修改SSH配置文件
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ```shell
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim /etc/ssh/sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;保证这三句不被注释掉，如果没有则添加新的对应的语句，我需要添加&amp;quot;RSAAuthentication yes&amp;quot;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;保存退出
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  3. 重新启动SSH服务（Linux）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ```shell
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl restart sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>HEU KMS Activator v23.1.0 win10 office2019激活工具</title>
+        <link>http://blog.aaayun.cc/archives/705.html</link>
+        <pubDate>Sat, 03 Jul 2021 20:02:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/705.html</guid>
+        <description>&lt;p&gt;如今，市面上有很多不同的激活工具，包括kms激活工具和win10数字权利激活两种。kms激活工具通用性强，但需要180天循环激活。数字权利激活属于永久激活，但只支持win10系统。两者可以说，各有优缺点。&lt;/p&gt;
+&lt;p&gt;系统迷之前分享过一款功能比较全面的激活工具，具体详见《KMS Tools v2020 kms激活工具 win10激活工具下载》。它几乎支持所有版本的Windows和Office激活，有需要的朋友，可以下载试试。&lt;/p&gt;
+&lt;p&gt;这次，我们再给大家补充一款kms激活工具，软件名叫HEU KMS Activator。很多年前，该工具在网上非常火，可惜后来作者停止更新维护，也就不能用了。让人没想到的是，如今它竟然又复活，推出了全新的版本。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/07/3549921151.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;（HEU KMS Activator）&lt;/p&gt;
+&lt;p&gt;HEU KMS Activator是网友知彼而知己制作的一款kms激活工具。它可以激活win10、office2019、office2016等版本的应用。由于kms激活的有效期只有180天，所以它支持创建自动续期任务。&lt;/p&gt;
+&lt;p&gt;另外，软件集成了将Office零售版转换成VOL版的功能，方便下错版本的朋友用kms进行激活。激活完成后，你可以在工具内查看Windows和Office的激活状态，非常方便。&lt;/p&gt;
+&lt;p&gt;HEU KMS Activator原生免费无广告，没有任何捆绑的内容，绝对纯净安全。它在所有激活工具中，算是比较小巧好用的了，强烈推荐大家试试。需要注意的是，使用前必须先关闭杀毒软件，防止激活失败。&lt;/p&gt;
+&lt;p&gt;更新：v20以上版本重新设计了UI界面，优化了KMS服务器。&lt;/p&gt;
+&lt;p&gt;下载：&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/07/407564694.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HEU KMS Activator v23.1.0.zip&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>windows下golang编译报running gcc failed错误</title>
+        <link>http://blog.aaayun.cc/archives/622.html</link>
+        <pubDate>Wed, 31 Mar 2021 00:08:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/622.html</guid>
+        <description>&lt;h2 id=&#34;windows下golang编译报running-gcc-failed错误&#34;&gt;windows下golang编译报running gcc failed错误
+&lt;/h2&gt;&lt;p&gt;报错信息如下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2182248545.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3143630383.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解决方法&#34;&gt;解决方法
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;下载mingw &lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3421229787.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;mingw-get-setup.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载后点击安装&lt;/li&gt;
+&lt;li&gt;修改环境变量 如 C:MinGWbin&lt;/li&gt;
+&lt;li&gt;打开cmd 输入命令mingw-get，如果弹出 MinGw installation manager 窗口，说明安装正常。此时，关闭 MinGw installation manager 窗口，否则接下来的步骤会报错&lt;/li&gt;
+&lt;li&gt;在cmd中输入命令 mingw-get install gcc，等待一会，gcc 就安装成功了。如果想安装 g++,gdb,只要输入命令 mingw-get install g++ 和 mingw-get install gdb&lt;/li&gt;
+&lt;li&gt;在cmd中输入 gcc -v 安装成功&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3155323931.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;重启ide即可编译成功&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;tips 在线安装很慢 离线安装包你值得拥有&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>windows下Navicat15破解详细教程带注册机</title>
+        <link>http://blog.aaayun.cc/archives/599.html</link>
+        <pubDate>Fri, 19 Mar 2021 21:55:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/599.html</guid>
+        <description>&lt;h2 id=&#34;windows下navicat15破解详细教程带注册机&#34;&gt;windows下Navicat15破解详细教程带注册机
+&lt;/h2&gt;&lt;p&gt;去&lt;a class=&#34;link&#34; href=&#34;https://www.navicat.com.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网&lt;/a&gt;下载最新版本下载安装，激活Navicat Premium，下载激活软件， 无需断网运行激活软件 &lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2792248087.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Navicat Keygen Patch v5.6.0&lt;/a&gt;（以管理员身份运行）&lt;br&gt;
+点击Path选择安装Navicat路径下的navicat.exe&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3238369073.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;显示下图则替换成功
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3840917050.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;6.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;显示下图，则是以前破解失败残留的文件，  
+要去软件安装路径下找到下图2个文件删除
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3635898423.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;7.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2387532086.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;8.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击确定，接下来修改注册信息生成注册码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3238369073.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击Generate生成注册码，打开将Navicat将注册码复制进注册框&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1865051273.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击激活，选择手动激活&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3526157883.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;将请求码复制到激活软件生成激活码，将生成的激活码复制到软件激活框激活&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1186584295.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;4.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;激活成功&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2801356723.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;5.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Windows10安装GCC和Make工具</title>
+        <link>http://blog.aaayun.cc/archives/589.html</link>
+        <pubDate>Fri, 19 Mar 2021 18:36:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/589.html</guid>
+        <description>&lt;h2 id=&#34;windows10安装gcc和make工具&#34;&gt;Windows10安装GCC和Make工具
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;下载并安装Windows版的&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1222272972.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cygwin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;解压并双击setup-x86_64.exe，启动cygwin安装&lt;/li&gt;
+&lt;li&gt;选择Install from internet&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/3077026335.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;填写163镜像：&lt;a class=&#34;link&#34; href=&#34;http://mirrors.163.com/cygwin/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://mirrors.163.com/cygwin/&lt;/a&gt; 并按“add”按钮&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2744567776.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;选择安装gcc
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1824036224.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;选择安装make，完成选择后按“下一步”按钮，完成安装&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1499138414.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;4.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;启动cygwin，键入命令：“make -v”和“gcc -v”，若运行成功，证明在Windows10安装GCC和Make工具成功！&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1452351827.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;5.png&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>Linux下通过rdesktop远程windows</title>
+        <link>http://blog.aaayun.cc/archives/476.html</link>
+        <pubDate>Mon, 23 Sep 2019 23:15:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/476.html</guid>
+        <description>&lt;p&gt;linux下利用rdesktop命令远程连接windows&lt;/p&gt;
+&lt;p&gt;博主本人使用的是centos7.4其它版本请自测&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# yum install rdesktop -y&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# rdesktop -u administrator -d contoso -p 密码 IP -g 1920x1080 -D&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;常用选项：&lt;/p&gt;
+&lt;p&gt;-u：指定User；&lt;/p&gt;
+&lt;p&gt;-d：指定域；&lt;/p&gt;
+&lt;p&gt;-p：指定密码（不指定密码则在远程时输入）；&lt;/p&gt;
+&lt;p&gt;-g：指定分辨率；&lt;/p&gt;
+&lt;p&gt;-D：远程后不显示标题栏；&lt;/p&gt;
+&lt;p&gt;-f：远程后全屏显示桌面（ctrl+alt+enter退出全屏模式）；&lt;/p&gt;
+&lt;p&gt;-r disk:&lt;sharename&gt;=/home/superlong：将本机（Linux）上的/home/superlong目录映射到Win7上，传输文件更方便；&lt;/p&gt;
+&lt;p&gt;-r clipboard:PRIMARYCLIPBOARD：Linux和Windows系统相互可以实现复制和粘贴（实际不添加此选项也可复制粘贴）；&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>WPS Office 2016 专业版/专业增强版/绿色精简版本</title>
+        <link>http://blog.aaayun.cc/archives/266.html</link>
+        <pubDate>Fri, 28 Dec 2018 21:47:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/266.html</guid>
+        <description>&lt;p&gt;经过测试后发布，资源来自网络。&lt;br&gt;
+此为某地方ZF购买的正版序列号，可终身有效激活！&lt;br&gt;
+THUV2-32HH7-6NMHN-PTX7Y-QQCTH&lt;br&gt;
+WPS Office Pro 2016 (10.8.0.6423)绿色精简版本&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1kVyuw5p&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pan.baidu.com/s/1kVyuw5p&lt;/a&gt;&lt;br&gt;
+WPS Office Pro 2016 专业版 (10.8.0.6206) 官方下载地址&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://wdl1.cache.wps.cn/wps/download/ep/WPS2016Pro_normal.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://wdl1.cache.wps.cn/wps/download/ep/WPS2016Pro_normal.exe&lt;/a&gt;&lt;br&gt;
+WPS Office Pro Plus 2016 专业增强版 (10.8.0.6206) 官方下载地址（带 VBA）&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://wdl1.cache.wps.cn/wps/download/ep/WPS2016ProPlus_normal.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://wdl1.cache.wps.cn/wps/download/ep/WPS2016ProPlus_normal.exe&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Win10数字激活神器HWIDGen v9.32 汉化版</title>
+        <link>http://blog.aaayun.cc/archives/97.html</link>
+        <pubDate>Sat, 26 May 2018 17:12:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/97.html</guid>
+        <description>&lt;p&gt;HWIDGEN是一款由国外Nsane论坛会员s1ave77制作的Windows 10数字权利激活工具，这款Win10数字权利获取工具，可以自动获取Windows 10 数字许可证激活，无需产品密钥，以最简单的方式永久激活。&lt;/p&gt;
+&lt;p&gt;什么是“数字权利激活”？数字许可证激活是 Windows 10 中新加入的激活方式，是一种授权方法的分类。数字许可证会记录您的硬件设备信息，只要在CPU和主板设备没有更换的情况下就可以连接微软服务器自动永久性的激活系统，重新安装系统时无需再次输入产品密钥，安装后会自动永久激活。“数字权利激活”在不更换电脑硬件的情况下一直有效，无论您安装的系统是正式版还是预览版，不影响永久激活效果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/05/61127725288621.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;支持Windows 10 版本 (SKUs):
+Core (Home) (N)
+CoreSingleLanguage (N)
+Professional (N)
+ProfessionalEducation (N)
+ProfessionalWorkstation (N)
+Education (N)
+Enterprise (N)
+EnterpriseS (N)
+新版变化
+[Windows 10] Digital License (HWID) Generation without KMS or predecessor install/upgrade
+&amp;lt;URL_ADDRESS&lt;a class=&#34;link&#34; href=&#34;http://www.nsaneforums.com/topic/312871-windows-10-digital-license-hwid-generation-without-kms-or-predecessor-installupgrade/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.nsaneforums.com/topic/312871-windows-10-digital-license-hwid-generation-without-kms-or-predecessor-installupgrade/&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/2018/06/05/612663433449565.7z&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载直通车&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

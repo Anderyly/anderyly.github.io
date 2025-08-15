@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>云豹 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E4%BA%91%E8%B1%B9/</link>
+        <description>Recent content in 云豹 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Fri, 11 Oct 2019 06:48:20 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E4%BA%91%E8%B1%B9/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【原创】2019云豹主播采集插件</title>
+        <link>http://blog.aaayun.cc/archives/488.html</link>
+        <pubDate>Fri, 11 Oct 2019 06:48:20 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/488.html</guid>
+        <description>&lt;p&gt;效果怎么样我就不在叙述了&lt;/p&gt;
+&lt;p&gt;为了防止此插件滥用接口加入授权 如需使用请赞助本站并联系博主本人&lt;/p&gt;
+&lt;p&gt;赞助以及联系方式请在 &lt;a class=&#34;link&#34; href=&#34;https://blog.aaayun.cc/about.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;关于&lt;/a&gt; 中查看&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://pan.aaayun.cc/?dl=ae43299a820a57b532b96e0ac92e6754&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点我下载&lt;/a&gt; 密码 i9IAmTNH&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>2019最新云豹直播采集(各大平台)</title>
+        <link>http://blog.aaayun.cc/archives/397.html</link>
+        <pubDate>Wed, 03 Jul 2019 08:58:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/397.html</guid>
+        <description>&lt;p&gt;应客户需求写了一个直播采集插件&lt;/p&gt;
+&lt;p&gt;功能主要就是采集各平台直播入自己库并生成僵尸粉&lt;/p&gt;
+&lt;p&gt;下载链接在下方&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/07/03/866801286360205.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/2019/07/03/86493140022492.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;云豹直播主播采集插件.zip&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>半中心化 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E5%8D%8A%E4%B8%AD%E5%BF%83%E5%8C%96/</link>
+        <description>Recent content in 半中心化 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Tue, 08 May 2018 00:13:16 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E5%8D%8A%E4%B8%AD%E5%BF%83%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>半中心化区块链</title>
+        <link>http://blog.aaayun.cc/archives/75.html</link>
+        <pubDate>Tue, 08 May 2018 00:13:16 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/75.html</guid>
+        <description>&lt;p&gt;构思一个半中心化区块链，由于没有xmind就码字了&lt;/p&gt;
+&lt;p&gt;1.管理员在服务器增加n个区块，并设置简易度&lt;br&gt;
+2.用户在客户端注册账号取得钱包地址、私匙及公匙&lt;br&gt;
+3.用户客户端选择区块并进行hash计算，成功计算将提交服务器进行随机奖励至钱包&lt;br&gt;
+4.交易、挖矿信息以对称式加密提交区块浏览器中，并以p2p形式传给其它用户保存至本地形成所谓的账本&lt;br&gt;
+5.交易转账须查找账本记录，51%账本记录无异议将成功交易，并扣除旷工费&lt;/p&gt;
+&lt;p&gt;区块可以创建在百度贴吧等平台，这样大大减少服务器成本又能实现cc攻击&lt;/p&gt;
+&lt;p&gt;整个过程实现须使用php、java或易语言及易安卓&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

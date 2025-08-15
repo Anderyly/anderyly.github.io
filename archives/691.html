@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="参考：\nhttps://blog.csdn.net/qq_35921925/article/details/108110519\nhttp://www.piaoyi.org/php/php-java-bridge-jar-class.html\n一、centos下 PHP 调用 jar包\n1.准备工作\n1.1、php环境【php7.2】，并且将php.ini中的allow_url_include改为On\n1.2、安装java环境\n1 yum install java 2.下载 JavaBridge.jar(快捷下载)\nJavaBridge.jar和Java.inc\n下载地址: http://php-java-bridge.sourceforge.net/pjb/download.php\n打一个jar包，将打包好的jar包以及JavaBridge.jar放到ext目录里面 1 2 3 cp Hello.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext cp JavaBridge.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext cd /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext 启动JavaBridge.jar 1 java -jar JavaBridge.jar SERVLET:8080 3 JavaBridge.log 新建一个php站点，把Java.inc放到根目录，新建index.php，index.php内容如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 &lt;?php header( &#39;Content-Type: text/html; charset=UTF-8&#39; ); define(&#34;JAVA_DEBUG&#34;, true); //调试设置 define(&#34;JAVA_HOSTS&#34;, &#34;127.0.0.1:8080&#34;); //设置javabridge监听端口 /*0: Log nothing, not even fatal errors. 1: Log fatal system errors such as &#34;out of memory error&#34;. 2: Log java exceptions.*/ define(&#34;JAVA_LOG_LEVEL&#34;, 2); //java.log_level: 0-6 require_once &#34;Java.inc&#34;; //php调用java的接口，与该脚本位于同一目录 java_set_file_encoding(&#34;UTF-8&#34;); //设置JAVA编码。 $ob = new Java(&#34;Hello&#34;); //实例 try{ $res = $ob-&gt;h(&#39;1333&#39;); echo $res; } catch(Exception $e) { var_dump($e); } // 输出 1333 【一些注意事项】：\n">
+<title>php调用java类</title>
+
+<link rel='canonical' href='http://blog.aaayun.cc/archives/691.html'>
+
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="php调用java类">
+<meta property='og:description' content="参考：\nhttps://blog.csdn.net/qq_35921925/article/details/108110519\nhttp://www.piaoyi.org/php/php-java-bridge-jar-class.html\n一、centos下 PHP 调用 jar包\n1.准备工作\n1.1、php环境【php7.2】，并且将php.ini中的allow_url_include改为On\n1.2、安装java环境\n1 yum install java 2.下载 JavaBridge.jar(快捷下载)\nJavaBridge.jar和Java.inc\n下载地址: http://php-java-bridge.sourceforge.net/pjb/download.php\n打一个jar包，将打包好的jar包以及JavaBridge.jar放到ext目录里面 1 2 3 cp Hello.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext cp JavaBridge.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext cd /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext 启动JavaBridge.jar 1 java -jar JavaBridge.jar SERVLET:8080 3 JavaBridge.log 新建一个php站点，把Java.inc放到根目录，新建index.php，index.php内容如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 &lt;?php header( &#39;Content-Type: text/html; charset=UTF-8&#39; ); define(&#34;JAVA_DEBUG&#34;, true); //调试设置 define(&#34;JAVA_HOSTS&#34;, &#34;127.0.0.1:8080&#34;); //设置javabridge监听端口 /*0: Log nothing, not even fatal errors. 1: Log fatal system errors such as &#34;out of memory error&#34;. 2: Log java exceptions.*/ define(&#34;JAVA_LOG_LEVEL&#34;, 2); //java.log_level: 0-6 require_once &#34;Java.inc&#34;; //php调用java的接口，与该脚本位于同一目录 java_set_file_encoding(&#34;UTF-8&#34;); //设置JAVA编码。 $ob = new Java(&#34;Hello&#34;); //实例 try{ $res = $ob-&gt;h(&#39;1333&#39;); echo $res; } catch(Exception $e) { var_dump($e); } // 输出 1333 【一些注意事项】：\n">
+<meta property='og:url' content='http://blog.aaayun.cc/archives/691.html'>
+<meta property='og:site_name' content='轻风云'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='java' /><meta property='article:tag' content='PHP' /><meta property='article:published_time' content='2021-06-21T18:27:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-21T18:27:00&#43;00:00'/>
+<meta name="twitter:title" content="php调用java类">
+<meta name="twitter:description" content="参考：\nhttps://blog.csdn.net/qq_35921925/article/details/108110519\nhttp://www.piaoyi.org/php/php-java-bridge-jar-class.html\n一、centos下 PHP 调用 jar包\n1.准备工作\n1.1、php环境【php7.2】，并且将php.ini中的allow_url_include改为On\n1.2、安装java环境\n1 yum install java 2.下载 JavaBridge.jar(快捷下载)\nJavaBridge.jar和Java.inc\n下载地址: http://php-java-bridge.sourceforge.net/pjb/download.php\n打一个jar包，将打包好的jar包以及JavaBridge.jar放到ext目录里面 1 2 3 cp Hello.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext cp JavaBridge.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext cd /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext 启动JavaBridge.jar 1 java -jar JavaBridge.jar SERVLET:8080 3 JavaBridge.log 新建一个php站点，把Java.inc放到根目录，新建index.php，index.php内容如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 &lt;?php header( &#39;Content-Type: text/html; charset=UTF-8&#39; ); define(&#34;JAVA_DEBUG&#34;, true); //调试设置 define(&#34;JAVA_HOSTS&#34;, &#34;127.0.0.1:8080&#34;); //设置javabridge监听端口 /*0: Log nothing, not even fatal errors. 1: Log fatal system errors such as &#34;out of memory error&#34;. 2: Log java exceptions.*/ define(&#34;JAVA_LOG_LEVEL&#34;, 2); //java.log_level: 0-6 require_once &#34;Java.inc&#34;; //php调用java的接口，与该脚本位于同一目录 java_set_file_encoding(&#34;UTF-8&#34;); //设置JAVA编码。 $ob = new Java(&#34;Hello&#34;); //实例 try{ $res = $ob-&gt;h(&#39;1333&#39;); echo $res; } catch(Exception $e) { var_dump($e); } // 输出 1333 【一些注意事项】：\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_3ed2d734dcdfd8a7.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">轻风云</a></h1>
+            <h2 class="site-description">云淡风轻，于事安然</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Anderyly'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友人帐</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/talk/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>留言板</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" >
+                技术教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/archives/691.html">php调用java类</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 21, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>参考：<br>
+<a class="link" href="https://blog.csdn.net/qq_35921925/article/details/108110519"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/qq_35921925/article/details/108110519</a><br>
+<a class="link" href="http://www.piaoyi.org/php/php-java-bridge-jar-class.html"  target="_blank" rel="noopener"
+    >http://www.piaoyi.org/php/php-java-bridge-jar-class.html</a></p>
+<p>一、centos下 PHP 调用 jar包</p>
+<p>1.准备工作<br>
+1.1、php环境【php7.2】，并且将php.ini中的allow_url_include改为On<br>
+1.2、安装java环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum install java
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>2.下载 JavaBridge.jar(<a class="link" href="https://uss.aaayun.cc/typecho/uploads/2021/06/2102158902.zip"  target="_blank" rel="noopener"
+    >快捷下载</a>)<br>
+JavaBridge.jar和Java.inc<br>
+下载地址: <a class="link" href="http://php-java-bridge.sourceforge.net/pjb/download.php"  target="_blank" rel="noopener"
+    >http://php-java-bridge.sourceforge.net/pjb/download.php</a></p>
+<p><img src="https://uss.aaayun.cc/typecho/uploads/2021/06/1036217854.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<ol>
+<li>打一个jar包，将打包好的jar包以及JavaBridge.jar放到ext目录里面</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cp Hello.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext
+</span></span><span class="line"><span class="cl">cp JavaBridge.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>启动JavaBridge.jar</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">java -jar JavaBridge.jar SERVLET:8080 <span class="m">3</span> JavaBridge.log
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>新建一个php站点，把Java.inc放到根目录，新建index.php，index.php内容如下</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="nx">header</span><span class="p">(</span> <span class="s1">&#39;Content-Type: text/html; charset=UTF-8&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span><span class="s2">&#34;JAVA_DEBUG&#34;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span> <span class="c1">//调试设置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">define</span><span class="p">(</span><span class="s2">&#34;JAVA_HOSTS&#34;</span><span class="p">,</span> <span class="s2">&#34;127.0.0.1:8080&#34;</span><span class="p">);</span> <span class="c1">//设置javabridge监听端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/*0: Log nothing, not even fatal errors.
+</span></span></span><span class="line"><span class="cl"><span class="cm">  1: Log fatal system errors such as &#34;out of memory error&#34;.
+</span></span></span><span class="line"><span class="cl"><span class="cm">  2: Log java exceptions.*/</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span><span class="s2">&#34;JAVA_LOG_LEVEL&#34;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">//java.log_level: 0-6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">require_once</span> <span class="s2">&#34;Java.inc&#34;</span><span class="p">;</span> <span class="c1">//php调用java的接口，与该脚本位于同一目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">java_set_file_encoding</span><span class="p">(</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">);</span> <span class="c1">//设置JAVA编码。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ob</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Java</span><span class="p">(</span><span class="s2">&#34;Hello&#34;</span><span class="p">);</span> <span class="c1">//实例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">{</span>    
+</span></span><span class="line"><span class="cl">    <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$ob</span><span class="o">-&gt;</span><span class="na">h</span><span class="p">(</span><span class="s1">&#39;1333&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="nv">$res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">var_dump</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 输出 1333
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>【一些注意事项】：</p>
+<p>关于PHP-Java-Bridge的各种函数使用：</p>
+<p>1、高版本的java_require不再使用,也无法使用,由于放到java虚拟机下面,则不需要再手动引入包文件。</p>
+<p>2、java_value()用于获取值,而且必须使用该函数获取值。</p>
+<p>(特别注意：如果该值需要存入数据库，那么必须使用该java_value函数,不然会报错，或者无法存入数据库)</p>
+<p>3、java_inspect()对实例化或者方法进行print_r类似的输出。</p>
+<p>(注：请不要直接使用var_dump这样的输出方法输出java的类、方法、变量，需要使用java_inspect或者java_value，例如：var_dump(java_inspect($abc)))</p>
+<p>4、实例化使用 $test = new Java(“Test&quot;)的方式,如果实例化的方法中存在参数,可以这样new Java(“Test&quot;,&ldquo;pram&rdquo;)</p>
+<p>提醒：</p>
+<p>1、务必确保对java.inc的引用，确保引用正确</p>
+<p>2、务必确保对jar包放在能引用的地方，比如java虚拟机jre下面</p>
+<p>3、在PHP中调用Java使用PHP的的写法即可</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/java/">Java</a>
+        
+            <a href="/tags/php/">PHP</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Jun 21, 2021 18:27 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/archives/424.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP 中 DES 加密、解密 以及和 Java 互通</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/952.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">TP5使用workerman开启websocket服务</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/943.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">centos7系统安装php8</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/842.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AYPHP轻量级框架</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/770.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">基于PHP实现微信小程序客服消息功能</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2015 - 
+        
+        2025 轻风云
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">本网站由<img width="50px" src="https://uss.aaayun.cc/upyun.png">提供cdn加速/云存储服务</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

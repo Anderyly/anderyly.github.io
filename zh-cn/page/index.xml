@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on 演示站点</title>
+        <link>http://localhost:1313/zh-cn/page/</link>
+        <description>Recent content in Pages on 演示站点</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Sun, 09 Dec 2018 07:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于</title>
+        <link>http://localhost:1313/zh-cn/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Sun, 09 Dec 2018 07:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/zh-cn/%E5%85%B3%E4%BA%8E/</guid>
+        <description>&lt;h2 id=&#34;原先并不叫轻风云而是十七之家&#34;&gt;原先并不叫轻风云而是十七之家
+&lt;/h2&gt;&lt;p&gt;当初不知权重重要性，迁移服务器时丢失了大部分数据，又换了几次域名&lt;/p&gt;
+&lt;p&gt;17my.net&lt;br&gt;
+blog.aaayun.cc&lt;br&gt;
+qfy.kim&lt;br&gt;
+rmc.ink&lt;/p&gt;
+&lt;p&gt;现在便从新来过&lt;/p&gt;
+&lt;p&gt;在这里说明以下几点:&lt;/p&gt;
+&lt;p&gt;此站正式作为我的个人博客使用&lt;br&gt;
+博客程序采用typecho，主题模板采用Aria主题，详情移步开发者&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

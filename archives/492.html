@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="博主之封装过一个微信支付类 很长时间没有更新了 现在分享一下自用的微信支付类\n该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询\nnative扫码支付后面会添加\n异步主要商户订单号查询 并确定金额是否与数据库中一致以及判断该商户订单号是否处理过（谨记）\n个人觉得验签并不重要 有订单查询以及数据库订单验证就行了\n过多的就不介绍了 源码有注释\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 &lt;?php /** * @author anderyly * @email anderyly@sina.com * @link https://blog.aaayun.cc/ * @copyright Copyright (c) 2018 */ class WxPay { // 微信分配的公众账号ID public $appId; // 微信支付分配的商户号 public $mch_id; // 微信支付分配的商户密钥 public $key; // 回调地址 public $notify_url; // 随机字符串 public $nonce_str; // 站点名称 public $webName; // 站点url地址 public $webUrl; // h5支付成功后跳转的地址 public $redirect_url; /** * [__construct 初始化配置] */ public function __construct($data) { $this-&gt;appId = $data[&#39;appId&#39;]; $this-&gt;mch_id = $data[&#39;mch_id&#39;]; $this-&gt;key = $data[&#39;key&#39;]; $this-&gt;notify_url = $data[&#39;notify_url&#39;]; if (isset($data[&#39;webName&#39;])) $this-&gt;webName = $data[&#39;webName&#39;]; if (isset($data[&#39;webUrl&#39;])) $this-&gt;webUrl = $data[&#39;webUrl&#39;]; if (isset($data[&#39;redirect_url&#39;])) $this-&gt;redirect_url = $data[&#39;redirect_url&#39;]; $this-&gt;nonce_str = $this-&gt;rand_code(); } /** * [h5 html5支付] * @param out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @return array|bool */ public function h5($out_trade_no, $body, $ip, $total_fee) { $url = &#39;https://api.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;MWEB&#39;, &#39;scene_info&#39; =&gt; &#34;{&#39;h5_info&#39;:{&#39;type&#39;: &#39;WAP&#39;,&#39;wap_url&#39;: $this-&gt;webUrl,&#39;wap_name&#39;: $this-&gt;webName}}&#34; ]; $data[&#39;sign&#39;] = $this-&gt;sign($data); //获取签名 $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if (isset($res[&#39;return_code&#39;]) and $res[&#39;return_code&#39;] != &#39;SUCCESS&#39; and isset($res[&#39;return_msg&#39;]) and $res[&#39;return_msg&#39;] == &#39;OK&#39; and isset($res[&#39;result_code&#39;]) and $res[&#39;result_code&#39;] == &#39;SUCCESS&#39;) { exit(&#34;签名失败！&#34;); } else { $url = $res[&#39;mweb_url&#39;] . &#39;&amp;redirect_url=&#39; . urlencode($this-&gt;redirect_url); exit(&#39;&lt;script src=&#34;https://open.mobile.qq.com/sdk/qqapi.js?_bid=152&#34;&gt;&lt;/script&gt;&lt;script type=&#34;text/javascript&#34;&gt;mqq.ui.openUrl({ target: 2,url: &#34;&#39; . $url . &#39;&#34;});&lt;/script&gt;&#39;); } } } /** * [app 移动端二次签名] * @param out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @return array|bool */ public function app($out_trade_no, $body, $ip, $total_fee) { $url = &#39;https://api.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;APP&#39;, ]; $data[&#39;sign&#39;] = $this-&gt;Sign($data); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] != &#39;SUCCESS&#39;) { return false; } else { $arr = [ &#39;prepayid&#39; =&gt; $res[&#39;prepay_id&#39;], &#39;appid&#39; =&gt; $this-&gt;appId, &#39;partnerid&#39; =&gt; $this-&gt;mch_id, &#39;package&#39; =&gt; &#39;Sign=WXPay&#39;, &#39;noncestr&#39; =&gt; $this-&gt;nonce_str, &#39;timestamp&#39; =&gt; time(), ]; $sign = $this-&gt;sign($arr, 1); $arr[&#39;out_trade_no&#39;] = $out_trade_no; $arr[&#39;return_code&#39;] = $res[&#39;return_code&#39;]; $arr[&#39;sign&#39;] = $sign; return $arr; } } else { return false; } } /** * [h5 html5支付] * @param $out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @param $openid [授权用户的openid] * @return array|bool */ public function jsapi($out_trade_no, $body, $ip, $total_fee, $openid) { $url = &#39;https://api2.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;JSAPI&#39;, &#39;openid&#39; =&gt; $openid ]; $data[&#39;sign&#39;] = $this-&gt;Sign($data, 1); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] != &#39;SUCCESS&#39;) { return false; } else { $arr = [ &#39;appId&#39; =&gt; $res[&#39;appid&#39;], &#39;package&#39; =&gt; &#39;prepay_id=&#39; . $res[&#39;prepay_id&#39;], &#39;nonceStr&#39; =&gt; $this-&gt;nonce_str, &#39;timeStamp&#39; =&gt; time(), &#39;signType&#39; =&gt; &#39;MD5&#39; ]; $sign = $this-&gt;sign($arr); $as[&#39;nonceStr&#39;] = $arr[&#39;nonceStr&#39;]; $as[&#39;package&#39;] = $arr[&#39;package&#39;]; $as[&#39;sign&#39;] = $sign; $as[&#39;timestamp&#39;] = $arr[&#39;timeStamp&#39;]; $as[&#39;appid&#39;] = $arr[&#39;appId&#39;]; return $as; } } else { return false; } } /** * [curlWx 发送curl请求] * @param $url [url地址] * @param $xml [xml] * @return mixed */ protected function curlWx($url, $xml) { //header(&#34;Content-type:text/xml&#34;); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $url); if (stripos($url, &#34;https://&#34;) !== FALSE) { curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); } else { curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, TRUE); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2); } curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1); curl_setopt($ch, CURLOPT_HEADER, FALSE); curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); curl_setopt($ch, CURLOPT_TIMEOUT, 30); curl_setopt($ch, CURLOPT_POST, TRUE); curl_setopt($ch, CURLOPT_POSTFIELDS, $xml); $data = curl_exec($ch); curl_close($ch); return $data; } /** * [sign 签名] * @param null $app [不为null开启二次签名] * @return string */ protected function sign($params, $app = NULL) { ksort($params); foreach ($params as $key =&gt; $item) { if (!empty($item)) $newArr[] = $key . &#39;=&#39; . $item; } $stringA = implode(&#34;&amp;&#34;, $newArr); $stringSignTemp = $stringA . &#34;&amp;key=&#34; . $this-&gt;key; $sign = MD5($stringSignTemp); if (is_null($app)) $sign = strtoupper($sign); return $sign; } /** * [FromXml xml转数组] * @param $xml * @return bool|mixed */ public function FromXml($xml) { if (!$xml) return false; libxml_disable_entity_loader(true); $data = @json_decode(json_encode(simplexml_load_string($xml, &#39;SimpleXMLElement&#39;, LIBXML_NOCDATA)), true); return $data; } /** * [ToXml 参数组装成xml] * @param array $data * @return bool|string */ public function ToXml($data = []) { if (!is_array($data) || count($data) &lt;= 0) return false; $xml = &#34;&lt;xml&gt;&#34;; foreach ($data as $key =&gt; $val) { if (is_numeric($val)) { $xml .= &#34;&lt;&#34; . $key . &#34;&gt;&#34; . $val . &#34;&lt;/&#34; . $key . &#34;&gt;&#34;; } else { $xml .= &#34;&lt;&#34; . $key . &#34;&gt;&lt;![CDATA[&#34; . $val . &#34;]]&gt;&lt;/&#34; . $key . &#34;&gt;&#34;; } } $xml .= &#34;&lt;/xml&gt;&#34;; return $xml; } /** * [rand_code 生成随机字符串] * @return bool|string */ protected function rand_code() { $str = &#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;;//62个字符 $str = str_shuffle($str); $str = substr($str, 0, 32); return $str; } /** * [orderQuery 查询订单] * @param $order [商户订单号] * @param $money [订单金额] * @return bool [false | 成功返回流水号] */ public function orderQuery($order, $money) { $url = &#39;https://api.mch.weixin.qq.com/pay/orderquery&#39;; $data = array( &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;out_trade_no&#39; =&gt; $order ); $data[&#39;sign&#39;] = $this-&gt;sign($data); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] == &#39;FAIL&#39;) { return false; } else { // if (isset($res[&#39;return_code&#39;]) and $res[&#39;return_code&#39;] == &#39;SUCCESS&#39; and isset($res[&#39;return_msg&#39;]) and $res[&#39;return_msg&#39;] == &#39;OK&#39; and isset($res[&#39;result_code&#39;]) and $res[&#39;result_code&#39;] == &#39;SUCCESS&#39; and isset($res[&#39;trade_state&#39;]) and $res[&#39;trade_state&#39;] == &#39;SUCCESS&#39;) { // if ($res[&#39;total_fee&#39;] == ($money * 100)) { return $res[&#39;transaction_id&#39;]; } else { return false; } // } else { return false; } // } // } else { return false; } } } 该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询\n">
+<title>[更新]php微信支付类（含h5支付、APP二次签名、jsapi支付）</title>
+
+<link rel='canonical' href='http://blog.aaayun.cc/archives/492.html'>
+
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="[更新]php微信支付类（含h5支付、APP二次签名、jsapi支付）">
+<meta property='og:description' content="博主之封装过一个微信支付类 很长时间没有更新了 现在分享一下自用的微信支付类\n该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询\nnative扫码支付后面会添加\n异步主要商户订单号查询 并确定金额是否与数据库中一致以及判断该商户订单号是否处理过（谨记）\n个人觉得验签并不重要 有订单查询以及数据库订单验证就行了\n过多的就不介绍了 源码有注释\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 &lt;?php /** * @author anderyly * @email anderyly@sina.com * @link https://blog.aaayun.cc/ * @copyright Copyright (c) 2018 */ class WxPay { // 微信分配的公众账号ID public $appId; // 微信支付分配的商户号 public $mch_id; // 微信支付分配的商户密钥 public $key; // 回调地址 public $notify_url; // 随机字符串 public $nonce_str; // 站点名称 public $webName; // 站点url地址 public $webUrl; // h5支付成功后跳转的地址 public $redirect_url; /** * [__construct 初始化配置] */ public function __construct($data) { $this-&gt;appId = $data[&#39;appId&#39;]; $this-&gt;mch_id = $data[&#39;mch_id&#39;]; $this-&gt;key = $data[&#39;key&#39;]; $this-&gt;notify_url = $data[&#39;notify_url&#39;]; if (isset($data[&#39;webName&#39;])) $this-&gt;webName = $data[&#39;webName&#39;]; if (isset($data[&#39;webUrl&#39;])) $this-&gt;webUrl = $data[&#39;webUrl&#39;]; if (isset($data[&#39;redirect_url&#39;])) $this-&gt;redirect_url = $data[&#39;redirect_url&#39;]; $this-&gt;nonce_str = $this-&gt;rand_code(); } /** * [h5 html5支付] * @param out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @return array|bool */ public function h5($out_trade_no, $body, $ip, $total_fee) { $url = &#39;https://api.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;MWEB&#39;, &#39;scene_info&#39; =&gt; &#34;{&#39;h5_info&#39;:{&#39;type&#39;: &#39;WAP&#39;,&#39;wap_url&#39;: $this-&gt;webUrl,&#39;wap_name&#39;: $this-&gt;webName}}&#34; ]; $data[&#39;sign&#39;] = $this-&gt;sign($data); //获取签名 $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if (isset($res[&#39;return_code&#39;]) and $res[&#39;return_code&#39;] != &#39;SUCCESS&#39; and isset($res[&#39;return_msg&#39;]) and $res[&#39;return_msg&#39;] == &#39;OK&#39; and isset($res[&#39;result_code&#39;]) and $res[&#39;result_code&#39;] == &#39;SUCCESS&#39;) { exit(&#34;签名失败！&#34;); } else { $url = $res[&#39;mweb_url&#39;] . &#39;&amp;redirect_url=&#39; . urlencode($this-&gt;redirect_url); exit(&#39;&lt;script src=&#34;https://open.mobile.qq.com/sdk/qqapi.js?_bid=152&#34;&gt;&lt;/script&gt;&lt;script type=&#34;text/javascript&#34;&gt;mqq.ui.openUrl({ target: 2,url: &#34;&#39; . $url . &#39;&#34;});&lt;/script&gt;&#39;); } } } /** * [app 移动端二次签名] * @param out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @return array|bool */ public function app($out_trade_no, $body, $ip, $total_fee) { $url = &#39;https://api.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;APP&#39;, ]; $data[&#39;sign&#39;] = $this-&gt;Sign($data); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] != &#39;SUCCESS&#39;) { return false; } else { $arr = [ &#39;prepayid&#39; =&gt; $res[&#39;prepay_id&#39;], &#39;appid&#39; =&gt; $this-&gt;appId, &#39;partnerid&#39; =&gt; $this-&gt;mch_id, &#39;package&#39; =&gt; &#39;Sign=WXPay&#39;, &#39;noncestr&#39; =&gt; $this-&gt;nonce_str, &#39;timestamp&#39; =&gt; time(), ]; $sign = $this-&gt;sign($arr, 1); $arr[&#39;out_trade_no&#39;] = $out_trade_no; $arr[&#39;return_code&#39;] = $res[&#39;return_code&#39;]; $arr[&#39;sign&#39;] = $sign; return $arr; } } else { return false; } } /** * [h5 html5支付] * @param $out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @param $openid [授权用户的openid] * @return array|bool */ public function jsapi($out_trade_no, $body, $ip, $total_fee, $openid) { $url = &#39;https://api2.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;JSAPI&#39;, &#39;openid&#39; =&gt; $openid ]; $data[&#39;sign&#39;] = $this-&gt;Sign($data, 1); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] != &#39;SUCCESS&#39;) { return false; } else { $arr = [ &#39;appId&#39; =&gt; $res[&#39;appid&#39;], &#39;package&#39; =&gt; &#39;prepay_id=&#39; . $res[&#39;prepay_id&#39;], &#39;nonceStr&#39; =&gt; $this-&gt;nonce_str, &#39;timeStamp&#39; =&gt; time(), &#39;signType&#39; =&gt; &#39;MD5&#39; ]; $sign = $this-&gt;sign($arr); $as[&#39;nonceStr&#39;] = $arr[&#39;nonceStr&#39;]; $as[&#39;package&#39;] = $arr[&#39;package&#39;]; $as[&#39;sign&#39;] = $sign; $as[&#39;timestamp&#39;] = $arr[&#39;timeStamp&#39;]; $as[&#39;appid&#39;] = $arr[&#39;appId&#39;]; return $as; } } else { return false; } } /** * [curlWx 发送curl请求] * @param $url [url地址] * @param $xml [xml] * @return mixed */ protected function curlWx($url, $xml) { //header(&#34;Content-type:text/xml&#34;); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $url); if (stripos($url, &#34;https://&#34;) !== FALSE) { curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); } else { curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, TRUE); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2); } curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1); curl_setopt($ch, CURLOPT_HEADER, FALSE); curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); curl_setopt($ch, CURLOPT_TIMEOUT, 30); curl_setopt($ch, CURLOPT_POST, TRUE); curl_setopt($ch, CURLOPT_POSTFIELDS, $xml); $data = curl_exec($ch); curl_close($ch); return $data; } /** * [sign 签名] * @param null $app [不为null开启二次签名] * @return string */ protected function sign($params, $app = NULL) { ksort($params); foreach ($params as $key =&gt; $item) { if (!empty($item)) $newArr[] = $key . &#39;=&#39; . $item; } $stringA = implode(&#34;&amp;&#34;, $newArr); $stringSignTemp = $stringA . &#34;&amp;key=&#34; . $this-&gt;key; $sign = MD5($stringSignTemp); if (is_null($app)) $sign = strtoupper($sign); return $sign; } /** * [FromXml xml转数组] * @param $xml * @return bool|mixed */ public function FromXml($xml) { if (!$xml) return false; libxml_disable_entity_loader(true); $data = @json_decode(json_encode(simplexml_load_string($xml, &#39;SimpleXMLElement&#39;, LIBXML_NOCDATA)), true); return $data; } /** * [ToXml 参数组装成xml] * @param array $data * @return bool|string */ public function ToXml($data = []) { if (!is_array($data) || count($data) &lt;= 0) return false; $xml = &#34;&lt;xml&gt;&#34;; foreach ($data as $key =&gt; $val) { if (is_numeric($val)) { $xml .= &#34;&lt;&#34; . $key . &#34;&gt;&#34; . $val . &#34;&lt;/&#34; . $key . &#34;&gt;&#34;; } else { $xml .= &#34;&lt;&#34; . $key . &#34;&gt;&lt;![CDATA[&#34; . $val . &#34;]]&gt;&lt;/&#34; . $key . &#34;&gt;&#34;; } } $xml .= &#34;&lt;/xml&gt;&#34;; return $xml; } /** * [rand_code 生成随机字符串] * @return bool|string */ protected function rand_code() { $str = &#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;;//62个字符 $str = str_shuffle($str); $str = substr($str, 0, 32); return $str; } /** * [orderQuery 查询订单] * @param $order [商户订单号] * @param $money [订单金额] * @return bool [false | 成功返回流水号] */ public function orderQuery($order, $money) { $url = &#39;https://api.mch.weixin.qq.com/pay/orderquery&#39;; $data = array( &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;out_trade_no&#39; =&gt; $order ); $data[&#39;sign&#39;] = $this-&gt;sign($data); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] == &#39;FAIL&#39;) { return false; } else { // if (isset($res[&#39;return_code&#39;]) and $res[&#39;return_code&#39;] == &#39;SUCCESS&#39; and isset($res[&#39;return_msg&#39;]) and $res[&#39;return_msg&#39;] == &#39;OK&#39; and isset($res[&#39;result_code&#39;]) and $res[&#39;result_code&#39;] == &#39;SUCCESS&#39; and isset($res[&#39;trade_state&#39;]) and $res[&#39;trade_state&#39;] == &#39;SUCCESS&#39;) { // if ($res[&#39;total_fee&#39;] == ($money * 100)) { return $res[&#39;transaction_id&#39;]; } else { return false; } // } else { return false; } // } // } else { return false; } } } 该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询\n">
+<meta property='og:url' content='http://blog.aaayun.cc/archives/492.html'>
+<meta property='og:site_name' content='轻风云'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PHP' /><meta property='article:tag' content='SDK' /><meta property='article:tag' content='微信' /><meta property='article:tag' content='支付' /><meta property='article:tag' content='源码' /><meta property='article:published_time' content='2019-11-02T23:03:00&#43;00:00'/><meta property='article:modified_time' content='2019-11-02T23:03:00&#43;00:00'/>
+<meta name="twitter:title" content="[更新]php微信支付类（含h5支付、APP二次签名、jsapi支付）">
+<meta name="twitter:description" content="博主之封装过一个微信支付类 很长时间没有更新了 现在分享一下自用的微信支付类\n该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询\nnative扫码支付后面会添加\n异步主要商户订单号查询 并确定金额是否与数据库中一致以及判断该商户订单号是否处理过（谨记）\n个人觉得验签并不重要 有订单查询以及数据库订单验证就行了\n过多的就不介绍了 源码有注释\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 &lt;?php /** * @author anderyly * @email anderyly@sina.com * @link https://blog.aaayun.cc/ * @copyright Copyright (c) 2018 */ class WxPay { // 微信分配的公众账号ID public $appId; // 微信支付分配的商户号 public $mch_id; // 微信支付分配的商户密钥 public $key; // 回调地址 public $notify_url; // 随机字符串 public $nonce_str; // 站点名称 public $webName; // 站点url地址 public $webUrl; // h5支付成功后跳转的地址 public $redirect_url; /** * [__construct 初始化配置] */ public function __construct($data) { $this-&gt;appId = $data[&#39;appId&#39;]; $this-&gt;mch_id = $data[&#39;mch_id&#39;]; $this-&gt;key = $data[&#39;key&#39;]; $this-&gt;notify_url = $data[&#39;notify_url&#39;]; if (isset($data[&#39;webName&#39;])) $this-&gt;webName = $data[&#39;webName&#39;]; if (isset($data[&#39;webUrl&#39;])) $this-&gt;webUrl = $data[&#39;webUrl&#39;]; if (isset($data[&#39;redirect_url&#39;])) $this-&gt;redirect_url = $data[&#39;redirect_url&#39;]; $this-&gt;nonce_str = $this-&gt;rand_code(); } /** * [h5 html5支付] * @param out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @return array|bool */ public function h5($out_trade_no, $body, $ip, $total_fee) { $url = &#39;https://api.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;MWEB&#39;, &#39;scene_info&#39; =&gt; &#34;{&#39;h5_info&#39;:{&#39;type&#39;: &#39;WAP&#39;,&#39;wap_url&#39;: $this-&gt;webUrl,&#39;wap_name&#39;: $this-&gt;webName}}&#34; ]; $data[&#39;sign&#39;] = $this-&gt;sign($data); //获取签名 $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if (isset($res[&#39;return_code&#39;]) and $res[&#39;return_code&#39;] != &#39;SUCCESS&#39; and isset($res[&#39;return_msg&#39;]) and $res[&#39;return_msg&#39;] == &#39;OK&#39; and isset($res[&#39;result_code&#39;]) and $res[&#39;result_code&#39;] == &#39;SUCCESS&#39;) { exit(&#34;签名失败！&#34;); } else { $url = $res[&#39;mweb_url&#39;] . &#39;&amp;redirect_url=&#39; . urlencode($this-&gt;redirect_url); exit(&#39;&lt;script src=&#34;https://open.mobile.qq.com/sdk/qqapi.js?_bid=152&#34;&gt;&lt;/script&gt;&lt;script type=&#34;text/javascript&#34;&gt;mqq.ui.openUrl({ target: 2,url: &#34;&#39; . $url . &#39;&#34;});&lt;/script&gt;&#39;); } } } /** * [app 移动端二次签名] * @param out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @return array|bool */ public function app($out_trade_no, $body, $ip, $total_fee) { $url = &#39;https://api.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;APP&#39;, ]; $data[&#39;sign&#39;] = $this-&gt;Sign($data); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] != &#39;SUCCESS&#39;) { return false; } else { $arr = [ &#39;prepayid&#39; =&gt; $res[&#39;prepay_id&#39;], &#39;appid&#39; =&gt; $this-&gt;appId, &#39;partnerid&#39; =&gt; $this-&gt;mch_id, &#39;package&#39; =&gt; &#39;Sign=WXPay&#39;, &#39;noncestr&#39; =&gt; $this-&gt;nonce_str, &#39;timestamp&#39; =&gt; time(), ]; $sign = $this-&gt;sign($arr, 1); $arr[&#39;out_trade_no&#39;] = $out_trade_no; $arr[&#39;return_code&#39;] = $res[&#39;return_code&#39;]; $arr[&#39;sign&#39;] = $sign; return $arr; } } else { return false; } } /** * [h5 html5支付] * @param $out_trade_no [订单号] * @param $body [商品描述] * @param $ip [ip地址] * @param $total_fee [订单总金额] * @param $openid [授权用户的openid] * @return array|bool */ public function jsapi($out_trade_no, $body, $ip, $total_fee, $openid) { $url = &#39;https://api2.mch.weixin.qq.com/pay/unifiedorder&#39;; $data = [ &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;body&#39; =&gt; $body, &#39;spbill_create_ip&#39; =&gt; $ip, &#39;total_fee&#39; =&gt; $total_fee * 100, &#39;out_trade_no&#39; =&gt; $out_trade_no, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;notify_url&#39; =&gt; $this-&gt;notify_url, &#39;trade_type&#39; =&gt; &#39;JSAPI&#39;, &#39;openid&#39; =&gt; $openid ]; $data[&#39;sign&#39;] = $this-&gt;Sign($data, 1); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] != &#39;SUCCESS&#39;) { return false; } else { $arr = [ &#39;appId&#39; =&gt; $res[&#39;appid&#39;], &#39;package&#39; =&gt; &#39;prepay_id=&#39; . $res[&#39;prepay_id&#39;], &#39;nonceStr&#39; =&gt; $this-&gt;nonce_str, &#39;timeStamp&#39; =&gt; time(), &#39;signType&#39; =&gt; &#39;MD5&#39; ]; $sign = $this-&gt;sign($arr); $as[&#39;nonceStr&#39;] = $arr[&#39;nonceStr&#39;]; $as[&#39;package&#39;] = $arr[&#39;package&#39;]; $as[&#39;sign&#39;] = $sign; $as[&#39;timestamp&#39;] = $arr[&#39;timeStamp&#39;]; $as[&#39;appid&#39;] = $arr[&#39;appId&#39;]; return $as; } } else { return false; } } /** * [curlWx 发送curl请求] * @param $url [url地址] * @param $xml [xml] * @return mixed */ protected function curlWx($url, $xml) { //header(&#34;Content-type:text/xml&#34;); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $url); if (stripos($url, &#34;https://&#34;) !== FALSE) { curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); } else { curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, TRUE); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2); } curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1); curl_setopt($ch, CURLOPT_HEADER, FALSE); curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); curl_setopt($ch, CURLOPT_TIMEOUT, 30); curl_setopt($ch, CURLOPT_POST, TRUE); curl_setopt($ch, CURLOPT_POSTFIELDS, $xml); $data = curl_exec($ch); curl_close($ch); return $data; } /** * [sign 签名] * @param null $app [不为null开启二次签名] * @return string */ protected function sign($params, $app = NULL) { ksort($params); foreach ($params as $key =&gt; $item) { if (!empty($item)) $newArr[] = $key . &#39;=&#39; . $item; } $stringA = implode(&#34;&amp;&#34;, $newArr); $stringSignTemp = $stringA . &#34;&amp;key=&#34; . $this-&gt;key; $sign = MD5($stringSignTemp); if (is_null($app)) $sign = strtoupper($sign); return $sign; } /** * [FromXml xml转数组] * @param $xml * @return bool|mixed */ public function FromXml($xml) { if (!$xml) return false; libxml_disable_entity_loader(true); $data = @json_decode(json_encode(simplexml_load_string($xml, &#39;SimpleXMLElement&#39;, LIBXML_NOCDATA)), true); return $data; } /** * [ToXml 参数组装成xml] * @param array $data * @return bool|string */ public function ToXml($data = []) { if (!is_array($data) || count($data) &lt;= 0) return false; $xml = &#34;&lt;xml&gt;&#34;; foreach ($data as $key =&gt; $val) { if (is_numeric($val)) { $xml .= &#34;&lt;&#34; . $key . &#34;&gt;&#34; . $val . &#34;&lt;/&#34; . $key . &#34;&gt;&#34;; } else { $xml .= &#34;&lt;&#34; . $key . &#34;&gt;&lt;![CDATA[&#34; . $val . &#34;]]&gt;&lt;/&#34; . $key . &#34;&gt;&#34;; } } $xml .= &#34;&lt;/xml&gt;&#34;; return $xml; } /** * [rand_code 生成随机字符串] * @return bool|string */ protected function rand_code() { $str = &#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;;//62个字符 $str = str_shuffle($str); $str = substr($str, 0, 32); return $str; } /** * [orderQuery 查询订单] * @param $order [商户订单号] * @param $money [订单金额] * @return bool [false | 成功返回流水号] */ public function orderQuery($order, $money) { $url = &#39;https://api.mch.weixin.qq.com/pay/orderquery&#39;; $data = array( &#39;appid&#39; =&gt; $this-&gt;appId, &#39;mch_id&#39; =&gt; $this-&gt;mch_id, &#39;nonce_str&#39; =&gt; $this-&gt;nonce_str, &#39;out_trade_no&#39; =&gt; $order ); $data[&#39;sign&#39;] = $this-&gt;sign($data); $data = $this-&gt;curlWx($url, $this-&gt;ToXml($data)); if ($data) { $res = $this-&gt;FromXml($data); if ($res[&#39;return_code&#39;] == &#39;FAIL&#39;) { return false; } else { // if (isset($res[&#39;return_code&#39;]) and $res[&#39;return_code&#39;] == &#39;SUCCESS&#39; and isset($res[&#39;return_msg&#39;]) and $res[&#39;return_msg&#39;] == &#39;OK&#39; and isset($res[&#39;result_code&#39;]) and $res[&#39;result_code&#39;] == &#39;SUCCESS&#39; and isset($res[&#39;trade_state&#39;]) and $res[&#39;trade_state&#39;] == &#39;SUCCESS&#39;) { // if ($res[&#39;total_fee&#39;] == ($money * 100)) { return $res[&#39;transaction_id&#39;]; } else { return false; } // } else { return false; } // } // } else { return false; } } } 该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_3ed2d734dcdfd8a7.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">轻风云</a></h1>
+            <h2 class="site-description">云淡风轻，于事安然</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Anderyly'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友人帐</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/talk/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>留言板</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" >
+                技术教程
+            </a>
+        
+            <a href="/categories/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/" >
+                程序源码
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/archives/492.html">[更新]php微信支付类（含h5支付、APP二次签名、jsapi支付）</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 02, 2019</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>博主之封装过一个微信支付类 很长时间没有更新了 现在分享一下自用的微信支付类</p>
+<p>该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询</p>
+<p>native扫码支付后面会添加</p>
+<p>异步主要商户订单号查询 并确定金额是否与数据库中一致以及判断该商户订单号是否处理过（谨记）</p>
+<p>个人觉得验签并不重要 有订单查询以及数据库订单验证就行了</p>
+<p>过多的就不介绍了 源码有注释</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd"> * @author anderyly
+</span></span></span><span class="line"><span class="cl"><span class="sd"> * @email anderyly@sina.com
+</span></span></span><span class="line"><span class="cl"><span class="sd"> * @link https://blog.aaayun.cc/
+</span></span></span><span class="line"><span class="cl"><span class="sd"> * @copyright Copyright (c) 2018
+</span></span></span><span class="line"><span class="cl"><span class="sd"> */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">WxPay</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 微信分配的公众账号ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span> <span class="nv">$appId</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 微信支付分配的商户号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span> <span class="nv">$mch_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 微信支付分配的商户密钥
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span> <span class="nv">$key</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 回调地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span> <span class="nv">$notify_url</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 随机字符串
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span> <span class="nv">$nonce_str</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 站点名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span> <span class="nv">$webName</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 站点url地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span> <span class="nv">$webUrl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// h5支付成功后跳转的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span> <span class="nv">$redirect_url</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [__construct 初始化配置]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appId</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;appId&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mch_id</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;mch_id&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">key</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notify_url</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;notify_url&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;webName&#39;</span><span class="p">]))</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">webName</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;webName&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;webUrl&#39;</span><span class="p">]))</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">webUrl</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;webUrl&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;redirect_url&#39;</span><span class="p">]))</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect_url</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;redirect_url&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nonce_str</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">rand_code</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [h5 html5支付]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param out_trade_no [订单号]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $body [商品描述]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $ip [ip地址]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $total_fee [订单总金额]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return array|bool
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">h5</span><span class="p">(</span><span class="nv">$out_trade_no</span><span class="p">,</span> <span class="nv">$body</span><span class="p">,</span> <span class="nv">$ip</span><span class="p">,</span> <span class="nv">$total_fee</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$url</span> <span class="o">=</span> <span class="s1">&#39;https://api.mch.weixin.qq.com/pay/unifiedorder&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;appid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appId</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;mch_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mch_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;body&#39;</span> <span class="o">=&gt;</span> <span class="nv">$body</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;spbill_create_ip&#39;</span> <span class="o">=&gt;</span> <span class="nv">$ip</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;total_fee&#39;</span> <span class="o">=&gt;</span> <span class="nv">$total_fee</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;out_trade_no&#39;</span> <span class="o">=&gt;</span> <span class="nv">$out_trade_no</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;nonce_str&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nonce_str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;notify_url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notify_url</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;trade_type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MWEB&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;scene_info&#39;</span> <span class="o">=&gt;</span> <span class="s2">&#34;{&#39;h5_info&#39;:{&#39;type&#39;: &#39;WAP&#39;,&#39;wap_url&#39;: </span><span class="si">$this-&gt;webUrl</span><span class="s2">,&#39;wap_name&#39;: </span><span class="si">$this-&gt;webName</span><span class="s2">}}&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sign</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span> <span class="c1">//获取签名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">curlWx</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ToXml</span><span class="p">(</span><span class="nv">$data</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">FromXml</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">])</span> <span class="k">and</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUCCESS&#39;</span> <span class="k">and</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_msg&#39;</span><span class="p">])</span> <span class="k">and</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_msg&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;OK&#39;</span> <span class="k">and</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;result_code&#39;</span><span class="p">])</span> <span class="k">and</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;result_code&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SUCCESS&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">exit</span><span class="p">(</span><span class="s2">&#34;签名失败！&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$url</span> <span class="o">=</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;mweb_url&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&amp;redirect_url=&#39;</span> <span class="o">.</span> <span class="nx">urlencode</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect_url</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                 <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&#34;https://open.mobile.qq.com/sdk/qqapi.js?_bid=152&#34;&gt;&lt;/script&gt;&lt;script type=&#34;text/javascript&#34;&gt;mqq.ui.openUrl({ target: 2,url: &#34;&#39;</span> <span class="o">.</span> <span class="nv">$url</span> <span class="o">.</span> <span class="s1">&#39;&#34;});&lt;/script&gt;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [app 移动端二次签名]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param out_trade_no [订单号]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $body [商品描述]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $ip [ip地址]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $total_fee [订单总金额]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return array|bool
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">app</span><span class="p">(</span><span class="nv">$out_trade_no</span><span class="p">,</span> <span class="nv">$body</span><span class="p">,</span> <span class="nv">$ip</span><span class="p">,</span> <span class="nv">$total_fee</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$url</span> <span class="o">=</span> <span class="s1">&#39;https://api.mch.weixin.qq.com/pay/unifiedorder&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;appid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appId</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;mch_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mch_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;body&#39;</span> <span class="o">=&gt;</span> <span class="nv">$body</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;spbill_create_ip&#39;</span> <span class="o">=&gt;</span> <span class="nv">$ip</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;total_fee&#39;</span> <span class="o">=&gt;</span> <span class="nv">$total_fee</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;out_trade_no&#39;</span> <span class="o">=&gt;</span> <span class="nv">$out_trade_no</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;nonce_str&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nonce_str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;notify_url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notify_url</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;trade_type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;APP&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Sign</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">curlWx</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ToXml</span><span class="p">(</span><span class="nv">$data</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">FromXml</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUCCESS&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$arr</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;prepayid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;prepay_id&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;appid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appId</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;partnerid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mch_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;package&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sign=WXPay&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;noncestr&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nonce_str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;timestamp&#39;</span> <span class="o">=&gt;</span> <span class="nx">time</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">                <span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$sign</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sign</span><span class="p">(</span><span class="nv">$arr</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;out_trade_no&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$out_trade_no</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$sign</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nv">$arr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [h5 html5支付]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $out_trade_no [订单号]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $body [商品描述]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $ip [ip地址]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $total_fee [订单总金额]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $openid [授权用户的openid]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return array|bool
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">jsapi</span><span class="p">(</span><span class="nv">$out_trade_no</span><span class="p">,</span> <span class="nv">$body</span><span class="p">,</span> <span class="nv">$ip</span><span class="p">,</span> <span class="nv">$total_fee</span><span class="p">,</span> <span class="nv">$openid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$url</span> <span class="o">=</span> <span class="s1">&#39;https://api2.mch.weixin.qq.com/pay/unifiedorder&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;appid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appId</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;mch_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mch_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;body&#39;</span> <span class="o">=&gt;</span> <span class="nv">$body</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;spbill_create_ip&#39;</span> <span class="o">=&gt;</span> <span class="nv">$ip</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;total_fee&#39;</span> <span class="o">=&gt;</span> <span class="nv">$total_fee</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;out_trade_no&#39;</span> <span class="o">=&gt;</span> <span class="nv">$out_trade_no</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;nonce_str&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nonce_str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;notify_url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notify_url</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;trade_type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;JSAPI&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;openid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$openid</span>
+</span></span><span class="line"><span class="cl">        <span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Sign</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">curlWx</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ToXml</span><span class="p">(</span><span class="nv">$data</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">FromXml</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUCCESS&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$arr</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;appId&#39;</span> <span class="o">=&gt;</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;appid&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;package&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;prepay_id=&#39;</span> <span class="o">.</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;prepay_id&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;nonceStr&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nonce_str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;timeStamp&#39;</span> <span class="o">=&gt;</span> <span class="nx">time</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">                    <span class="s1">&#39;signType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MD5&#39;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$sign</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sign</span><span class="p">(</span><span class="nv">$arr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$as</span><span class="p">[</span><span class="s1">&#39;nonceStr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;nonceStr&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$as</span><span class="p">[</span><span class="s1">&#39;package&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;package&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$as</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$sign</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$as</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;timeStamp&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$as</span><span class="p">[</span><span class="s1">&#39;appid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;appId&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nv">$as</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [curlWx 发送curl请求]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $url [url地址]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $xml [xml]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return mixed
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="k">function</span> <span class="nf">curlWx</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$xml</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//header(&#34;Content-type:text/xml&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nv">$ch</span> <span class="o">=</span> <span class="nx">curl_init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">stripos</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="s2">&#34;https://&#34;</span><span class="p">)</span> <span class="o">!==</span> <span class="k">FALSE</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSLVERSION</span><span class="p">,</span> <span class="nx">CURL_SSLVERSION_TLSv1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSLVERSION</span><span class="p">,</span> <span class="nx">CURL_SSLVERSION_TLSv1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_TIMEOUT</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$xml</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="nx">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [sign 签名]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param null $app [不为null开启二次签名]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return string
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="k">function</span> <span class="nf">sign</span><span class="p">(</span><span class="nv">$params</span><span class="p">,</span> <span class="nv">$app</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">ksort</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$params</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$item</span><span class="p">))</span> <span class="nv">$newArr</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">&#39;=&#39;</span> <span class="o">.</span> <span class="nv">$item</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$stringA</span> <span class="o">=</span> <span class="nx">implode</span><span class="p">(</span><span class="s2">&#34;&amp;&#34;</span><span class="p">,</span> <span class="nv">$newArr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$stringSignTemp</span> <span class="o">=</span> <span class="nv">$stringA</span> <span class="o">.</span> <span class="s2">&#34;&amp;key=&#34;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">key</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$sign</span> <span class="o">=</span> <span class="nx">MD5</span><span class="p">(</span><span class="nv">$stringSignTemp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">is_null</span><span class="p">(</span><span class="nv">$app</span><span class="p">))</span> <span class="nv">$sign</span> <span class="o">=</span> <span class="nx">strtoupper</span><span class="p">(</span><span class="nv">$sign</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$sign</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [FromXml xml转数组]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $xml
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return bool|mixed
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">FromXml</span><span class="p">(</span><span class="nv">$xml</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$xml</span><span class="p">)</span> <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">libxml_disable_entity_loader</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="o">@</span><span class="nx">json_decode</span><span class="p">(</span><span class="nx">json_encode</span><span class="p">(</span><span class="nx">simplexml_load_string</span><span class="p">(</span><span class="nv">$xml</span><span class="p">,</span> <span class="s1">&#39;SimpleXMLElement&#39;</span><span class="p">,</span> <span class="nx">LIBXML_NOCDATA</span><span class="p">)),</span> <span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [ToXml 参数组装成xml]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param array $data
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return bool|string
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">ToXml</span><span class="p">(</span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">is_array</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="o">||</span> <span class="nx">count</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$xml</span> <span class="o">=</span> <span class="s2">&#34;&lt;xml&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">is_numeric</span><span class="p">(</span><span class="nv">$val</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$xml</span> <span class="o">.=</span> <span class="s2">&#34;&lt;&#34;</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s2">&#34;&gt;&#34;</span> <span class="o">.</span> <span class="nv">$val</span> <span class="o">.</span> <span class="s2">&#34;&lt;/&#34;</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s2">&#34;&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$xml</span> <span class="o">.=</span> <span class="s2">&#34;&lt;&#34;</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s2">&#34;&gt;&lt;![CDATA[&#34;</span> <span class="o">.</span> <span class="nv">$val</span> <span class="o">.</span> <span class="s2">&#34;]]&gt;&lt;/&#34;</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s2">&#34;&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$xml</span> <span class="o">.=</span> <span class="s2">&#34;&lt;/xml&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$xml</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [rand_code 生成随机字符串]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return bool|string
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="k">function</span> <span class="nf">rand_code</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><span class="p">;</span><span class="c1">//62个字符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nv">$str</span> <span class="o">=</span> <span class="nx">str_shuffle</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$str</span> <span class="o">=</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$str</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * [orderQuery 查询订单]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $order [商户订单号]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @param $money [订单金额]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     * @return bool [false | 成功返回流水号]
+</span></span></span><span class="line"><span class="cl"><span class="sd">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">orderQuery</span><span class="p">(</span><span class="nv">$order</span><span class="p">,</span> <span class="nv">$money</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$url</span> <span class="o">=</span> <span class="s1">&#39;https://api.mch.weixin.qq.com/pay/orderquery&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;appid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appId</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;mch_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mch_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;nonce_str&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nonce_str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;out_trade_no&#39;</span> <span class="o">=&gt;</span> <span class="nv">$order</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sign</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">curlWx</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ToXml</span><span class="p">(</span><span class="nv">$data</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">FromXml</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;FAIL&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">])</span> <span class="k">and</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_code&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SUCCESS&#39;</span> <span class="k">and</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_msg&#39;</span><span class="p">])</span> <span class="k">and</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;return_msg&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;OK&#39;</span> <span class="k">and</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;result_code&#39;</span><span class="p">])</span> <span class="k">and</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;result_code&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SUCCESS&#39;</span> <span class="k">and</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;trade_state&#39;</span><span class="p">])</span> <span class="k">and</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;trade_state&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SUCCESS&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="k">if</span> <span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;total_fee&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="nv">$money</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">return</span> <span class="nv">$res</span><span class="p">[</span><span class="s1">&#39;transaction_id&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询</p>
+<p>native扫码支付后面会添加</p>
+<p>异步主要商户订单号查询 并确定金额是否与数据库中一致以及判断该商户订单号是否处理过（谨记）</p>
+<p>个人觉得验签并不重要 有订单查询以及数据库订单验证就行了</p>
+<p>过多的就不介绍了 源码有注释</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/php/">PHP</a>
+        
+            <a href="/tags/sdk/">SDK</a>
+        
+            <a href="/tags/%E5%BE%AE%E4%BF%A1/">微信</a>
+        
+            <a href="/tags/%E6%94%AF%E4%BB%98/">支付</a>
+        
+            <a href="/tags/%E6%BA%90%E7%A0%81/">源码</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Nov 02, 2019 23:03 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/archives/147.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">微信支付类（含h5支付、APP二次签名）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/497.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">分享自用支付宝支付类</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/745.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">一个漂亮的单文件PHP目录程序</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/648.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">分享自己封装的mysql类 基于pdo</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/archives/502.html">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">微营销系统</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2015 - 
+        
+        2025 轻风云
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">本网站由<img width="50px" src="https://uss.aaayun.cc/upyun.png">提供cdn加速/云存储服务</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

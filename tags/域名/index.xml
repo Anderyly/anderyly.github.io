@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>域名 on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/%E5%9F%9F%E5%90%8D/</link>
+        <description>Recent content in 域名 on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Sun, 22 Jul 2018 22:24:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E5%9F%9F%E5%90%8D/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>轻风云授权系统1.1【更新】</title>
+        <link>http://blog.aaayun.cc/archives/116.html</link>
+        <pubDate>Sun, 22 Jul 2018 22:24:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/116.html</guid>
+        <description>&lt;p&gt;截图预览&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/05/28/993373005566653.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+本次更新解决了关键字，以及模板响应速度慢问题&lt;/p&gt;
+&lt;p&gt;源码介绍：&lt;br&gt;
+1.增加时间限制&lt;br&gt;
+2.增加授权到期短信提醒&lt;br&gt;
+3.重写黑名单系统&lt;br&gt;
+4.增加二次认证&lt;/p&gt;
+&lt;p&gt;注：使用本系统必须开启rewrite模块，否则会使用失败，此授权系统使用AYPHP1.3框架&lt;/p&gt;
+&lt;p&gt;此系统去除了在线打包下载以及QQ扫描验证，采用了短信sdk更适合商业用途，此系统将不定时更新，如发现漏洞请及时反馈&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;p&gt;1.安装需要把auth.sql导入数据库&lt;br&gt;
+2.更改/application/Configs/database.php，这是链接数据库的参数，必须更改&lt;br&gt;
+3.把核心代码复制到你需要授权的系统数据库操作文件&lt;br&gt;
+4.监控&lt;a class=&#34;link&#34; href=&#34;http://%e5%9f%9f%e5%90%8d//Job/index/key=%e5%af%86%e5%8c%99%28%e7%9b%91%e6%8e%a7%e9%80%9f%e5%ba%a6%e6%97%a0%e9%9c%80%e5%a4%9a%e5%bf%ab%29&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://域名//Job/index/key=密匙(监控速度无需多快)&lt;/a&gt;&lt;br&gt;
+密匙在后台更改&lt;/p&gt;
+&lt;p&gt;5.把tool.php放在源码根目录中【非必须】&lt;br&gt;
+(此源码方便放置密匙，如果核心代码密匙路径更改，此源码密匙路径也要更改)&lt;/p&gt;
+&lt;p&gt;6.使用短信sdk需在ay/common/sms/sms100.php更改key以及模板参数，获取key请登入100sms.cn&lt;/p&gt;
+&lt;p&gt;用户授权只需按时缴纳费用和放置密匙即可正常访问网站，&lt;br&gt;
+如授权即将到期本程序将自动下发短信给用户让缴费，&lt;br&gt;
+密匙防止已授权用户将自己的授权源码给他人使用的黑名单系统&lt;/p&gt;
+&lt;p&gt;注意网站运行后/readme目录需删除&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/2018/07/22/408531210286062.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载直通车&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>轻风云授权系统1.0</title>
+        <link>http://blog.aaayun.cc/archives/84.html</link>
+        <pubDate>Tue, 29 May 2018 00:56:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/84.html</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/05/28/993373005566653.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;源码介绍：
+1.增加时间限制&lt;br&gt;
+2.增加授权到期短信提醒&lt;br&gt;
+3.重写黑名单系统&lt;br&gt;
+4.增加二次认证&lt;/p&gt;
+&lt;p&gt;注：使用本系统必须开启rewrite模块，否则会使用失败，此授权系统使用AYPHP1.3框架&lt;/p&gt;
+&lt;p&gt;此系统去除了在线打包下载以及QQ扫描验证，采用了短信sdk更适合商业用途，此系统将不定时更新，如发现漏洞请及时反馈&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;p&gt;1.安装需要把auth.sql导入数据库&lt;br&gt;
+2.更改/application/Configs/database.php，这是链接数据库的参数，必须更改&lt;br&gt;
+3.把核心代码复制到你需要授权的系统数据库操作文件&lt;br&gt;
+4.监控&lt;a class=&#34;link&#34; href=&#34;http://%e5%9f%9f%e5%90%8d//Job/index/key=%e5%af%86%e5%8c%99%28%e7%9b%91%e6%8e%a7%e9%80%9f%e5%ba%a6%e6%97%a0%e9%9c%80%e5%a4%9a%e5%bf%ab%29&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://域名//Job/index/key=密匙(监控速度无需多快)&lt;/a&gt;&lt;br&gt;
+密匙在后台更改&lt;/p&gt;
+&lt;p&gt;5.把tool.php放在源码根目录中【非必须】&lt;br&gt;
+(此源码方便放置密匙，如果核心代码密匙路径更改，此源码密匙路径也要更改)&lt;/p&gt;
+&lt;p&gt;6.使用短信sdk需在ay/common/sms/sms100.php更改key以及模板参数，获取key请登入100sms.cn&lt;/p&gt;
+&lt;p&gt;用户授权只需按时缴纳费用和放置密匙即可正常访问网站，&lt;br&gt;
+如授权即将到期本程序将自动下发短信给用户让缴费，&lt;br&gt;
+密匙防止已授权用户将自己的授权源码给他人使用的黑名单系统&lt;/p&gt;
+&lt;p&gt;注意网站运行后/readme目录需删除&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.aaayun.cc/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载直通车&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>快乐二级域名分发系统v2.1.1</title>
+        <link>http://blog.aaayun.cc/archives/8.html</link>
+        <pubDate>Mon, 19 Mar 2018 04:19:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/8.html</guid>
+        <description>&lt;p&gt;此系统有哪些特点&lt;br&gt;
+目前支持的域名解析平台有&lt;br&gt;
+dnspod&lt;br&gt;
+cloudxns&lt;br&gt;
+aliyun&lt;br&gt;
+dnscom&lt;br&gt;
+dnsla&lt;br&gt;
+多用户、多域名、多平台同时存在&lt;br&gt;
+界面简单、舒适，操作简单&lt;br&gt;
+2.1.1更新说明 (20170606)&lt;br&gt;
+1、增加解析线路的选择&lt;br&gt;
+2.1更新说明 （20170605）&lt;br&gt;
+1、增加首页顶部自定义代码&lt;br&gt;
+2、增加对dns.la解析平台的支持&lt;br&gt;
+2.0版本更新说明 （20170604）&lt;br&gt;
+1、此版本基本上完全重写，暂未提供以前版本升级方案&lt;br&gt;
+2、程序框架使用的ThinkPHP 5.0.7&lt;br&gt;
+3、此版本修复了之前版本的很多BUG问题&lt;br&gt;
+4、新增加用户分组，可以设置每个域名能由那些分组成员解析&lt;br&gt;
+5、新增加用户金币功能，后台可以设置每条解析扣除多少金币，以控制用户解析量&lt;br&gt;
+安装说明&lt;br&gt;
+1、由于此程序是在ThinkPHP框架基础上完成开发，所以安装环境有以下要求&lt;br&gt;
+PHP+MYSQL&lt;br&gt;
+PHP版本》=5.4 * 支持PATH_INFO模式 （PS:如果进后台出现404错误，基本上就是不支PATH_INFO的原因）&lt;br&gt;
+下载地址：&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/klsf/kldns/archive/2.1.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/klsf/kldns/archive/2.1.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/klsf/kldns&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/klsf/kldns&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cc on 轻风云</title>
+        <link>http://blog.aaayun.cc/tags/cc/</link>
+        <description>Recent content in Cc on 轻风云</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>轻风云</copyright>
+        <lastBuildDate>Fri, 30 Apr 2021 00:59:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/cc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>golang实现CC多线程测压</title>
+        <link>http://blog.aaayun.cc/archives/641.html</link>
+        <pubDate>Fri, 30 Apr 2021 00:59:00 +0000</pubDate>
+        
+        <guid>http://blog.aaayun.cc/archives/641.html</guid>
+        <description>&lt;h2 id=&#34;golang实现cc多线程攻击&#34;&gt;golang实现CC多线程攻击
+&lt;/h2&gt;&lt;p&gt;内含exe编译后的文件以及源代码&lt;/p&gt;
+&lt;p&gt;由于需要大量ip 博主特地找了个收费很低的代理网址 一个月最低3.2 (推荐使用每秒更换ip)&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.fanqieip.com/register.html?k=PaH488&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;注册地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;套餐选择 &lt;strong&gt;套餐4-IP不限量&lt;/strong&gt; (推荐使用每秒更换ip)&lt;br&gt;
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/04/1573501722.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;
+套餐购买后请将你的ip加入网址的白名单即可使用&lt;/p&gt;
+&lt;p&gt;使用方式：./main.exe -h
+&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/04/790346996.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/04/343506602.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cc.zip&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
