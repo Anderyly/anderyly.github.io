@@ -891,6 +891,71 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+<script>
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container",
+            ".js-Pjax"
+        ]
+    })
+</script>
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script>
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        lrcType: 3,
+        autoplay:true,
+        audio: [
+            {
+                name: 'solo',
+                artist: 'Clean Bandit',
+                url: 'https://uss.aaayun.cc/music/solo.mp3',
+                cover: 'https://p1.music.126.net/QkQZkw_o9hGIcYQGxQgHAA==/109951163683694959.jpg?param=130y130',
+                lrc: 'https://uss.aaayun.cc/music/solo.lrc',
+            },
+            {
+                name: '危险派对',
+                artist: 'Clean Bandit',
+                url: 'https://uss.aaayun.cc/music/wxpd.mp3',
+                cover: 'https://p2.music.126.net/W8ETRaZt_fS1gJGbifTlew==/109951170480087921.jpg?param=250y250',
+                lrc: 'https://uss.aaayun.cc/music/wxpd.lcr',
+            },
+        ]
+    });
+
+    console.log(ap)
+        </script>
+<script>
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            if (responseText) {
+                
+                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+                
+                let bodyClass = newDom.body.className;
+                document.body.setAttribute("class", bodyClass)
+            }
+
+            
+            pjax._handleResponse(responseText, request, href, options);
+            initCodeMoreBox()
+        } else {
+            
+        }
+    }
+</script>
+<script>
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+    })
+</script>
+
 <style>
     @font-face {
         font-family: '字体名';
@@ -1028,42 +1093,6 @@
     }
 
     initCodeMoreBox();
-</script>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
-<script>
-    var pjax = new Pjax({
-        selectors: [
-            ".main-container",
-            ".js-Pjax"
-        ]
-    })
-</script>
-<script>
-    pjax._handleResponse = pjax.handleResponse;
-    pjax.handleResponse = function(responseText, request, href, options) {
-        if (request.responseText.match("<html")) {
-            if (responseText) {
-                
-                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
-                
-                let bodyClass = newDom.body.className;
-                document.body.setAttribute("class", bodyClass)
-            }
-            
-            pjax._handleResponse(responseText, request, href, options);
-        } else {
-            
-        }
-    }
-</script>
-<script>
-    document.addEventListener('pjax:complete', () => {
-        
-        window.Stack.init();
-    })
 </script><div class="js-Pjax">
         <script>
             (function () {
@@ -1144,29 +1173,12 @@
             })
         </script>
 
-        
-        <div id="aplayer"></div>
-        <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-
         <script>
-            const ap = new APlayer({
-                container: document.getElementById('aplayer'),
-                fixed: true,
-                lrcType: 3,
-                audio: [
-                    {
-                        name: 'name', 
-                        artist: 'artist', 
-                        url: 'url.mp3', 
-                        cover: 'cover.jpg', 
-                        lrc: 'lrc.lrc', 
-                    },
-                ]
-            });
 
             
 
             window.onbeforeunload = () => {
+                console.log("==================================")
                 
                 const playInfo = {
                     index: ap.list.index,
