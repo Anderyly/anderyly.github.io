@@ -1,18 +1,172 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前期准备： 首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。\n本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。\n服务端(Linux)搭建步骤 下载服务端的frp\n使用tar命令解压下载成功的压缩包文件:\n```shell tar -zxvf frp_0.45.0_linux_arm64.tar.gz\n1 2 3 4 5 3. 使用cd命令进入解压出来的文件夹: ```shell mv frp_0.45.0_linux_arm64 frp &amp;&amp; cd frp 修改服务器配置文件(frps.ini): ```shell vim fros.ini\n编辑 [common] bind_port = 7000 vhost_http_port = 88 vhost_https_port = 89 #与客户端通信的令牌 token = 57854 dashboard_user = admin #dashboard 密码 dashboard_pwd = admin #dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500 dashboard_port = 7500\n1 2 3 4 5 5. 启动frp服务端，让frp在后台运行: ```shell nohup ./frps -c frps.ini &amp; &gt; frp.log 这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前期准备： 首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。\n本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。\n服务端(Linux)搭建步骤 下载服务端的frp\n使用tar命令解压下载成功的压缩包文件:\n1 tar -zxvf frp_0.45.0_linux_arm64.tar.gz 使用cd命令进入解压出来的文件夹: 1 mv frp_0.45.0_linux_arm64 frp &amp;&amp; cd frp 修改服务器配置文件(frps.ini): 1 2 3 4 5 6 7 8 9 10 11 12 13 vim fros.ini # 编辑 [common] bind_port = 7000 vhost_http_port = 88 vhost_https_port = 89 #与客户端通信的令牌 token = 57854 dashboard_user = admin #dashboard 密码 dashboard_pwd = admin #dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500 dashboard_port = 7500 启动frp服务端，让frp在后台运行: 1 nohup ./frps -c frps.ini &amp; &gt; frp.log 这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。\n">
 <title>最好用的完全开源的内网穿透工具frps</title>
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/947.html'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="最好用的完全开源的内网穿透工具frps">
-<meta property='og:description' content="前期准备： 首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。\n本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。\n服务端(Linux)搭建步骤 下载服务端的frp\n使用tar命令解压下载成功的压缩包文件:\n```shell tar -zxvf frp_0.45.0_linux_arm64.tar.gz\n1 2 3 4 5 3. 使用cd命令进入解压出来的文件夹: ```shell mv frp_0.45.0_linux_arm64 frp &amp;&amp; cd frp 修改服务器配置文件(frps.ini): ```shell vim fros.ini\n编辑 [common] bind_port = 7000 vhost_http_port = 88 vhost_https_port = 89 #与客户端通信的令牌 token = 57854 dashboard_user = admin #dashboard 密码 dashboard_pwd = admin #dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500 dashboard_port = 7500\n1 2 3 4 5 5. 启动frp服务端，让frp在后台运行: ```shell nohup ./frps -c frps.ini &amp; &gt; frp.log 这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。\n">
+<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="最好用的完全开源的内网穿透工具frps">
+<meta property='og:description' content="前期准备： 首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。\n本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。\n服务端(Linux)搭建步骤 下载服务端的frp\n使用tar命令解压下载成功的压缩包文件:\n1 tar -zxvf frp_0.45.0_linux_arm64.tar.gz 使用cd命令进入解压出来的文件夹: 1 mv frp_0.45.0_linux_arm64 frp &amp;&amp; cd frp 修改服务器配置文件(frps.ini): 1 2 3 4 5 6 7 8 9 10 11 12 13 vim fros.ini # 编辑 [common] bind_port = 7000 vhost_http_port = 88 vhost_https_port = 89 #与客户端通信的令牌 token = 57854 dashboard_user = admin #dashboard 密码 dashboard_pwd = admin #dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500 dashboard_port = 7500 启动frp服务端，让frp在后台运行: 1 nohup ./frps -c frps.ini &amp; &gt; frp.log 这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/947.html'>
 <meta property='og:site_name' content='轻风云'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='frp' /><meta property='article:tag' content='内网穿透' /><meta property='article:published_time' content='2022-12-02T15:43:55&#43;00:00'/><meta property='article:modified_time' content='2022-12-02T15:43:55&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='frp' /><meta property='article:tag' content='内网穿透' /><meta property='article:published_time' content='2022-12-02T15:43:55&#43;00:00'/><meta property='article:modified_time' content='2025-08-15T17:12:30&#43;08:00'/>
 <meta name="twitter:title" content="最好用的完全开源的内网穿透工具frps">
-<meta name="twitter:description" content="前期准备： 首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。\n本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。\n服务端(Linux)搭建步骤 下载服务端的frp\n使用tar命令解压下载成功的压缩包文件:\n```shell tar -zxvf frp_0.45.0_linux_arm64.tar.gz\n1 2 3 4 5 3. 使用cd命令进入解压出来的文件夹: ```shell mv frp_0.45.0_linux_arm64 frp &amp;&amp; cd frp 修改服务器配置文件(frps.ini): ```shell vim fros.ini\n编辑 [common] bind_port = 7000 vhost_http_port = 88 vhost_https_port = 89 #与客户端通信的令牌 token = 57854 dashboard_user = admin #dashboard 密码 dashboard_pwd = admin #dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500 dashboard_port = 7500\n1 2 3 4 5 5. 启动frp服务端，让frp在后台运行: ```shell nohup ./frps -c frps.ini &amp; &gt; frp.log 这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。\n">
+<meta name="twitter:description" content="前期准备： 首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。\n本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。\n服务端(Linux)搭建步骤 下载服务端的frp\n使用tar命令解压下载成功的压缩包文件:\n1 tar -zxvf frp_0.45.0_linux_arm64.tar.gz 使用cd命令进入解压出来的文件夹: 1 mv frp_0.45.0_linux_arm64 frp &amp;&amp; cd frp 修改服务器配置文件(frps.ini): 1 2 3 4 5 6 7 8 9 10 11 12 13 vim fros.ini # 编辑 [common] bind_port = 7000 vhost_http_port = 88 vhost_https_port = 89 #与客户端通信的令牌 token = 57854 dashboard_user = admin #dashboard 密码 dashboard_pwd = admin #dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500 dashboard_port = 7500 启动frp服务端，让frp在后台运行: 1 nohup ./frps -c frps.ini &amp; &gt; frp.log 这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。\n"><div class="loading">
+    <div class="sharingon">
+        <div class="ring">
+            <div class="to"></div>
+            <div class="to"></div>
+            <div class="to"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .loading {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        zoom: 3.0;
+        background-color: #f5f5fa;
+    }
+
+    .animated-stop {
+        animation-play-state: paused !important;
+    }
+
+    .scaleAndFadeout {
+        animation: scaleAndFadeOut 1.5s forwards;
+    }
+
+     
+    @keyframes scaleAndFadeOut {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+     
+    .sharingon {
+        position: relative;
+        width: 6em;
+        height: 6em;
+        background-color: red;
+        border: 6px solid black;
+        animation: rot 1s ease-in-out infinite;
+    }
+
+    .ring {
+        position: absolute;
+        content: "";
+        left: 50%;
+        top: 50%;
+        width: 3.5em;
+        height: 3.5em;
+        border: 4px solid rgb(110, 13 ,13 ,0.5);
+        transform: translate(-50%,-50%);
+    }
+
+    .sharingon, .ring, .to,.circle {
+        border-radius: 50%;
+    }
+
+    .to,.circle {
+        position: absolute;
+        content: "";
+        width: 0.9em;
+        height: 0.9em;
+        background-color: black;
+    }
+
+    .to:nth-child(1) {
+        top: -0.5em;
+        left: 50%;
+        transform: translate(-40%);
+    }
+
+    .to::before {
+        content: "";
+        position: absolute;
+        top: -0.5em;
+        right: -0.2em;
+        width: 1.1em;
+        height: 0.9em;
+        box-sizing: border-box;
+        border-left: 16px solid black;
+        border-radius: 100% 0 0;
+    }
+
+    .to:nth-child(2) {
+        bottom: 0.5em;
+        left: -0.35em;
+        transform: rotate(-120deg);
+    }
+
+    .to:nth-child(3) {
+        bottom: 0.5em;
+        right: -0.35em;
+        transform: rotate(120deg);
+    }
+
+    .circle {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0 20px 1px;
+        width: 1em;
+        height: 1em;
+    }
+
+    @keyframes rot {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+    function initLoading() {
+        let loading = document.querySelector(".loading");
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            
+            loadFinish();
+            
+            setTimeout(() => {
+                loading.style.display = "none";
+            }, 1500)
+        });
+    }
+
+    function loadFinish() {
+        
+        let sharingon= document.querySelector(".sharingon");
+        sharingon.classList.add("animated-stop")
+        
+        let loading = document.querySelector(".loading");
+        loading.classList.add("scaleAndFadeout")
+    }
+
+    initLoading();
+</script>
+
     </head>
     <body class="
     article-page
@@ -246,9 +400,6 @@
   <ol>
     <li><a href="#前期准备">前期准备：</a></li>
     <li><a href="#服务端linux搭建步骤">服务端(Linux)搭建步骤</a></li>
-  </ol>
-
-  <ol>
     <li><a href="#客户端搭建步骤">客户端搭建步骤</a></li>
   </ol>
 </nav>
@@ -286,8 +437,10 @@
     
     
     
+
     
     <footer class="article-time">
+
         
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -303,7 +456,19 @@
             </div>
         
 
-        
+        <div class="article-lastmod">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+            <time>
+                Aug 15, 2025 17:12 &#43;0800
+            </time>
+        </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -343,57 +508,69 @@
 <p>使用tar命令解压下载成功的压缩包文件:</p>
 </li>
 </ol>
-<pre><code>```shell
-</code></pre>
-<p>tar -zxvf frp_0.45.0_linux_arm64.tar.gz</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  3. 使用cd命令进入解压出来的文件夹:
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    ```shell
-</span></span><span class="line"><span class="cl">mv frp_0.45.0_linux_arm64 frp &amp;&amp; cd frp
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar -zxvf frp_0.45.0_linux_arm64.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>使用cd命令进入解压出来的文件夹:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mv frp_0.45.0_linux_arm64 frp <span class="o">&amp;&amp;</span> <span class="nb">cd</span> frp
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>修改服务器配置文件(frps.ini):</li>
 </ol>
-<pre><code>```shell
-</code></pre>
-<p>vim fros.ini</p>
-<h1 id="编辑">编辑
-</h1><p>[common]
-bind_port = 7000
-vhost_http_port = 88
-vhost_https_port = 89
-#与客户端通信的令牌
-token = 57854
-dashboard_user  = admin
-#dashboard 密码
-dashboard_pwd = admin
-#dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500
-dashboard_port = 7500</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim fros.ini
+</span></span><span class="line"><span class="cl"><span class="c1"># 编辑</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>common<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">bind_port</span> <span class="o">=</span> <span class="m">7000</span>
+</span></span><span class="line"><span class="cl"><span class="nv">vhost_http_port</span> <span class="o">=</span> <span class="m">88</span>
+</span></span><span class="line"><span class="cl"><span class="nv">vhost_https_port</span> <span class="o">=</span> <span class="m">89</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#与客户端通信的令牌</span>
+</span></span><span class="line"><span class="cl"><span class="nv">token</span> <span class="o">=</span> <span class="m">57854</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dashboard_user</span>  <span class="o">=</span> admin
+</span></span><span class="line"><span class="cl"><span class="c1">#dashboard 密码</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dashboard_pwd</span> <span class="o">=</span> admin
+</span></span><span class="line"><span class="cl"><span class="c1">#dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dashboard_port</span> <span class="o">=</span> <span class="m">7500</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>启动frp服务端，让frp在后台运行:</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  5. 启动frp服务端，让frp在后台运行:
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    ```shell
-</span></span><span class="line"><span class="cl">nohup ./frps -c frps.ini &amp;  &gt; frp.log
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nohup ./frps -c frps.ini <span class="p">&amp;</span>  &gt; frp.log
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。</p>
@@ -409,59 +586,92 @@ dashboard_port = 7500</p>
 <p>编辑frpc.ini文件，内容如下：</p>
 </li>
 </ol>
-<pre><code>```ini
-</code></pre>
-<p>[common]
-server_addr = x.x.x.x  #公网ip
-server_port = 7000
-#与服务端通信的令牌
-token = 57854
-[mysql]
-type = tcp
-#local_ip = 127.0.0.1
-local_port = 3306  #本地mysql端口
-remote_port = 3366 #印射公网端口
-#连接Windows远程桌面的
-[rdp]
-type = tcp
-local_ip = 127.0.0.1
-local_port = 3389
-remote_port = 3389
-custom_domains = x.x.x.x  #公网ip或域名
-[web01]
-type = http
-local_ip = 127.0.0.1
-local_port = 80
-locations  = /
-custom_domains =  x.x.x.x  #公网ip或域名
-[web02]
-type = http
-local_ip =  127.0.0.1
-local_port = 8090
-locations  = /cardmanager
-custom_domains =  x.x.x.x  #公网ip或域名
-#通过tcp来连接svn
-[svn]
-type = tcp
-local_ip =127.0.0.1
-local_port = 81
-remote_port = 9000</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[common]</span>
+</span></span><span class="line"><span class="cl"><span class="na">server_addr</span> <span class="o">=</span> <span class="s">x.x.x.x  #公网ip</span>
+</span></span><span class="line"><span class="cl"><span class="na">server_port</span> <span class="o">=</span> <span class="s">7000</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#与服务端通信的令牌</span>
+</span></span><span class="line"><span class="cl"><span class="na">token</span> <span class="o">=</span> <span class="s">57854</span>
+</span></span><span class="line"><span class="cl"><span class="k">[mysql]</span>
+</span></span><span class="line"><span class="cl"><span class="na">type</span> <span class="o">=</span> <span class="s">tcp</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#local_ip = 127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_port</span> <span class="o">=</span> <span class="s">3306  #本地mysql端口</span>
+</span></span><span class="line"><span class="cl"><span class="na">remote_port</span> <span class="o">=</span> <span class="s">3366 #印射公网端口</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#连接Windows远程桌面的</span>
+</span></span><span class="line"><span class="cl"><span class="k">[rdp]</span>
+</span></span><span class="line"><span class="cl"><span class="na">type</span> <span class="o">=</span> <span class="s">tcp</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_ip</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_port</span> <span class="o">=</span> <span class="s">3389</span>
+</span></span><span class="line"><span class="cl"><span class="na">remote_port</span> <span class="o">=</span> <span class="s">3389</span>
+</span></span><span class="line"><span class="cl"><span class="na">custom_domains</span> <span class="o">=</span> <span class="s">x.x.x.x  #公网ip或域名</span>
+</span></span><span class="line"><span class="cl"><span class="k">[web01]</span>
+</span></span><span class="line"><span class="cl"><span class="na">type</span> <span class="o">=</span> <span class="s">http</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_ip</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_port</span> <span class="o">=</span> <span class="s">80</span>
+</span></span><span class="line"><span class="cl"><span class="na">locations</span>  <span class="o">=</span> <span class="s">/</span>
+</span></span><span class="line"><span class="cl"><span class="na">custom_domains</span> <span class="o">=</span>  <span class="s">x.x.x.x  #公网ip或域名</span>
+</span></span><span class="line"><span class="cl"><span class="k">[web02]</span>
+</span></span><span class="line"><span class="cl"><span class="na">type</span> <span class="o">=</span> <span class="s">http</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_ip</span> <span class="o">=</span>  <span class="s">127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_port</span> <span class="o">=</span> <span class="s">8090</span>
+</span></span><span class="line"><span class="cl"><span class="na">locations</span>  <span class="o">=</span> <span class="s">/cardmanager</span>
+</span></span><span class="line"><span class="cl"><span class="na">custom_domains</span> <span class="o">=</span>  <span class="s">x.x.x.x  #公网ip或域名</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#通过tcp来连接svn</span>
+</span></span><span class="line"><span class="cl"><span class="k">[svn]</span>
+</span></span><span class="line"><span class="cl"><span class="na">type</span> <span class="o">=</span> <span class="s">tcp</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_ip</span> <span class="o">=</span><span class="s">127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="na">local_port</span> <span class="o">=</span> <span class="s">81</span>
+</span></span><span class="line"><span class="cl"><span class="na">remote_port</span> <span class="o">=</span> <span class="s">9000</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>启动frp客户端：<br>
+在目录下打开cmd命令窗口，执行如下命令：</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  4. 启动frp客户端：  
-</span></span><span class="line"><span class="cl">    在目录下打开cmd命令窗口，执行如下命令：
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    ```cmd
-</span></span><span class="line"><span class="cl">frpc.exe -c frpc.ini
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">frpc.exe -c frpc.ini
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>到此，客户端的搭建已经完成。</p>
@@ -502,7 +712,7 @@ remote_port = 9000</p>
 
 
         <span>
-            最后更新于 Dec 02, 2022 15:43 UTC
+            最后更新于 Aug 15, 2025 17:12 &#43;0800
         </span>
     </section></footer>
 
@@ -591,6 +801,59 @@ remote_port = 9000</p>
      
     
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="Anderyly/anderyly.github.io"
+    data-repo-id="R_kgDOPeUMeA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPeUMeM4CuNM_"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+<div class="comment"></div>
+
+
     
 
     <footer class="site-footer">
@@ -695,7 +958,7 @@ remote_port = 9000</p>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.eaf1211e4c7db355f37ceea53df13700e1b77fbcc3cfe8c1c1f69e4468a752e1.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -707,6 +970,312 @@ remote_port = 9000</p>
         document.head.appendChild(customFont);
     }());
 </script>
+<style>
+    @font-face {
+        font-family: '字体名';
+        src: url(http://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
+    }
+
+    :root {
+        --base-font-family: '字体名';
+        --code-font-family: '字体名';
+    }
+</style>
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol {
+            display: none;
+        }
+        .open {
+            display: block;
+        }
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+                openUl.forEach((ul) => {
+                    ul.classList.remove("open")
+                })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+    function initCodeMoreBox() {
+        let codeBlocks = document.querySelectorAll(".highlight");
+        if (!codeBlocks) {
+            return;
+        }
+        codeBlocks.forEach(codeBlock => {
+            
+            if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+                return;
+            }
+            
+            
+            let codeMoreBox = document.createElement('div');
+            codeMoreBox.classList.add('code-more-box');
+            
+            let codeMoreBtn = document.createElement('span');
+            codeMoreBtn.classList.add('code-more-btn');
+            codeMoreBtn.addEventListener('click', () => {
+                codeBlock.classList.add('code-show');
+                codeMoreBox.style.display = 'none';
+                
+                window.dispatchEvent(new Event('resize'))
+            })
+            
+            let img = document.createElement('img');
+            img.classList.add('code-more-img');
+            img.src = "http://blog.aaayun.cc/icons/codeMore.png"
+            
+            codeMoreBtn.appendChild(img);
+            codeMoreBox.appendChild(codeMoreBtn);
+            codeBlock.appendChild(codeMoreBox)
+        })
+    }
+
+    initCodeMoreBox();
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+<script>
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container",
+            ".js-Pjax"
+        ]
+    })
+</script>
+<script>
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            if (responseText) {
+                
+                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+                
+                let bodyClass = newDom.body.className;
+                document.body.setAttribute("class", bodyClass)
+            }
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    }
+</script>
+<script>
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+    })
+</script><div class="js-Pjax">
+        <script>
+            (function () {
+                
+                let comment = document.querySelector(".comment");
+                if (!comment) {
+                    return
+                }
+                let script = document.createElement('script');
+                
+                script.setAttribute('src', 'https://giscus.app/client.js');
+                script.setAttribute('data-repo', 'Anderyly\/anderyly.github.io');
+                
+                script.async = true;
+                
+                document.querySelector('.site-footer').before(script)
+            })(document);
+        </script>
+    <div><script>
+            async function renderKaTeX() {
+                
+                let katex = document.querySelector(".math-katex");
+                if (!katex) {
+                    return;
+                }
+                
+                while (typeof renderMathInElement !== 'function') {
+                    await delay(500);
+                }
+                
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+
+            
+
+            function delay(time) {
+                return new Promise(resolve => {
+                    setTimeout(resolve, time)
+                })
+            }
+
+            document.addEventListener('pjax:complete', () => {
+                renderKaTeX();
+            })
+        </script>
+
+
+
+        
+        
+        <script src=http://blog.aaayun.cc/js/topbar.min.js></script>
+        
+        <script>
+            
+            topbar.config({
+                barColors: {
+                    '0': 'rgba(255,  255, 255, 1)', 
+                    '1.0': 'rgba(0, 149, 234,  1)' 
+                }
+            })
+
+            document.addEventListener('pjax:send', () => {
+                
+                topbar.show();
+            })
+
+            document.addEventListener('pjax:complete', () => {
+                
+                topbar.hide();
+            })
+        </script>
+
+        
+        <div id="aplayer"></div>
+        <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+        <script>
+            const ap = new APlayer({
+                container: document.getElementById('aplayer'),
+                fixed: true,
+                lrcType: 3,
+                audio: [
+                    {
+                        name: 'name', 
+                        artist: 'artist', 
+                        url: 'url.mp3', 
+                        cover: 'cover.jpg', 
+                        lrc: 'lrc.lrc', 
+                    },
+                ]
+            });
+
+            
+
+            window.onbeforeunload = () => {
+                
+                const playInfo = {
+                    index: ap.list.index,
+                    currentTime: ap.audio.currentTime,
+                    paused: ap.paused
+                };
+                localStorage.setItem("playInfo", JSON.stringify(playInfo));
+            };
+
+            
+
+            window.onload = () => {
+                
+                const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+                if (!playInfo) {
+                    return;
+                }
+                
+                ap.list.switch(playInfo.index);
+                
+                setTimeout(() => {
+                    
+                    ap.seek(playInfo.currentTime);
+                    
+                    if (!playInfo.paused) {
+                        ap.play()
+                    }
+                }, 500);
+            };
+        </script>
 
     </body>
 </html>

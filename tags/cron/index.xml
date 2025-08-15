@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Sat, 10 Jul 2021 01:42:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/cron/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/cron/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>golang cron v3 定时任务实现</title>
         <link>http://blog.aaayun.cc/archives/709.html</link>
         <pubDate>Sat, 10 Jul 2021 01:42:00 +0000</pubDate>

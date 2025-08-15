@@ -6,13 +6,167 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/796.html'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="VFM 3.7.5 源码 – 一个极简的 PHP 私人云盘！">
+<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="VFM 3.7.5 源码 – 一个极简的 PHP 私人云盘！">
 <meta property='og:description' content=" 博主在网上找了很多免费版本只有这款是最新的\n现在的个人数据越来越多，数据交互变得频繁。每当有需要临时存储的数据而身边又没有合适的存储介质，或者家里或工作中需要下载的文件，都是非常不方便的。这时候你就需要使用通用网盘了。有很多服务提供商提供云存储，但一般你需要支付空间或会员制度。免费云盘速度慢，内容有限。也有很多私有的网盘程序，但是比较臃肿，对服务器的要求也比较高。那么为什么不用VFM来搭建一个轻量级简单的私有云盘呢？\nVFM是外国个人团队的付费作品。作为私有云盘，其功能可以涵盖方方面面。存储空间的容量和下载速度只取决于你家的建筑环境(VPS)。\n开始安装 环境需要 硬件配置不低于单核 512M 内存及 50M 磁盘空间。 系统推荐使用 Centos。 WEB 端使用 Apache 与 PHP（PHP 需要高于 5.5 的版本）。 VFM 源码。 配置 VFM 系统及环境都配置好之后将 VFM 上传至 WEB 根目录，并确保下图红框内文件是 755 权限（如果权限不足会导致无法更改配置及创建文件夹和添加用户）。 打开预设的 WEB 地址并输入账户密码进入后台设置，默认账户 admin 密码 password。 进入后台之后可以将语言更改为中文并自定义站点名称，也可以根据需要设置伪静态（漂亮的链接）或者直链支持。 权限部分可以根据自己的需求进行更改，比如你有多用户需求就需要设置 admin 账户的权限，有远程上传的需求就需要开启功能并设置上传文件后缀限制。 这里是一些基本设置，是否开启注册（开启注册需要同时启用下方的电邮选项并填入信息）及文件分享设置。 伪静态设置 如果你用的是apache则不需要设置\nlocation / { index index.php; if (!-e $request_filename) { rewrite /download/(.*)/sh/(.*)/share/(.*) /vfm-admin/vfm-downloader.php?q=$1&amp;sh=$2&amp;share=$3 last; } rewrite /download/(.*)/h/(.*) /vfm-admin/vfm-downloader.php?q=$1&amp;h=$2 last; rewrite /download/zip/(.*)/n/(.*) /vfm-admin/vfm-downloader.php?zip=$1&amp;n=$2 last; } location /uploads/ { deny all; } location /vfm-admin/_content1/ { deny all; } location /vfm-admin/tmp/ { deny all; } VFM 详细特征 文件和文件夹管理 文件夹树导航 重命名文件和文件夹 按名称，日期和大小排序的项目 分页 下载文件夹 集体行动 下载多个文件为.zip 档案 删除文件和文件夹 通过目录移动文件 通过目录复制文件 服务器端通过 Ajax 处理列表 用户 具有自定义权限的多个角色 为每个用户分配一个或多个特定目录 每个用户可选的最大可用空间 用户注册（可选） 用户面板 个人资料图片和默认头像 找回密码 用户之间上传通知 向新用户发送电子邮件通知 上传 上传 BIG 文件 远程上传器 暂停 / 恢复 拖放上传器 * 多个文件上传 * 上传进度 * 文件共享 电子邮件表格 链接到期时间 可选的密码保护链接 媒体 快速图像预览 * 内联缩略图 音频播放器 视频播放器 搜索 全球搜索 快速搜索模块 归档地图导航 安全 IP 黑名单 / 白名单 用于登录和共享链接的可选 CAPTCHA 安全代码 预防的热门链接 * 统计 每日 / 每周 / 每月报告 日期范围的趋势图表 将日志导出为.csv 任何活动的可选电子邮件通知 国际 多语言（包括 16+） RTL 支持 翻译编辑 样式 包括 25 多张皮肤 可定制的徽标，标题，说明 可定制的警报 自定义电子邮件 HTML 模板 自定义管理面板配色方案 下载地址\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/796.html'>
 <meta property='og:site_name' content='轻风云'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='vfm' /><meta property='article:tag' content='免费' /><meta property='article:published_time' content='2022-06-10T18:02:00&#43;00:00'/><meta property='article:modified_time' content='2022-06-10T18:02:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='vfm' /><meta property='article:tag' content='免费' /><meta property='article:published_time' content='2022-06-10T18:02:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-15T15:01:54&#43;08:00'/>
 <meta name="twitter:title" content="VFM 3.7.5 源码 – 一个极简的 PHP 私人云盘！">
-<meta name="twitter:description" content=" 博主在网上找了很多免费版本只有这款是最新的\n现在的个人数据越来越多，数据交互变得频繁。每当有需要临时存储的数据而身边又没有合适的存储介质，或者家里或工作中需要下载的文件，都是非常不方便的。这时候你就需要使用通用网盘了。有很多服务提供商提供云存储，但一般你需要支付空间或会员制度。免费云盘速度慢，内容有限。也有很多私有的网盘程序，但是比较臃肿，对服务器的要求也比较高。那么为什么不用VFM来搭建一个轻量级简单的私有云盘呢？\nVFM是外国个人团队的付费作品。作为私有云盘，其功能可以涵盖方方面面。存储空间的容量和下载速度只取决于你家的建筑环境(VPS)。\n开始安装 环境需要 硬件配置不低于单核 512M 内存及 50M 磁盘空间。 系统推荐使用 Centos。 WEB 端使用 Apache 与 PHP（PHP 需要高于 5.5 的版本）。 VFM 源码。 配置 VFM 系统及环境都配置好之后将 VFM 上传至 WEB 根目录，并确保下图红框内文件是 755 权限（如果权限不足会导致无法更改配置及创建文件夹和添加用户）。 打开预设的 WEB 地址并输入账户密码进入后台设置，默认账户 admin 密码 password。 进入后台之后可以将语言更改为中文并自定义站点名称，也可以根据需要设置伪静态（漂亮的链接）或者直链支持。 权限部分可以根据自己的需求进行更改，比如你有多用户需求就需要设置 admin 账户的权限，有远程上传的需求就需要开启功能并设置上传文件后缀限制。 这里是一些基本设置，是否开启注册（开启注册需要同时启用下方的电邮选项并填入信息）及文件分享设置。 伪静态设置 如果你用的是apache则不需要设置\nlocation / { index index.php; if (!-e $request_filename) { rewrite /download/(.*)/sh/(.*)/share/(.*) /vfm-admin/vfm-downloader.php?q=$1&amp;sh=$2&amp;share=$3 last; } rewrite /download/(.*)/h/(.*) /vfm-admin/vfm-downloader.php?q=$1&amp;h=$2 last; rewrite /download/zip/(.*)/n/(.*) /vfm-admin/vfm-downloader.php?zip=$1&amp;n=$2 last; } location /uploads/ { deny all; } location /vfm-admin/_content1/ { deny all; } location /vfm-admin/tmp/ { deny all; } VFM 详细特征 文件和文件夹管理 文件夹树导航 重命名文件和文件夹 按名称，日期和大小排序的项目 分页 下载文件夹 集体行动 下载多个文件为.zip 档案 删除文件和文件夹 通过目录移动文件 通过目录复制文件 服务器端通过 Ajax 处理列表 用户 具有自定义权限的多个角色 为每个用户分配一个或多个特定目录 每个用户可选的最大可用空间 用户注册（可选） 用户面板 个人资料图片和默认头像 找回密码 用户之间上传通知 向新用户发送电子邮件通知 上传 上传 BIG 文件 远程上传器 暂停 / 恢复 拖放上传器 * 多个文件上传 * 上传进度 * 文件共享 电子邮件表格 链接到期时间 可选的密码保护链接 媒体 快速图像预览 * 内联缩略图 音频播放器 视频播放器 搜索 全球搜索 快速搜索模块 归档地图导航 安全 IP 黑名单 / 白名单 用于登录和共享链接的可选 CAPTCHA 安全代码 预防的热门链接 * 统计 每日 / 每周 / 每月报告 日期范围的趋势图表 将日志导出为.csv 任何活动的可选电子邮件通知 国际 多语言（包括 16+） RTL 支持 翻译编辑 样式 包括 25 多张皮肤 可定制的徽标，标题，说明 可定制的警报 自定义电子邮件 HTML 模板 自定义管理面板配色方案 下载地址\n">
+<meta name="twitter:description" content=" 博主在网上找了很多免费版本只有这款是最新的\n现在的个人数据越来越多，数据交互变得频繁。每当有需要临时存储的数据而身边又没有合适的存储介质，或者家里或工作中需要下载的文件，都是非常不方便的。这时候你就需要使用通用网盘了。有很多服务提供商提供云存储，但一般你需要支付空间或会员制度。免费云盘速度慢，内容有限。也有很多私有的网盘程序，但是比较臃肿，对服务器的要求也比较高。那么为什么不用VFM来搭建一个轻量级简单的私有云盘呢？\nVFM是外国个人团队的付费作品。作为私有云盘，其功能可以涵盖方方面面。存储空间的容量和下载速度只取决于你家的建筑环境(VPS)。\n开始安装 环境需要 硬件配置不低于单核 512M 内存及 50M 磁盘空间。 系统推荐使用 Centos。 WEB 端使用 Apache 与 PHP（PHP 需要高于 5.5 的版本）。 VFM 源码。 配置 VFM 系统及环境都配置好之后将 VFM 上传至 WEB 根目录，并确保下图红框内文件是 755 权限（如果权限不足会导致无法更改配置及创建文件夹和添加用户）。 打开预设的 WEB 地址并输入账户密码进入后台设置，默认账户 admin 密码 password。 进入后台之后可以将语言更改为中文并自定义站点名称，也可以根据需要设置伪静态（漂亮的链接）或者直链支持。 权限部分可以根据自己的需求进行更改，比如你有多用户需求就需要设置 admin 账户的权限，有远程上传的需求就需要开启功能并设置上传文件后缀限制。 这里是一些基本设置，是否开启注册（开启注册需要同时启用下方的电邮选项并填入信息）及文件分享设置。 伪静态设置 如果你用的是apache则不需要设置\nlocation / { index index.php; if (!-e $request_filename) { rewrite /download/(.*)/sh/(.*)/share/(.*) /vfm-admin/vfm-downloader.php?q=$1&amp;sh=$2&amp;share=$3 last; } rewrite /download/(.*)/h/(.*) /vfm-admin/vfm-downloader.php?q=$1&amp;h=$2 last; rewrite /download/zip/(.*)/n/(.*) /vfm-admin/vfm-downloader.php?zip=$1&amp;n=$2 last; } location /uploads/ { deny all; } location /vfm-admin/_content1/ { deny all; } location /vfm-admin/tmp/ { deny all; } VFM 详细特征 文件和文件夹管理 文件夹树导航 重命名文件和文件夹 按名称，日期和大小排序的项目 分页 下载文件夹 集体行动 下载多个文件为.zip 档案 删除文件和文件夹 通过目录移动文件 通过目录复制文件 服务器端通过 Ajax 处理列表 用户 具有自定义权限的多个角色 为每个用户分配一个或多个特定目录 每个用户可选的最大可用空间 用户注册（可选） 用户面板 个人资料图片和默认头像 找回密码 用户之间上传通知 向新用户发送电子邮件通知 上传 上传 BIG 文件 远程上传器 暂停 / 恢复 拖放上传器 * 多个文件上传 * 上传进度 * 文件共享 电子邮件表格 链接到期时间 可选的密码保护链接 媒体 快速图像预览 * 内联缩略图 音频播放器 视频播放器 搜索 全球搜索 快速搜索模块 归档地图导航 安全 IP 黑名单 / 白名单 用于登录和共享链接的可选 CAPTCHA 安全代码 预防的热门链接 * 统计 每日 / 每周 / 每月报告 日期范围的趋势图表 将日志导出为.csv 任何活动的可选电子邮件通知 国际 多语言（包括 16+） RTL 支持 翻译编辑 样式 包括 25 多张皮肤 可定制的徽标，标题，说明 可定制的警报 自定义电子邮件 HTML 模板 自定义管理面板配色方案 下载地址\n"><div class="loading">
+    <div class="sharingon">
+        <div class="ring">
+            <div class="to"></div>
+            <div class="to"></div>
+            <div class="to"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .loading {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        zoom: 3.0;
+        background-color: #f5f5fa;
+    }
+
+    .animated-stop {
+        animation-play-state: paused !important;
+    }
+
+    .scaleAndFadeout {
+        animation: scaleAndFadeOut 1.5s forwards;
+    }
+
+     
+    @keyframes scaleAndFadeOut {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+     
+    .sharingon {
+        position: relative;
+        width: 6em;
+        height: 6em;
+        background-color: red;
+        border: 6px solid black;
+        animation: rot 1s ease-in-out infinite;
+    }
+
+    .ring {
+        position: absolute;
+        content: "";
+        left: 50%;
+        top: 50%;
+        width: 3.5em;
+        height: 3.5em;
+        border: 4px solid rgb(110, 13 ,13 ,0.5);
+        transform: translate(-50%,-50%);
+    }
+
+    .sharingon, .ring, .to,.circle {
+        border-radius: 50%;
+    }
+
+    .to,.circle {
+        position: absolute;
+        content: "";
+        width: 0.9em;
+        height: 0.9em;
+        background-color: black;
+    }
+
+    .to:nth-child(1) {
+        top: -0.5em;
+        left: 50%;
+        transform: translate(-40%);
+    }
+
+    .to::before {
+        content: "";
+        position: absolute;
+        top: -0.5em;
+        right: -0.2em;
+        width: 1.1em;
+        height: 0.9em;
+        box-sizing: border-box;
+        border-left: 16px solid black;
+        border-radius: 100% 0 0;
+    }
+
+    .to:nth-child(2) {
+        bottom: 0.5em;
+        left: -0.35em;
+        transform: rotate(-120deg);
+    }
+
+    .to:nth-child(3) {
+        bottom: 0.5em;
+        right: -0.35em;
+        transform: rotate(120deg);
+    }
+
+    .circle {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0 20px 1px;
+        width: 1em;
+        height: 1em;
+    }
+
+    @keyframes rot {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+    function initLoading() {
+        let loading = document.querySelector(".loading");
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            
+            loadFinish();
+            
+            setTimeout(() => {
+                loading.style.display = "none";
+            }, 1500)
+        });
+    }
+
+    function loadFinish() {
+        
+        let sharingon= document.querySelector(".sharingon");
+        sharingon.classList.add("animated-stop")
+        
+        let loading = document.querySelector(".loading");
+        loading.classList.add("scaleAndFadeout")
+    }
+
+    initLoading();
+</script>
+
     </head>
     <body class="
     article-page
@@ -300,8 +454,10 @@
     
     
     
+
     
     <footer class="article-time">
+
         
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -317,7 +473,19 @@
             </div>
         
 
-        
+        <div class="article-lastmod">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+            <time>
+                Aug 15, 2025 15:01 &#43;0800
+            </time>
+        </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -513,7 +681,7 @@ location /vfm-admin/tmp/ {
 
 
         <span>
-            最后更新于 Jun 10, 2022 18:02 UTC
+            最后更新于 Aug 15, 2025 15:01 &#43;0800
         </span>
     </section></footer>
 
@@ -602,6 +770,59 @@ location /vfm-admin/tmp/ {
      
     
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="Anderyly/anderyly.github.io"
+    data-repo-id="R_kgDOPeUMeA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPeUMeM4CuNM_"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+<div class="comment"></div>
+
+
     
 
     <footer class="site-footer">
@@ -706,7 +927,7 @@ location /vfm-admin/tmp/ {
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.eaf1211e4c7db355f37ceea53df13700e1b77fbcc3cfe8c1c1f69e4468a752e1.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -718,6 +939,312 @@ location /vfm-admin/tmp/ {
         document.head.appendChild(customFont);
     }());
 </script>
+<style>
+    @font-face {
+        font-family: '字体名';
+        src: url(http://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
+    }
+
+    :root {
+        --base-font-family: '字体名';
+        --code-font-family: '字体名';
+    }
+</style>
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol {
+            display: none;
+        }
+        .open {
+            display: block;
+        }
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+                openUl.forEach((ul) => {
+                    ul.classList.remove("open")
+                })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+    function initCodeMoreBox() {
+        let codeBlocks = document.querySelectorAll(".highlight");
+        if (!codeBlocks) {
+            return;
+        }
+        codeBlocks.forEach(codeBlock => {
+            
+            if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+                return;
+            }
+            
+            
+            let codeMoreBox = document.createElement('div');
+            codeMoreBox.classList.add('code-more-box');
+            
+            let codeMoreBtn = document.createElement('span');
+            codeMoreBtn.classList.add('code-more-btn');
+            codeMoreBtn.addEventListener('click', () => {
+                codeBlock.classList.add('code-show');
+                codeMoreBox.style.display = 'none';
+                
+                window.dispatchEvent(new Event('resize'))
+            })
+            
+            let img = document.createElement('img');
+            img.classList.add('code-more-img');
+            img.src = "http://blog.aaayun.cc/icons/codeMore.png"
+            
+            codeMoreBtn.appendChild(img);
+            codeMoreBox.appendChild(codeMoreBtn);
+            codeBlock.appendChild(codeMoreBox)
+        })
+    }
+
+    initCodeMoreBox();
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+<script>
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container",
+            ".js-Pjax"
+        ]
+    })
+</script>
+<script>
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            if (responseText) {
+                
+                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+                
+                let bodyClass = newDom.body.className;
+                document.body.setAttribute("class", bodyClass)
+            }
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    }
+</script>
+<script>
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+    })
+</script><div class="js-Pjax">
+        <script>
+            (function () {
+                
+                let comment = document.querySelector(".comment");
+                if (!comment) {
+                    return
+                }
+                let script = document.createElement('script');
+                
+                script.setAttribute('src', 'https://giscus.app/client.js');
+                script.setAttribute('data-repo', 'Anderyly\/anderyly.github.io');
+                
+                script.async = true;
+                
+                document.querySelector('.site-footer').before(script)
+            })(document);
+        </script>
+    <div><script>
+            async function renderKaTeX() {
+                
+                let katex = document.querySelector(".math-katex");
+                if (!katex) {
+                    return;
+                }
+                
+                while (typeof renderMathInElement !== 'function') {
+                    await delay(500);
+                }
+                
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+
+            
+
+            function delay(time) {
+                return new Promise(resolve => {
+                    setTimeout(resolve, time)
+                })
+            }
+
+            document.addEventListener('pjax:complete', () => {
+                renderKaTeX();
+            })
+        </script>
+
+
+
+        
+        
+        <script src=http://blog.aaayun.cc/js/topbar.min.js></script>
+        
+        <script>
+            
+            topbar.config({
+                barColors: {
+                    '0': 'rgba(255,  255, 255, 1)', 
+                    '1.0': 'rgba(0, 149, 234,  1)' 
+                }
+            })
+
+            document.addEventListener('pjax:send', () => {
+                
+                topbar.show();
+            })
+
+            document.addEventListener('pjax:complete', () => {
+                
+                topbar.hide();
+            })
+        </script>
+
+        
+        <div id="aplayer"></div>
+        <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+        <script>
+            const ap = new APlayer({
+                container: document.getElementById('aplayer'),
+                fixed: true,
+                lrcType: 3,
+                audio: [
+                    {
+                        name: 'name', 
+                        artist: 'artist', 
+                        url: 'url.mp3', 
+                        cover: 'cover.jpg', 
+                        lrc: 'lrc.lrc', 
+                    },
+                ]
+            });
+
+            
+
+            window.onbeforeunload = () => {
+                
+                const playInfo = {
+                    index: ap.list.index,
+                    currentTime: ap.audio.currentTime,
+                    paused: ap.paused
+                };
+                localStorage.setItem("playInfo", JSON.stringify(playInfo));
+            };
+
+            
+
+            window.onload = () => {
+                
+                const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+                if (!playInfo) {
+                    return;
+                }
+                
+                ap.list.switch(playInfo.index);
+                
+                setTimeout(() => {
+                    
+                    ap.seek(playInfo.currentTime);
+                    
+                    if (!playInfo.paused) {
+                        ap.play()
+                    }
+                }, 500);
+            };
+        </script>
 
     </body>
 </html>

@@ -6,13 +6,167 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/429.html'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="MD5口算算法">
+<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="MD5口算算法">
 <meta property='og:description' content="对MD5算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。\n在MD5算法中，首先需要对信息进行填充，使其字节长度对512求余的结果等于448。因此，信息的字节长度（Bits Length）将被扩展至N_512+448，即N_64+56个字节（Bytes），N为一个正整数。填充的方法如下，在信息的后面填充一个1和无数个0，直到满足上面的条件时才停止用0对信息的填充。然后，在在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，现在的信息字节长度=N_512+448+64=(N+1)_512，即长度恰好是512的整数倍。这样做的原因是为满足后面处理中对信息长度的要求。\nMD5中有四个32位被称作链接变量（Chaining Variable）的整数参数，他们分别为：A=0x01234567，B=0x89abcdef，C=0xfedcba98，D=0x76543210。\n当设置好这四个链接变量后，就开始进入算法的四轮循环运算。循环的次数是信息中512位信息分组的数目。\n将上面四个链接变量复制到另外四个变量中：A到a，B到b，C到c，D到d。\n主循环有四轮（MD4只有三轮），每轮循环都很相似。第一轮进行16次操作。每次操作对a、b、c和d中的其中三个作一次非线性函数运算，然后将所得结果加上第四个变量，文本的一个子分组和一个常数。再将所得结果向右环移一个不定的数，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。\n以一下是每次操作中用到的四个非线性函数（每轮一个）。\nF(X,Y,Z) =(X&amp;Y)|((~X)&amp;Z)\nG(X,Y,Z) =(X&amp;Z)|(Y&amp;(~Z))\nH(X,Y,Z) =X^Y^Z\nI(X,Y,Z)=Y^(X|(~Z))\n（&amp;是与，|是或，~是非，^是异或）\n这四个函数的说明：如果X、Y和Z的对应位是独立和均匀的，那么结果的每一位也应是独立和均匀的。\nF是一个逐位运算的函数。即，如果X，那么Y，否则Z。函数H是逐位奇偶操作符。\n假设Mj表示消息的第j个子分组（从0到15），&laquo;\nFF(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (F(b, c, d) + Mj + ti) &laquo; s\nGG(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (G(b, c, d) + Mj + ti) &laquo; s\nHH(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (H(b, c, d) + Mj + ti) &laquo; s\nII(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (I(b, c, d) + Mj + ti) &laquo; s\n这四轮（64步）是：\n第一轮\nFF(a, b, c, d, M0, 7, 0xd76aa478)\nFF(d, a, b, c, M1, 12, 0xe8c7b756)\nFF(c, d, a, b, M2, 17, 0x242070db)\nFF(b, c, d, a, M3, 22, 0xc1bdceee)\nFF(a, b, c, d, M4, 7, 0xf57c0faf)\nFF(d, a, b, c, M5, 12, 0x4787c62a)\nFF(c, d, a, b, M6, 17, 0xa8304613)\nFF(b, c, d, a, M7, 22, 0xfd469501)\nFF(a, b, c, d, M8, 7, 0x698098d8)\nFF(d, a, b, c, M9, 12, 0x8b44f7af)\nFF(c, d, a, b, M10, 17, 0xffff5bb1)\nFF(b, c, d, a, M11, 22, 0x895cd7be)\nFF(a, b, c, d, M12, 7, 0x6b901122)\nFF(d, a, b, c, M13, 12, 0xfd987193)\nFF(c, d, a, b, M14, 17, 0xa679438e)\nFF(b, c, d, a, M15, 22, 0x49b40821)\n第二轮\nGG(a, b, c, d, M1, 5, 0xf61e2562)\nGG(d, a, b, c, M6, 9, 0xc040b340)\nGG(c, d, a, b, M11, 14, 0x265e5a51)\nGG(b, c, d, a, M0, 20, 0xe9b6c7aa)\nGG(a, b, c, d, M5, 5, 0xd62f105d)\nGG(d, a, b, c, M10, 9, 0x02441453)\nGG(c, d, a, b, M15, 14, 0xd8a1e681)\nGG(b, c, d, a, M4, 20, 0xe7d3fbc8)\nGG(a, b, c, d, M9, 5, 0x21e1cde6)\nGG(d, a, b, c, M14, 9, 0xc33707d6)\nGG(c, d, a, b, M3, 14, 0xf4d50d87)\nGG(b, c, d, a, M8, 20, 0x455a14ed)\nGG(a, b, c, d, M13, 5, 0xa9e3e905)\nGG(d, a, b, c, M2, 9, 0xfcefa3f8)\nGG(c, d, a, b, M7, 14, 0x676f02d9)\nGG(b, c, d, a, M12, 20, 0x8d2a4c8a)\n第三轮\nHH(a, b, c, d, M5, 4, 0xfffa3942)\nHH(d, a, b, c, M8, 11, 0x8771f681)\nHH(c, d, a, b, M11, 16, 0x6d9d6122)\nHH(b, c, d, a, M14, 23, 0xfde5380c)\nHH(a, b, c, d, M1, 4, 0xa4beea44)\nHH(d, a, b, c, M4, 11, 0x4bdecfa9)\nHH(c, d, a, b, M7, 16, 0xf6bb4b60)\nHH(b, c, d, a, M10, 23, 0xbebfbc70)\nHH(a, b, c, d, M13, 4, 0x289b7ec6)\nHH(d, a, b, c, M0, 11, 0xeaa127fa)\nHH(c, d, a, b, M3, 16, 0xd4ef3085)\nHH(b, c, d, a, M6, 23, 0x04881d05)\nHH(a, b, c, d, M9, 4, 0xd9d4d039)\nHH(d, a, b, c, M12, 11, 0xe6db99e5)\nHH(c, d, a, b, M15, 16, 0x1fa27cf8)\nHH(b, c, d, a, M2, 23, 0xc4ac5665)\n第四轮\nII(a, b, c, d, M0, 6, 0xf4292244)\nII(d, a, b, c, M7, 10, 0x432aff97)\nII(c, d, a, b, M14, 15, 0xab9423a7)\nII(b, c, d, a, M5, 21, 0xfc93a039)\nII(a, b, c, d, M12, 6, 0x655b59c3)\nII(d, a, b, c, M3, 10, 0x8f0ccc92)\nII(c, d, a, b, M10, 15, 0xffeff47d)\nII(b, c, d, a, M1, 21, 0x85845dd1)\nII(a, b, c, d, M8, 6, 0x6fa87e4f)\nII(d, a, b, c, M15, 10, 0xfe2ce6e0)\nII(c, d, a, b, M6, 15, 0xa3014314)\nII(b, c, d, a, M13, 21, 0x4e0811a1)\nII(a, b, c, d, M4, 6, 0xf7537e82)\nII(d, a, b, c, M11, 10, 0xbd3af235)\nII(c, d, a, b, M2, 15, 0x2ad7d2bb)\nII(b, c, d, a, M9, 21, 0xeb86d391)\n常数ti可以如下选择：\n在第i步中，ti是4294967296*abs(sin(i))的整数部分，i的单位是弧度。(4294967296等于2的32次方)\n所有这些完成之后，将A、B、C、D分别加上a、b、c、d。然后用下一分组数据继续运行算法，最后的输出是A、B、C和D的级联。\n当你按照我上面所说的方法实现MD5算法以后，你可以用以下几个信息对你做出来的程序作一个简单的测试，看看程序有没有错误。\nMD5 (“&quot;) = d41d8cd98f00b204e9800998ecf8427e\nMD5 (“a&quot;) = 0cc175b9c0f1b6a831c399e269772661\nMD5 (“abc&quot;) = 900150983cd24fb0d6963f7d28e17f72\nMD5 (“message digest&quot;) = f96b697d7cb7938d525a2f31aaf161d0\nMD5 (“abcdefghijklmnopqrstuvwxyz&quot;) = c3fcd3d76192e4007dfb496cca67e13b\nMD5 (“ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;) =\nd174ab98d277d9f5a5611c2c9f419d9f\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/429.html'>
 <meta property='og:site_name' content='轻风云'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='md5' /><meta property='article:tag' content='算法' /><meta property='article:published_time' content='2019-08-29T06:27:00&#43;00:00'/><meta property='article:modified_time' content='2019-08-29T06:27:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='md5' /><meta property='article:tag' content='算法' /><meta property='article:published_time' content='2019-08-29T06:27:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-15T15:01:54&#43;08:00'/>
 <meta name="twitter:title" content="MD5口算算法">
-<meta name="twitter:description" content="对MD5算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。\n在MD5算法中，首先需要对信息进行填充，使其字节长度对512求余的结果等于448。因此，信息的字节长度（Bits Length）将被扩展至N_512+448，即N_64+56个字节（Bytes），N为一个正整数。填充的方法如下，在信息的后面填充一个1和无数个0，直到满足上面的条件时才停止用0对信息的填充。然后，在在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，现在的信息字节长度=N_512+448+64=(N+1)_512，即长度恰好是512的整数倍。这样做的原因是为满足后面处理中对信息长度的要求。\nMD5中有四个32位被称作链接变量（Chaining Variable）的整数参数，他们分别为：A=0x01234567，B=0x89abcdef，C=0xfedcba98，D=0x76543210。\n当设置好这四个链接变量后，就开始进入算法的四轮循环运算。循环的次数是信息中512位信息分组的数目。\n将上面四个链接变量复制到另外四个变量中：A到a，B到b，C到c，D到d。\n主循环有四轮（MD4只有三轮），每轮循环都很相似。第一轮进行16次操作。每次操作对a、b、c和d中的其中三个作一次非线性函数运算，然后将所得结果加上第四个变量，文本的一个子分组和一个常数。再将所得结果向右环移一个不定的数，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。\n以一下是每次操作中用到的四个非线性函数（每轮一个）。\nF(X,Y,Z) =(X&amp;Y)|((~X)&amp;Z)\nG(X,Y,Z) =(X&amp;Z)|(Y&amp;(~Z))\nH(X,Y,Z) =X^Y^Z\nI(X,Y,Z)=Y^(X|(~Z))\n（&amp;是与，|是或，~是非，^是异或）\n这四个函数的说明：如果X、Y和Z的对应位是独立和均匀的，那么结果的每一位也应是独立和均匀的。\nF是一个逐位运算的函数。即，如果X，那么Y，否则Z。函数H是逐位奇偶操作符。\n假设Mj表示消息的第j个子分组（从0到15），&laquo;\nFF(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (F(b, c, d) + Mj + ti) &laquo; s\nGG(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (G(b, c, d) + Mj + ti) &laquo; s\nHH(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (H(b, c, d) + Mj + ti) &laquo; s\nII(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (I(b, c, d) + Mj + ti) &laquo; s\n这四轮（64步）是：\n第一轮\nFF(a, b, c, d, M0, 7, 0xd76aa478)\nFF(d, a, b, c, M1, 12, 0xe8c7b756)\nFF(c, d, a, b, M2, 17, 0x242070db)\nFF(b, c, d, a, M3, 22, 0xc1bdceee)\nFF(a, b, c, d, M4, 7, 0xf57c0faf)\nFF(d, a, b, c, M5, 12, 0x4787c62a)\nFF(c, d, a, b, M6, 17, 0xa8304613)\nFF(b, c, d, a, M7, 22, 0xfd469501)\nFF(a, b, c, d, M8, 7, 0x698098d8)\nFF(d, a, b, c, M9, 12, 0x8b44f7af)\nFF(c, d, a, b, M10, 17, 0xffff5bb1)\nFF(b, c, d, a, M11, 22, 0x895cd7be)\nFF(a, b, c, d, M12, 7, 0x6b901122)\nFF(d, a, b, c, M13, 12, 0xfd987193)\nFF(c, d, a, b, M14, 17, 0xa679438e)\nFF(b, c, d, a, M15, 22, 0x49b40821)\n第二轮\nGG(a, b, c, d, M1, 5, 0xf61e2562)\nGG(d, a, b, c, M6, 9, 0xc040b340)\nGG(c, d, a, b, M11, 14, 0x265e5a51)\nGG(b, c, d, a, M0, 20, 0xe9b6c7aa)\nGG(a, b, c, d, M5, 5, 0xd62f105d)\nGG(d, a, b, c, M10, 9, 0x02441453)\nGG(c, d, a, b, M15, 14, 0xd8a1e681)\nGG(b, c, d, a, M4, 20, 0xe7d3fbc8)\nGG(a, b, c, d, M9, 5, 0x21e1cde6)\nGG(d, a, b, c, M14, 9, 0xc33707d6)\nGG(c, d, a, b, M3, 14, 0xf4d50d87)\nGG(b, c, d, a, M8, 20, 0x455a14ed)\nGG(a, b, c, d, M13, 5, 0xa9e3e905)\nGG(d, a, b, c, M2, 9, 0xfcefa3f8)\nGG(c, d, a, b, M7, 14, 0x676f02d9)\nGG(b, c, d, a, M12, 20, 0x8d2a4c8a)\n第三轮\nHH(a, b, c, d, M5, 4, 0xfffa3942)\nHH(d, a, b, c, M8, 11, 0x8771f681)\nHH(c, d, a, b, M11, 16, 0x6d9d6122)\nHH(b, c, d, a, M14, 23, 0xfde5380c)\nHH(a, b, c, d, M1, 4, 0xa4beea44)\nHH(d, a, b, c, M4, 11, 0x4bdecfa9)\nHH(c, d, a, b, M7, 16, 0xf6bb4b60)\nHH(b, c, d, a, M10, 23, 0xbebfbc70)\nHH(a, b, c, d, M13, 4, 0x289b7ec6)\nHH(d, a, b, c, M0, 11, 0xeaa127fa)\nHH(c, d, a, b, M3, 16, 0xd4ef3085)\nHH(b, c, d, a, M6, 23, 0x04881d05)\nHH(a, b, c, d, M9, 4, 0xd9d4d039)\nHH(d, a, b, c, M12, 11, 0xe6db99e5)\nHH(c, d, a, b, M15, 16, 0x1fa27cf8)\nHH(b, c, d, a, M2, 23, 0xc4ac5665)\n第四轮\nII(a, b, c, d, M0, 6, 0xf4292244)\nII(d, a, b, c, M7, 10, 0x432aff97)\nII(c, d, a, b, M14, 15, 0xab9423a7)\nII(b, c, d, a, M5, 21, 0xfc93a039)\nII(a, b, c, d, M12, 6, 0x655b59c3)\nII(d, a, b, c, M3, 10, 0x8f0ccc92)\nII(c, d, a, b, M10, 15, 0xffeff47d)\nII(b, c, d, a, M1, 21, 0x85845dd1)\nII(a, b, c, d, M8, 6, 0x6fa87e4f)\nII(d, a, b, c, M15, 10, 0xfe2ce6e0)\nII(c, d, a, b, M6, 15, 0xa3014314)\nII(b, c, d, a, M13, 21, 0x4e0811a1)\nII(a, b, c, d, M4, 6, 0xf7537e82)\nII(d, a, b, c, M11, 10, 0xbd3af235)\nII(c, d, a, b, M2, 15, 0x2ad7d2bb)\nII(b, c, d, a, M9, 21, 0xeb86d391)\n常数ti可以如下选择：\n在第i步中，ti是4294967296*abs(sin(i))的整数部分，i的单位是弧度。(4294967296等于2的32次方)\n所有这些完成之后，将A、B、C、D分别加上a、b、c、d。然后用下一分组数据继续运行算法，最后的输出是A、B、C和D的级联。\n当你按照我上面所说的方法实现MD5算法以后，你可以用以下几个信息对你做出来的程序作一个简单的测试，看看程序有没有错误。\nMD5 (“&quot;) = d41d8cd98f00b204e9800998ecf8427e\nMD5 (“a&quot;) = 0cc175b9c0f1b6a831c399e269772661\nMD5 (“abc&quot;) = 900150983cd24fb0d6963f7d28e17f72\nMD5 (“message digest&quot;) = f96b697d7cb7938d525a2f31aaf161d0\nMD5 (“abcdefghijklmnopqrstuvwxyz&quot;) = c3fcd3d76192e4007dfb496cca67e13b\nMD5 (“ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;) =\nd174ab98d277d9f5a5611c2c9f419d9f\n">
+<meta name="twitter:description" content="对MD5算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值。\n在MD5算法中，首先需要对信息进行填充，使其字节长度对512求余的结果等于448。因此，信息的字节长度（Bits Length）将被扩展至N_512+448，即N_64+56个字节（Bytes），N为一个正整数。填充的方法如下，在信息的后面填充一个1和无数个0，直到满足上面的条件时才停止用0对信息的填充。然后，在在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，现在的信息字节长度=N_512+448+64=(N+1)_512，即长度恰好是512的整数倍。这样做的原因是为满足后面处理中对信息长度的要求。\nMD5中有四个32位被称作链接变量（Chaining Variable）的整数参数，他们分别为：A=0x01234567，B=0x89abcdef，C=0xfedcba98，D=0x76543210。\n当设置好这四个链接变量后，就开始进入算法的四轮循环运算。循环的次数是信息中512位信息分组的数目。\n将上面四个链接变量复制到另外四个变量中：A到a，B到b，C到c，D到d。\n主循环有四轮（MD4只有三轮），每轮循环都很相似。第一轮进行16次操作。每次操作对a、b、c和d中的其中三个作一次非线性函数运算，然后将所得结果加上第四个变量，文本的一个子分组和一个常数。再将所得结果向右环移一个不定的数，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。\n以一下是每次操作中用到的四个非线性函数（每轮一个）。\nF(X,Y,Z) =(X&amp;Y)|((~X)&amp;Z)\nG(X,Y,Z) =(X&amp;Z)|(Y&amp;(~Z))\nH(X,Y,Z) =X^Y^Z\nI(X,Y,Z)=Y^(X|(~Z))\n（&amp;是与，|是或，~是非，^是异或）\n这四个函数的说明：如果X、Y和Z的对应位是独立和均匀的，那么结果的每一位也应是独立和均匀的。\nF是一个逐位运算的函数。即，如果X，那么Y，否则Z。函数H是逐位奇偶操作符。\n假设Mj表示消息的第j个子分组（从0到15），&laquo;\nFF(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (F(b, c, d) + Mj + ti) &laquo; s\nGG(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (G(b, c, d) + Mj + ti) &laquo; s\nHH(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (H(b, c, d) + Mj + ti) &laquo; s\nII(a, b, c, d, Mj, s, ti)表示 a = b + ((a + (I(b, c, d) + Mj + ti) &laquo; s\n这四轮（64步）是：\n第一轮\nFF(a, b, c, d, M0, 7, 0xd76aa478)\nFF(d, a, b, c, M1, 12, 0xe8c7b756)\nFF(c, d, a, b, M2, 17, 0x242070db)\nFF(b, c, d, a, M3, 22, 0xc1bdceee)\nFF(a, b, c, d, M4, 7, 0xf57c0faf)\nFF(d, a, b, c, M5, 12, 0x4787c62a)\nFF(c, d, a, b, M6, 17, 0xa8304613)\nFF(b, c, d, a, M7, 22, 0xfd469501)\nFF(a, b, c, d, M8, 7, 0x698098d8)\nFF(d, a, b, c, M9, 12, 0x8b44f7af)\nFF(c, d, a, b, M10, 17, 0xffff5bb1)\nFF(b, c, d, a, M11, 22, 0x895cd7be)\nFF(a, b, c, d, M12, 7, 0x6b901122)\nFF(d, a, b, c, M13, 12, 0xfd987193)\nFF(c, d, a, b, M14, 17, 0xa679438e)\nFF(b, c, d, a, M15, 22, 0x49b40821)\n第二轮\nGG(a, b, c, d, M1, 5, 0xf61e2562)\nGG(d, a, b, c, M6, 9, 0xc040b340)\nGG(c, d, a, b, M11, 14, 0x265e5a51)\nGG(b, c, d, a, M0, 20, 0xe9b6c7aa)\nGG(a, b, c, d, M5, 5, 0xd62f105d)\nGG(d, a, b, c, M10, 9, 0x02441453)\nGG(c, d, a, b, M15, 14, 0xd8a1e681)\nGG(b, c, d, a, M4, 20, 0xe7d3fbc8)\nGG(a, b, c, d, M9, 5, 0x21e1cde6)\nGG(d, a, b, c, M14, 9, 0xc33707d6)\nGG(c, d, a, b, M3, 14, 0xf4d50d87)\nGG(b, c, d, a, M8, 20, 0x455a14ed)\nGG(a, b, c, d, M13, 5, 0xa9e3e905)\nGG(d, a, b, c, M2, 9, 0xfcefa3f8)\nGG(c, d, a, b, M7, 14, 0x676f02d9)\nGG(b, c, d, a, M12, 20, 0x8d2a4c8a)\n第三轮\nHH(a, b, c, d, M5, 4, 0xfffa3942)\nHH(d, a, b, c, M8, 11, 0x8771f681)\nHH(c, d, a, b, M11, 16, 0x6d9d6122)\nHH(b, c, d, a, M14, 23, 0xfde5380c)\nHH(a, b, c, d, M1, 4, 0xa4beea44)\nHH(d, a, b, c, M4, 11, 0x4bdecfa9)\nHH(c, d, a, b, M7, 16, 0xf6bb4b60)\nHH(b, c, d, a, M10, 23, 0xbebfbc70)\nHH(a, b, c, d, M13, 4, 0x289b7ec6)\nHH(d, a, b, c, M0, 11, 0xeaa127fa)\nHH(c, d, a, b, M3, 16, 0xd4ef3085)\nHH(b, c, d, a, M6, 23, 0x04881d05)\nHH(a, b, c, d, M9, 4, 0xd9d4d039)\nHH(d, a, b, c, M12, 11, 0xe6db99e5)\nHH(c, d, a, b, M15, 16, 0x1fa27cf8)\nHH(b, c, d, a, M2, 23, 0xc4ac5665)\n第四轮\nII(a, b, c, d, M0, 6, 0xf4292244)\nII(d, a, b, c, M7, 10, 0x432aff97)\nII(c, d, a, b, M14, 15, 0xab9423a7)\nII(b, c, d, a, M5, 21, 0xfc93a039)\nII(a, b, c, d, M12, 6, 0x655b59c3)\nII(d, a, b, c, M3, 10, 0x8f0ccc92)\nII(c, d, a, b, M10, 15, 0xffeff47d)\nII(b, c, d, a, M1, 21, 0x85845dd1)\nII(a, b, c, d, M8, 6, 0x6fa87e4f)\nII(d, a, b, c, M15, 10, 0xfe2ce6e0)\nII(c, d, a, b, M6, 15, 0xa3014314)\nII(b, c, d, a, M13, 21, 0x4e0811a1)\nII(a, b, c, d, M4, 6, 0xf7537e82)\nII(d, a, b, c, M11, 10, 0xbd3af235)\nII(c, d, a, b, M2, 15, 0x2ad7d2bb)\nII(b, c, d, a, M9, 21, 0xeb86d391)\n常数ti可以如下选择：\n在第i步中，ti是4294967296*abs(sin(i))的整数部分，i的单位是弧度。(4294967296等于2的32次方)\n所有这些完成之后，将A、B、C、D分别加上a、b、c、d。然后用下一分组数据继续运行算法，最后的输出是A、B、C和D的级联。\n当你按照我上面所说的方法实现MD5算法以后，你可以用以下几个信息对你做出来的程序作一个简单的测试，看看程序有没有错误。\nMD5 (“&quot;) = d41d8cd98f00b204e9800998ecf8427e\nMD5 (“a&quot;) = 0cc175b9c0f1b6a831c399e269772661\nMD5 (“abc&quot;) = 900150983cd24fb0d6963f7d28e17f72\nMD5 (“message digest&quot;) = f96b697d7cb7938d525a2f31aaf161d0\nMD5 (“abcdefghijklmnopqrstuvwxyz&quot;) = c3fcd3d76192e4007dfb496cca67e13b\nMD5 (“ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;) =\nd174ab98d277d9f5a5611c2c9f419d9f\n"><div class="loading">
+    <div class="sharingon">
+        <div class="ring">
+            <div class="to"></div>
+            <div class="to"></div>
+            <div class="to"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .loading {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        zoom: 3.0;
+        background-color: #f5f5fa;
+    }
+
+    .animated-stop {
+        animation-play-state: paused !important;
+    }
+
+    .scaleAndFadeout {
+        animation: scaleAndFadeOut 1.5s forwards;
+    }
+
+     
+    @keyframes scaleAndFadeOut {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+     
+    .sharingon {
+        position: relative;
+        width: 6em;
+        height: 6em;
+        background-color: red;
+        border: 6px solid black;
+        animation: rot 1s ease-in-out infinite;
+    }
+
+    .ring {
+        position: absolute;
+        content: "";
+        left: 50%;
+        top: 50%;
+        width: 3.5em;
+        height: 3.5em;
+        border: 4px solid rgb(110, 13 ,13 ,0.5);
+        transform: translate(-50%,-50%);
+    }
+
+    .sharingon, .ring, .to,.circle {
+        border-radius: 50%;
+    }
+
+    .to,.circle {
+        position: absolute;
+        content: "";
+        width: 0.9em;
+        height: 0.9em;
+        background-color: black;
+    }
+
+    .to:nth-child(1) {
+        top: -0.5em;
+        left: 50%;
+        transform: translate(-40%);
+    }
+
+    .to::before {
+        content: "";
+        position: absolute;
+        top: -0.5em;
+        right: -0.2em;
+        width: 1.1em;
+        height: 0.9em;
+        box-sizing: border-box;
+        border-left: 16px solid black;
+        border-radius: 100% 0 0;
+    }
+
+    .to:nth-child(2) {
+        bottom: 0.5em;
+        left: -0.35em;
+        transform: rotate(-120deg);
+    }
+
+    .to:nth-child(3) {
+        bottom: 0.5em;
+        right: -0.35em;
+        transform: rotate(120deg);
+    }
+
+    .circle {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0 20px 1px;
+        width: 1em;
+        height: 1em;
+    }
+
+    @keyframes rot {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+    function initLoading() {
+        let loading = document.querySelector(".loading");
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            
+            loadFinish();
+            
+            setTimeout(() => {
+                loading.style.display = "none";
+            }, 1500)
+        });
+    }
+
+    function loadFinish() {
+        
+        let sharingon= document.querySelector(".sharingon");
+        sharingon.classList.add("animated-stop")
+        
+        let loading = document.querySelector(".loading");
+        loading.classList.add("scaleAndFadeout")
+    }
+
+    initLoading();
+</script>
+
     </head>
     <body class="
     article-page
@@ -250,8 +404,10 @@
     
     
     
+
     
     <footer class="article-time">
+
         
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -267,7 +423,19 @@
             </div>
         
 
-        
+        <div class="article-lastmod">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+            <time>
+                Aug 15, 2025 15:01 &#43;0800
+            </time>
+        </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -429,7 +597,7 @@
 
 
         <span>
-            最后更新于 Aug 29, 2019 06:27 UTC
+            最后更新于 Aug 15, 2025 15:01 &#43;0800
         </span>
     </section></footer>
 
@@ -518,6 +686,59 @@
      
     
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="Anderyly/anderyly.github.io"
+    data-repo-id="R_kgDOPeUMeA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPeUMeM4CuNM_"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+<div class="comment"></div>
+
+
     
 
     <footer class="site-footer">
@@ -622,7 +843,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.eaf1211e4c7db355f37ceea53df13700e1b77fbcc3cfe8c1c1f69e4468a752e1.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -634,6 +855,312 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<style>
+    @font-face {
+        font-family: '字体名';
+        src: url(http://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
+    }
+
+    :root {
+        --base-font-family: '字体名';
+        --code-font-family: '字体名';
+    }
+</style>
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol {
+            display: none;
+        }
+        .open {
+            display: block;
+        }
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+                openUl.forEach((ul) => {
+                    ul.classList.remove("open")
+                })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+    function initCodeMoreBox() {
+        let codeBlocks = document.querySelectorAll(".highlight");
+        if (!codeBlocks) {
+            return;
+        }
+        codeBlocks.forEach(codeBlock => {
+            
+            if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+                return;
+            }
+            
+            
+            let codeMoreBox = document.createElement('div');
+            codeMoreBox.classList.add('code-more-box');
+            
+            let codeMoreBtn = document.createElement('span');
+            codeMoreBtn.classList.add('code-more-btn');
+            codeMoreBtn.addEventListener('click', () => {
+                codeBlock.classList.add('code-show');
+                codeMoreBox.style.display = 'none';
+                
+                window.dispatchEvent(new Event('resize'))
+            })
+            
+            let img = document.createElement('img');
+            img.classList.add('code-more-img');
+            img.src = "http://blog.aaayun.cc/icons/codeMore.png"
+            
+            codeMoreBtn.appendChild(img);
+            codeMoreBox.appendChild(codeMoreBtn);
+            codeBlock.appendChild(codeMoreBox)
+        })
+    }
+
+    initCodeMoreBox();
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+<script>
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container",
+            ".js-Pjax"
+        ]
+    })
+</script>
+<script>
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            if (responseText) {
+                
+                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+                
+                let bodyClass = newDom.body.className;
+                document.body.setAttribute("class", bodyClass)
+            }
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    }
+</script>
+<script>
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+    })
+</script><div class="js-Pjax">
+        <script>
+            (function () {
+                
+                let comment = document.querySelector(".comment");
+                if (!comment) {
+                    return
+                }
+                let script = document.createElement('script');
+                
+                script.setAttribute('src', 'https://giscus.app/client.js');
+                script.setAttribute('data-repo', 'Anderyly\/anderyly.github.io');
+                
+                script.async = true;
+                
+                document.querySelector('.site-footer').before(script)
+            })(document);
+        </script>
+    <div><script>
+            async function renderKaTeX() {
+                
+                let katex = document.querySelector(".math-katex");
+                if (!katex) {
+                    return;
+                }
+                
+                while (typeof renderMathInElement !== 'function') {
+                    await delay(500);
+                }
+                
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+
+            
+
+            function delay(time) {
+                return new Promise(resolve => {
+                    setTimeout(resolve, time)
+                })
+            }
+
+            document.addEventListener('pjax:complete', () => {
+                renderKaTeX();
+            })
+        </script>
+
+
+
+        
+        
+        <script src=http://blog.aaayun.cc/js/topbar.min.js></script>
+        
+        <script>
+            
+            topbar.config({
+                barColors: {
+                    '0': 'rgba(255,  255, 255, 1)', 
+                    '1.0': 'rgba(0, 149, 234,  1)' 
+                }
+            })
+
+            document.addEventListener('pjax:send', () => {
+                
+                topbar.show();
+            })
+
+            document.addEventListener('pjax:complete', () => {
+                
+                topbar.hide();
+            })
+        </script>
+
+        
+        <div id="aplayer"></div>
+        <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+        <script>
+            const ap = new APlayer({
+                container: document.getElementById('aplayer'),
+                fixed: true,
+                lrcType: 3,
+                audio: [
+                    {
+                        name: 'name', 
+                        artist: 'artist', 
+                        url: 'url.mp3', 
+                        cover: 'cover.jpg', 
+                        lrc: 'lrc.lrc', 
+                    },
+                ]
+            });
+
+            
+
+            window.onbeforeunload = () => {
+                
+                const playInfo = {
+                    index: ap.list.index,
+                    currentTime: ap.audio.currentTime,
+                    paused: ap.paused
+                };
+                localStorage.setItem("playInfo", JSON.stringify(playInfo));
+            };
+
+            
+
+            window.onload = () => {
+                
+                const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+                if (!playInfo) {
+                    return;
+                }
+                
+                ap.list.switch(playInfo.index);
+                
+                setTimeout(() => {
+                    
+                    ap.seek(playInfo.currentTime);
+                    
+                    if (!playInfo.paused) {
+                        ap.play()
+                    }
+                }, 500);
+            };
+        </script>
 
     </body>
 </html>

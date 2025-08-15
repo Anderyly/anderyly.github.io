@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 26 Mar 2021 18:58:00 +0000</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/nginx/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/nginx/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>记一次centos7在断网环境下编译安装nginx1.6&#43;php7.2</title>
         <link>http://blog.aaayun.cc/archives/610.html</link>
         <pubDate>Fri, 26 Mar 2021 18:58:00 +0000</pubDate>
