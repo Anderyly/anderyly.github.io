@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Cron on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/cron/</link>
+        <link>https://blog.aaayun.cc/tags/cron/</link>
         <description>Recent content in Cron on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/cron/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/cron/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>golang cron v3 定时任务实现</title>
-        <link>http://blog.aaayun.cc/archives/709.html</link>
+        <link>https://blog.aaayun.cc/archives/709.html</link>
         <pubDate>Sat, 10 Jul 2021 01:42:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/709.html</guid>
+        <guid>https://blog.aaayun.cc/archives/709.html</guid>
         <description>&lt;h3 id=&#34;最近需要在-golang-中使用定时任务功能用到了一个-cron-库当前是-v3-版本网上挺多都是-v2-的教程记录一下使用方法&#34;&gt;最近需要在 golang 中使用定时任务功能，用到了一个 cron 库，当前是 v3 版本，网上挺多都是 v2 的教程，记录一下使用方法。
 &lt;/h3&gt;&lt;p&gt;在旧版本的库中默认的 cron 表达式不是标准格式，第一个位是秒级的定义。&lt;br&gt;
 现在 v3 版本直接用标准 cron 表示式即可，主要看 godoc 文档部分&lt;/p&gt;

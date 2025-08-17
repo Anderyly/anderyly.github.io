@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>星座 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E6%98%9F%E5%BA%A7/</link>
+        <link>https://blog.aaayun.cc/tags/%E6%98%9F%E5%BA%A7/</link>
         <description>Recent content in 星座 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E6%98%9F%E5%BA%A7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E6%98%9F%E5%BA%A7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>php根据出生日期计算星座</title>
-        <link>http://blog.aaayun.cc/archives/303.html</link>
+        <link>https://blog.aaayun.cc/archives/303.html</link>
         <pubDate>Wed, 23 Jan 2019 00:08:12 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/303.html</guid>
+        <guid>https://blog.aaayun.cc/archives/303.html</guid>
         <description>&lt;p&gt;话说，今天做项目要求计算星座&lt;/p&gt;
 &lt;p&gt;日期格式为2019-1-22&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

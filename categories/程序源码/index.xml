@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>程序源码 on 轻风云</title>
-        <link>http://blog.aaayun.cc/categories/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/</link>
+        <link>https://blog.aaayun.cc/categories/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/</link>
         <description>Recent content in 程序源码 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/categories/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/categories/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>VFM 3.7.5 源码 – 一个极简的 PHP 私人云盘！</title>
-        <link>http://blog.aaayun.cc/archives/796.html</link>
+        <link>https://blog.aaayun.cc/archives/796.html</link>
         <pubDate>Fri, 10 Jun 2022 18:02:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/796.html</guid>
+        <guid>https://blog.aaayun.cc/archives/796.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;博主在网上找了很多免费版本只有这款是最新的&lt;/p&gt;
 &lt;p&gt;现在的个人数据越来越多，数据交互变得频繁。每当有需要临时存储的数据而身边又没有合适的存储介质，或者家里或工作中需要下载的文件，都是非常不方便的。这时候你就需要使用通用网盘了。有很多服务提供商提供云存储，但一般你需要支付空间或会员制度。免费云盘速度慢，内容有限。也有很多私有的网盘程序，但是比较臃肿，对服务器的要求也比较高。那么为什么不用VFM来搭建一个轻量级简单的私有云盘呢？&lt;/p&gt;
@@ -150,10 +150,10 @@ location /vfm-admin/tmp/ {
         </item>
         <item>
         <title>批量采集美女写真等图片做图片站</title>
-        <link>http://blog.aaayun.cc/archives/747.html</link>
+        <link>https://blog.aaayun.cc/archives/747.html</link>
         <pubDate>Mon, 11 Oct 2021 15:14:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/747.html</guid>
+        <guid>https://blog.aaayun.cc/archives/747.html</guid>
         <description>&lt;h1 id=&#34;批量采集美女写真等图片做图片站&#34;&gt;批量采集美女写真等图片做图片站
 &lt;/h1&gt;&lt;p&gt;批量采集美女写真等图片到typecho上，图片可选择本地化，内含多种数据源，程序采用golang开发，可进行多线程采集，经测试很稳定，目前可采集到2400篇文章，2w多图片。可自行编译，也有打包好的&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/10/2950170588.png&#34;
@@ -204,10 +204,10 @@ location /vfm-admin/tmp/ {
         </item>
         <item>
         <title>一个漂亮的单文件PHP目录程序</title>
-        <link>http://blog.aaayun.cc/archives/745.html</link>
+        <link>https://blog.aaayun.cc/archives/745.html</link>
         <pubDate>Wed, 15 Sep 2021 22:37:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/745.html</guid>
+        <guid>https://blog.aaayun.cc/archives/745.html</guid>
         <description>&lt;img decoding=&#34;async&#34; src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/09/2436517943.jpeg&#34; alt=&#34;753621866.jpeg&#34; title=&#34;753621866.jpeg&#34; /&gt;
 &lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;Files Photo Gallery是一个单文件PHP目录程序，可以放置到服务器上的任何目录，立即拥有一个文件和文件夹预览目录。它支持所有文件类型，并允许您预览图像、视频、音频和代码。&lt;/p&gt;
@@ -348,10 +348,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>HEU KMS Activator v23.1.0 win10 office2019激活工具</title>
-        <link>http://blog.aaayun.cc/archives/705.html</link>
+        <link>https://blog.aaayun.cc/archives/705.html</link>
         <pubDate>Sat, 03 Jul 2021 20:02:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/705.html</guid>
+        <guid>https://blog.aaayun.cc/archives/705.html</guid>
         <description>&lt;p&gt;如今，市面上有很多不同的激活工具，包括kms激活工具和win10数字权利激活两种。kms激活工具通用性强，但需要180天循环激活。数字权利激活属于永久激活，但只支持win10系统。两者可以说，各有优缺点。&lt;/p&gt;
 &lt;p&gt;系统迷之前分享过一款功能比较全面的激活工具，具体详见《KMS Tools v2020 kms激活工具 win10激活工具下载》。它几乎支持所有版本的Windows和Office激活，有需要的朋友，可以下载试试。&lt;/p&gt;
 &lt;p&gt;这次，我们再给大家补充一款kms激活工具，软件名叫HEU KMS Activator。很多年前，该工具在网上非常火，可惜后来作者停止更新维护，也就不能用了。让人没想到的是，如今它竟然又复活，推出了全新的版本。&lt;/p&gt;
@@ -376,10 +376,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>golang实现windows下切换代理</title>
-        <link>http://blog.aaayun.cc/archives/657.html</link>
+        <link>https://blog.aaayun.cc/archives/657.html</link>
         <pubDate>Tue, 11 May 2021 23:42:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/657.html</guid>
+        <guid>https://blog.aaayun.cc/archives/657.html</guid>
         <description>&lt;h2 id=&#34;golang实现windows下切换代理&#34;&gt;golang实现windows下切换代理
 &lt;/h2&gt;&lt;p&gt;实现很简单 主要修改注册表文件 利用walk展示页面&lt;/p&gt;
 &lt;h2 id=&#34;界面如下&#34;&gt;界面如下
@@ -605,10 +605,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>分享自己封装的mysql类 基于pdo</title>
-        <link>http://blog.aaayun.cc/archives/648.html</link>
+        <link>https://blog.aaayun.cc/archives/648.html</link>
         <pubDate>Fri, 07 May 2021 19:57:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/648.html</guid>
+        <guid>https://blog.aaayun.cc/archives/648.html</guid>
         <description>&lt;h2 id=&#34;分享自己封装的mysql类-基于pdo&#34;&gt;分享自己封装的mysql类 基于pdo
 &lt;/h2&gt;&lt;p&gt;由于经常开发小型系统用不到框架，用原生写又太麻烦干脆封装一个MySQL操作类&lt;br&gt;
 用了连贯操作 用法和tp相似 上手快 &lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/05/3043539544.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2373,10 +2373,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>golang实现CC多线程测压</title>
-        <link>http://blog.aaayun.cc/archives/641.html</link>
+        <link>https://blog.aaayun.cc/archives/641.html</link>
         <pubDate>Fri, 30 Apr 2021 00:59:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/641.html</guid>
+        <guid>https://blog.aaayun.cc/archives/641.html</guid>
         <description>&lt;h2 id=&#34;golang实现cc多线程攻击&#34;&gt;golang实现CC多线程攻击
 &lt;/h2&gt;&lt;p&gt;内含exe编译后的文件以及源代码&lt;/p&gt;
 &lt;p&gt;由于需要大量ip 博主特地找了个收费很低的代理网址 一个月最低3.2 (推荐使用每秒更换ip)&lt;br&gt;
@@ -2411,10 +2411,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>windows下Navicat15破解详细教程带注册机</title>
-        <link>http://blog.aaayun.cc/archives/599.html</link>
+        <link>https://blog.aaayun.cc/archives/599.html</link>
         <pubDate>Fri, 19 Mar 2021 21:55:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/599.html</guid>
+        <guid>https://blog.aaayun.cc/archives/599.html</guid>
         <description>&lt;h2 id=&#34;windows下navicat15破解详细教程带注册机&#34;&gt;windows下Navicat15破解详细教程带注册机
 &lt;/h2&gt;&lt;p&gt;去&lt;a class=&#34;link&#34; href=&#34;https://www.navicat.com.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官网&lt;/a&gt;下载最新版本下载安装，激活Navicat Premium，下载激活软件， 无需断网运行激活软件 &lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2792248087.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2524,10 +2524,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>微营销系统</title>
-        <link>http://blog.aaayun.cc/archives/502.html</link>
+        <link>https://blog.aaayun.cc/archives/502.html</link>
         <pubDate>Mon, 04 Nov 2019 23:27:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/502.html</guid>
+        <guid>https://blog.aaayun.cc/archives/502.html</guid>
         <description>&lt;h2 id=&#34;微营销平台&#34;&gt;微营销平台
 &lt;/h2&gt;&lt;p&gt;主要用于产品的宣传推广，以订单处理为核心，帮助企业快速构建专属的全渠道营销订单平台。企业通过平台可以全面展示商品，快速引流客户，提升内外部协同效率，数据驱动获取更多利润。&lt;/p&gt;
 &lt;p&gt;您可以在后台自由编辑产品页面，产品内容，业务员，各种订单数据的查看。&lt;/p&gt;
@@ -2747,10 +2747,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>分享自用支付宝支付类</title>
-        <link>http://blog.aaayun.cc/archives/497.html</link>
+        <link>https://blog.aaayun.cc/archives/497.html</link>
         <pubDate>Mon, 04 Nov 2019 22:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/497.html</guid>
+        <guid>https://blog.aaayun.cc/archives/497.html</guid>
         <description>&lt;p&gt;分享自用的支付宝支付类&lt;/p&gt;
 &lt;p&gt;目前只封装了 订单查询以及app支付&lt;/p&gt;
 &lt;p&gt;更多的支付 后期会集成&lt;/p&gt;
@@ -3219,10 +3219,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>[更新]php微信支付类（含h5支付、APP二次签名、jsapi支付）</title>
-        <link>http://blog.aaayun.cc/archives/492.html</link>
+        <link>https://blog.aaayun.cc/archives/492.html</link>
         <pubDate>Sat, 02 Nov 2019 23:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/492.html</guid>
+        <guid>https://blog.aaayun.cc/archives/492.html</guid>
         <description>&lt;p&gt;博主之封装过一个微信支付类 很长时间没有更新了 现在分享一下自用的微信支付类&lt;/p&gt;
 &lt;p&gt;该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询&lt;/p&gt;
 &lt;p&gt;native扫码支付后面会添加&lt;/p&gt;
@@ -3874,10 +3874,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>【原创】2019云豹主播采集插件</title>
-        <link>http://blog.aaayun.cc/archives/488.html</link>
+        <link>https://blog.aaayun.cc/archives/488.html</link>
         <pubDate>Fri, 11 Oct 2019 06:48:20 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/488.html</guid>
+        <guid>https://blog.aaayun.cc/archives/488.html</guid>
         <description>&lt;p&gt;效果怎么样我就不在叙述了&lt;/p&gt;
 &lt;p&gt;为了防止此插件滥用接口加入授权 如需使用请赞助本站并联系博主本人&lt;/p&gt;
 &lt;p&gt;赞助以及联系方式请在 &lt;a class=&#34;link&#34; href=&#34;https://blog.aaayun.cc/about.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -3888,10 +3888,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>最新域名防红整站源码带后台配置</title>
-        <link>http://blog.aaayun.cc/archives/451.html</link>
+        <link>https://blog.aaayun.cc/archives/451.html</link>
         <pubDate>Mon, 09 Sep 2019 18:50:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/451.html</guid>
+        <guid>https://blog.aaayun.cc/archives/451.html</guid>
         <description>&lt;h2 id=&#34;图片预览&#34;&gt;图片预览
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/09/09/974044211957439.png&#34;
 	
@@ -3920,10 +3920,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>无须科学上网上谷歌搜索</title>
-        <link>http://blog.aaayun.cc/archives/446.html</link>
+        <link>https://blog.aaayun.cc/archives/446.html</link>
         <pubDate>Sat, 07 Sep 2019 23:33:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/446.html</guid>
+        <guid>https://blog.aaayun.cc/archives/446.html</guid>
         <description>&lt;h2 id=&#34;使用说明&#34;&gt;使用说明
 &lt;/h2&gt;&lt;p&gt;下载源码后放置国外空间或vps （静态） 绑定域名，访问即可&lt;/p&gt;
 &lt;h2 id=&#34;图片预览&#34;&gt;图片预览
@@ -3943,10 +3943,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>「推荐」很萌的404动画响应式页面</title>
-        <link>http://blog.aaayun.cc/archives/437.html</link>
+        <link>https://blog.aaayun.cc/archives/437.html</link>
         <pubDate>Sat, 07 Sep 2019 22:21:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/437.html</guid>
+        <guid>https://blog.aaayun.cc/archives/437.html</guid>
         <description>&lt;p&gt;现在是时候改变你的404错误页面！高级时尚响应式404＆维护页面，还可以附带玩游戏的，不一样的创意！&lt;/p&gt;
 &lt;h2 id=&#34;图片预览&#34;&gt;图片预览
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/09/07/3719946608079.png&#34;
@@ -3996,10 +3996,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>2019最新云豹直播采集(各大平台)</title>
-        <link>http://blog.aaayun.cc/archives/397.html</link>
+        <link>https://blog.aaayun.cc/archives/397.html</link>
         <pubDate>Wed, 03 Jul 2019 08:58:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/397.html</guid>
+        <guid>https://blog.aaayun.cc/archives/397.html</guid>
         <description>&lt;p&gt;应客户需求写了一个直播采集插件&lt;/p&gt;
 &lt;p&gt;功能主要就是采集各平台直播入自己库并生成僵尸粉&lt;/p&gt;
 &lt;p&gt;下载链接在下方&lt;/p&gt;
@@ -4019,10 +4019,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>PHP实现微博登入(非开放平台)</title>
-        <link>http://blog.aaayun.cc/archives/380.html</link>
+        <link>https://blog.aaayun.cc/archives/380.html</link>
         <pubDate>Mon, 22 Apr 2019 23:09:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/380.html</guid>
+        <guid>https://blog.aaayun.cc/archives/380.html</guid>
         <description>&lt;p&gt;用到官方的两个接口,一个是获取图片地址以及qrid，一个是用qrid验证二维码状态&lt;/p&gt;
 &lt;p&gt;获取新浪登入二维码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -4190,10 +4190,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>PHP实现QQ扫码登入，非开放平台</title>
-        <link>http://blog.aaayun.cc/archives/372.html</link>
+        <link>https://blog.aaayun.cc/archives/372.html</link>
         <pubDate>Thu, 18 Apr 2019 22:47:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/372.html</guid>
+        <guid>https://blog.aaayun.cc/archives/372.html</guid>
         <description>&lt;p&gt;近期有个需求，需要做扫码登入，而又不想去开放平台申请，看了一下彩虹大神的提取qq的sid，提取了几个重要的方法&lt;/p&gt;
 &lt;p&gt;原理就是生成二维码后，前端设置定时器查看二维码状态，因为没有openid只能保存固定的值，那就是qq号了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -4459,10 +4459,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>分享一个PHP环信服务端操作类</title>
-        <link>http://blog.aaayun.cc/archives/369.html</link>
+        <link>https://blog.aaayun.cc/archives/369.html</link>
         <pubDate>Wed, 03 Apr 2019 23:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/369.html</guid>
+        <guid>https://blog.aaayun.cc/archives/369.html</guid>
         <description>&lt;p&gt;之前做直播系统,需要用到通信这一块,由于官方文档没有sdk,博主本人也是google的,顺便修改了一下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -4918,10 +4918,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>必应获取每日高清壁纸API代码</title>
-        <link>http://blog.aaayun.cc/archives/314.html</link>
+        <link>https://blog.aaayun.cc/archives/314.html</link>
         <pubDate>Sun, 27 Jan 2019 12:47:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/314.html</guid>
+        <guid>https://blog.aaayun.cc/archives/314.html</guid>
         <description>&lt;p&gt;话不多说直接上代码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -4949,10 +4949,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>全网VIP影视一次解析接口源码文件分享</title>
-        <link>http://blog.aaayun.cc/archives/307.html</link>
+        <link>https://blog.aaayun.cc/archives/307.html</link>
         <pubDate>Wed, 23 Jan 2019 16:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/307.html</guid>
+        <guid>https://blog.aaayun.cc/archives/307.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/01/23/048671803558492.jpg&#34;
 	
 	
@@ -4988,10 +4988,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>php根据出生日期计算星座</title>
-        <link>http://blog.aaayun.cc/archives/303.html</link>
+        <link>https://blog.aaayun.cc/archives/303.html</link>
         <pubDate>Wed, 23 Jan 2019 00:08:12 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/303.html</guid>
+        <guid>https://blog.aaayun.cc/archives/303.html</guid>
         <description>&lt;p&gt;话说，今天做项目要求计算星座&lt;/p&gt;
 &lt;p&gt;日期格式为2019-1-22&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -5060,10 +5060,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>二次元导航网源码</title>
-        <link>http://blog.aaayun.cc/archives/293.html</link>
+        <link>https://blog.aaayun.cc/archives/293.html</link>
         <pubDate>Mon, 14 Jan 2019 19:07:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/293.html</guid>
+        <guid>https://blog.aaayun.cc/archives/293.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/01/14/352251208030991.png&#34;
 	
 	
@@ -5080,10 +5080,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>Miko动漫视频网站整站源码&#43;二次元动漫网源码&#43;视频弹幕网&#43;自带播放器数据下载</title>
-        <link>http://blog.aaayun.cc/archives/276.html</link>
+        <link>https://blog.aaayun.cc/archives/276.html</link>
         <pubDate>Wed, 02 Jan 2019 19:04:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/276.html</guid>
+        <guid>https://blog.aaayun.cc/archives/276.html</guid>
         <description>&lt;div class=&#39;fancybox-wrapper lazyload-container-unload&#39; data-fancybox=&#39;post-images&#39; href=&#39;https://uss.aaayun.cc/typecho/2019/01/02/981841092624496.jpg&#39;&gt;
   &lt;img class=&#34;lazyload lazyload-style-1&#34; src=&#34;data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+&#34;  decoding=&#34;async&#34; data-original=&#34;https://uss.aaayun.cc/typecho/2019/01/02/981841092624496.jpg&#34; src=&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC&#34; alt=&#34;1-1.jpg&#34; title=&#34;1-1.jpg&#34; /&gt;
 &lt;/div&gt;
@@ -5111,10 +5111,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>WHMCS v7.6.0 – 著名的虚拟主机管理脚本绿色版</title>
-        <link>http://blog.aaayun.cc/archives/273.html</link>
+        <link>https://blog.aaayun.cc/archives/273.html</link>
         <pubDate>Wed, 02 Jan 2019 18:58:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/273.html</guid>
+        <guid>https://blog.aaayun.cc/archives/273.html</guid>
         <description>&lt;div class=&#39;fancybox-wrapper lazyload-container-unload&#39; data-fancybox=&#39;post-images&#39; href=&#39;https://uss.aaayun.cc/typecho/2019/01/02/978932429551453.png&#39;&gt;
   &lt;img class=&#34;lazyload lazyload-style-1&#34; src=&#34;data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+&#34;  decoding=&#34;async&#34; data-original=&#34;https://uss.aaayun.cc/typecho/2019/01/02/978932429551453.png&#34; src=&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC&#34; alt=&#34;whmcs&#34; title=&#34;whmcs&#34; /&gt;
 &lt;/div&gt;
@@ -5134,10 +5134,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>蜗牛网游加速器下载 破解注册限制 无限使用会员体验</title>
-        <link>http://blog.aaayun.cc/archives/234.html</link>
+        <link>https://blog.aaayun.cc/archives/234.html</link>
         <pubDate>Sat, 22 Dec 2018 22:01:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/234.html</guid>
+        <guid>https://blog.aaayun.cc/archives/234.html</guid>
         <description>&lt;p&gt;吃鸡一般都要用加速器 现在腾讯的加速器已经开始收费了&lt;/p&gt;
 &lt;p&gt;想免费使用网游加速的朋友可以试试这个软件&lt;/p&gt;
 &lt;p&gt;注册免费送会员体验 软件注册非常简单 无需验证&lt;/p&gt;
@@ -5158,10 +5158,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>安卓老司机app-YY绿色版V8.0软件</title>
-        <link>http://blog.aaayun.cc/archives/231.html</link>
+        <link>https://blog.aaayun.cc/archives/231.html</link>
         <pubDate>Thu, 20 Dec 2018 18:13:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/231.html</guid>
+        <guid>https://blog.aaayun.cc/archives/231.html</guid>
         <description>&lt;p&gt;就不截图了&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.fileim.com/file/32dd3.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;下载直通车&lt;/a&gt;&lt;/p&gt;
@@ -5169,10 +5169,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>最近很火的支付宝领红包引导页</title>
-        <link>http://blog.aaayun.cc/archives/214.html</link>
+        <link>https://blog.aaayun.cc/archives/214.html</link>
         <pubDate>Fri, 14 Dec 2018 00:49:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/214.html</guid>
+        <guid>https://blog.aaayun.cc/archives/214.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/13/909323226927171.png&#34;
 	
 	
@@ -5192,10 +5192,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>单网页四合一图床上传源码</title>
-        <link>http://blog.aaayun.cc/archives/201.html</link>
+        <link>https://blog.aaayun.cc/archives/201.html</link>
         <pubDate>Tue, 11 Dec 2018 23:17:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/201.html</guid>
+        <guid>https://blog.aaayun.cc/archives/201.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/11/124362256500577.jpg&#34;
 	
 	
@@ -5213,10 +5213,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>绚丽彩虹同学录php源码V1.4公测版</title>
-        <link>http://blog.aaayun.cc/archives/187.html</link>
+        <link>https://blog.aaayun.cc/archives/187.html</link>
         <pubDate>Tue, 11 Dec 2018 18:50:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/187.html</guid>
+        <guid>https://blog.aaayun.cc/archives/187.html</guid>
         <description>&lt;p&gt;绚丽彩虹同学录是一款清新简洁的同学录程序&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/11/96497920010922.png&#34;
 	
@@ -5276,10 +5276,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>PHP百度随机壁纸图片接口，PHP随机图片API</title>
-        <link>http://blog.aaayun.cc/archives/183.html</link>
+        <link>https://blog.aaayun.cc/archives/183.html</link>
         <pubDate>Tue, 11 Dec 2018 01:30:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/183.html</guid>
+        <guid>https://blog.aaayun.cc/archives/183.html</guid>
         <description>&lt;p&gt;接口地址：&lt;a class=&#34;link&#34; href=&#34;https://api.aaayun.cc/?type=Image&amp;amp;file=BaiDuRand&amp;amp;class=%e7%be%8e%e5%a5%b3&amp;amp;sub=%e5%86%99%e7%9c%9f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://api.aaayun.cc/?type=Image&amp;file=BaiDuRand&amp;class=美女&amp;sub=写真&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;参数sub可不填写&lt;/p&gt;
@@ -5331,10 +5331,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>价值50块钱的智云影视多功能php源码V3.6.6.2版本</title>
-        <link>http://blog.aaayun.cc/archives/159.html</link>
+        <link>https://blog.aaayun.cc/archives/159.html</link>
         <pubDate>Sat, 01 Dec 2018 17:33:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/159.html</guid>
+        <guid>https://blog.aaayun.cc/archives/159.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/01/280894127605747.jpeg&#34;
 	
 	
@@ -5372,10 +5372,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>微信支付类（含h5支付、APP二次签名）</title>
-        <link>http://blog.aaayun.cc/archives/147.html</link>
+        <link>https://blog.aaayun.cc/archives/147.html</link>
         <pubDate>Tue, 13 Nov 2018 17:20:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/147.html</guid>
+        <guid>https://blog.aaayun.cc/archives/147.html</guid>
         <description>&lt;p&gt;最新地址 &lt;a class=&#34;link&#34; href=&#34;https://vclove.cn/archives/492.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://vclove.cn/archives/492.html&lt;/a&gt;&lt;br&gt;
 什么是微信H5支付&lt;/p&gt;
@@ -5420,10 +5420,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>轻风云授权系统1.1【更新】</title>
-        <link>http://blog.aaayun.cc/archives/116.html</link>
+        <link>https://blog.aaayun.cc/archives/116.html</link>
         <pubDate>Sun, 22 Jul 2018 22:24:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/116.html</guid>
+        <guid>https://blog.aaayun.cc/archives/116.html</guid>
         <description>&lt;p&gt;截图预览&lt;br&gt;
 &lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/05/28/993373005566653.png&#34;
 	
@@ -5463,10 +5463,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>[二开]校园表白墙</title>
-        <link>http://blog.aaayun.cc/archives/108.html</link>
+        <link>https://blog.aaayun.cc/archives/108.html</link>
         <pubDate>Wed, 27 Jun 2018 21:59:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/108.html</guid>
+        <guid>https://blog.aaayun.cc/archives/108.html</guid>
         <description>&lt;p&gt;截图预览:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/27/791653405341689.jpg&#34;
 	
@@ -5495,10 +5495,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>科目一刷学时脚本</title>
-        <link>http://blog.aaayun.cc/archives/102.html</link>
+        <link>https://blog.aaayun.cc/archives/102.html</link>
         <pubDate>Wed, 20 Jun 2018 03:16:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/102.html</guid>
+        <guid>https://blog.aaayun.cc/archives/102.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/19/076891432716468.png&#34;
 	
 	
@@ -5520,10 +5520,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>轻风云授权系统1.0</title>
-        <link>http://blog.aaayun.cc/archives/84.html</link>
+        <link>https://blog.aaayun.cc/archives/84.html</link>
         <pubDate>Tue, 29 May 2018 00:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/84.html</guid>
+        <guid>https://blog.aaayun.cc/archives/84.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/05/28/993373005566653.png&#34;
 	
 	
@@ -5561,10 +5561,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>Win10数字激活神器HWIDGen v9.32 汉化版</title>
-        <link>http://blog.aaayun.cc/archives/97.html</link>
+        <link>https://blog.aaayun.cc/archives/97.html</link>
         <pubDate>Sat, 26 May 2018 17:12:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/97.html</guid>
+        <guid>https://blog.aaayun.cc/archives/97.html</guid>
         <description>&lt;p&gt;HWIDGEN是一款由国外Nsane论坛会员s1ave77制作的Windows 10数字权利激活工具，这款Win10数字权利获取工具，可以自动获取Windows 10 数字许可证激活，无需产品密钥，以最简单的方式永久激活。&lt;/p&gt;
 &lt;p&gt;什么是“数字权利激活”？数字许可证激活是 Windows 10 中新加入的激活方式，是一种授权方法的分类。数字许可证会记录您的硬件设备信息，只要在CPU和主板设备没有更换的情况下就可以连接微软服务器自动永久性的激活系统，重新安装系统时无需再次输入产品密钥，安装后会自动永久激活。“数字权利激活”在不更换电脑硬件的情况下一直有效，无论您安装的系统是正式版还是预览版，不影响永久激活效果。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/05/61127725288621.jpg&#34;
@@ -5596,10 +5596,10 @@ EnterpriseS (N)
         </item>
         <item>
         <title>vax虚拟币系统PHP源码</title>
-        <link>http://blog.aaayun.cc/archives/40.html</link>
+        <link>https://blog.aaayun.cc/archives/40.html</link>
         <pubDate>Thu, 29 Mar 2018 20:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/40.html</guid>
+        <guid>https://blog.aaayun.cc/archives/40.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;此源码已停止更新，仍可下载使用**&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;程序用途&lt;br&gt;
@@ -5632,19 +5632,19 @@ EnterpriseS (N)
         </item>
         <item>
         <title>ssr科学上网附ssr服务器搭建</title>
-        <link>http://blog.aaayun.cc/?p=11/</link>
+        <link>https://blog.aaayun.cc/?p=11/</link>
         <pubDate>Mon, 19 Mar 2018 19:30:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/?p=11/</guid>
+        <guid>https://blog.aaayun.cc/?p=11/</guid>
         <description>&lt;p&gt;因整改内容暂无&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>快乐二级域名分发系统v2.1.1</title>
-        <link>http://blog.aaayun.cc/archives/8.html</link>
+        <link>https://blog.aaayun.cc/archives/8.html</link>
         <pubDate>Mon, 19 Mar 2018 04:19:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/8.html</guid>
+        <guid>https://blog.aaayun.cc/archives/8.html</guid>
         <description>&lt;p&gt;此系统有哪些特点&lt;br&gt;
 目前支持的域名解析平台有&lt;br&gt;
 dnspod&lt;br&gt;

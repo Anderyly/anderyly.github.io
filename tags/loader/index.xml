@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Loader on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/loader/</link>
+        <link>https://blog.aaayun.cc/tags/loader/</link>
         <description>Recent content in Loader on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/loader/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/loader/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在线免费测试网站压力</title>
-        <link>http://blog.aaayun.cc/archives/421.html</link>
+        <link>https://blog.aaayun.cc/archives/421.html</link>
         <pubDate>Tue, 27 Aug 2019 19:36:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/421.html</guid>
+        <guid>https://blog.aaayun.cc/archives/421.html</guid>
         <description>&lt;p&gt;loader.io最大支持10000个连接，一个主域名，每次测试时最多同时可以对两个页面进行测试，每次测试时间限制为1分钟。使用前需要注册一个loader.io账号。&lt;br&gt;
 截图&lt;br&gt;
 loader.io也支持定时执行测试任务和使用loader.io提供的API来调用测试任务。&lt;br&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>监控 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E7%9B%91%E6%8E%A7/</link>
+        <link>https://blog.aaayun.cc/tags/%E7%9B%91%E6%8E%A7/</link>
         <description>Recent content in 监控 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E7%9B%91%E6%8E%A7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E7%9B%91%E6%8E%A7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>宝塔linux版设置秒级监控</title>
-        <link>http://blog.aaayun.cc/archives/566.html</link>
+        <link>https://blog.aaayun.cc/archives/566.html</link>
         <pubDate>Mon, 25 Jan 2021 07:07:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/566.html</guid>
+        <guid>https://blog.aaayun.cc/archives/566.html</guid>
         <description>&lt;p&gt;宝塔的定时任务最低周期为一分钟，那么我们可以通过执行shell脚本的方法来实现秒级监控，也就是无限循环，但是会大量消耗资源，请谨慎添加&lt;/p&gt;
 &lt;p&gt;在某某博客看到的源码复制下来执行直接报错&lt;br&gt;
 &lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/01/3830572278.png&#34;
@@ -62,10 +62,10 @@
         </item>
         <item>
         <title>监控微信个人二维码是否打开</title>
-        <link>http://blog.aaayun.cc/archives/514.html</link>
+        <link>https://blog.aaayun.cc/archives/514.html</link>
         <pubDate>Sun, 25 Oct 2020 08:47:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/514.html</guid>
+        <guid>https://blog.aaayun.cc/archives/514.html</guid>
         <description>&lt;p&gt;因为项目需求 监控微信个人二维码是否打开&lt;/p&gt;
 &lt;p&gt;思路：&lt;br&gt;
 微信官方并没有提供这个API，经过二维码识别提取到了一个https链接，此类链接微信以及浏览器打开则指向微信官网地址，此思路pass&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>二维码 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/</link>
+        <link>https://blog.aaayun.cc/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/</link>
         <description>Recent content in 二维码 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>微活码管理系统</title>
-        <link>http://blog.aaayun.cc/archives/577.html</link>
+        <link>https://blog.aaayun.cc/archives/577.html</link>
         <pubDate>Wed, 03 Mar 2021 02:18:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/577.html</guid>
+        <guid>https://blog.aaayun.cc/archives/577.html</guid>
         <description>&lt;h2 id=&#34;微活码系统&#34;&gt;微活码系统
 &lt;/h2&gt;&lt;p&gt;微信群满100人以后，就不能扫描二维码入群了怎么办？&lt;br&gt;
 用活码就能完美解决这个问题。&lt;br&gt;
@@ -109,10 +109,10 @@
         </item>
         <item>
         <title>监控微信个人二维码是否打开</title>
-        <link>http://blog.aaayun.cc/archives/514.html</link>
+        <link>https://blog.aaayun.cc/archives/514.html</link>
         <pubDate>Sun, 25 Oct 2020 08:47:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/514.html</guid>
+        <guid>https://blog.aaayun.cc/archives/514.html</guid>
         <description>&lt;p&gt;因为项目需求 监控微信个人二维码是否打开&lt;/p&gt;
 &lt;p&gt;思路：&lt;br&gt;
 微信官方并没有提供这个API，经过二维码识别提取到了一个https链接，此类链接微信以及浏览器打开则指向微信官网地址，此思路pass&lt;/p&gt;
@@ -221,10 +221,10 @@
         </item>
         <item>
         <title>PHP实现微博登入(非开放平台)</title>
-        <link>http://blog.aaayun.cc/archives/380.html</link>
+        <link>https://blog.aaayun.cc/archives/380.html</link>
         <pubDate>Mon, 22 Apr 2019 23:09:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/380.html</guid>
+        <guid>https://blog.aaayun.cc/archives/380.html</guid>
         <description>&lt;p&gt;用到官方的两个接口,一个是获取图片地址以及qrid，一个是用qrid验证二维码状态&lt;/p&gt;
 &lt;p&gt;获取新浪登入二维码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

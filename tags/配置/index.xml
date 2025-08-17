@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>配置 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E9%85%8D%E7%BD%AE/</link>
+        <link>https://blog.aaayun.cc/tags/%E9%85%8D%E7%BD%AE/</link>
         <description>Recent content in 配置 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>golang配置文件加载</title>
-        <link>http://blog.aaayun.cc/archives/366.html</link>
+        <link>https://blog.aaayun.cc/archives/366.html</link>
         <pubDate>Wed, 03 Apr 2019 18:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/366.html</guid>
+        <guid>https://blog.aaayun.cc/archives/366.html</guid>
         <description>&lt;p&gt;最近在研究golang,由于需要采集很多分类的数据配置文件写死不合适,何况还要编译成exe,查看了一下大佬以及官方文档,发现实现并不难&lt;/p&gt;
 &lt;p&gt;1.首先导入包&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

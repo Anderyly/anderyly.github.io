@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Gcc on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/gcc/</link>
+        <link>https://blog.aaayun.cc/tags/gcc/</link>
         <description>Recent content in Gcc on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/gcc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/gcc/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>windows下golang编译报running gcc failed错误</title>
-        <link>http://blog.aaayun.cc/archives/622.html</link>
+        <link>https://blog.aaayun.cc/archives/622.html</link>
         <pubDate>Wed, 31 Mar 2021 00:08:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/622.html</guid>
+        <guid>https://blog.aaayun.cc/archives/622.html</guid>
         <description>&lt;h2 id=&#34;windows下golang编译报running-gcc-failed错误&#34;&gt;windows下golang编译报running gcc failed错误
 &lt;/h2&gt;&lt;p&gt;报错信息如下&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2182248545.png&#34;
@@ -61,10 +61,10 @@
         </item>
         <item>
         <title>Windows10安装GCC和Make工具</title>
-        <link>http://blog.aaayun.cc/archives/589.html</link>
+        <link>https://blog.aaayun.cc/archives/589.html</link>
         <pubDate>Fri, 19 Mar 2021 18:36:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/589.html</guid>
+        <guid>https://blog.aaayun.cc/archives/589.html</guid>
         <description>&lt;h2 id=&#34;windows10安装gcc和make工具&#34;&gt;Windows10安装GCC和Make工具
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;下载并安装Windows版的&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1222272972.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -131,10 +131,10 @@
         </item>
         <item>
         <title>centos7编译安装gcc9.2</title>
-        <link>http://blog.aaayun.cc/archives/419.html</link>
+        <link>https://blog.aaayun.cc/archives/419.html</link>
         <pubDate>Mon, 19 Aug 2019 17:46:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/419.html</guid>
+        <guid>https://blog.aaayun.cc/archives/419.html</guid>
         <description>&lt;p&gt;原先的centos7中安装的gcc编译器为4.8.5，版本太旧，执行一些程序完全不够用阿 比如 网易云音乐等&lt;br&gt;
 所以今天博主带你升级gcc9.2.0最新版&lt;/p&gt;
 &lt;p&gt;1.安装编译环境&lt;/p&gt;

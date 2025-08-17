@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>宝塔 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E5%AE%9D%E5%A1%94/</link>
+        <link>https://blog.aaayun.cc/tags/%E5%AE%9D%E5%A1%94/</link>
         <description>Recent content in 宝塔 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E5%AE%9D%E5%A1%94/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E5%AE%9D%E5%A1%94/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>golang使用宝塔API快速建站</title>
-        <link>http://blog.aaayun.cc/archives/799.html</link>
+        <link>https://blog.aaayun.cc/archives/799.html</link>
         <pubDate>Fri, 10 Jun 2022 10:17:24 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/799.html</guid>
+        <guid>https://blog.aaayun.cc/archives/799.html</guid>
         <description>&lt;p&gt;由于某些原因，需要用一行命令来创建宝塔以及数据库，此函数基于官方的API&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注意：宝塔创建网站需要使用php 以下代码使用php80&lt;/p&gt;&lt;/blockquote&gt;
@@ -301,10 +301,10 @@ mysql:
         </item>
         <item>
         <title>宝塔linux版设置秒级监控</title>
-        <link>http://blog.aaayun.cc/archives/566.html</link>
+        <link>https://blog.aaayun.cc/archives/566.html</link>
         <pubDate>Mon, 25 Jan 2021 07:07:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/566.html</guid>
+        <guid>https://blog.aaayun.cc/archives/566.html</guid>
         <description>&lt;p&gt;宝塔的定时任务最低周期为一分钟，那么我们可以通过执行shell脚本的方法来实现秒级监控，也就是无限循环，但是会大量消耗资源，请谨慎添加&lt;/p&gt;
 &lt;p&gt;在某某博客看到的源码复制下来执行直接报错&lt;br&gt;
 &lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/01/3830572278.png&#34;
@@ -354,10 +354,10 @@ mysql:
         </item>
         <item>
         <title>宝塔面板专业版7.4.3破解版一键脚本</title>
-        <link>http://blog.aaayun.cc/archives/516.html</link>
+        <link>https://blog.aaayun.cc/archives/516.html</link>
         <pubDate>Tue, 25 Aug 2020 11:31:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/516.html</guid>
+        <guid>https://blog.aaayun.cc/archives/516.html</guid>
         <description>&lt;p&gt;脚本简介&lt;/p&gt;
 &lt;p&gt;本次面板版本：7.4.3&lt;br&gt;
 本脚本支持一键安装79版宝塔面板 以及 已经安装宝塔面板升级79版！&lt;br&gt;
@@ -430,10 +430,10 @@ Centos安装命令：根据系统执行框内命令开始安装（大约2分钟�
         </item>
         <item>
         <title>宝塔面板7.X高级破解版代码</title>
-        <link>http://blog.aaayun.cc/archives/513.html</link>
+        <link>https://blog.aaayun.cc/archives/513.html</link>
         <pubDate>Wed, 25 Dec 2019 18:54:57 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/513.html</guid>
+        <guid>https://blog.aaayun.cc/archives/513.html</guid>
         <description>&lt;p&gt;宝塔面板 7.0.3 安装命令&lt;br&gt;
 Centos安装命令：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -549,10 +549,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>宝塔nginx环境下php7.2无mcrypt扩展</title>
-        <link>http://blog.aaayun.cc/archives/423.html</link>
+        <link>https://blog.aaayun.cc/archives/423.html</link>
         <pubDate>Wed, 28 Aug 2019 00:12:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/423.html</guid>
+        <guid>https://blog.aaayun.cc/archives/423.html</guid>
         <description>&lt;p&gt;ssh以root用户登入服务器 执行以下命令&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -589,10 +589,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>宝塔专业版手动破解方法</title>
-        <link>http://blog.aaayun.cc/archives/358.html</link>
+        <link>https://blog.aaayun.cc/archives/358.html</link>
         <pubDate>Sat, 16 Mar 2019 22:44:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/358.html</guid>
+        <guid>https://blog.aaayun.cc/archives/358.html</guid>
         <description>&lt;p&gt;首先安装面板免费版&lt;br&gt;
 然后升级专业版&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

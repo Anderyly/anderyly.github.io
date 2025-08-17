@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>微博 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E5%BE%AE%E5%8D%9A/</link>
+        <link>https://blog.aaayun.cc/tags/%E5%BE%AE%E5%8D%9A/</link>
         <description>Recent content in 微博 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E5%BE%AE%E5%8D%9A/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E5%BE%AE%E5%8D%9A/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PHP实现微博登入(非开放平台)</title>
-        <link>http://blog.aaayun.cc/archives/380.html</link>
+        <link>https://blog.aaayun.cc/archives/380.html</link>
         <pubDate>Mon, 22 Apr 2019 23:09:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/380.html</guid>
+        <guid>https://blog.aaayun.cc/archives/380.html</guid>
         <description>&lt;p&gt;用到官方的两个接口,一个是获取图片地址以及qrid，一个是用qrid验证二维码状态&lt;/p&gt;
 &lt;p&gt;获取新浪登入二维码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

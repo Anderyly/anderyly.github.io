@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Centos7 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/centos7/</link>
+        <link>https://blog.aaayun.cc/tags/centos7/</link>
         <description>Recent content in Centos7 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/centos7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/centos7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Centos7一键安装pptp脚本</title>
-        <link>http://blog.aaayun.cc/archives/791.html</link>
+        <link>https://blog.aaayun.cc/archives/791.html</link>
         <pubDate>Mon, 23 May 2022 19:39:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/791.html</guid>
+        <guid>https://blog.aaayun.cc/archives/791.html</guid>
         <description>&lt;h2 id=&#34;废话不多说直接上脚本&#34;&gt;废话不多说直接上脚本
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -72,10 +72,10 @@
         </item>
         <item>
         <title>记一次centos7在断网环境下编译安装nginx1.6&#43;php7.2</title>
-        <link>http://blog.aaayun.cc/archives/610.html</link>
+        <link>https://blog.aaayun.cc/archives/610.html</link>
         <pubDate>Fri, 26 Mar 2021 18:58:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/610.html</guid>
+        <guid>https://blog.aaayun.cc/archives/610.html</guid>
         <description>&lt;h2 id=&#34;记一次centos7在断网环境下编译安装nginx16php72&#34;&gt;记一次centos7在断网环境下编译安装nginx1.6+php7.2
 &lt;/h2&gt;&lt;p&gt;下载我们用到的依赖包文件 &lt;a class=&#34;link&#34; href=&#34;https://anderyly.lanzous.com/ikq8bnbzngd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;nginx1.6&amp;amp;php7.2.zip&lt;/a&gt;&lt;br&gt;

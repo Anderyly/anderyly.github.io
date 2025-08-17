@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Go on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/go/</link>
+        <link>https://blog.aaayun.cc/tags/go/</link>
         <description>Recent content in Go on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/go/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/go/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>golang中time.RFC3339时间格式化</title>
-        <link>http://blog.aaayun.cc/archives/914.html</link>
+        <link>https://blog.aaayun.cc/archives/914.html</link>
         <pubDate>Wed, 26 Oct 2022 17:07:10 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/914.html</guid>
+        <guid>https://blog.aaayun.cc/archives/914.html</guid>
         <description>&lt;p&gt;在开发过程中，我们有时会遇到这样的问题，将 2022-10-22T08:18:46+08:00 转成 2022-10-22 08:18:46，怎么解决这个问题？&lt;/p&gt;
 &lt;p&gt;解决这个问题，最好不要用字符串截取，或者说字符串截取是最笨的方法，这应该是时间格式化的问题。&lt;/p&gt;
 &lt;p&gt;我们先看一下 golang time 包中支持的 format 格式：&lt;/p&gt;
@@ -155,10 +155,10 @@
         </item>
         <item>
         <title>golang使用宝塔API快速建站</title>
-        <link>http://blog.aaayun.cc/archives/799.html</link>
+        <link>https://blog.aaayun.cc/archives/799.html</link>
         <pubDate>Fri, 10 Jun 2022 10:17:24 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/799.html</guid>
+        <guid>https://blog.aaayun.cc/archives/799.html</guid>
         <description>&lt;p&gt;由于某些原因，需要用一行命令来创建宝塔以及数据库，此函数基于官方的API&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注意：宝塔创建网站需要使用php 以下代码使用php80&lt;/p&gt;&lt;/blockquote&gt;
@@ -447,10 +447,10 @@ mysql:
         </item>
         <item>
         <title>飞尔国际源码</title>
-        <link>http://blog.aaayun.cc/archives/755.html</link>
+        <link>https://blog.aaayun.cc/archives/755.html</link>
         <pubDate>Thu, 18 Nov 2021 02:51:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/755.html</guid>
+        <guid>https://blog.aaayun.cc/archives/755.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;非资金盘系统，项目可长期运营&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;预览&#34;&gt;预览
@@ -498,10 +498,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>批量采集美女写真等图片做图片站</title>
-        <link>http://blog.aaayun.cc/archives/747.html</link>
+        <link>https://blog.aaayun.cc/archives/747.html</link>
         <pubDate>Mon, 11 Oct 2021 15:14:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/747.html</guid>
+        <guid>https://blog.aaayun.cc/archives/747.html</guid>
         <description>&lt;h1 id=&#34;批量采集美女写真等图片做图片站&#34;&gt;批量采集美女写真等图片做图片站
 &lt;/h1&gt;&lt;p&gt;批量采集美女写真等图片到typecho上，图片可选择本地化，内含多种数据源，程序采用golang开发，可进行多线程采集，经测试很稳定，目前可采集到2400篇文章，2w多图片。可自行编译，也有打包好的&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/10/2950170588.png&#34;
@@ -552,10 +552,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>golang cron v3 定时任务实现</title>
-        <link>http://blog.aaayun.cc/archives/709.html</link>
+        <link>https://blog.aaayun.cc/archives/709.html</link>
         <pubDate>Sat, 10 Jul 2021 01:42:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/709.html</guid>
+        <guid>https://blog.aaayun.cc/archives/709.html</guid>
         <description>&lt;h3 id=&#34;最近需要在-golang-中使用定时任务功能用到了一个-cron-库当前是-v3-版本网上挺多都是-v2-的教程记录一下使用方法&#34;&gt;最近需要在 golang 中使用定时任务功能，用到了一个 cron 库，当前是 v3 版本，网上挺多都是 v2 的教程，记录一下使用方法。
 &lt;/h3&gt;&lt;p&gt;在旧版本的库中默认的 cron 表达式不是标准格式，第一个位是秒级的定义。&lt;br&gt;
 现在 v3 版本直接用标准 cron 表示式即可，主要看 godoc 文档部分&lt;/p&gt;
@@ -1088,10 +1088,10 @@ crontab.guru&lt;/p&gt;
         </item>
         <item>
         <title>gin渲染多层目录下模板</title>
-        <link>http://blog.aaayun.cc/archives/674.html</link>
+        <link>https://blog.aaayun.cc/archives/674.html</link>
         <pubDate>Fri, 18 Jun 2021 10:04:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/674.html</guid>
+        <guid>https://blog.aaayun.cc/archives/674.html</guid>
         <description>&lt;p&gt;试着学习一下go的gin框架，相比php来说，坑太多了&lt;/p&gt;
 &lt;p&gt;在模板里面如果 &lt;em&gt;不定义define&lt;/em&gt; 则相同文件名会被 &lt;em&gt;覆盖&lt;/em&gt; ，必须定义&lt;/p&gt;
 &lt;p&gt;项目结构：&lt;br&gt;
@@ -1159,10 +1159,10 @@ crontab.guru&lt;/p&gt;
         </item>
         <item>
         <title>golang实现windows下切换代理</title>
-        <link>http://blog.aaayun.cc/archives/657.html</link>
+        <link>https://blog.aaayun.cc/archives/657.html</link>
         <pubDate>Tue, 11 May 2021 23:42:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/657.html</guid>
+        <guid>https://blog.aaayun.cc/archives/657.html</guid>
         <description>&lt;h2 id=&#34;golang实现windows下切换代理&#34;&gt;golang实现windows下切换代理
 &lt;/h2&gt;&lt;p&gt;实现很简单 主要修改注册表文件 利用walk展示页面&lt;/p&gt;
 &lt;h2 id=&#34;界面如下&#34;&gt;界面如下
@@ -1388,10 +1388,10 @@ crontab.guru&lt;/p&gt;
         </item>
         <item>
         <title>golang实现CC多线程测压</title>
-        <link>http://blog.aaayun.cc/archives/641.html</link>
+        <link>https://blog.aaayun.cc/archives/641.html</link>
         <pubDate>Fri, 30 Apr 2021 00:59:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/641.html</guid>
+        <guid>https://blog.aaayun.cc/archives/641.html</guid>
         <description>&lt;h2 id=&#34;golang实现cc多线程攻击&#34;&gt;golang实现CC多线程攻击
 &lt;/h2&gt;&lt;p&gt;内含exe编译后的文件以及源代码&lt;/p&gt;
 &lt;p&gt;由于需要大量ip 博主特地找了个收费很低的代理网址 一个月最低3.2 (推荐使用每秒更换ip)&lt;br&gt;
@@ -1426,10 +1426,10 @@ crontab.guru&lt;/p&gt;
         </item>
         <item>
         <title>golang获取本地服务器IP</title>
-        <link>http://blog.aaayun.cc/archives/629.html</link>
+        <link>https://blog.aaayun.cc/archives/629.html</link>
         <pubDate>Wed, 21 Apr 2021 01:01:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/629.html</guid>
+        <guid>https://blog.aaayun.cc/archives/629.html</guid>
         <description>&lt;h2 id=&#34;golang获取本地服务器ip&#34;&gt;golang获取本地服务器IP
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1545,10 +1545,10 @@ crontab.guru&lt;/p&gt;
         </item>
         <item>
         <title>windows下golang编译报running gcc failed错误</title>
-        <link>http://blog.aaayun.cc/archives/622.html</link>
+        <link>https://blog.aaayun.cc/archives/622.html</link>
         <pubDate>Wed, 31 Mar 2021 00:08:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/622.html</guid>
+        <guid>https://blog.aaayun.cc/archives/622.html</guid>
         <description>&lt;h2 id=&#34;windows下golang编译报running-gcc-failed错误&#34;&gt;windows下golang编译报running gcc failed错误
 &lt;/h2&gt;&lt;p&gt;报错信息如下&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/2182248545.png&#34;
@@ -1597,10 +1597,10 @@ crontab.guru&lt;/p&gt;
         </item>
         <item>
         <title>golang配置文件加载</title>
-        <link>http://blog.aaayun.cc/archives/366.html</link>
+        <link>https://blog.aaayun.cc/archives/366.html</link>
         <pubDate>Wed, 03 Apr 2019 18:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/366.html</guid>
+        <guid>https://blog.aaayun.cc/archives/366.html</guid>
         <description>&lt;p&gt;最近在研究golang,由于需要采集很多分类的数据配置文件写死不合适,何况还要编译成exe,查看了一下大佬以及官方文档,发现实现并不难&lt;/p&gt;
 &lt;p&gt;1.首先导入包&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

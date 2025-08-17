@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>开机自启 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</link>
+        <link>https://blog.aaayun.cc/tags/%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</link>
         <description>Recent content in 开机自启 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>deepin下开机自启脚本</title>
-        <link>http://blog.aaayun.cc/archives/768.html</link>
+        <link>https://blog.aaayun.cc/archives/768.html</link>
         <pubDate>Tue, 14 Dec 2021 22:28:52 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/768.html</guid>
+        <guid>https://blog.aaayun.cc/archives/768.html</guid>
         <description>&lt;h2 id=&#34;利用-rclocal-文件实现脚本开机自启&#34;&gt;利用 rc.local 文件实现脚本开机自启:
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;新建 /etc/rc.local 文件&lt;/li&gt;

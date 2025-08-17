@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Deepin on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/deepin/</link>
+        <link>https://blog.aaayun.cc/tags/deepin/</link>
         <description>Recent content in Deepin on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/deepin/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/deepin/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>deepin下开机自启脚本</title>
-        <link>http://blog.aaayun.cc/archives/768.html</link>
+        <link>https://blog.aaayun.cc/archives/768.html</link>
         <pubDate>Tue, 14 Dec 2021 22:28:52 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/768.html</guid>
+        <guid>https://blog.aaayun.cc/archives/768.html</guid>
         <description>&lt;h2 id=&#34;利用-rclocal-文件实现脚本开机自启&#34;&gt;利用 rc.local 文件实现脚本开机自启:
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;新建 /etc/rc.local 文件&lt;/li&gt;
@@ -99,10 +99,10 @@
         </item>
         <item>
         <title>deepin15.7上安装mysql(解决不提示设置密码的问题)</title>
-        <link>http://blog.aaayun.cc/archives/139.html</link>
+        <link>https://blog.aaayun.cc/archives/139.html</link>
         <pubDate>Mon, 01 Oct 2018 18:01:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/139.html</guid>
+        <guid>https://blog.aaayun.cc/archives/139.html</guid>
         <description>&lt;p&gt;mysql已经安装完毕，但安装过程没有让你填写密码，链接错误，那么就来看看以下命令吧&lt;/p&gt;
 &lt;p&gt;1.首先获取root权限&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Chrome on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/chrome/</link>
+        <link>https://blog.aaayun.cc/tags/chrome/</link>
         <description>Recent content in Chrome on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/chrome/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/chrome/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Fedora26/27/28/29中安装Google Chrome浏览器</title>
-        <link>http://blog.aaayun.cc/archives/317.html</link>
+        <link>https://blog.aaayun.cc/archives/317.html</link>
         <pubDate>Fri, 01 Feb 2019 21:57:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/317.html</guid>
+        <guid>https://blog.aaayun.cc/archives/317.html</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;终端切换用户为超级用户root&lt;/li&gt;
 &lt;li&gt;添加Chrome浏览器的数据源&lt;/li&gt;

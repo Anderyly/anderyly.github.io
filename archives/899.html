@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="微信个人版扫码登入 此方法适用于个人开发者想使用微信扫码快速登入，但是又申请不了微信开放平台授权的个人用户，经测试此方法可用，demo下载地址在最底部\n获取uuid get方式请求以下接口会返回uuid信息\n1 2 3 4 5 // 地址 https://login.wx.qq.com/jslogin?appid=wx782c26e4c19acffb&amp;redirect_uri=https%3A%2F%2Fweb.weixin.qq.com%2Fcgi-bin%2Fmmwebwx-bin%2Fwebwxnewloginpage&amp;fun=new&amp;lang=zh_&amp;_=1663918497103 // 结果 window.QRLogin.code = 200; window.QRLogin.uuid = &amp;quot;mmmmmmmmmm&amp;quot;; 组装获取qrcode 1 https://login.weixin.qq.com/qrcode/{{第一步获取到的uuid}} 轮询get访问获取微信返回信息 1 https://login.wx.qq.com/cgi-bin/mmwebwx-bin/login?loginicon=true&amp;amp;uuid={{第一步获取到的uuid}} 当用户扫码时会出现code 201，此时接口会返回base64图片\n1 window.code=201;window.userAvatar = &amp;#039;data:img/jpg;......&amp;#039;; 当用户在手机上确定登入，则接口会返回code 200 并返回地址，此时模拟访问此地址并获取cookie信息\n1 2 3 4 5 6 // 返回信息 window.code=200; window.redirect_uri=&amp;quot;https://wx2.qq.com/cgi-bin/mmwebwx-bin/webwxnewloginpage?ticket=A_mmmmmmmmmmmmmmmmmmmmmm@qrticket_0&amp;amp;uuid=mmmmmmmmmmmm&amp;amp;lang=zh_&amp;amp;scan=1661918912&amp;quot;; // 抓取到的cookie pac_uid=0_65cf11501295d; iip=0; pgv_pvid=8666222200; wxuin=1044427715; wxsid=1DTmzGGGDDDWSyuR; mm_lang=zh_; wxuin=1044427715; webwx_data_ticket=gSe4NFFFSDDSDSCC/kmhPNLO; webwxuvid=47a38a6FSDSCSCSCFGDGDGDGDGDGD1cd69355a523b64a548db8717f173d68ee1; webwx_auth_ticket=CIsBEJrPiGEDFDVERFDSFSGBDGFVSDFFCSDVDFSVGDSFCV7gxbszLyHqQCXa1sw0XMHM6sjVxfVWR/IIVn3jO97euZPMIT0jSDFVRFVGBRFBHGBHFSGSBSDGSDFGDFFSDDSFSDFDSFSDFTI=; MM_WX_NOTIFY_STATE=1; MM_WX_SOUND_STATE=1; wxloadtime=1663918937_expired; wxpluginkey=16633456778 ps: 博主经过多次测试，发现只有wxuin是固定的，因此用wxuin代openid进行快速登入或注册\n同一账号短时间内请勿多次登入\n">
 <title>微信个人版扫码登入</title>
 
-<link rel='canonical' href='http://blog.aaayun.cc/archives/899.html'>
+<link rel='canonical' href='https://blog.aaayun.cc/archives/899.html'>
 
 <link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="微信个人版扫码登入">
 <meta property='og:description' content="微信个人版扫码登入 此方法适用于个人开发者想使用微信扫码快速登入，但是又申请不了微信开放平台授权的个人用户，经测试此方法可用，demo下载地址在最底部\n获取uuid get方式请求以下接口会返回uuid信息\n1 2 3 4 5 // 地址 https://login.wx.qq.com/jslogin?appid=wx782c26e4c19acffb&amp;redirect_uri=https%3A%2F%2Fweb.weixin.qq.com%2Fcgi-bin%2Fmmwebwx-bin%2Fwebwxnewloginpage&amp;fun=new&amp;lang=zh_&amp;_=1663918497103 // 结果 window.QRLogin.code = 200; window.QRLogin.uuid = &amp;quot;mmmmmmmmmm&amp;quot;; 组装获取qrcode 1 https://login.weixin.qq.com/qrcode/{{第一步获取到的uuid}} 轮询get访问获取微信返回信息 1 https://login.wx.qq.com/cgi-bin/mmwebwx-bin/login?loginicon=true&amp;amp;uuid={{第一步获取到的uuid}} 当用户扫码时会出现code 201，此时接口会返回base64图片\n1 window.code=201;window.userAvatar = &amp;#039;data:img/jpg;......&amp;#039;; 当用户在手机上确定登入，则接口会返回code 200 并返回地址，此时模拟访问此地址并获取cookie信息\n1 2 3 4 5 6 // 返回信息 window.code=200; window.redirect_uri=&amp;quot;https://wx2.qq.com/cgi-bin/mmwebwx-bin/webwxnewloginpage?ticket=A_mmmmmmmmmmmmmmmmmmmmmm@qrticket_0&amp;amp;uuid=mmmmmmmmmmmm&amp;amp;lang=zh_&amp;amp;scan=1661918912&amp;quot;; // 抓取到的cookie pac_uid=0_65cf11501295d; iip=0; pgv_pvid=8666222200; wxuin=1044427715; wxsid=1DTmzGGGDDDWSyuR; mm_lang=zh_; wxuin=1044427715; webwx_data_ticket=gSe4NFFFSDDSDSCC/kmhPNLO; webwxuvid=47a38a6FSDSCSCSCFGDGDGDGDGDGD1cd69355a523b64a548db8717f173d68ee1; webwx_auth_ticket=CIsBEJrPiGEDFDVERFDSFSGBDGFVSDFFCSDVDFSVGDSFCV7gxbszLyHqQCXa1sw0XMHM6sjVxfVWR/IIVn3jO97euZPMIT0jSDFVRFVGBRFBHGBHFSGSBSDGSDFGDFFSDDSFSDFDSFSDFTI=; MM_WX_NOTIFY_STATE=1; MM_WX_SOUND_STATE=1; wxloadtime=1663918937_expired; wxpluginkey=16633456778 ps: 博主经过多次测试，发现只有wxuin是固定的，因此用wxuin代openid进行快速登入或注册\n同一账号短时间内请勿多次登入\n">
-<meta property='og:url' content='http://blog.aaayun.cc/archives/899.html'>
+<meta property='og:url' content='https://blog.aaayun.cc/archives/899.html'>
 <meta property='og:site_name' content='轻风云'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='微信' /><meta property='article:tag' content='扫码' /><meta property='article:published_time' content='2022-09-23T16:28:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-15T15:01:54&#43;08:00'/>
 <meta name="twitter:title" content="微信个人版扫码登入">
@@ -881,7 +881,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
-    const staticDir = "http://blog.aaayun.cc/"
+    const staticDir = "https://blog.aaayun.cc/"
 
     var pjax = new Pjax({
         selectors: [
@@ -891,7 +891,7 @@
     })
 </script>
 <div id="dplayer"></div>
-<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+<script src="https://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
 
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -950,7 +950,7 @@
 <style>
     @font-face {
         font-family: '字体名';
-        src: url(http://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
+        src: url(https://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
     }
 
     :root {
@@ -1075,7 +1075,7 @@
             
             let img = document.createElement('img');
             img.classList.add('code-more-img');
-            img.src = "http://blog.aaayun.cc/icons/codeMore.png"
+            img.src = "https://blog.aaayun.cc/icons/codeMore.png"
             
             codeMoreBtn.appendChild(img);
             codeMoreBox.appendChild(codeMoreBtn);
@@ -1142,7 +1142,7 @@
 
         
         
-        <script src=http://blog.aaayun.cc/js/topbar.min.js></script>
+        <script src=https://blog.aaayun.cc/js/topbar.min.js></script>
         
         <script>
             
@@ -1208,13 +1208,13 @@
 
 
 
-        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+        <script src=https://blog.aaayun.cc/background/sakura.js></script>
 
         <div id="particles-js"></div>
 
-        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script src=https://blog.aaayun.cc/background/particles.min.js></script>
         <script>
-            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+            particlesJS.load('particles-js', "https://blog.aaayun.cc/background/particlesjs-config.json", function() {
                 console.log('particles.js loaded - callback');
             });
         </script>

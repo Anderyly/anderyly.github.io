@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Protoc on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/protoc/</link>
+        <link>https://blog.aaayun.cc/tags/protoc/</link>
         <description>Recent content in Protoc on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/protoc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/protoc/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>linux安装或升级protoc</title>
-        <link>http://blog.aaayun.cc/archives/971.html</link>
+        <link>https://blog.aaayun.cc/archives/971.html</link>
         <pubDate>Fri, 19 May 2023 18:34:59 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/971.html</guid>
+        <guid>https://blog.aaayun.cc/archives/971.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;由于协作管理protoc版本不一致导致每次生成的文件都会冲突，直接用同一版本&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;获取源码包&#34;&gt;获取源码包

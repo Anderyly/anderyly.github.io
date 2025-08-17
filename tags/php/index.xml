@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>PHP on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/php/</link>
+        <link>https://blog.aaayun.cc/tags/php/</link>
         <description>Recent content in PHP on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 17:12:30 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/php/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 17:12:30 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/php/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>TP5使用workerman开启websocket服务</title>
-        <link>http://blog.aaayun.cc/archives/952.html</link>
+        <link>https://blog.aaayun.cc/archives/952.html</link>
         <pubDate>Mon, 05 Dec 2022 15:34:45 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/952.html</guid>
+        <guid>https://blog.aaayun.cc/archives/952.html</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;之前代码使用websocket方式是直接下载workman文件放入vendor中进行使用，这种方式处理及其容易出现问题，比如linux运行正常而windows无法使用，每次部署代码拉取依赖包都会覆盖等奇奇怪怪的问题&lt;/p&gt;
 &lt;h2 id=&#34;安装依赖&#34;&gt;安装依赖
@@ -266,10 +266,10 @@
         </item>
         <item>
         <title>centos7系统安装php8</title>
-        <link>http://blog.aaayun.cc/archives/943.html</link>
+        <link>https://blog.aaayun.cc/archives/943.html</link>
         <pubDate>Thu, 01 Dec 2022 15:28:12 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/943.html</guid>
+        <guid>https://blog.aaayun.cc/archives/943.html</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;centos7默认源的php版本只有5.4，版本太老，而mediawiki需要的php版本为7.4以上，所以本文直接升级到php8.0。&lt;/p&gt;
 &lt;h2 id=&#34;步骤&#34;&gt;步骤
@@ -342,10 +342,10 @@
         </item>
         <item>
         <title>AYPHP轻量级框架</title>
-        <link>http://blog.aaayun.cc/archives/842.html</link>
+        <link>https://blog.aaayun.cc/archives/842.html</link>
         <pubDate>Thu, 16 Jun 2022 15:29:42 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/842.html</guid>
+        <guid>https://blog.aaayun.cc/archives/842.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;开发初衷&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;此框架陪伴了博主三年多，因为经常开发小系统，其他框架有些东西真好用（TP的连贯操作、C函数等），想把这些抠出来太难了。故此写了很多第三方类，后来觉得文件太多了，每次开发都要重新复制并命名（命名空间）很麻烦，故此开发了这样一个轻量级框架，用此框架无需担心用户注入等危险操作，框架在路由层已全面去除可能存在的危险字符（sql、xss、特殊字符）&lt;/p&gt;
@@ -928,10 +928,10 @@
         </item>
         <item>
         <title>基于PHP实现微信小程序客服消息功能</title>
-        <link>http://blog.aaayun.cc/archives/770.html</link>
+        <link>https://blog.aaayun.cc/archives/770.html</link>
         <pubDate>Mon, 14 Feb 2022 17:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/770.html</guid>
+        <guid>https://blog.aaayun.cc/archives/770.html</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;开启客服消息&lt;/li&gt;
 &lt;li&gt;开启消息推送 &lt;a class=&#34;link&#34; href=&#34;https://mp.weixin.qq.com/wxamp/devprofile/get_profile?lang=zh_CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1107,10 +1107,10 @@
         </item>
         <item>
         <title>飞尔国际源码</title>
-        <link>http://blog.aaayun.cc/archives/755.html</link>
+        <link>https://blog.aaayun.cc/archives/755.html</link>
         <pubDate>Thu, 18 Nov 2021 02:51:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/755.html</guid>
+        <guid>https://blog.aaayun.cc/archives/755.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;非资金盘系统，项目可长期运营&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;预览&#34;&gt;预览
@@ -1158,10 +1158,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>一个漂亮的单文件PHP目录程序</title>
-        <link>http://blog.aaayun.cc/archives/745.html</link>
+        <link>https://blog.aaayun.cc/archives/745.html</link>
         <pubDate>Wed, 15 Sep 2021 22:37:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/745.html</guid>
+        <guid>https://blog.aaayun.cc/archives/745.html</guid>
         <description>&lt;img decoding=&#34;async&#34; src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/09/2436517943.jpeg&#34; alt=&#34;753621866.jpeg&#34; title=&#34;753621866.jpeg&#34; /&gt;
 &lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;Files Photo Gallery是一个单文件PHP目录程序，可以放置到服务器上的任何目录，立即拥有一个文件和文件夹预览目录。它支持所有文件类型，并允许您预览图像、视频、音频和代码。&lt;/p&gt;
@@ -1302,10 +1302,10 @@ files.js文件下载地址：&lt;/p&gt;
         </item>
         <item>
         <title>php调用java类</title>
-        <link>http://blog.aaayun.cc/archives/691.html</link>
+        <link>https://blog.aaayun.cc/archives/691.html</link>
         <pubDate>Mon, 21 Jun 2021 18:27:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/691.html</guid>
+        <guid>https://blog.aaayun.cc/archives/691.html</guid>
         <description>&lt;p&gt;参考：&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_35921925/article/details/108110519&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://blog.csdn.net/qq_35921925/article/details/108110519&lt;/a&gt;&lt;br&gt;
@@ -1435,10 +1435,10 @@ JavaBridge.jar和Java.inc&lt;br&gt;
         </item>
         <item>
         <title>分享自己封装的mysql类 基于pdo</title>
-        <link>http://blog.aaayun.cc/archives/648.html</link>
+        <link>https://blog.aaayun.cc/archives/648.html</link>
         <pubDate>Fri, 07 May 2021 19:57:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/648.html</guid>
+        <guid>https://blog.aaayun.cc/archives/648.html</guid>
         <description>&lt;h2 id=&#34;分享自己封装的mysql类-基于pdo&#34;&gt;分享自己封装的mysql类 基于pdo
 &lt;/h2&gt;&lt;p&gt;由于经常开发小型系统用不到框架，用原生写又太麻烦干脆封装一个MySQL操作类&lt;br&gt;
 用了连贯操作 用法和tp相似 上手快 &lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/05/3043539544.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -3203,10 +3203,10 @@ JavaBridge.jar和Java.inc&lt;br&gt;
         </item>
         <item>
         <title>微活码管理系统</title>
-        <link>http://blog.aaayun.cc/archives/577.html</link>
+        <link>https://blog.aaayun.cc/archives/577.html</link>
         <pubDate>Wed, 03 Mar 2021 02:18:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/577.html</guid>
+        <guid>https://blog.aaayun.cc/archives/577.html</guid>
         <description>&lt;h2 id=&#34;微活码系统&#34;&gt;微活码系统
 &lt;/h2&gt;&lt;p&gt;微信群满100人以后，就不能扫描二维码入群了怎么办？&lt;br&gt;
 用活码就能完美解决这个问题。&lt;br&gt;
@@ -3303,10 +3303,10 @@ JavaBridge.jar和Java.inc&lt;br&gt;
         </item>
         <item>
         <title>宝塔面板7.X高级破解版代码</title>
-        <link>http://blog.aaayun.cc/archives/513.html</link>
+        <link>https://blog.aaayun.cc/archives/513.html</link>
         <pubDate>Wed, 25 Dec 2019 18:54:57 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/513.html</guid>
+        <guid>https://blog.aaayun.cc/archives/513.html</guid>
         <description>&lt;p&gt;宝塔面板 7.0.3 安装命令&lt;br&gt;
 Centos安装命令：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3422,10 +3422,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>微营销系统</title>
-        <link>http://blog.aaayun.cc/archives/502.html</link>
+        <link>https://blog.aaayun.cc/archives/502.html</link>
         <pubDate>Mon, 04 Nov 2019 23:27:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/502.html</guid>
+        <guid>https://blog.aaayun.cc/archives/502.html</guid>
         <description>&lt;h2 id=&#34;微营销平台&#34;&gt;微营销平台
 &lt;/h2&gt;&lt;p&gt;主要用于产品的宣传推广，以订单处理为核心，帮助企业快速构建专属的全渠道营销订单平台。企业通过平台可以全面展示商品，快速引流客户，提升内外部协同效率，数据驱动获取更多利润。&lt;/p&gt;
 &lt;p&gt;您可以在后台自由编辑产品页面，产品内容，业务员，各种订单数据的查看。&lt;/p&gt;
@@ -3645,10 +3645,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>分享自用支付宝支付类</title>
-        <link>http://blog.aaayun.cc/archives/497.html</link>
+        <link>https://blog.aaayun.cc/archives/497.html</link>
         <pubDate>Mon, 04 Nov 2019 22:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/497.html</guid>
+        <guid>https://blog.aaayun.cc/archives/497.html</guid>
         <description>&lt;p&gt;分享自用的支付宝支付类&lt;/p&gt;
 &lt;p&gt;目前只封装了 订单查询以及app支付&lt;/p&gt;
 &lt;p&gt;更多的支付 后期会集成&lt;/p&gt;
@@ -4117,10 +4117,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>[更新]php微信支付类（含h5支付、APP二次签名、jsapi支付）</title>
-        <link>http://blog.aaayun.cc/archives/492.html</link>
+        <link>https://blog.aaayun.cc/archives/492.html</link>
         <pubDate>Sat, 02 Nov 2019 23:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/492.html</guid>
+        <guid>https://blog.aaayun.cc/archives/492.html</guid>
         <description>&lt;p&gt;博主之封装过一个微信支付类 很长时间没有更新了 现在分享一下自用的微信支付类&lt;/p&gt;
 &lt;p&gt;该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询&lt;/p&gt;
 &lt;p&gt;native扫码支付后面会添加&lt;/p&gt;
@@ -4772,10 +4772,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>【原创】2019云豹主播采集插件</title>
-        <link>http://blog.aaayun.cc/archives/488.html</link>
+        <link>https://blog.aaayun.cc/archives/488.html</link>
         <pubDate>Fri, 11 Oct 2019 06:48:20 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/488.html</guid>
+        <guid>https://blog.aaayun.cc/archives/488.html</guid>
         <description>&lt;p&gt;效果怎么样我就不在叙述了&lt;/p&gt;
 &lt;p&gt;为了防止此插件滥用接口加入授权 如需使用请赞助本站并联系博主本人&lt;/p&gt;
 &lt;p&gt;赞助以及联系方式请在 &lt;a class=&#34;link&#34; href=&#34;https://blog.aaayun.cc/about.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4786,10 +4786,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>PHP采集短视频 无水印</title>
-        <link>http://blog.aaayun.cc/archives/472.html</link>
+        <link>https://blog.aaayun.cc/archives/472.html</link>
         <pubDate>Fri, 20 Sep 2019 02:32:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/472.html</guid>
+        <guid>https://blog.aaayun.cc/archives/472.html</guid>
         <description>&lt;p&gt;因为一些原因需要采集短视频，要无水印的那种，没办法只好找了一个平台抓包看看&lt;/p&gt;
 &lt;h2 id=&#34;思路&#34;&gt;思路：
 &lt;/h2&gt;&lt;p&gt;首先fd安卓抓包获取视频列表接口以及分页接口&lt;/p&gt;
@@ -5001,10 +5001,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>最新域名防红整站源码带后台配置</title>
-        <link>http://blog.aaayun.cc/archives/451.html</link>
+        <link>https://blog.aaayun.cc/archives/451.html</link>
         <pubDate>Mon, 09 Sep 2019 18:50:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/451.html</guid>
+        <guid>https://blog.aaayun.cc/archives/451.html</guid>
         <description>&lt;h2 id=&#34;图片预览&#34;&gt;图片预览
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/09/09/974044211957439.png&#34;
 	
@@ -5033,10 +5033,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>PHP上解决cookie跨域问题</title>
-        <link>http://blog.aaayun.cc/archives/430.html</link>
+        <link>https://blog.aaayun.cc/archives/430.html</link>
         <pubDate>Fri, 06 Sep 2019 19:43:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/430.html</guid>
+        <guid>https://blog.aaayun.cc/archives/430.html</guid>
         <description>&lt;p&gt;正常情况下，cookie只能在一个应用中共享，即一个cookie只能有创建它的应用程序共享，实现cookie跨域是为了统一应用平台&lt;/p&gt;
 &lt;p&gt;下面来看一下，使用P3P协议实现简单的cookie跨域请求：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -5053,10 +5053,10 @@ Centos安装命令：&lt;/p&gt;
         </item>
         <item>
         <title>PHP 中 DES 加密、解密 以及和 Java 互通</title>
-        <link>http://blog.aaayun.cc/archives/424.html</link>
+        <link>https://blog.aaayun.cc/archives/424.html</link>
         <pubDate>Wed, 28 Aug 2019 00:16:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/424.html</guid>
+        <guid>https://blog.aaayun.cc/archives/424.html</guid>
         <description>&lt;p&gt;一、简介&lt;br&gt;
 DES 是对称性加密里面常见一种，全称为 Data Encryption Standard，即数据加密标准，是一种使用密钥加密的块算法。密钥长度是64位(bit)，超过位数密钥被忽略。所谓对称性加密即加密和解密密钥相同，对称性加密一般会按照固定长度，把待加密字符串分成块，不足一整块或者刚好最后有特殊填充字符。&lt;/p&gt;
 &lt;p&gt;跨语言做 DES 加密解密经常会出现问题，往往是填充方式不对、编码不一致或者加密解密模式没有对应上造成。常见的填充模式有： pkcs5、pkcs7、iso10126、ansix923、zero。加密模式有：DES-ECB、DES-CBC、DES-CTR、DES-OFB、DES-CFB。&lt;/p&gt;
@@ -5336,10 +5336,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>宝塔nginx环境下php7.2无mcrypt扩展</title>
-        <link>http://blog.aaayun.cc/archives/423.html</link>
+        <link>https://blog.aaayun.cc/archives/423.html</link>
         <pubDate>Wed, 28 Aug 2019 00:12:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/423.html</guid>
+        <guid>https://blog.aaayun.cc/archives/423.html</guid>
         <description>&lt;p&gt;ssh以root用户登入服务器 执行以下命令&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -5376,10 +5376,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>2019最新云豹直播采集(各大平台)</title>
-        <link>http://blog.aaayun.cc/archives/397.html</link>
+        <link>https://blog.aaayun.cc/archives/397.html</link>
         <pubDate>Wed, 03 Jul 2019 08:58:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/397.html</guid>
+        <guid>https://blog.aaayun.cc/archives/397.html</guid>
         <description>&lt;p&gt;应客户需求写了一个直播采集插件&lt;/p&gt;
 &lt;p&gt;功能主要就是采集各平台直播入自己库并生成僵尸粉&lt;/p&gt;
 &lt;p&gt;下载链接在下方&lt;/p&gt;
@@ -5399,10 +5399,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>PHP实现无顺序连贯操作</title>
-        <link>http://blog.aaayun.cc/archives/393.html</link>
+        <link>https://blog.aaayun.cc/archives/393.html</link>
         <pubDate>Sun, 30 Jun 2019 00:31:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/393.html</guid>
+        <guid>https://blog.aaayun.cc/archives/393.html</guid>
         <description>&lt;p&gt;想必大家都用过tp的Db类吧,连贯操作是不是很酷&lt;/p&gt;
 &lt;p&gt;实现很简单不需要用到__call方法&lt;/p&gt;
 &lt;p&gt;简单分析一下tp框架的Db类&lt;/p&gt;
@@ -5500,10 +5500,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>PHP实现微博登入(非开放平台)</title>
-        <link>http://blog.aaayun.cc/archives/380.html</link>
+        <link>https://blog.aaayun.cc/archives/380.html</link>
         <pubDate>Mon, 22 Apr 2019 23:09:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/380.html</guid>
+        <guid>https://blog.aaayun.cc/archives/380.html</guid>
         <description>&lt;p&gt;用到官方的两个接口,一个是获取图片地址以及qrid，一个是用qrid验证二维码状态&lt;/p&gt;
 &lt;p&gt;获取新浪登入二维码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -5671,10 +5671,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>PHP实现QQ扫码登入，非开放平台</title>
-        <link>http://blog.aaayun.cc/archives/372.html</link>
+        <link>https://blog.aaayun.cc/archives/372.html</link>
         <pubDate>Thu, 18 Apr 2019 22:47:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/372.html</guid>
+        <guid>https://blog.aaayun.cc/archives/372.html</guid>
         <description>&lt;p&gt;近期有个需求，需要做扫码登入，而又不想去开放平台申请，看了一下彩虹大神的提取qq的sid，提取了几个重要的方法&lt;/p&gt;
 &lt;p&gt;原理就是生成二维码后，前端设置定时器查看二维码状态，因为没有openid只能保存固定的值，那就是qq号了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -5940,10 +5940,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>PHP实现file_get_contents发送post请求</title>
-        <link>http://blog.aaayun.cc/archives/371.html</link>
+        <link>https://blog.aaayun.cc/archives/371.html</link>
         <pubDate>Tue, 09 Apr 2019 18:39:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/371.html</guid>
+        <guid>https://blog.aaayun.cc/archives/371.html</guid>
         <description>&lt;p&gt;最近按照客户需求写一个支付异步回调通知url的需求,本想用curl写的,后来想想用file_get_contens是否可以实现,果然可以&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -5989,10 +5989,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>分享一个PHP环信服务端操作类</title>
-        <link>http://blog.aaayun.cc/archives/369.html</link>
+        <link>https://blog.aaayun.cc/archives/369.html</link>
         <pubDate>Wed, 03 Apr 2019 23:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/369.html</guid>
+        <guid>https://blog.aaayun.cc/archives/369.html</guid>
         <description>&lt;p&gt;之前做直播系统,需要用到通信这一块,由于官方文档没有sdk,博主本人也是google的,顺便修改了一下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -6448,10 +6448,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>Miko动漫视频网站整站源码&#43;二次元动漫网源码&#43;视频弹幕网&#43;自带播放器数据下载</title>
-        <link>http://blog.aaayun.cc/archives/276.html</link>
+        <link>https://blog.aaayun.cc/archives/276.html</link>
         <pubDate>Wed, 02 Jan 2019 19:04:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/276.html</guid>
+        <guid>https://blog.aaayun.cc/archives/276.html</guid>
         <description>&lt;div class=&#39;fancybox-wrapper lazyload-container-unload&#39; data-fancybox=&#39;post-images&#39; href=&#39;https://uss.aaayun.cc/typecho/2019/01/02/981841092624496.jpg&#39;&gt;
   &lt;img class=&#34;lazyload lazyload-style-1&#34; src=&#34;data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+&#34;  decoding=&#34;async&#34; data-original=&#34;https://uss.aaayun.cc/typecho/2019/01/02/981841092624496.jpg&#34; src=&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC&#34; alt=&#34;1-1.jpg&#34; title=&#34;1-1.jpg&#34; /&gt;
 &lt;/div&gt;
@@ -6479,10 +6479,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>PHP360随机壁纸图片接口，PHP随机图片API</title>
-        <link>http://blog.aaayun.cc/archives/208.html</link>
+        <link>https://blog.aaayun.cc/archives/208.html</link>
         <pubDate>Thu, 13 Dec 2018 18:00:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/208.html</guid>
+        <guid>https://blog.aaayun.cc/archives/208.html</guid>
         <description>&lt;p&gt;接口地址：&lt;a class=&#34;link&#34; href=&#34;https://api.aaayun.cc/?type=Image&amp;amp;file=QiHooRand&amp;amp;cid=26&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://api.aaayun.cc/?type=Image&amp;file=QiHooRand&amp;cid=26&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;参数cid可变:&lt;/p&gt;
@@ -6505,10 +6505,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>单网页四合一图床上传源码</title>
-        <link>http://blog.aaayun.cc/archives/201.html</link>
+        <link>https://blog.aaayun.cc/archives/201.html</link>
         <pubDate>Tue, 11 Dec 2018 23:17:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/201.html</guid>
+        <guid>https://blog.aaayun.cc/archives/201.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/11/124362256500577.jpg&#34;
 	
 	
@@ -6526,10 +6526,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>绚丽彩虹同学录php源码V1.4公测版</title>
-        <link>http://blog.aaayun.cc/archives/187.html</link>
+        <link>https://blog.aaayun.cc/archives/187.html</link>
         <pubDate>Tue, 11 Dec 2018 18:50:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/187.html</guid>
+        <guid>https://blog.aaayun.cc/archives/187.html</guid>
         <description>&lt;p&gt;绚丽彩虹同学录是一款清新简洁的同学录程序&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/11/96497920010922.png&#34;
 	
@@ -6589,10 +6589,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>PHP百度随机壁纸图片接口，PHP随机图片API</title>
-        <link>http://blog.aaayun.cc/archives/183.html</link>
+        <link>https://blog.aaayun.cc/archives/183.html</link>
         <pubDate>Tue, 11 Dec 2018 01:30:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/183.html</guid>
+        <guid>https://blog.aaayun.cc/archives/183.html</guid>
         <description>&lt;p&gt;接口地址：&lt;a class=&#34;link&#34; href=&#34;https://api.aaayun.cc/?type=Image&amp;amp;file=BaiDuRand&amp;amp;class=%e7%be%8e%e5%a5%b3&amp;amp;sub=%e5%86%99%e7%9c%9f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://api.aaayun.cc/?type=Image&amp;file=BaiDuRand&amp;class=美女&amp;sub=写真&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;参数sub可不填写&lt;/p&gt;
@@ -6644,10 +6644,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>价值50块钱的智云影视多功能php源码V3.6.6.2版本</title>
-        <link>http://blog.aaayun.cc/archives/159.html</link>
+        <link>https://blog.aaayun.cc/archives/159.html</link>
         <pubDate>Sat, 01 Dec 2018 17:33:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/159.html</guid>
+        <guid>https://blog.aaayun.cc/archives/159.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/01/280894127605747.jpeg&#34;
 	
 	
@@ -6685,10 +6685,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>微信支付类（含h5支付、APP二次签名）</title>
-        <link>http://blog.aaayun.cc/archives/147.html</link>
+        <link>https://blog.aaayun.cc/archives/147.html</link>
         <pubDate>Tue, 13 Nov 2018 17:20:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/147.html</guid>
+        <guid>https://blog.aaayun.cc/archives/147.html</guid>
         <description>&lt;p&gt;最新地址 &lt;a class=&#34;link&#34; href=&#34;https://vclove.cn/archives/492.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://vclove.cn/archives/492.html&lt;/a&gt;&lt;br&gt;
 什么是微信H5支付&lt;/p&gt;
@@ -6733,10 +6733,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>Restful API规范详解</title>
-        <link>http://blog.aaayun.cc/archives/142.html</link>
+        <link>https://blog.aaayun.cc/archives/142.html</link>
         <pubDate>Sun, 21 Oct 2018 04:37:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/142.html</guid>
+        <guid>https://blog.aaayun.cc/archives/142.html</guid>
         <description>&lt;p&gt;Restful API是目前比较成熟的一套互联网应用程序的API设计理念，Rest是一组架构约束条件和原则，如何Rest约束条件和原则的架构，我们就称为Restful架构，Restful架构具有结构清晰、符合标准、易于理解以及扩展方便等特点，受到越来越多网站的采用！&lt;/p&gt;
 &lt;p&gt;Restful API接口规范包括以下部分：&lt;/p&gt;
 &lt;p&gt;一、协议&lt;/p&gt;
@@ -6806,10 +6806,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>deepin15.7上安装mysql(解决不提示设置密码的问题)</title>
-        <link>http://blog.aaayun.cc/archives/139.html</link>
+        <link>https://blog.aaayun.cc/archives/139.html</link>
         <pubDate>Mon, 01 Oct 2018 18:01:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/139.html</guid>
+        <guid>https://blog.aaayun.cc/archives/139.html</guid>
         <description>&lt;p&gt;mysql已经安装完毕，但安装过程没有让你填写密码，链接错误，那么就来看看以下命令吧&lt;/p&gt;
 &lt;p&gt;1.首先获取root权限&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -6888,10 +6888,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>轻风云授权系统1.1【更新】</title>
-        <link>http://blog.aaayun.cc/archives/116.html</link>
+        <link>https://blog.aaayun.cc/archives/116.html</link>
         <pubDate>Sun, 22 Jul 2018 22:24:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/116.html</guid>
+        <guid>https://blog.aaayun.cc/archives/116.html</guid>
         <description>&lt;p&gt;截图预览&lt;br&gt;
 &lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/05/28/993373005566653.png&#34;
 	
@@ -6931,10 +6931,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>[二开]校园表白墙</title>
-        <link>http://blog.aaayun.cc/archives/108.html</link>
+        <link>https://blog.aaayun.cc/archives/108.html</link>
         <pubDate>Wed, 27 Jun 2018 21:59:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/108.html</guid>
+        <guid>https://blog.aaayun.cc/archives/108.html</guid>
         <description>&lt;p&gt;截图预览:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/27/791653405341689.jpg&#34;
 	
@@ -6963,10 +6963,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>PHP框架的理解</title>
-        <link>http://blog.aaayun.cc/archives/89.html</link>
+        <link>https://blog.aaayun.cc/archives/89.html</link>
         <pubDate>Tue, 29 May 2018 03:51:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/89.html</guid>
+        <guid>https://blog.aaayun.cc/archives/89.html</guid>
         <description>&lt;p&gt;PHP框架的原理&lt;/p&gt;
 &lt;p&gt;说到PHP框架，可能很多PHP新手会感到有些胆怯。其实，PHP框架也不是那么深不可测的，框架就是别人使用PHP基础只是为你写好了的东西，只是封装在一起；这就好比我们使用PHP的函数，函数都是已近写好了的，我们只要按照函数使用的规则，比如，为函数传递参数的个数、类型以及函数返回的值类型等。理解了PHP函数的这些使用规则，我们就可以大胆、放心的去使用了。同样道理，PHP框架也有自己的规则，比如项目文件夹的部署、控制器类的命名规则以及数据表的命名规则等。了解了PHP框架的使用规则我们就能去使用PHP框架提供的全部功能了。&lt;/p&gt;
 &lt;p&gt;PHP框架并不是那么高不可攀，每位PHP程序员都应该加入到PHP框架的学习和使用中来，毕竟一个人的精力是有限的，如何你每个项目都全部由自己开发的话，那么你将浪费许多时间用在做相同的事情上。比方说，几乎每个项目都有数据的验证，那么你要为每个项目都要编写数据验证的PHP代码，而如果你使用PHP框架的话，这些都是封装了可以直接拿来使用的。&lt;/p&gt;
@@ -6992,10 +6992,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>轻风云授权系统1.0</title>
-        <link>http://blog.aaayun.cc/archives/84.html</link>
+        <link>https://blog.aaayun.cc/archives/84.html</link>
         <pubDate>Tue, 29 May 2018 00:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/84.html</guid>
+        <guid>https://blog.aaayun.cc/archives/84.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/05/28/993373005566653.png&#34;
 	
 	
@@ -7033,10 +7033,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>php显示html源代码函数</title>
-        <link>http://blog.aaayun.cc/archives/79.html</link>
+        <link>https://blog.aaayun.cc/archives/79.html</link>
         <pubDate>Thu, 10 May 2018 02:50:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/79.html</guid>
+        <guid>https://blog.aaayun.cc/archives/79.html</guid>
         <description>&lt;p&gt;如果你想在后台更改页面底部代码，而其中有html代码，输入框显示不出源代码，pre标签又没有用，那么你不防试试下面的函数&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -7066,10 +7066,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>vax虚拟币系统PHP源码</title>
-        <link>http://blog.aaayun.cc/archives/40.html</link>
+        <link>https://blog.aaayun.cc/archives/40.html</link>
         <pubDate>Thu, 29 Mar 2018 20:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/40.html</guid>
+        <guid>https://blog.aaayun.cc/archives/40.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;此源码已停止更新，仍可下载使用**&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;程序用途&lt;br&gt;
@@ -7102,10 +7102,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>centos7快速搭建LAMP</title>
-        <link>http://blog.aaayun.cc/archives/37.html</link>
+        <link>https://blog.aaayun.cc/archives/37.html</link>
         <pubDate>Mon, 26 Mar 2018 06:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/37.html</guid>
+        <guid>https://blog.aaayun.cc/archives/37.html</guid>
         <description>&lt;p&gt;1、安装apache&lt;br&gt;
 　　1.1 安装apache&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -7347,10 +7347,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>centos7中解决无法识别ntfs格式</title>
-        <link>http://blog.aaayun.cc/archives/30.html</link>
+        <link>https://blog.aaayun.cc/archives/30.html</link>
         <pubDate>Mon, 26 Mar 2018 05:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/30.html</guid>
+        <guid>https://blog.aaayun.cc/archives/30.html</guid>
         <description>&lt;p&gt;CentOS默认源里没有ntfs3g，想要添加ntfs支持，无非是自己下载编译安装或者加源yum安装&lt;/p&gt;
 &lt;p&gt;添加aliyun的epel源来yum安装的方式，简单易行&lt;/p&gt;
 &lt;p&gt;1、加源&lt;/p&gt;
@@ -7377,10 +7377,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>centos7安装phpmyadmin</title>
-        <link>http://blog.aaayun.cc/archives/27.html</link>
+        <link>https://blog.aaayun.cc/archives/27.html</link>
         <pubDate>Sun, 25 Mar 2018 05:23:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/27.html</guid>
+        <guid>https://blog.aaayun.cc/archives/27.html</guid>
         <description>&lt;p&gt;首先服务器要有web 环境&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -7486,10 +7486,10 @@ PHP 提供了 Mcrypt 系列函数来实现 DES 的加解密，但该扩展中的
         </item>
         <item>
         <title>快乐二级域名分发系统v2.1.1</title>
-        <link>http://blog.aaayun.cc/archives/8.html</link>
+        <link>https://blog.aaayun.cc/archives/8.html</link>
         <pubDate>Mon, 19 Mar 2018 04:19:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/8.html</guid>
+        <guid>https://blog.aaayun.cc/archives/8.html</guid>
         <description>&lt;p&gt;此系统有哪些特点&lt;br&gt;
 目前支持的域名解析平台有&lt;br&gt;
 dnspod&lt;br&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Make on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/make/</link>
+        <link>https://blog.aaayun.cc/tags/make/</link>
         <description>Recent content in Make on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/make/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/make/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Windows10安装GCC和Make工具</title>
-        <link>http://blog.aaayun.cc/archives/589.html</link>
+        <link>https://blog.aaayun.cc/archives/589.html</link>
         <pubDate>Fri, 19 Mar 2021 18:36:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/589.html</guid>
+        <guid>https://blog.aaayun.cc/archives/589.html</guid>
         <description>&lt;h2 id=&#34;windows10安装gcc和make工具&#34;&gt;Windows10安装GCC和Make工具
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;下载并安装Windows版的&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/1222272972.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

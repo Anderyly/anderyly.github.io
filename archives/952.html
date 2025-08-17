@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 之前代码使用websocket方式是直接下载workman文件放入vendor中进行使用，这种方式处理及其容易出现问题，比如linux运行正常而windows无法使用，每次部署代码拉取依赖包都会覆盖等奇奇怪怪的问题\n安装依赖 通过Composer.exe安装相关依赖： 1 composer require topthink/think-worker 如果报错，如下：\n1 2 3 4 5 6 7 8 9 composer require topthink/think-worker Using version ^2.0 for topthink/think-worker ./composer.json has been updated Loading composer repositories with package information Updating dependencies (including require-dev) Your requirements could not be resolved to an installable set of packages. Problem 1 topthink/think-worker v2.0.5 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.4 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.3 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.2 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.1 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.0 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - Installation requestfortopthink/think-worker ^2.0 -&gt; satisfiable by topthink/think-worker[v2.0.0, v2.0.1, v2.0.2, v2.0.3, v2.0.4, v2.0.5].Installation failed, reverting ./composer.json to its original content. Installation failed, reverting ./composer.json to its original content. 则是版本不匹配，用低版本的workerman，更改如下：\n">
 <title>TP5使用workerman开启websocket服务</title>
 
-<link rel='canonical' href='http://blog.aaayun.cc/archives/952.html'>
+<link rel='canonical' href='https://blog.aaayun.cc/archives/952.html'>
 
 <link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="TP5使用workerman开启websocket服务">
 <meta property='og:description' content="前言 之前代码使用websocket方式是直接下载workman文件放入vendor中进行使用，这种方式处理及其容易出现问题，比如linux运行正常而windows无法使用，每次部署代码拉取依赖包都会覆盖等奇奇怪怪的问题\n安装依赖 通过Composer.exe安装相关依赖： 1 composer require topthink/think-worker 如果报错，如下：\n1 2 3 4 5 6 7 8 9 composer require topthink/think-worker Using version ^2.0 for topthink/think-worker ./composer.json has been updated Loading composer repositories with package information Updating dependencies (including require-dev) Your requirements could not be resolved to an installable set of packages. Problem 1 topthink/think-worker v2.0.5 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.4 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.3 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.2 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.1 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.0 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - Installation requestfortopthink/think-worker ^2.0 -&gt; satisfiable by topthink/think-worker[v2.0.0, v2.0.1, v2.0.2, v2.0.3, v2.0.4, v2.0.5].Installation failed, reverting ./composer.json to its original content. Installation failed, reverting ./composer.json to its original content. 则是版本不匹配，用低版本的workerman，更改如下：\n">
-<meta property='og:url' content='http://blog.aaayun.cc/archives/952.html'>
+<meta property='og:url' content='https://blog.aaayun.cc/archives/952.html'>
 <meta property='og:site_name' content='轻风云'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PHP' /><meta property='article:tag' content='thinkphp' /><meta property='article:tag' content='websocket' /><meta property='article:tag' content='workman' /><meta property='article:published_time' content='2022-12-05T15:34:45&#43;00:00'/><meta property='article:modified_time' content='2025-08-15T17:12:30&#43;08:00'/>
 <meta name="twitter:title" content="TP5使用workerman开启websocket服务">
@@ -1048,7 +1048,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
-    const staticDir = "http://blog.aaayun.cc/"
+    const staticDir = "https://blog.aaayun.cc/"
 
     var pjax = new Pjax({
         selectors: [
@@ -1058,7 +1058,7 @@
     })
 </script>
 <div id="dplayer"></div>
-<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+<script src="https://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
 
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -1117,7 +1117,7 @@
 <style>
     @font-face {
         font-family: '字体名';
-        src: url(http://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
+        src: url(https://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
     }
 
     :root {
@@ -1242,7 +1242,7 @@
             
             let img = document.createElement('img');
             img.classList.add('code-more-img');
-            img.src = "http://blog.aaayun.cc/icons/codeMore.png"
+            img.src = "https://blog.aaayun.cc/icons/codeMore.png"
             
             codeMoreBtn.appendChild(img);
             codeMoreBox.appendChild(codeMoreBtn);
@@ -1309,7 +1309,7 @@
 
         
         
-        <script src=http://blog.aaayun.cc/js/topbar.min.js></script>
+        <script src=https://blog.aaayun.cc/js/topbar.min.js></script>
         
         <script>
             
@@ -1375,13 +1375,13 @@
 
 
 
-        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+        <script src=https://blog.aaayun.cc/background/sakura.js></script>
 
         <div id="particles-js"></div>
 
-        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script src=https://blog.aaayun.cc/background/particles.min.js></script>
         <script>
-            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+            particlesJS.load('particles-js', "https://blog.aaayun.cc/background/particlesjs-config.json", function() {
                 console.log('particles.js loaded - callback');
             });
         </script>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Vfm on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/vfm/</link>
+        <link>https://blog.aaayun.cc/tags/vfm/</link>
         <description>Recent content in Vfm on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/vfm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/vfm/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>VFM 3.7.5 源码 – 一个极简的 PHP 私人云盘！</title>
-        <link>http://blog.aaayun.cc/archives/796.html</link>
+        <link>https://blog.aaayun.cc/archives/796.html</link>
         <pubDate>Fri, 10 Jun 2022 18:02:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/796.html</guid>
+        <guid>https://blog.aaayun.cc/archives/796.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;博主在网上找了很多免费版本只有这款是最新的&lt;/p&gt;
 &lt;p&gt;现在的个人数据越来越多，数据交互变得频繁。每当有需要临时存储的数据而身边又没有合适的存储介质，或者家里或工作中需要下载的文件，都是非常不方便的。这时候你就需要使用通用网盘了。有很多服务提供商提供云存储，但一般你需要支付空间或会员制度。免费云盘速度慢，内容有限。也有很多私有的网盘程序，但是比较臃肿，对服务器的要求也比较高。那么为什么不用VFM来搭建一个轻量级简单的私有云盘呢？&lt;/p&gt;

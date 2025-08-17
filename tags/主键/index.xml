@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>主键 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E4%B8%BB%E9%94%AE/</link>
+        <link>https://blog.aaayun.cc/tags/%E4%B8%BB%E9%94%AE/</link>
         <description>Recent content in 主键 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E4%B8%BB%E9%94%AE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E4%B8%BB%E9%94%AE/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>mysql对自增主键id进行重新排序</title>
-        <link>http://blog.aaayun.cc/archives/479.html</link>
+        <link>https://blog.aaayun.cc/archives/479.html</link>
         <pubDate>Fri, 27 Sep 2019 17:42:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/479.html</guid>
+        <guid>https://blog.aaayun.cc/archives/479.html</guid>
         <description>&lt;p&gt;经过一段时间的添加和删除，mysql数据库表的自增量主键ID变得混乱​​，需要重新排列&lt;/p&gt;
 &lt;p&gt;原理：删除原有的自增ID，重新建立新的自增ID。&lt;/p&gt;
 &lt;p&gt;1.删除原有主键&lt;/p&gt;

@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在开发过程中，我们有时会遇到这样的问题，将 2022-10-22T08:18:46+08:00 转成 2022-10-22 08:18:46，怎么解决这个问题？\n解决这个问题，最好不要用字符串截取，或者说字符串截取是最笨的方法，这应该是时间格式化的问题。\n我们先看一下 golang time 包中支持的 format 格式：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; UnixDate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RubyDate = &#34;Mon Jan 02 15:04:05 -0700 2006&#34; RFC822 = &#34;02 Jan 06 15:04 MST&#34; RFC822Z = &#34;02 Jan 06 15:04 -0700&#34; // RFC822 with numeric zone RFC850 = &#34;Monday, 02-Jan-06 15:04:05 MST&#34; RFC1123 = &#34;Mon, 02 Jan 2006 15:04:05 MST&#34; RFC1123Z = &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; // RFC1123 with numeric zone RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; RFC3339Nano = &#34;2006-01-02T15:04:05.999999999Z07:00&#34; Kitchen = &#34;3:04PM&#34; // Handy time stamps. Stamp = &#34;Jan _2 15:04:05&#34; StampMilli = &#34;Jan _2 15:04:05.000&#34; StampMicro = &#34;Jan _2 15:04:05.000000&#34; StampNano = &#34;Jan _2 15:04:05.000000000&#34; ) 我们找到了 RFC3339 ，那就很简单了，我们封装一个方法 RFC3339ToDateTime，见下面代码\n">
 <title>golang中time.RFC3339时间格式化</title>
 
-<link rel='canonical' href='http://blog.aaayun.cc/archives/914.html'>
+<link rel='canonical' href='https://blog.aaayun.cc/archives/914.html'>
 
 <link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="golang中time.RFC3339时间格式化">
 <meta property='og:description' content="在开发过程中，我们有时会遇到这样的问题，将 2022-10-22T08:18:46+08:00 转成 2022-10-22 08:18:46，怎么解决这个问题？\n解决这个问题，最好不要用字符串截取，或者说字符串截取是最笨的方法，这应该是时间格式化的问题。\n我们先看一下 golang time 包中支持的 format 格式：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; UnixDate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RubyDate = &#34;Mon Jan 02 15:04:05 -0700 2006&#34; RFC822 = &#34;02 Jan 06 15:04 MST&#34; RFC822Z = &#34;02 Jan 06 15:04 -0700&#34; // RFC822 with numeric zone RFC850 = &#34;Monday, 02-Jan-06 15:04:05 MST&#34; RFC1123 = &#34;Mon, 02 Jan 2006 15:04:05 MST&#34; RFC1123Z = &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; // RFC1123 with numeric zone RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; RFC3339Nano = &#34;2006-01-02T15:04:05.999999999Z07:00&#34; Kitchen = &#34;3:04PM&#34; // Handy time stamps. Stamp = &#34;Jan _2 15:04:05&#34; StampMilli = &#34;Jan _2 15:04:05.000&#34; StampMicro = &#34;Jan _2 15:04:05.000000&#34; StampNano = &#34;Jan _2 15:04:05.000000000&#34; ) 我们找到了 RFC3339 ，那就很简单了，我们封装一个方法 RFC3339ToDateTime，见下面代码\n">
-<meta property='og:url' content='http://blog.aaayun.cc/archives/914.html'>
+<meta property='og:url' content='https://blog.aaayun.cc/archives/914.html'>
 <meta property='og:site_name' content='轻风云'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='go' /><meta property='article:tag' content='time' /><meta property='article:published_time' content='2022-10-26T17:07:10&#43;00:00'/><meta property='article:modified_time' content='2025-08-15T15:01:54&#43;08:00'/>
 <meta name="twitter:title" content="golang中time.RFC3339时间格式化">
@@ -897,7 +897,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
-    const staticDir = "http://blog.aaayun.cc/"
+    const staticDir = "https://blog.aaayun.cc/"
 
     var pjax = new Pjax({
         selectors: [
@@ -907,7 +907,7 @@
     })
 </script>
 <div id="dplayer"></div>
-<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+<script src="https://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
 
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -966,7 +966,7 @@
 <style>
     @font-face {
         font-family: '字体名';
-        src: url(http://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
+        src: url(https://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
     }
 
     :root {
@@ -1091,7 +1091,7 @@
             
             let img = document.createElement('img');
             img.classList.add('code-more-img');
-            img.src = "http://blog.aaayun.cc/icons/codeMore.png"
+            img.src = "https://blog.aaayun.cc/icons/codeMore.png"
             
             codeMoreBtn.appendChild(img);
             codeMoreBox.appendChild(codeMoreBtn);
@@ -1158,7 +1158,7 @@
 
         
         
-        <script src=http://blog.aaayun.cc/js/topbar.min.js></script>
+        <script src=https://blog.aaayun.cc/js/topbar.min.js></script>
         
         <script>
             
@@ -1224,13 +1224,13 @@
 
 
 
-        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+        <script src=https://blog.aaayun.cc/background/sakura.js></script>
 
         <div id="particles-js"></div>
 
-        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script src=https://blog.aaayun.cc/background/particles.min.js></script>
         <script>
-            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+            particlesJS.load('particles-js', "https://blog.aaayun.cc/background/particlesjs-config.json", function() {
                 console.log('particles.js loaded - callback');
             });
         </script>

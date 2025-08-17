@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="废话不多说直接上脚本 1 2 3 wget https://uss.aaayun.cc/typecho/uploads/2022/05/3296326676.txt -O CentOS7-pptp-host1plus.sh chmod +x ./CentOS7-pptp-host1plus.sh ./CentOS7-pptp-host1plus.sh -u your_username -p your_password 可在-u、-p后随意更改自己的登录用户名和密码。但密码长度必须大于8个 ASCII字符，否则为了安全，脚本将会随机生成密码。\n脚本命令及配置 设置账号 1 vim /etc/ppp/chap-secrets 修改dns(ms_dns) 1 vim /etc/ppp/options.pptpd 重启服务 1 /bin/systemctl restart pptpd.service 连不上VPN 检查是否开放了 1723 端口，一般是因为这个原因吧\n打不开网页 1 vim /etc/ppp/ip-up 在 exit 0 前写入 : ifconfig $1 mtu 1500\n">
 <title>Centos7一键安装pptp脚本</title>
 
-<link rel='canonical' href='http://blog.aaayun.cc/archives/791.html'>
+<link rel='canonical' href='https://blog.aaayun.cc/archives/791.html'>
 
 <link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="Centos7一键安装pptp脚本">
 <meta property='og:description' content="废话不多说直接上脚本 1 2 3 wget https://uss.aaayun.cc/typecho/uploads/2022/05/3296326676.txt -O CentOS7-pptp-host1plus.sh chmod +x ./CentOS7-pptp-host1plus.sh ./CentOS7-pptp-host1plus.sh -u your_username -p your_password 可在-u、-p后随意更改自己的登录用户名和密码。但密码长度必须大于8个 ASCII字符，否则为了安全，脚本将会随机生成密码。\n脚本命令及配置 设置账号 1 vim /etc/ppp/chap-secrets 修改dns(ms_dns) 1 vim /etc/ppp/options.pptpd 重启服务 1 /bin/systemctl restart pptpd.service 连不上VPN 检查是否开放了 1723 端口，一般是因为这个原因吧\n打不开网页 1 vim /etc/ppp/ip-up 在 exit 0 前写入 : ifconfig $1 mtu 1500\n">
-<meta property='og:url' content='http://blog.aaayun.cc/archives/791.html'>
+<meta property='og:url' content='https://blog.aaayun.cc/archives/791.html'>
 <meta property='og:site_name' content='轻风云'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='centos7' /><meta property='article:tag' content='pptp' /><meta property='article:published_time' content='2022-05-23T19:39:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-15T15:01:54&#43;08:00'/>
 <meta name="twitter:title" content="Centos7一键安装pptp脚本">
@@ -854,7 +854,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
-    const staticDir = "http://blog.aaayun.cc/"
+    const staticDir = "https://blog.aaayun.cc/"
 
     var pjax = new Pjax({
         selectors: [
@@ -864,7 +864,7 @@
     })
 </script>
 <div id="dplayer"></div>
-<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+<script src="https://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
 
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -923,7 +923,7 @@
 <style>
     @font-face {
         font-family: '字体名';
-        src: url(http://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
+        src: url(https://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
     }
 
     :root {
@@ -1048,7 +1048,7 @@
             
             let img = document.createElement('img');
             img.classList.add('code-more-img');
-            img.src = "http://blog.aaayun.cc/icons/codeMore.png"
+            img.src = "https://blog.aaayun.cc/icons/codeMore.png"
             
             codeMoreBtn.appendChild(img);
             codeMoreBox.appendChild(codeMoreBtn);
@@ -1115,7 +1115,7 @@
 
         
         
-        <script src=http://blog.aaayun.cc/js/topbar.min.js></script>
+        <script src=https://blog.aaayun.cc/js/topbar.min.js></script>
         
         <script>
             
@@ -1181,13 +1181,13 @@
 
 
 
-        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+        <script src=https://blog.aaayun.cc/background/sakura.js></script>
 
         <div id="particles-js"></div>
 
-        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script src=https://blog.aaayun.cc/background/particles.min.js></script>
         <script>
-            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+            particlesJS.load('particles-js', "https://blog.aaayun.cc/background/particlesjs-config.json", function() {
                 console.log('particles.js loaded - callback');
             });
         </script>

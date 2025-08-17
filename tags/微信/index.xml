@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>微信 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E5%BE%AE%E4%BF%A1/</link>
+        <link>https://blog.aaayun.cc/tags/%E5%BE%AE%E4%BF%A1/</link>
         <description>Recent content in 微信 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E5%BE%AE%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E5%BE%AE%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>微信个人版扫码登入</title>
-        <link>http://blog.aaayun.cc/archives/899.html</link>
+        <link>https://blog.aaayun.cc/archives/899.html</link>
         <pubDate>Fri, 23 Sep 2022 16:28:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/899.html</guid>
+        <guid>https://blog.aaayun.cc/archives/899.html</guid>
         <description>&lt;h2 id=&#34;微信个人版扫码登入&#34;&gt;微信个人版扫码登入
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;此方法适用于个人开发者想使用微信扫码快速登入，但是又申请不了微信开放平台授权的个人用户，经测试此方法可用，demo下载地址在最底部&lt;/p&gt;&lt;/blockquote&gt;
@@ -102,10 +102,10 @@
         </item>
         <item>
         <title>基于PHP实现微信小程序客服消息功能</title>
-        <link>http://blog.aaayun.cc/archives/770.html</link>
+        <link>https://blog.aaayun.cc/archives/770.html</link>
         <pubDate>Mon, 14 Feb 2022 17:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/770.html</guid>
+        <guid>https://blog.aaayun.cc/archives/770.html</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;开启客服消息&lt;/li&gt;
 &lt;li&gt;开启消息推送 &lt;a class=&#34;link&#34; href=&#34;https://mp.weixin.qq.com/wxamp/devprofile/get_profile?lang=zh_CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -281,10 +281,10 @@
         </item>
         <item>
         <title>微活码管理系统</title>
-        <link>http://blog.aaayun.cc/archives/577.html</link>
+        <link>https://blog.aaayun.cc/archives/577.html</link>
         <pubDate>Wed, 03 Mar 2021 02:18:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/577.html</guid>
+        <guid>https://blog.aaayun.cc/archives/577.html</guid>
         <description>&lt;h2 id=&#34;微活码系统&#34;&gt;微活码系统
 &lt;/h2&gt;&lt;p&gt;微信群满100人以后，就不能扫描二维码入群了怎么办？&lt;br&gt;
 用活码就能完美解决这个问题。&lt;br&gt;
@@ -381,10 +381,10 @@
         </item>
         <item>
         <title>监控微信个人二维码是否打开</title>
-        <link>http://blog.aaayun.cc/archives/514.html</link>
+        <link>https://blog.aaayun.cc/archives/514.html</link>
         <pubDate>Sun, 25 Oct 2020 08:47:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/514.html</guid>
+        <guid>https://blog.aaayun.cc/archives/514.html</guid>
         <description>&lt;p&gt;因为项目需求 监控微信个人二维码是否打开&lt;/p&gt;
 &lt;p&gt;思路：&lt;br&gt;
 微信官方并没有提供这个API，经过二维码识别提取到了一个https链接，此类链接微信以及浏览器打开则指向微信官网地址，此思路pass&lt;/p&gt;
@@ -493,10 +493,10 @@
         </item>
         <item>
         <title>微营销系统</title>
-        <link>http://blog.aaayun.cc/archives/502.html</link>
+        <link>https://blog.aaayun.cc/archives/502.html</link>
         <pubDate>Mon, 04 Nov 2019 23:27:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/502.html</guid>
+        <guid>https://blog.aaayun.cc/archives/502.html</guid>
         <description>&lt;h2 id=&#34;微营销平台&#34;&gt;微营销平台
 &lt;/h2&gt;&lt;p&gt;主要用于产品的宣传推广，以订单处理为核心，帮助企业快速构建专属的全渠道营销订单平台。企业通过平台可以全面展示商品，快速引流客户，提升内外部协同效率，数据驱动获取更多利润。&lt;/p&gt;
 &lt;p&gt;您可以在后台自由编辑产品页面，产品内容，业务员，各种订单数据的查看。&lt;/p&gt;
@@ -716,10 +716,10 @@
         </item>
         <item>
         <title>[更新]php微信支付类（含h5支付、APP二次签名、jsapi支付）</title>
-        <link>http://blog.aaayun.cc/archives/492.html</link>
+        <link>https://blog.aaayun.cc/archives/492.html</link>
         <pubDate>Sat, 02 Nov 2019 23:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/492.html</guid>
+        <guid>https://blog.aaayun.cc/archives/492.html</guid>
         <description>&lt;p&gt;博主之封装过一个微信支付类 很长时间没有更新了 现在分享一下自用的微信支付类&lt;/p&gt;
 &lt;p&gt;该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询&lt;/p&gt;
 &lt;p&gt;native扫码支付后面会添加&lt;/p&gt;
@@ -1371,10 +1371,10 @@
         </item>
         <item>
         <title>微信支付类（含h5支付、APP二次签名）</title>
-        <link>http://blog.aaayun.cc/archives/147.html</link>
+        <link>https://blog.aaayun.cc/archives/147.html</link>
         <pubDate>Tue, 13 Nov 2018 17:20:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/147.html</guid>
+        <guid>https://blog.aaayun.cc/archives/147.html</guid>
         <description>&lt;p&gt;最新地址 &lt;a class=&#34;link&#34; href=&#34;https://vclove.cn/archives/492.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://vclove.cn/archives/492.html&lt;/a&gt;&lt;br&gt;
 什么是微信H5支付&lt;/p&gt;

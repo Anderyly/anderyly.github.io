@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pdo on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/pdo/</link>
+        <link>https://blog.aaayun.cc/tags/pdo/</link>
         <description>Recent content in Pdo on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/pdo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/pdo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>分享自己封装的mysql类 基于pdo</title>
-        <link>http://blog.aaayun.cc/archives/648.html</link>
+        <link>https://blog.aaayun.cc/archives/648.html</link>
         <pubDate>Fri, 07 May 2021 19:57:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/648.html</guid>
+        <guid>https://blog.aaayun.cc/archives/648.html</guid>
         <description>&lt;h2 id=&#34;分享自己封装的mysql类-基于pdo&#34;&gt;分享自己封装的mysql类 基于pdo
 &lt;/h2&gt;&lt;p&gt;由于经常开发小型系统用不到框架，用原生写又太麻烦干脆封装一个MySQL操作类&lt;br&gt;
 用了连贯操作 用法和tp相似 上手快 &lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/05/3043539544.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

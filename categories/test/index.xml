@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Test on 轻风云</title>
-        <link>http://blog.aaayun.cc/categories/test/</link>
+        <link>https://blog.aaayun.cc/categories/test/</link>
         <description>Recent content in Test on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>轻风云</copyright><atom:link href="http://blog.aaayun.cc/categories/test/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>轻风云</copyright><atom:link href="https://blog.aaayun.cc/categories/test/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>连贯 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E8%BF%9E%E8%B4%AF/</link>
+        <link>https://blog.aaayun.cc/tags/%E8%BF%9E%E8%B4%AF/</link>
         <description>Recent content in 连贯 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E8%BF%9E%E8%B4%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E8%BF%9E%E8%B4%AF/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PHP实现无顺序连贯操作</title>
-        <link>http://blog.aaayun.cc/archives/393.html</link>
+        <link>https://blog.aaayun.cc/archives/393.html</link>
         <pubDate>Sun, 30 Jun 2019 00:31:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/393.html</guid>
+        <guid>https://blog.aaayun.cc/archives/393.html</guid>
         <description>&lt;p&gt;想必大家都用过tp的Db类吧,连贯操作是不是很酷&lt;/p&gt;
 &lt;p&gt;实现很简单不需要用到__call方法&lt;/p&gt;
 &lt;p&gt;简单分析一下tp框架的Db类&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>半中心化 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E5%8D%8A%E4%B8%AD%E5%BF%83%E5%8C%96/</link>
+        <link>https://blog.aaayun.cc/tags/%E5%8D%8A%E4%B8%AD%E5%BF%83%E5%8C%96/</link>
         <description>Recent content in 半中心化 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E5%8D%8A%E4%B8%AD%E5%BF%83%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E5%8D%8A%E4%B8%AD%E5%BF%83%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>半中心化区块链</title>
-        <link>http://blog.aaayun.cc/archives/75.html</link>
+        <link>https://blog.aaayun.cc/archives/75.html</link>
         <pubDate>Tue, 08 May 2018 00:13:16 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/75.html</guid>
+        <guid>https://blog.aaayun.cc/archives/75.html</guid>
         <description>&lt;p&gt;构思一个半中心化区块链，由于没有xmind就码字了&lt;/p&gt;
 &lt;p&gt;1.管理员在服务器增加n个区块，并设置简易度&lt;br&gt;
 2.用户在客户端注册账号取得钱包地址、私匙及公匙&lt;br&gt;

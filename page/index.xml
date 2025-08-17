@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 轻风云</title>
-        <link>http://blog.aaayun.cc/page/</link>
+        <link>https://blog.aaayun.cc/page/</link>
         <description>Recent content in Pages on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Sun, 17 Aug 2025 21:00:23 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 17 Aug 2025 21:00:23 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>留言板</title>
-        <link>http://blog.aaayun.cc/talk/</link>
+        <link>https://blog.aaayun.cc/talk/</link>
         <pubDate>Sun, 09 Dec 2018 07:08:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/talk/</guid>
+        <guid>https://blog.aaayun.cc/talk/</guid>
         <description>&lt;p&gt;来了，便留下足迹吧&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>关于</title>
-        <link>http://blog.aaayun.cc/about/</link>
+        <link>https://blog.aaayun.cc/about/</link>
         <pubDate>Sun, 09 Dec 2018 07:00:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/about/</guid>
+        <guid>https://blog.aaayun.cc/about/</guid>
         <description>&lt;h2 id=&#34;原先并不叫轻风云而是十七之家&#34;&gt;原先并不叫轻风云而是十七之家
 &lt;/h2&gt;&lt;p&gt;当初不知权重重要性，迁移服务器时丢失了大部分数据，又换了几次域名&lt;/p&gt;
 &lt;p&gt;17my.net&lt;br&gt;
@@ -36,18 +36,18 @@ rmc.ink&lt;/p&gt;
         </item>
         <item>
         <title>搜索</title>
-        <link>http://blog.aaayun.cc/search/</link>
+        <link>https://blog.aaayun.cc/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/search/</guid>
+        <guid>https://blog.aaayun.cc/search/</guid>
         <description></description>
         </item>
         <item>
         <title>友人帐</title>
-        <link>http://blog.aaayun.cc/links/</link>
+        <link>https://blog.aaayun.cc/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/links/</guid>
+        <guid>https://blog.aaayun.cc/links/</guid>
         <description>&lt;p&gt;申请格式：博客名称 || 博客地址 || 博客头像 || 博客说明&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

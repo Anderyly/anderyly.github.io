@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 centos7默认源的php版本只有5.4，版本太老，而mediawiki需要的php版本为7.4以上，所以本文直接升级到php8.0。\n步骤 卸载所有已安装的php\n1 yum remove -y php* 添加remi源（可能需要提前安装epel-release）\n1 2 3 4 yum install -y https://rpms.remirepo.net/enterprise/remi-release-7.rpm # 此处若是无法下载 可用 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://rpms.remirepo.net/enterprise/remi-release-7.rpm 单独启用php80的源（没有yum-config-manager命令的话需要安装yum-utils）\n1 2 yum-config-manager --disable &amp;#039;remi-php*&amp;#039; yum-config-manager --enable remi-php80 安装php及其拓展\n1 yum install -y php php-bcmath php-cli php-common php-devel php-fpm php-gd php-intl php-ldap php-mbstring php-mysqlnd php-odbc php-pdo php-pear php-pecl-xmlrpc php-pecl-zip php-process php-snmp php-soap php-sodium php-xml 版本验证\n">
 <title>centos7系统安装php8</title>
 
-<link rel='canonical' href='http://blog.aaayun.cc/archives/943.html'>
+<link rel='canonical' href='https://blog.aaayun.cc/archives/943.html'>
 
 <link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="centos7系统安装php8">
 <meta property='og:description' content="前言 centos7默认源的php版本只有5.4，版本太老，而mediawiki需要的php版本为7.4以上，所以本文直接升级到php8.0。\n步骤 卸载所有已安装的php\n1 yum remove -y php* 添加remi源（可能需要提前安装epel-release）\n1 2 3 4 yum install -y https://rpms.remirepo.net/enterprise/remi-release-7.rpm # 此处若是无法下载 可用 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://rpms.remirepo.net/enterprise/remi-release-7.rpm 单独启用php80的源（没有yum-config-manager命令的话需要安装yum-utils）\n1 2 yum-config-manager --disable &amp;#039;remi-php*&amp;#039; yum-config-manager --enable remi-php80 安装php及其拓展\n1 yum install -y php php-bcmath php-cli php-common php-devel php-fpm php-gd php-intl php-ldap php-mbstring php-mysqlnd php-odbc php-pdo php-pear php-pecl-xmlrpc php-pecl-zip php-process php-snmp php-soap php-sodium php-xml 版本验证\n">
-<meta property='og:url' content='http://blog.aaayun.cc/archives/943.html'>
+<meta property='og:url' content='https://blog.aaayun.cc/archives/943.html'>
 <meta property='og:site_name' content='轻风云'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='centos' /><meta property='article:tag' content='PHP' /><meta property='article:published_time' content='2022-12-01T15:28:12&#43;00:00'/><meta property='article:modified_time' content='2025-08-15T17:12:30&#43;08:00'/>
 <meta name="twitter:title" content="centos7系统安装php8">
@@ -859,7 +859,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
 <script>
-    const staticDir = "http://blog.aaayun.cc/"
+    const staticDir = "https://blog.aaayun.cc/"
 
     var pjax = new Pjax({
         selectors: [
@@ -869,7 +869,7 @@
     })
 </script>
 <div id="dplayer"></div>
-<script src="http://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
+<script src="https://blog.aaayun.cc/js/dplayer/DPlayer.min.js"></script>
 
 <div id="aplayer"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -928,7 +928,7 @@
 <style>
     @font-face {
         font-family: '字体名';
-        src: url(http://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
+        src: url(https://blog.aaayun.cc/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('truetype');
     }
 
     :root {
@@ -1053,7 +1053,7 @@
             
             let img = document.createElement('img');
             img.classList.add('code-more-img');
-            img.src = "http://blog.aaayun.cc/icons/codeMore.png"
+            img.src = "https://blog.aaayun.cc/icons/codeMore.png"
             
             codeMoreBtn.appendChild(img);
             codeMoreBox.appendChild(codeMoreBtn);
@@ -1120,7 +1120,7 @@
 
         
         
-        <script src=http://blog.aaayun.cc/js/topbar.min.js></script>
+        <script src=https://blog.aaayun.cc/js/topbar.min.js></script>
         
         <script>
             
@@ -1186,13 +1186,13 @@
 
 
 
-        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+        <script src=https://blog.aaayun.cc/background/sakura.js></script>
 
         <div id="particles-js"></div>
 
-        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script src=https://blog.aaayun.cc/background/particles.min.js></script>
         <script>
-            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+            particlesJS.load('particles-js', "https://blog.aaayun.cc/background/particlesjs-config.json", function() {
                 console.log('particles.js loaded - callback');
             });
         </script>

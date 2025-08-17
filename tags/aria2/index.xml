@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Aria2 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/aria2/</link>
+        <link>https://blog.aaayun.cc/tags/aria2/</link>
         <description>Recent content in Aria2 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/aria2/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/aria2/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在Ubuntu上用aria2和Aria2WebUI实现远程多线程下载</title>
-        <link>http://blog.aaayun.cc/archives/143.html</link>
+        <link>https://blog.aaayun.cc/archives/143.html</link>
         <pubDate>Mon, 12 Nov 2018 23:02:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/143.html</guid>
+        <guid>https://blog.aaayun.cc/archives/143.html</guid>
         <description>&lt;p&gt;配置环境：deepin 15.7&lt;br&gt;
 1.基础软件的安装&lt;br&gt;
 在下载Aria2之前先安装一些基础必备的软件：git、screen、nodejs-legacy，在终端下输入命令&lt;/p&gt;

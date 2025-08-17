@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>API on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/api/</link>
+        <link>https://blog.aaayun.cc/tags/api/</link>
         <description>Recent content in API on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/api/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/api/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>必应获取每日高清壁纸API代码</title>
-        <link>http://blog.aaayun.cc/archives/314.html</link>
+        <link>https://blog.aaayun.cc/archives/314.html</link>
         <pubDate>Sun, 27 Jan 2019 12:47:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/314.html</guid>
+        <guid>https://blog.aaayun.cc/archives/314.html</guid>
         <description>&lt;p&gt;话不多说直接上代码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -40,10 +40,10 @@
         </item>
         <item>
         <title>PHP获取toopen性感美女随机图片，PHP接口</title>
-        <link>http://blog.aaayun.cc/archives/218.html</link>
+        <link>https://blog.aaayun.cc/archives/218.html</link>
         <pubDate>Fri, 14 Dec 2018 01:41:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/218.html</guid>
+        <guid>https://blog.aaayun.cc/archives/218.html</guid>
         <description>&lt;p&gt;接口地址：&lt;a class=&#34;link&#34; href=&#34;https://api.aaayun.cc/?type=Image&amp;amp;file=TooPenRand&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://api.aaayun.cc/?type=Image&amp;file=TooPenRand&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;实现很简单，如需要源码，请留言&lt;/p&gt;
@@ -61,10 +61,10 @@
         </item>
         <item>
         <title>PHP360随机壁纸图片接口，PHP随机图片API</title>
-        <link>http://blog.aaayun.cc/archives/208.html</link>
+        <link>https://blog.aaayun.cc/archives/208.html</link>
         <pubDate>Thu, 13 Dec 2018 18:00:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/208.html</guid>
+        <guid>https://blog.aaayun.cc/archives/208.html</guid>
         <description>&lt;p&gt;接口地址：&lt;a class=&#34;link&#34; href=&#34;https://api.aaayun.cc/?type=Image&amp;amp;file=QiHooRand&amp;amp;cid=26&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://api.aaayun.cc/?type=Image&amp;file=QiHooRand&amp;cid=26&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;参数cid可变:&lt;/p&gt;
@@ -87,10 +87,10 @@
         </item>
         <item>
         <title>Restful API规范详解</title>
-        <link>http://blog.aaayun.cc/archives/142.html</link>
+        <link>https://blog.aaayun.cc/archives/142.html</link>
         <pubDate>Sun, 21 Oct 2018 04:37:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/142.html</guid>
+        <guid>https://blog.aaayun.cc/archives/142.html</guid>
         <description>&lt;p&gt;Restful API是目前比较成熟的一套互联网应用程序的API设计理念，Rest是一组架构约束条件和原则，如何Rest约束条件和原则的架构，我们就称为Restful架构，Restful架构具有结构清晰、符合标准、易于理解以及扩展方便等特点，受到越来越多网站的采用！&lt;/p&gt;
 &lt;p&gt;Restful API接口规范包括以下部分：&lt;/p&gt;
 &lt;p&gt;一、协议&lt;/p&gt;

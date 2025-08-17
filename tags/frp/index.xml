@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Frp on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/frp/</link>
+        <link>https://blog.aaayun.cc/tags/frp/</link>
         <description>Recent content in Frp on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 17:12:30 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/frp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 17:12:30 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/frp/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>最好用的完全开源的内网穿透工具frps</title>
-        <link>http://blog.aaayun.cc/archives/947.html</link>
+        <link>https://blog.aaayun.cc/archives/947.html</link>
         <pubDate>Fri, 02 Dec 2022 15:43:55 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/947.html</guid>
+        <guid>https://blog.aaayun.cc/archives/947.html</guid>
         <description>&lt;h2 id=&#34;前期准备&#34;&gt;前期准备：
 &lt;/h2&gt;&lt;p&gt;首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。&lt;/p&gt;
 &lt;p&gt;本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Shell on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/shell/</link>
+        <link>https://blog.aaayun.cc/tags/shell/</link>
         <description>Recent content in Shell on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/shell/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/shell/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>deepin下开机自启脚本</title>
-        <link>http://blog.aaayun.cc/archives/768.html</link>
+        <link>https://blog.aaayun.cc/archives/768.html</link>
         <pubDate>Tue, 14 Dec 2021 22:28:52 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/768.html</guid>
+        <guid>https://blog.aaayun.cc/archives/768.html</guid>
         <description>&lt;h2 id=&#34;利用-rclocal-文件实现脚本开机自启&#34;&gt;利用 rc.local 文件实现脚本开机自启:
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;新建 /etc/rc.local 文件&lt;/li&gt;
@@ -99,10 +99,10 @@
         </item>
         <item>
         <title>宝塔linux版设置秒级监控</title>
-        <link>http://blog.aaayun.cc/archives/566.html</link>
+        <link>https://blog.aaayun.cc/archives/566.html</link>
         <pubDate>Mon, 25 Jan 2021 07:07:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/566.html</guid>
+        <guid>https://blog.aaayun.cc/archives/566.html</guid>
         <description>&lt;p&gt;宝塔的定时任务最低周期为一分钟，那么我们可以通过执行shell脚本的方法来实现秒级监控，也就是无限循环，但是会大量消耗资源，请谨慎添加&lt;/p&gt;
 &lt;p&gt;在某某博客看到的源码复制下来执行直接报错&lt;br&gt;
 &lt;img src=&#34;https://uss.aaayun.cc/typecho/uploads/2021/01/3830572278.png&#34;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>谈天说地 on 轻风云</title>
-        <link>http://blog.aaayun.cc/categories/%E8%B0%88%E5%A4%A9%E8%AF%B4%E5%9C%B0/</link>
+        <link>https://blog.aaayun.cc/categories/%E8%B0%88%E5%A4%A9%E8%AF%B4%E5%9C%B0/</link>
         <description>Recent content in 谈天说地 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 18:57:35 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/categories/%E8%B0%88%E5%A4%A9%E8%AF%B4%E5%9C%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 18:57:35 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/categories/%E8%B0%88%E5%A4%A9%E8%AF%B4%E5%9C%B0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>最好用的完全开源的内网穿透工具frps</title>
-        <link>http://blog.aaayun.cc/archives/947.html</link>
+        <link>https://blog.aaayun.cc/archives/947.html</link>
         <pubDate>Fri, 02 Dec 2022 15:43:55 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/947.html</guid>
+        <guid>https://blog.aaayun.cc/archives/947.html</guid>
         <description>&lt;h2 id=&#34;前期准备&#34;&gt;前期准备：
 &lt;/h2&gt;&lt;p&gt;首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。&lt;/p&gt;
 &lt;p&gt;本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。&lt;/p&gt;
@@ -198,10 +198,10 @@
         </item>
         <item>
         <title>爱</title>
-        <link>http://blog.aaayun.cc/archives/930.html</link>
+        <link>https://blog.aaayun.cc/archives/930.html</link>
         <pubDate>Thu, 24 Nov 2022 11:22:14 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/930.html</guid>
+        <guid>https://blog.aaayun.cc/archives/930.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/2022/11/20221124032054894.webp&#34;
 	
 	
@@ -296,20 +296,20 @@
         </item>
         <item>
         <title>人生</title>
-        <link>http://blog.aaayun.cc/archives/788.html</link>
+        <link>https://blog.aaayun.cc/archives/788.html</link>
         <pubDate>Sat, 21 May 2022 17:40:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/788.html</guid>
+        <guid>https://blog.aaayun.cc/archives/788.html</guid>
         <description>&lt;p&gt;{dplayer src=&amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2022/05/1024311815.mp4%22/%7d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://uss.aaayun.cc/typecho/uploads/2022/05/1024311815.mp4&#34;/}&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>人生</title>
-        <link>http://blog.aaayun.cc/archives/604.html</link>
+        <link>https://blog.aaayun.cc/archives/604.html</link>
         <pubDate>Tue, 23 Mar 2021 05:07:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/604.html</guid>
+        <guid>https://blog.aaayun.cc/archives/604.html</guid>
         <description>&lt;p&gt;死亡是终点，但不是目的。人生不就像是一场旅行吗？每个人可能都有各自的目的地(不同的死因)。但是，旅行的意义就是在于享受旅程，享受当下啊！！人生不也一样啊？&lt;/p&gt;
 &lt;p&gt;{dplayer src=&amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;https://uss.aaayun.cc/typecho/uploads/2021/03/32470077.mp4%22/%7d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://uss.aaayun.cc/typecho/uploads/2021/03/32470077.mp4&#34;/}&lt;/a&gt;&lt;/p&gt;
@@ -317,55 +317,55 @@
         </item>
         <item>
         <title>悲情客</title>
-        <link>http://blog.aaayun.cc/archives/601.html</link>
+        <link>https://blog.aaayun.cc/archives/601.html</link>
         <pubDate>Sun, 21 Mar 2021 08:52:28 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/601.html</guid>
+        <guid>https://blog.aaayun.cc/archives/601.html</guid>
         <description>&lt;p&gt;人间若无悲情客，何来诗者赋年华&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>言卿</title>
-        <link>http://blog.aaayun.cc/archives/491.html</link>
+        <link>https://blog.aaayun.cc/archives/491.html</link>
         <pubDate>Sat, 02 Nov 2019 08:19:21 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/491.html</guid>
+        <guid>https://blog.aaayun.cc/archives/491.html</guid>
         <description>&lt;p&gt;阅尽人间三千愿 处处何人处处卿&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>前程似锦</title>
-        <link>http://blog.aaayun.cc/archives/487.html</link>
+        <link>https://blog.aaayun.cc/archives/487.html</link>
         <pubDate>Thu, 10 Oct 2019 06:26:35 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/487.html</guid>
+        <guid>https://blog.aaayun.cc/archives/487.html</guid>
         <description>&lt;p&gt;生如蝼蚁，当立鸿鹄之志，命薄如纸，却有不屈之心，未来可期，祝你我飞黄腾达&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>难</title>
-        <link>http://blog.aaayun.cc/archives/486.html</link>
+        <link>https://blog.aaayun.cc/archives/486.html</link>
         <pubDate>Tue, 08 Oct 2019 04:20:01 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/486.html</guid>
+        <guid>https://blog.aaayun.cc/archives/486.html</guid>
         <description>&lt;p&gt;仗义多为屠狗辈，负心多是读书人&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>轻风拂</title>
-        <link>http://blog.aaayun.cc/archives/478.html</link>
+        <link>https://blog.aaayun.cc/archives/478.html</link>
         <pubDate>Tue, 24 Sep 2019 19:56:15 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/478.html</guid>
+        <guid>https://blog.aaayun.cc/archives/478.html</guid>
         <description>&lt;p&gt;轻风拂，傍山晓晚，烟胧伊人倩影。清波碧漾，素手褪红裳，却作弯身掬水，何见芊芊玉足踏意来&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>现在的男生为什么不追女生?</title>
-        <link>http://blog.aaayun.cc/archives/474.html</link>
+        <link>https://blog.aaayun.cc/archives/474.html</link>
         <pubDate>Fri, 20 Sep 2019 09:01:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/474.html</guid>
+        <guid>https://blog.aaayun.cc/archives/474.html</guid>
         <description>&lt;p&gt;转载知乎&lt;/p&gt;
 &lt;p&gt;我发了一个请求，请求方式、参数、路径写的很清楚了,并且请求了很多次!&lt;br&gt;
 她并没有响应数据，所以我不知道怎么显示数据，继续又发了请求，她响应了个404,我觉得我的路径有问题，经她闺蜜指点，我应该先和她成为好朋友，这次我换了个参数:情人节那天发了个520,这次给我响应了，登上主页面了&lt;br&gt;
@@ -375,19 +375,19 @@
         </item>
         <item>
         <title>情 殇</title>
-        <link>http://blog.aaayun.cc/archives/448.html</link>
+        <link>https://blog.aaayun.cc/archives/448.html</link>
         <pubDate>Sun, 08 Sep 2019 09:11:31 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/448.html</guid>
+        <guid>https://blog.aaayun.cc/archives/448.html</guid>
         <description>&lt;p&gt;心有苍穹人先走，三年泪水杯中流&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>轻风云影视</title>
-        <link>http://blog.aaayun.cc/archives/420.html</link>
+        <link>https://blog.aaayun.cc/archives/420.html</link>
         <pubDate>Tue, 27 Aug 2019 09:00:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/420.html</guid>
+        <guid>https://blog.aaayun.cc/archives/420.html</guid>
         <description>&lt;p&gt;因为无聊用苹果cms做了个视频采集站点 里面的各大影视都可以免费观看 已经稳定运行两个月了&lt;/p&gt;
 &lt;p&gt;注:视频资源来源于互联网，本平台只是做收集处理，如侵犯了您的版权请联系我们删除&lt;/p&gt;
 &lt;p&gt;邮箱:admin@aaayun.cc&lt;/p&gt;
@@ -397,10 +397,10 @@
         </item>
         <item>
         <title>揭露一个恶心的公司</title>
-        <link>http://blog.aaayun.cc/archives/415.html</link>
+        <link>https://blog.aaayun.cc/archives/415.html</link>
         <pubDate>Sat, 17 Aug 2019 04:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/415.html</guid>
+        <guid>https://blog.aaayun.cc/archives/415.html</guid>
         <description>&lt;p&gt;之前博主在江苏凯博公司(又称蜂鸟传媒)做过后端开发&lt;br&gt;
 四月十号去面试，十二号工作的，因为有急事所以在七月十七号晚辞职了，那天正好完成了cms管理框架。&lt;br&gt;
 之后领导也同意了我辞职的事，并说余下的工资下个月十号结清，说了抱歉便走了&lt;/p&gt;
@@ -424,10 +424,10 @@
         </item>
         <item>
         <title>病</title>
-        <link>http://blog.aaayun.cc/archives/413.html</link>
+        <link>https://blog.aaayun.cc/archives/413.html</link>
         <pubDate>Tue, 30 Jul 2019 06:45:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/413.html</guid>
+        <guid>https://blog.aaayun.cc/archives/413.html</guid>
         <description>&lt;p&gt;男孩患了疾病&lt;br&gt;
 医生说活不了多久了&lt;br&gt;
 女孩听到这句话时&lt;br&gt;
@@ -469,10 +469,10 @@
         </item>
         <item>
         <title>十七岁与二十五岁的不同</title>
-        <link>http://blog.aaayun.cc/archives/390.html</link>
+        <link>https://blog.aaayun.cc/archives/390.html</link>
         <pubDate>Thu, 13 Jun 2019 08:43:56 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/390.html</guid>
+        <guid>https://blog.aaayun.cc/archives/390.html</guid>
         <description>&lt;p&gt;我也想谈恋爱，可我不想再分手了&lt;/p&gt;
 &lt;p&gt;17岁失恋了&lt;br&gt;
 可以躲在厕所里哭&lt;br&gt;
@@ -548,10 +548,10 @@
         </item>
         <item>
         <title>幸</title>
-        <link>http://blog.aaayun.cc/archives/389.html</link>
+        <link>https://blog.aaayun.cc/archives/389.html</link>
         <pubDate>Sat, 18 May 2019 19:24:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/389.html</guid>
+        <guid>https://blog.aaayun.cc/archives/389.html</guid>
         <description>&lt;p&gt;余之一生，最幸，莫过于汝&lt;br&gt;
 总角十九载，于花开之时，共结秦晋之缘&lt;br&gt;
 执笔而添灯，剑舞而酒温&lt;br&gt;
@@ -564,10 +564,10 @@
         </item>
         <item>
         <title>一首歌一个故事 | 盗将行（很凄美的一个故事）</title>
-        <link>http://blog.aaayun.cc/archives/360.html</link>
+        <link>https://blog.aaayun.cc/archives/360.html</link>
         <pubDate>Fri, 22 Mar 2019 19:13:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/360.html</guid>
+        <guid>https://blog.aaayun.cc/archives/360.html</guid>
         <description>&lt;p&gt;{music id=&amp;ldquo;574566207&amp;rdquo; color=&amp;quot;#19facd&amp;quot; autoplay=&amp;ldquo;autoplay&amp;rdquo;/}&lt;/p&gt;
 &lt;p&gt;宋徽宗二十年，一劫富济贫，看不惯贪官污吏，通过盗窃贪官钱财施予平民百姓的盗窃，在一次纵马逃城时带起一女子裙边，看官兵并未追来，就下马致歉，没想到一眼定情，便暗下决心不再为盗，取其为妻。&lt;/p&gt;
 &lt;p&gt;天随人愿，大盗盗得了女子的心，共渡了三年神仙眷侣般的生活，陪女子小巷吃面，谈笑飞雪，还不惜用夜明珠做弹珠弹落山雀……&lt;/p&gt;
@@ -578,10 +578,10 @@
         </item>
         <item>
         <title>雪</title>
-        <link>http://blog.aaayun.cc/archives/328.html</link>
+        <link>https://blog.aaayun.cc/archives/328.html</link>
         <pubDate>Wed, 13 Feb 2019 11:13:12 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/328.html</guid>
+        <guid>https://blog.aaayun.cc/archives/328.html</guid>
         <description>&lt;p&gt;“好想变成雪啊，这样就可以落在姑娘的肩上了……”&lt;br&gt;
 “若是姑娘撑了伞呢？”&lt;br&gt;
 “那就落在姑娘的红伞上，静载一路的月光。”&lt;br&gt;
@@ -591,10 +591,10 @@
         </item>
         <item>
         <title>轻风云防红免责声明</title>
-        <link>http://blog.aaayun.cc/archives/301.html</link>
+        <link>https://blog.aaayun.cc/archives/301.html</link>
         <pubDate>Mon, 21 Jan 2019 18:31:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/301.html</guid>
+        <guid>https://blog.aaayun.cc/archives/301.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/01/21/378292151834982.png&#34;
 	
 	
@@ -616,10 +616,10 @@
         </item>
         <item>
         <title>解释</title>
-        <link>http://blog.aaayun.cc/archives/179.html</link>
+        <link>https://blog.aaayun.cc/archives/179.html</link>
         <pubDate>Mon, 10 Dec 2018 05:20:23 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/179.html</guid>
+        <guid>https://blog.aaayun.cc/archives/179.html</guid>
         <description>&lt;p&gt;老实人：“为什么你们女人都喜欢油腔滑调的男人，不喜欢我们老实人？”&lt;br&gt;
 女神：“你们老实人根本不解风情。”&lt;br&gt;
 老实人：“我们又怎样不解风情了，你现在给我解释清楚。”&lt;br&gt;
@@ -629,10 +629,10 @@
         </item>
         <item>
         <title>轻风云影视</title>
-        <link>http://blog.aaayun.cc/archives/153.html</link>
+        <link>https://blog.aaayun.cc/archives/153.html</link>
         <pubDate>Fri, 23 Nov 2018 19:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/153.html</guid>
+        <guid>https://blog.aaayun.cc/archives/153.html</guid>
         <description>&lt;p&gt;今天正式开启影视平台，该网站为视频二次解析，如有侵权请联系我下架&lt;br&gt;
 轻风云影视：&lt;a class=&#34;link&#34; href=&#34;https://v.qfy.kim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://v.qfy.kim&lt;/a&gt;&lt;br&gt;
@@ -641,10 +641,10 @@
         </item>
         <item>
         <title>揭露一个小骗子</title>
-        <link>http://blog.aaayun.cc/archives/126.html</link>
+        <link>https://blog.aaayun.cc/archives/126.html</link>
         <pubDate>Fri, 07 Sep 2018 03:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/126.html</guid>
+        <guid>https://blog.aaayun.cc/archives/126.html</guid>
         <description>&lt;p&gt;我们是附近互相喜欢认识的，成为好友时间为5号，过了一天，刚下班和我要钱冲个会员，可以，但给我理由啊，虽然化妆后有点漂亮，但我还是需要一个让我信服的理由。有图有真相&lt;br&gt;
 &lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/09/06/318302041036568.jpg&#34;
 	
@@ -660,10 +660,10 @@
         </item>
         <item>
         <title>生活状态</title>
-        <link>http://blog.aaayun.cc/archives/118.html</link>
+        <link>https://blog.aaayun.cc/archives/118.html</link>
         <pubDate>Wed, 01 Aug 2018 21:24:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/118.html</guid>
+        <guid>https://blog.aaayun.cc/archives/118.html</guid>
         <description>&lt;p&gt;这是不是你现在的生活状态，别不承认&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/08/01/011223145939381.jpg&#34;
 	
@@ -729,10 +729,10 @@
         </item>
         <item>
         <title>开启接单</title>
-        <link>http://blog.aaayun.cc/archives/114.html</link>
+        <link>https://blog.aaayun.cc/archives/114.html</link>
         <pubDate>Sun, 15 Jul 2018 22:40:10 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/114.html</guid>
+        <guid>https://blog.aaayun.cc/archives/114.html</guid>
         <description>&lt;p&gt;正式开启接单模式:&lt;/p&gt;
 &lt;p&gt;动态网站、二次开发、环境搭建、数据库优化、源码搭建&lt;/p&gt;
 &lt;p&gt;联系方式:&lt;br&gt;
@@ -744,20 +744,20 @@ mail:admin@aaayun.cc&lt;/p&gt;
         </item>
         <item>
         <title>建立博客的意义</title>
-        <link>http://blog.aaayun.cc/archives/113.html</link>
+        <link>https://blog.aaayun.cc/archives/113.html</link>
         <pubDate>Thu, 28 Jun 2018 01:31:23 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/113.html</guid>
+        <guid>https://blog.aaayun.cc/archives/113.html</guid>
         <description>&lt;p&gt;甲:建立博客的意义何在?&lt;br&gt;
 乙:单身程序狗解决了一个技术难题后没有妹子可以炫耀或夸一下自己怎么办?&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>当处男和处女在一起嘿嘿是什么体验？</title>
-        <link>http://blog.aaayun.cc/archives/95.html</link>
+        <link>https://blog.aaayun.cc/archives/95.html</link>
         <pubDate>Tue, 05 Jun 2018 07:55:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/95.html</guid>
+        <guid>https://blog.aaayun.cc/archives/95.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/04/277233428793747.jpg&#34;
 	
 	
@@ -782,19 +782,19 @@ mail:admin@aaayun.cc&lt;/p&gt;
         </item>
         <item>
         <title>插手</title>
-        <link>http://blog.aaayun.cc/archives/66.html</link>
+        <link>https://blog.aaayun.cc/archives/66.html</link>
         <pubDate>Tue, 24 Apr 2018 00:07:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/66.html</guid>
+        <guid>https://blog.aaayun.cc/archives/66.html</guid>
         <description>&lt;p&gt;一年前我就不应该插手稻香村的事情&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>学习经历</title>
-        <link>http://blog.aaayun.cc/archives/63.html</link>
+        <link>https://blog.aaayun.cc/archives/63.html</link>
         <pubDate>Sun, 08 Apr 2018 19:05:29 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/63.html</guid>
+        <guid>https://blog.aaayun.cc/archives/63.html</guid>
         <description>&lt;p&gt;2014年初入C语言门槛，因为底层开发不喜欢放弃了&lt;br&gt;
 2015年进攻VB，因为VB的兼容性太差放弃了&lt;br&gt;
 2016年上旬进攻易语言和易安卓，最后放弃了，因为各大厂商都报毒，强制性删除源文件&lt;br&gt;
@@ -806,10 +806,10 @@ mail:admin@aaayun.cc&lt;/p&gt;
         </item>
         <item>
         <title>关于博客</title>
-        <link>http://blog.aaayun.cc/archives/7.html</link>
+        <link>https://blog.aaayun.cc/archives/7.html</link>
         <pubDate>Sat, 17 Mar 2018 20:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/7.html</guid>
+        <guid>https://blog.aaayun.cc/archives/7.html</guid>
         <description>&lt;p&gt;轻风云博客已经存于二年多了，这两年多的时间博客经历了大大小小的曲折，从原先的十七之家(17my.net)变成现在的地址，换了不少服务器，丢失了绝大数数据，从现在起，全新使用博客，不再使用之前的数据&lt;/p&gt;
 </description>
         </item>

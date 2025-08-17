@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Ssl on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/ssl/</link>
+        <link>https://blog.aaayun.cc/tags/ssl/</link>
         <description>Recent content in Ssl on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/ssl/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/ssl/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>HTTP和HTTPS有什么区别？</title>
-        <link>http://blog.aaayun.cc/archives/180.html</link>
+        <link>https://blog.aaayun.cc/archives/180.html</link>
         <pubDate>Tue, 11 Dec 2018 00:18:08 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/180.html</guid>
+        <guid>https://blog.aaayun.cc/archives/180.html</guid>
         <description>&lt;p&gt;HTTP（Hypertext Transfer Protocol）超文本传输协议是用来在Internet上传送超文本的传送协议，它可以使浏览器更加高效，使网络传输减少。但HTTP协议采用明文传输信息，存在信息窃听、信息篡改和信息劫持的风险。&lt;/p&gt;
 &lt;p&gt;HTTPS(Secure Hypertext Transfer Protocol) 安全超文本传输协议是一个安全的通信通道，它基于HTTP开发，用于在客户计算机和服务器之间交换信息。HTTPS使用安全套接字层(SSL)进行信息交换，简单来说HTTPS是HTTP的安全版，是使用TLS/SSL加密的HTTP协议。&lt;/p&gt;
 &lt;p&gt;HTTPS是加密传输协议，HTTP是明文传输协议;&lt;br&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Centos on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/centos/</link>
+        <link>https://blog.aaayun.cc/tags/centos/</link>
         <description>Recent content in Centos on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 17:12:30 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/centos/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 17:12:30 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/centos/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>centos7系统安装php8</title>
-        <link>http://blog.aaayun.cc/archives/943.html</link>
+        <link>https://blog.aaayun.cc/archives/943.html</link>
         <pubDate>Thu, 01 Dec 2022 15:28:12 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/943.html</guid>
+        <guid>https://blog.aaayun.cc/archives/943.html</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;centos7默认源的php版本只有5.4，版本太老，而mediawiki需要的php版本为7.4以上，所以本文直接升级到php8.0。&lt;/p&gt;
 &lt;h2 id=&#34;步骤&#34;&gt;步骤
@@ -85,10 +85,10 @@
         </item>
         <item>
         <title>Linux下通过rdesktop远程windows</title>
-        <link>http://blog.aaayun.cc/archives/476.html</link>
+        <link>https://blog.aaayun.cc/archives/476.html</link>
         <pubDate>Mon, 23 Sep 2019 23:15:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/476.html</guid>
+        <guid>https://blog.aaayun.cc/archives/476.html</guid>
         <description>&lt;p&gt;linux下利用rdesktop命令远程连接windows&lt;/p&gt;
 &lt;p&gt;博主本人使用的是centos7.4其它版本请自测&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -114,10 +114,10 @@
         </item>
         <item>
         <title>centos7下安装nodejs并切换国内源</title>
-        <link>http://blog.aaayun.cc/archives/459.html</link>
+        <link>https://blog.aaayun.cc/archives/459.html</link>
         <pubDate>Wed, 18 Sep 2019 23:52:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/459.html</guid>
+        <guid>https://blog.aaayun.cc/archives/459.html</guid>
         <description>&lt;p&gt;博主本人只测试了centos7环境下正常使用 其它linux环境请自测&lt;/p&gt;
 &lt;p&gt;1.下载nvm一键安装脚本&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -160,10 +160,10 @@
         </item>
         <item>
         <title>centos7下svn常用命令详解</title>
-        <link>http://blog.aaayun.cc/archives/457.html</link>
+        <link>https://blog.aaayun.cc/archives/457.html</link>
         <pubDate>Thu, 12 Sep 2019 18:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/457.html</guid>
+        <guid>https://blog.aaayun.cc/archives/457.html</guid>
         <description>&lt;p&gt;1、SVN的安装：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -250,10 +250,10 @@ svnlook — 查看版本库的信息等&lt;/p&gt;
         </item>
         <item>
         <title>centos7编译安装gcc9.2</title>
-        <link>http://blog.aaayun.cc/archives/419.html</link>
+        <link>https://blog.aaayun.cc/archives/419.html</link>
         <pubDate>Mon, 19 Aug 2019 17:46:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/419.html</guid>
+        <guid>https://blog.aaayun.cc/archives/419.html</guid>
         <description>&lt;p&gt;原先的centos7中安装的gcc编译器为4.8.5，版本太旧，执行一些程序完全不够用阿 比如 网易云音乐等&lt;br&gt;
 所以今天博主带你升级gcc9.2.0最新版&lt;/p&gt;
 &lt;p&gt;1.安装编译环境&lt;/p&gt;
@@ -482,10 +482,10 @@ svnlook — 查看版本库的信息等&lt;/p&gt;
         </item>
         <item>
         <title>CentOS7中编译安装redis5.0</title>
-        <link>http://blog.aaayun.cc/archives/401.html</link>
+        <link>https://blog.aaayun.cc/archives/401.html</link>
         <pubDate>Thu, 11 Jul 2019 19:36:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/401.html</guid>
+        <guid>https://blog.aaayun.cc/archives/401.html</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;环境介绍&lt;/li&gt;
 &lt;/ol&gt;
@@ -750,10 +750,10 @@ svnlook — 查看版本库的信息等&lt;/p&gt;
         </item>
         <item>
         <title>centos7快速搭建LAMP</title>
-        <link>http://blog.aaayun.cc/archives/37.html</link>
+        <link>https://blog.aaayun.cc/archives/37.html</link>
         <pubDate>Mon, 26 Mar 2018 06:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/37.html</guid>
+        <guid>https://blog.aaayun.cc/archives/37.html</guid>
         <description>&lt;p&gt;1、安装apache&lt;br&gt;
 　　1.1 安装apache&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -995,10 +995,10 @@ svnlook — 查看版本库的信息等&lt;/p&gt;
         </item>
         <item>
         <title>centos7中解决无法识别ntfs格式</title>
-        <link>http://blog.aaayun.cc/archives/30.html</link>
+        <link>https://blog.aaayun.cc/archives/30.html</link>
         <pubDate>Mon, 26 Mar 2018 05:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/30.html</guid>
+        <guid>https://blog.aaayun.cc/archives/30.html</guid>
         <description>&lt;p&gt;CentOS默认源里没有ntfs3g，想要添加ntfs支持，无非是自己下载编译安装或者加源yum安装&lt;/p&gt;
 &lt;p&gt;添加aliyun的epel源来yum安装的方式，简单易行&lt;/p&gt;
 &lt;p&gt;1、加源&lt;/p&gt;
@@ -1025,10 +1025,10 @@ svnlook — 查看版本库的信息等&lt;/p&gt;
         </item>
         <item>
         <title>centos7安装phpmyadmin</title>
-        <link>http://blog.aaayun.cc/archives/27.html</link>
+        <link>https://blog.aaayun.cc/archives/27.html</link>
         <pubDate>Sun, 25 Mar 2018 05:23:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/27.html</guid>
+        <guid>https://blog.aaayun.cc/archives/27.html</guid>
         <description>&lt;p&gt;首先服务器要有web 环境&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>源码 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E6%BA%90%E7%A0%81/</link>
+        <link>https://blog.aaayun.cc/tags/%E6%BA%90%E7%A0%81/</link>
         <description>Recent content in 源码 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E6%BA%90%E7%A0%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E6%BA%90%E7%A0%81/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>飞尔国际源码</title>
-        <link>http://blog.aaayun.cc/archives/755.html</link>
+        <link>https://blog.aaayun.cc/archives/755.html</link>
         <pubDate>Thu, 18 Nov 2021 02:51:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/755.html</guid>
+        <guid>https://blog.aaayun.cc/archives/755.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;非资金盘系统，项目可长期运营&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;预览&#34;&gt;预览
@@ -60,10 +60,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>微营销系统</title>
-        <link>http://blog.aaayun.cc/archives/502.html</link>
+        <link>https://blog.aaayun.cc/archives/502.html</link>
         <pubDate>Mon, 04 Nov 2019 23:27:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/502.html</guid>
+        <guid>https://blog.aaayun.cc/archives/502.html</guid>
         <description>&lt;h2 id=&#34;微营销平台&#34;&gt;微营销平台
 &lt;/h2&gt;&lt;p&gt;主要用于产品的宣传推广，以订单处理为核心，帮助企业快速构建专属的全渠道营销订单平台。企业通过平台可以全面展示商品，快速引流客户，提升内外部协同效率，数据驱动获取更多利润。&lt;/p&gt;
 &lt;p&gt;您可以在后台自由编辑产品页面，产品内容，业务员，各种订单数据的查看。&lt;/p&gt;
@@ -283,10 +283,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>分享自用支付宝支付类</title>
-        <link>http://blog.aaayun.cc/archives/497.html</link>
+        <link>https://blog.aaayun.cc/archives/497.html</link>
         <pubDate>Mon, 04 Nov 2019 22:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/497.html</guid>
+        <guid>https://blog.aaayun.cc/archives/497.html</guid>
         <description>&lt;p&gt;分享自用的支付宝支付类&lt;/p&gt;
 &lt;p&gt;目前只封装了 订单查询以及app支付&lt;/p&gt;
 &lt;p&gt;更多的支付 后期会集成&lt;/p&gt;
@@ -755,10 +755,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>[更新]php微信支付类（含h5支付、APP二次签名、jsapi支付）</title>
-        <link>http://blog.aaayun.cc/archives/492.html</link>
+        <link>https://blog.aaayun.cc/archives/492.html</link>
         <pubDate>Sat, 02 Nov 2019 23:03:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/492.html</guid>
+        <guid>https://blog.aaayun.cc/archives/492.html</guid>
         <description>&lt;p&gt;博主之封装过一个微信支付类 很长时间没有更新了 现在分享一下自用的微信支付类&lt;/p&gt;
 &lt;p&gt;该类含有微信app支付 h5支付 公众号支付（jsapi） 订单查询&lt;/p&gt;
 &lt;p&gt;native扫码支付后面会添加&lt;/p&gt;
@@ -1410,10 +1410,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>最新域名防红整站源码带后台配置</title>
-        <link>http://blog.aaayun.cc/archives/451.html</link>
+        <link>https://blog.aaayun.cc/archives/451.html</link>
         <pubDate>Mon, 09 Sep 2019 18:50:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/451.html</guid>
+        <guid>https://blog.aaayun.cc/archives/451.html</guid>
         <description>&lt;h2 id=&#34;图片预览&#34;&gt;图片预览
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2019/09/09/974044211957439.png&#34;
 	
@@ -1442,10 +1442,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>价值50块钱的智云影视多功能php源码V3.6.6.2版本</title>
-        <link>http://blog.aaayun.cc/archives/159.html</link>
+        <link>https://blog.aaayun.cc/archives/159.html</link>
         <pubDate>Sat, 01 Dec 2018 17:33:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/159.html</guid>
+        <guid>https://blog.aaayun.cc/archives/159.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/12/01/280894127605747.jpeg&#34;
 	
 	
@@ -1483,10 +1483,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>微信支付类（含h5支付、APP二次签名）</title>
-        <link>http://blog.aaayun.cc/archives/147.html</link>
+        <link>https://blog.aaayun.cc/archives/147.html</link>
         <pubDate>Tue, 13 Nov 2018 17:20:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/147.html</guid>
+        <guid>https://blog.aaayun.cc/archives/147.html</guid>
         <description>&lt;p&gt;最新地址 &lt;a class=&#34;link&#34; href=&#34;https://vclove.cn/archives/492.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://vclove.cn/archives/492.html&lt;/a&gt;&lt;br&gt;
 什么是微信H5支付&lt;/p&gt;
@@ -1531,10 +1531,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>轻风云授权系统1.1【更新】</title>
-        <link>http://blog.aaayun.cc/archives/116.html</link>
+        <link>https://blog.aaayun.cc/archives/116.html</link>
         <pubDate>Sun, 22 Jul 2018 22:24:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/116.html</guid>
+        <guid>https://blog.aaayun.cc/archives/116.html</guid>
         <description>&lt;p&gt;截图预览&lt;br&gt;
 &lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/05/28/993373005566653.png&#34;
 	
@@ -1574,10 +1574,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>[二开]校园表白墙</title>
-        <link>http://blog.aaayun.cc/archives/108.html</link>
+        <link>https://blog.aaayun.cc/archives/108.html</link>
         <pubDate>Wed, 27 Jun 2018 21:59:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/108.html</guid>
+        <guid>https://blog.aaayun.cc/archives/108.html</guid>
         <description>&lt;p&gt;截图预览:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/06/27/791653405341689.jpg&#34;
 	
@@ -1606,10 +1606,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>轻风云授权系统1.0</title>
-        <link>http://blog.aaayun.cc/archives/84.html</link>
+        <link>https://blog.aaayun.cc/archives/84.html</link>
         <pubDate>Tue, 29 May 2018 00:56:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/84.html</guid>
+        <guid>https://blog.aaayun.cc/archives/84.html</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://uss.aaayun.cc/typecho/2018/05/28/993373005566653.png&#34;
 	
 	
@@ -1647,10 +1647,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>vax虚拟币系统PHP源码</title>
-        <link>http://blog.aaayun.cc/archives/40.html</link>
+        <link>https://blog.aaayun.cc/archives/40.html</link>
         <pubDate>Thu, 29 Mar 2018 20:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/40.html</guid>
+        <guid>https://blog.aaayun.cc/archives/40.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;此源码已停止更新，仍可下载使用**&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;程序用途&lt;br&gt;
@@ -1683,10 +1683,10 @@ v10业绩累积10000fil享受名下会员每日静态收益20%节点服务费 �
         </item>
         <item>
         <title>快乐二级域名分发系统v2.1.1</title>
-        <link>http://blog.aaayun.cc/archives/8.html</link>
+        <link>https://blog.aaayun.cc/archives/8.html</link>
         <pubDate>Mon, 19 Mar 2018 04:19:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/8.html</guid>
+        <guid>https://blog.aaayun.cc/archives/8.html</guid>
         <description>&lt;p&gt;此系统有哪些特点&lt;br&gt;
 目前支持的域名解析平台有&lt;br&gt;
 dnspod&lt;br&gt;

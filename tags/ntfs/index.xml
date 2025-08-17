@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Ntfs on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/ntfs/</link>
+        <link>https://blog.aaayun.cc/tags/ntfs/</link>
         <description>Recent content in Ntfs on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/ntfs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/ntfs/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>centos7中解决无法识别ntfs格式</title>
-        <link>http://blog.aaayun.cc/archives/30.html</link>
+        <link>https://blog.aaayun.cc/archives/30.html</link>
         <pubDate>Mon, 26 Mar 2018 05:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/30.html</guid>
+        <guid>https://blog.aaayun.cc/archives/30.html</guid>
         <description>&lt;p&gt;CentOS默认源里没有ntfs3g，想要添加ntfs支持，无非是自己下载编译安装或者加源yum安装&lt;/p&gt;
 &lt;p&gt;添加aliyun的epel源来yum安装的方式，简单易行&lt;/p&gt;
 &lt;p&gt;1、加源&lt;/p&gt;

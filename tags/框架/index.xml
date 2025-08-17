@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>框架 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E6%A1%86%E6%9E%B6/</link>
+        <link>https://blog.aaayun.cc/tags/%E6%A1%86%E6%9E%B6/</link>
         <description>Recent content in 框架 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AYPHP轻量级框架</title>
-        <link>http://blog.aaayun.cc/archives/842.html</link>
+        <link>https://blog.aaayun.cc/archives/842.html</link>
         <pubDate>Thu, 16 Jun 2022 15:29:42 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/842.html</guid>
+        <guid>https://blog.aaayun.cc/archives/842.html</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;开发初衷&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;此框架陪伴了博主三年多，因为经常开发小系统，其他框架有些东西真好用（TP的连贯操作、C函数等），想把这些抠出来太难了。故此写了很多第三方类，后来觉得文件太多了，每次开发都要重新复制并命名（命名空间）很麻烦，故此开发了这样一个轻量级框架，用此框架无需担心用户注入等危险操作，框架在路由层已全面去除可能存在的危险字符（sql、xss、特殊字符）&lt;/p&gt;
@@ -595,10 +595,10 @@
         </item>
         <item>
         <title>PHP框架的理解</title>
-        <link>http://blog.aaayun.cc/archives/89.html</link>
+        <link>https://blog.aaayun.cc/archives/89.html</link>
         <pubDate>Tue, 29 May 2018 03:51:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/89.html</guid>
+        <guid>https://blog.aaayun.cc/archives/89.html</guid>
         <description>&lt;p&gt;PHP框架的原理&lt;/p&gt;
 &lt;p&gt;说到PHP框架，可能很多PHP新手会感到有些胆怯。其实，PHP框架也不是那么深不可测的，框架就是别人使用PHP基础只是为你写好了的东西，只是封装在一起；这就好比我们使用PHP的函数，函数都是已近写好了的，我们只要按照函数使用的规则，比如，为函数传递参数的个数、类型以及函数返回的值类型等。理解了PHP函数的这些使用规则，我们就可以大胆、放心的去使用了。同样道理，PHP框架也有自己的规则，比如项目文件夹的部署、控制器类的命名规则以及数据表的命名规则等。了解了PHP框架的使用规则我们就能去使用PHP框架提供的全部功能了。&lt;/p&gt;
 &lt;p&gt;PHP框架并不是那么高不可攀，每位PHP程序员都应该加入到PHP框架的学习和使用中来，毕竟一个人的精力是有限的，如何你每个项目都全部由自己开发的话，那么你将浪费许多时间用在做相同的事情上。比方说，几乎每个项目都有数据的验证，那么你要为每个项目都要编写数据验证的PHP代码，而如果你使用PHP框架的话，这些都是封装了可以直接拿来使用的。&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>通信 on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/%E9%80%9A%E4%BF%A1/</link>
+        <link>https://blog.aaayun.cc/tags/%E9%80%9A%E4%BF%A1/</link>
         <description>Recent content in 通信 on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/%E9%80%9A%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 15:01:54 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/%E9%80%9A%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>分享一个PHP环信服务端操作类</title>
-        <link>http://blog.aaayun.cc/archives/369.html</link>
+        <link>https://blog.aaayun.cc/archives/369.html</link>
         <pubDate>Wed, 03 Apr 2019 23:10:00 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/369.html</guid>
+        <guid>https://blog.aaayun.cc/archives/369.html</guid>
         <description>&lt;p&gt;之前做直播系统,需要用到通信这一块,由于官方文档没有sdk,博主本人也是google的,顺便修改了一下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

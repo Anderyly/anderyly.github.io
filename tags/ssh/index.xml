@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Ssh on 轻风云</title>
-        <link>http://blog.aaayun.cc/tags/ssh/</link>
+        <link>https://blog.aaayun.cc/tags/ssh/</link>
         <description>Recent content in Ssh on 轻风云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>轻风云</copyright>
-        <lastBuildDate>Fri, 15 Aug 2025 17:12:30 +0800</lastBuildDate><atom:link href="http://blog.aaayun.cc/tags/ssh/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 17:12:30 +0800</lastBuildDate><atom:link href="https://blog.aaayun.cc/tags/ssh/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>win11自带SSH免密登录Linux</title>
-        <link>http://blog.aaayun.cc/archives/859.html</link>
+        <link>https://blog.aaayun.cc/archives/859.html</link>
         <pubDate>Wed, 31 Aug 2022 09:32:13 +0000</pubDate>
         
-        <guid>http://blog.aaayun.cc/archives/859.html</guid>
+        <guid>https://blog.aaayun.cc/archives/859.html</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;使用win11自带的SSH工具登录Linux，不需要每次都输入密码。网上找了很多教程才找到合适的，重新整理和操作并记录下来，给相同需求的小伙伴提供参考。（所有的操作都是在win11的CMD命令行）&lt;/p&gt;&lt;/blockquote&gt;
