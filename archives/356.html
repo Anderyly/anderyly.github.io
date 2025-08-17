@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/356.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="解决linux下sublime3无法中文输入">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="解决linux下sublime3无法中文输入">
 <meta property='og:description' content="1.先下载文件，下载后将后缀改为.c 点我下载\n安装 C/C++ 的编译环境和 gtk libgtk2.0-dev 1 2 # apt-get install build-essential # apt-get install libgtk2.0-dev 编译共享内库 1 # gcc -shared -o libsublime-imfix.so sublime-imfix.c `pkg-config --libs --cflags gtk+-2.0` -fPIC 设置 LD_PRELOAD 并启动 Sublime Text 1 # LD_PRELOAD=./libsublime-imfix.so subl 修改 /usr/share/applications/sublime_text.desktop 1 2 3 4 5 6 7 8 9 10 11 12 13 14 [Desktop Entry] [...] Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text %F [...] [Desktop Action Window] [...] Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n [...] [Desktop Action Document] [...] Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text --command new_file [...] 不要忘了把 libsublime-imfix.so 放到 /opt/sublime_text/ 中\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/356.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1169,6 +1169,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

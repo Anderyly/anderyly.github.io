@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/358.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="宝塔专业版手动破解方法">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="宝塔专业版手动破解方法">
 <meta property='og:description' content="首先安装面板免费版\n然后升级专业版\n1 wget -O update.sh http://download.bt.cn/install/update_pro.sh &amp;&amp; bash update.sh pro 找到路径/www/server/panel/class 找到文件名或者直接搜索：common.py\n搜索代码164行\n1 data = panelAuth().get_order_status(None) 替换成\n1 data = {&#39;status&#39; : True,&#39;msg&#39; : {&#39;endtime&#39; : 32503651199 }} 完成后，进入 /www/server/panel/data 新建一个文件 文件名为：userInfo.json 内容空的，如果存在这个文件的删掉重新新建文件\n最后重启宝塔\n1 /etc/init.d/bt restart 注意：安装前请关闭宝塔网页 防止错误 如果使用失败，请恢复成免费版 代码为\n1 wget -O update.sh http://download.bt.cn/install/update.sh &amp;&amp; bash update.sh free 本地玩下可以 运营请支持正版\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/358.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1127,6 +1127,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

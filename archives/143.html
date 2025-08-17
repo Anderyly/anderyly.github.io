@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/143.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="在Ubuntu上用aria2和Aria2WebUI实现远程多线程下载">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="在Ubuntu上用aria2和Aria2WebUI实现远程多线程下载">
 <meta property='og:description' content="配置环境：deepin 15.7\n1.基础软件的安装\n在下载Aria2之前先安装一些基础必备的软件：git、screen、nodejs-legacy，在终端下输入命令\n1 sudo apt-get install git screen nodejs-legacy 2.下载安装Aria2\n1 sudo apt-get install aria2 3.下载Aria2WebUI\n1 git clone https://github.com/ziahamza/webui-aria2.git 4.设置Aria2监听rpc，启动WebUI\n1 screen -S aria2 新建一个名为aria2的会话\n在新的会话中输入：\n1 aria2c --enable-rpc --rpc-listen-all --rpc-secret 123456 注意：参数–rpc-secret 后面的字符串是自己自定义的token密码，要记住！要记住！要记住！\n执行后会显示：\n1 2 3 root@anderyly-PC:~# aria2c --enable-rpc --rpc-listen-all --rpc-secret 123456 11/12 15:10:28 [NOTICE] IPv4 RPC: listening on TCP port 6800 11/12 15:10:28 [NOTICE] IPv4 RPC: listening on TCP port 6800 记住port后面的端口号“6800”\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/143.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1179,6 +1179,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

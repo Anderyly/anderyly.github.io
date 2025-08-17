@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/27.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="centos7安装phpmyadmin">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="centos7安装phpmyadmin">
 <meta property='og:description' content="首先服务器要有web 环境\n1 yum install phpmyadmin 有时候会安装不成功，提示没有可用软件包，则需要安装Remi源\n1 2 yum install epel-release rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm 修改配置\n1 vim /etc/httpd/conf.d/phpMyadmin.conf 将 Require ip 127.0.0.1 Require ip ::1 注释\n添加Require all granted\n即可在浏览器本地通过localhost/phpmyadmin 访问\n修改配置\n1 vim /etc/phpMyAdmin/config.inc.php 1 2 3 4 5 6 7 8 9 10 11 $cfg[&#39;Servers&#39;][$i][&#39;host&#39;] = &#39;localhost&#39;; //设定MySQL所在的主机名或IP地址。如127.0.0.1这步很重要 $cfg[&#39;Servers&#39;][$i][&#39;auth_type&#39;] = &#39;cookie&#39;; // 设定进入phpMyAdmin管理MySQL的方式，共有三个选项：config、http、cookie。config是按配置文件登录，为默认方式， 无需任何确认；http是使用HTTP登录管理，在Apache模块安装下才能支持；cookie是最通用的管理方式。后两种方式的用户名和密码都是直接到数据库中验证。 $cfg[&#39;Servers&#39;][$i][&#39;user&#39;] = &#39;root&#39; ; //设定管理MySQL的账号。 $cfg[&#39;Servers&#39;][$i][&#39;password&#39;] = &#39;&#39; ; //设定管理MySQL的密码。 设置完成后，保存config.inc.php文件，重启Apache，测试：访问http://localhost/phpMyAdmin/\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/27.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1183,6 +1183,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/401.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="CentOS7中编译安装redis5.0">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="CentOS7中编译安装redis5.0">
 <meta property='og:description' content=" 环境介绍 CentOS7 (未安装Development Tools)\n下载Redis5.0-rc3 1 wget -O redis-5.0-rc3.tar.gz https://github.com/antirez/redis/archive/5.0-rc3.tar.gz 解压redis 1 tar -zxvf redis-5.0-rc3.tar.gz -C /usr/local 编译并安装 1 2 cd /usr/local/redis-5.0-rc3 make 此时会出错：\n1 2 3 4 compilation terminated. make[1]: *** [adlist.o] Error 1 make[1]: Leaving directory `/usr/local/redis-5.0-rc3/src&#39; make: *** [all] Error 2 安装Development Tools\n1 yum groupinstall &#39;Development Tools&#39; 再次执行，还会报错\n1 2 3 4 5 6 7 8 9 10 11 12 make cd src &amp;&amp; make all make[1]: Entering directory `/usr/local/redis-5.0-rc3/src&#39; CC adlist.o In file included from adlist.c:34:0: zmalloc.h:50:31: fatal error: jemalloc/jemalloc.h: No such file or directory #include &lt;jemalloc/jemalloc.h&gt; ^ compilation terminated. make[1]: *** [adlist.o] Error 1 make[1]: Leaving directory `/usr/local/redis-5.0-rc3/src&#39; make: *** [all] Error 2 最后解决方案如下：\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/401.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1340,6 +1340,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/709.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="golang cron v3 定时任务实现">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="golang cron v3 定时任务实现">
 <meta property='og:description' content="最近需要在 golang 中使用定时任务功能，用到了一个 cron 库，当前是 v3 版本，网上挺多都是 v2 的教程，记录一下使用方法。 在旧版本的库中默认的 cron 表达式不是标准格式，第一个位是秒级的定义。\n现在 v3 版本直接用标准 cron 表示式即可，主要看 godoc 文档部分\ncron 表示式 推荐使用在线工具来看自己写的 cron 对不对，简单的表达式直接写一般问题不大。这里推荐 crontab.guru，可以通过可视化的方式来查看你编写的定时规则。\n以下内容摘自 维基百科-Cron\n文件格式說明\n1 2 3 4 5 6 7 ┌──分鐘（0 - 59） │ ┌──小時（0 - 23） │ │ ┌──日（1 - 31） │ │ │ ┌─月（1 - 12） │ │ │ │ ┌─星期（0 - 6，表示从周日到周六） │ │ │ │ │ * * * * * 被執行的命令 注：\n在某些系统里，星期日也可以为 7\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/709.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1645,6 +1645,34 @@ crontab.guru</p>
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

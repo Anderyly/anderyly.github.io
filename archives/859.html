@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/859.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="win11自带SSH免密登录Linux">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="win11自带SSH免密登录Linux">
 <meta property='og:description' content="前言 使用win11自带的SSH工具登录Linux，不需要每次都输入密码。网上找了很多教程才找到合适的，重新整理和操作并记录下来，给相同需求的小伙伴提供参考。（所有的操作都是在win11的CMD命令行）\n生成公钥文件 1 ssh-keygen -t rsa -c &#34;admin@aaayun.cc&#34; 上传公钥文件（win11） 找到自己的公钥路径 (C:\\Users\\你的用户名.ssh)\n1 scp C:\\Users\\anderyly\\.ssh\\id_rsa.pub root@192.168.2.222:~/.ssh 重命名公钥文件 登录linux，此时仍需要密码登陆 1 ssh root@192.168.2.222 重命名公钥文件 1 2 cd /root/.ssh mv id_rsa.pub authorized_keys 修改文件权限 修改文件权限 1 2 chmod 600 authorized_keys chmod 700 /root/.ssh 修改SSH配置文件 1 vim /etc/ssh/sshd_config 保证这三句不被注释掉，如果没有则添加新的对应的语句，我需要添加&quot;RSAAuthentication yes&quot;\nRSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys\n1 2 3 4 5 6 7 保存退出 3. 重新启动SSH服务（Linux） ```shell systemctl restart sshd ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/859.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1220,6 +1220,34 @@ AuthorizedKeysFile .ssh/authorized_keys</p>
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

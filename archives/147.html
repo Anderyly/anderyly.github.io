@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/147.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="微信支付类（含h5支付、APP二次签名）">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="微信支付类（含h5支付、APP二次签名）">
 <meta property='og:description' content="最新地址 https://vclove.cn/archives/492.html\n什么是微信H5支付\nH5支付是指商户在微信客户端外的移动端网页展示商品或服务，用户在前述页面确认使用微信支付时，商户发起本服务呼起微信客户端进行支付\n主要用于触屏版的手机浏览器请求微信支付的场景。可以方便的从外部浏览器唤起微信支付\n开发流程\n1、用户在商户侧完成下单，使用微信支付进行支付\n2、由商户后台向微信支付发起下单请求（调用统一下单接口）注：交易类型trade_type=MWEB\n3、统一下单接口返回支付相关参数给商户后台，如支付跳转url（参数名“mweb_url”），商户通过mweb_url调起微信支付中间页\n4、中间页进行H5权限的校验，安全性检查（此处常见错误请见下文）\n5、如支付成功，商户后台会接收到微信侧的异步通知\n6、用户在微信支付收银台完成支付或取消支付，返回商户页面（默认为返回支付发起页面）\n7、商户在展示页面，引导用户主动发起支付结果的查询\n8、商户后台判断是否接到收微信侧的支付结果通知，如没有，后台调用订单查询接口确认订单状态\n9、展示最终的订单支付结果给用户\n相信大家都用过企鹅的sdk吧，那酸爽让人难以接受\nh5的支付我就不给大家截图了，看调用方式就知道了\nAPP签名结果\n微信支付类库下载地址：wepay.tar.gz\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/147.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1130,6 +1130,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

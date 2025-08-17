@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/952.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="TP5使用workerman开启websocket服务">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="TP5使用workerman开启websocket服务">
 <meta property='og:description' content="前言 之前代码使用websocket方式是直接下载workman文件放入vendor中进行使用，这种方式处理及其容易出现问题，比如linux运行正常而windows无法使用，每次部署代码拉取依赖包都会覆盖等奇奇怪怪的问题\n安装依赖 通过Composer.exe安装相关依赖： 1 composer require topthink/think-worker 如果报错，如下：\n1 2 3 4 5 6 7 8 9 composer require topthink/think-worker Using version ^2.0 for topthink/think-worker ./composer.json has been updated Loading composer repositories with package information Updating dependencies (including require-dev) Your requirements could not be resolved to an installable set of packages. Problem 1 topthink/think-worker v2.0.5 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.4 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.3 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.2 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.1 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - topthink/think-worker v2.0.0 requires topthink/framework 5.1.* -&gt; satisfiable by topthink/framework[5.1.x-dev, v5.1-beta.1, v5.1-rc.1, v5.1-rc.2, v5.1-rc.3, v5.1.0, v5.1.1, v5.1.10, v5.1.11, v5.1.12, v5.1.13, v5.1.14, v5.1.15, v5.1.16, v5.1.17, v5.1.18, v5.1.19, v5.1.2, v5.1.3, v5.1.4, v5.1.5, v5.1.6, v5.1.7, v5.1.8, v5.1.9] but these conflict with your requirements or minimum-stability. - Installation requestfortopthink/think-worker ^2.0 -&gt; satisfiable by topthink/think-worker[v2.0.0, v2.0.1, v2.0.2, v2.0.3, v2.0.4, v2.0.5].Installation failed, reverting ./composer.json to its original content. Installation failed, reverting ./composer.json to its original content. 则是版本不匹配，用低版本的workerman，更改如下：\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/952.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1367,6 +1367,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

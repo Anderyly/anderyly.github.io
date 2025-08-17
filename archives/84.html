@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/84.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="轻风云授权系统1.0">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="轻风云授权系统1.0">
 <meta property='og:description' content="\n源码介绍： 1.增加时间限制\n2.增加授权到期短信提醒\n3.重写黑名单系统\n4.增加二次认证\n注：使用本系统必须开启rewrite模块，否则会使用失败，此授权系统使用AYPHP1.3框架\n此系统去除了在线打包下载以及QQ扫描验证，采用了短信sdk更适合商业用途，此系统将不定时更新，如发现漏洞请及时反馈\n使用方法：\n1.安装需要把auth.sql导入数据库\n2.更改/application/Configs/database.php，这是链接数据库的参数，必须更改\n3.把核心代码复制到你需要授权的系统数据库操作文件\n4.监控http://域名//Job/index/key=密匙(监控速度无需多快)\n密匙在后台更改\n5.把tool.php放在源码根目录中【非必须】\n(此源码方便放置密匙，如果核心代码密匙路径更改，此源码密匙路径也要更改)\n6.使用短信sdk需在ay/common/sms/sms100.php更改key以及模板参数，获取key请登入100sms.cn\n用户授权只需按时缴纳费用和放置密匙即可正常访问网站，\n如授权即将到期本程序将自动下发短信给用户让缴费，\n密匙防止已授权用户将自己的授权源码给他人使用的黑名单系统\n注意网站运行后/readme目录需删除\n下载直通车\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/84.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1117,6 +1117,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

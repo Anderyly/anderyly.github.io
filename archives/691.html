@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/691.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="php调用java类">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="php调用java类">
 <meta property='og:description' content="参考：\nhttps://blog.csdn.net/qq_35921925/article/details/108110519\nhttp://www.piaoyi.org/php/php-java-bridge-jar-class.html\n一、centos下 PHP 调用 jar包\n1.准备工作\n1.1、php环境【php7.2】，并且将php.ini中的allow_url_include改为On\n1.2、安装java环境\n1 yum install java 2.下载 JavaBridge.jar(快捷下载)\nJavaBridge.jar和Java.inc\n下载地址: http://php-java-bridge.sourceforge.net/pjb/download.php\n打一个jar包，将打包好的jar包以及JavaBridge.jar放到ext目录里面 1 2 3 cp Hello.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext cp JavaBridge.jar /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext cd /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/jre/lib/ext 启动JavaBridge.jar 1 java -jar JavaBridge.jar SERVLET:8080 3 JavaBridge.log 新建一个php站点，把Java.inc放到根目录，新建index.php，index.php内容如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 &lt;?php header( &#39;Content-Type: text/html; charset=UTF-8&#39; ); define(&#34;JAVA_DEBUG&#34;, true); //调试设置 define(&#34;JAVA_HOSTS&#34;, &#34;127.0.0.1:8080&#34;); //设置javabridge监听端口 /*0: Log nothing, not even fatal errors. 1: Log fatal system errors such as &#34;out of memory error&#34;. 2: Log java exceptions.*/ define(&#34;JAVA_LOG_LEVEL&#34;, 2); //java.log_level: 0-6 require_once &#34;Java.inc&#34;; //php调用java的接口，与该脚本位于同一目录 java_set_file_encoding(&#34;UTF-8&#34;); //设置JAVA编码。 $ob = new Java(&#34;Hello&#34;); //实例 try{ $res = $ob-&gt;h(&#39;1333&#39;); echo $res; } catch(Exception $e) { var_dump($e); } // 输出 1333 【一些注意事项】：\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/691.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1203,6 +1203,34 @@ JavaBridge.jar和Java.inc<br>
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

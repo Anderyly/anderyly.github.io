@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/317.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="Fedora26/27/28/29中安装Google Chrome浏览器">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="Fedora26/27/28/29中安装Google Chrome浏览器">
 <meta property='og:description' content=" 终端切换用户为超级用户root 添加Chrome浏览器的数据源 注意：Google Chrome Linux版本已经没有任何32位（x86）的更新，并且32位的库源也已被删除。如果您安装了32位版本，则可以使用它，但无法再获取安全更新或其他更新。\n运行以下命令（直接复制粘贴所有内容到控制台）来创建 /etc/yum.repos.d/google-chrome.repo 文件\n1 2 3 4 5 6 7 8 cat &lt;&lt; EOF &gt;&gt; /etc/yum.repos.d/google-chrome.repo [google-chrome] name=google-chrome - x86_64 baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64 enabled=1 gpgcheck=1 gpgkey=https://dl.google.com/linux/linux_signing_key.pub EOF YUM安装Chrome浏览器\n3.1 安装稳定版本的Chrome浏览器 1 dnf install google-chrome-stable 3.1 安装测试版本的Chrome浏览器\n1 dnf install google-chrome-beta 3.1 安装不稳定版本的Chrome浏览器\n1 dnf install google-chrome-unstable ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/317.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1138,6 +1138,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

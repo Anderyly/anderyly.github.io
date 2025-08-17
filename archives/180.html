@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/180.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="HTTP和HTTPS有什么区别？">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="HTTP和HTTPS有什么区别？">
 <meta property='og:description' content="HTTP（Hypertext Transfer Protocol）超文本传输协议是用来在Internet上传送超文本的传送协议，它可以使浏览器更加高效，使网络传输减少。但HTTP协议采用明文传输信息，存在信息窃听、信息篡改和信息劫持的风险。\nHTTPS(Secure Hypertext Transfer Protocol) 安全超文本传输协议是一个安全的通信通道，它基于HTTP开发，用于在客户计算机和服务器之间交换信息。HTTPS使用安全套接字层(SSL)进行信息交换，简单来说HTTPS是HTTP的安全版，是使用TLS/SSL加密的HTTP协议。\nHTTPS是加密传输协议，HTTP是明文传输协议;\nHTTPS需要用到SSL证书，而HTTP不用;\nHTTPS标准端口443，HTTP标准端口80;\nHTTPS基于传输层，HTTP基于应用层;\n什么是SSL？\nSSL是指安全套接层协议（以及传输层协议TLS），位于TCP/IP协议与各种应用层协议之间，为数据通讯提供安全支持，是目前使用最广泛的安全协议。它为互联网或内部网络连接，进行操作的两台机器之间提供安全信息通道，即HTTPS。\n1.1 数据传输期间，对信息进行加密\n1.2通过唯一的SSL凭据识别证书所有者身份。\n1.3先验证证书所有者身份，再颁发SSL证书。\n什么是SSL数字证书（SSL证书）？\n数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL服务器证书。SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA（如GlobalSign，wosign），在验证服务器身份后颁发，具有服务器身份验证和数据传输加密功能。\nCA：\n即证书授权中心（CA, Certificate Authority）。CA是负责签发证书、认证证书、管理已颁发证书的机关。用户向CA提出申请后，CA负责审核用户信息，然后对关键信息利用私钥进行”签名”，并公开对应的公钥。客户端可以利用公钥验证签名。\nCSR：\nCSR（Certificate Signing Request）即证书请求文件，也就是证书申请者在申请数字证书时由CSP（加密服务提供者）在生成私钥的同时也生成证书请求文件，证书申请者只要把CSR文件提交给证书颁发机构后，证书颁发机构使用其根证书私钥签名就生成了证书公钥文件，也就是颁发给用户的证书。\n使用ssl证书优势？\n谷歌从 2017 年1月1日起，Chrome 浏览器将会对未进行HTTPS加密的网站标记为「不安全」网站；\n同时苹果App Store的所有iOS应用将强制采用ATS标准，也就是强制使用 HTTPS；\n在国内热火朝天的小程序也要求必须使用 HTTPS 请求。\n1.防流量劫持\n全站Https是根治运营商、中间人流量劫持的解决方案，不仅可以杜绝网页中被插入的小广告，更可以保护用户隐私安全。\n2.提升搜索排名\n采用Https可以帮忙搜索排名的提升，提高站点的可信度和品牌形象。\n3.杜绝钓鱼网站\nHttps地址栏绿色图标可以帮助用户识别出钓鱼网站，保障用户和企业的利益不受损害，增强用户信任。\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/180.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1103,6 +1103,34 @@ Https地址栏绿色图标可以帮助用户识别出钓鱼网站，保障用户
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

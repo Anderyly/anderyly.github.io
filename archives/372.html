@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/372.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="PHP实现QQ扫码登入，非开放平台">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="PHP实现QQ扫码登入，非开放平台">
 <meta property='og:description' content="近期有个需求，需要做扫码登入，而又不想去开放平台申请，看了一下彩虹大神的提取qq的sid，提取了几个重要的方法\n原理就是生成二维码后，前端设置定时器查看二维码状态，因为没有openid只能保存固定的值，那就是qq号了\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 // 生成二维码 public function getqrpic() { $url = &#39;https://ssl.ptlogin2.qq.com/ptqrshow?appid=1006102&amp;e=2&amp;l=M&amp;s=4&amp;d=72&amp;v=4&amp;t=0.5409099&#39; . time() . &#39;daid=1&amp;pt_3rd_aid=0&#39;; $arr = $this-&gt;get_curl($url, 0, 0, 0, 1, 0, 0, 1); preg_match(&#39;/qrsig=(.*?);/&#39;, $arr[&#39;header&#39;], $match); if ($qrsig = $match[1]) { Json::msg(0, &#39;success&#39;, [&#39;qrsig&#39; =&gt; $qrsig, &#39;data&#39; =&gt; base64_encode($arr[&#39;body&#39;])]); } else { Json::msg(1, &#39;二维码获取失败&#39;); } } // 获取二维码状态 public function qqlogin() { error_reporting(0); if (input(&#39;?get.qrsig&#39;)) { $qrsig = input(&#39;get.qrsig&#39;); } else { Json::msg(400, &#39;qrsig不能为空&#39;); } $sig = &#39;&#39;; $url = &#39;https://ssl.ptlogin2.qq.com/ptqrlogin?u1=https%3A%2F%2Fid.qq.com%2Findex.html&amp;ptqrtoken=&#39; . $this-&gt;getqrtoken($qrsig) . &#39;&amp;ptredirect=1&amp;h=1&amp;t=1&amp;g=1&amp;from_ui=1&amp;ptlang=2052&amp;action=0-0-&#39; . time() . &#39;0000&amp;js_ver=10291&amp;js_type=1&amp;login_sig=&#39; . $sig . &#39;&amp;pt_uistyle=40&amp;aid=1006102&amp;daid=1&amp;&#39;; $ret = $this-&gt;get_curl($url, 0, $url, &#39;qrsig=&#39; . $qrsig . &#39;; &#39;, 1); preg_match(&#34;/ptuiCB\\(&#39;(.*?)&#39;\\)/&#34;, $ret, $ts_arr); $r = @explode(&#34;&#39;,&#39;&#34;, str_replace(&#34;&#39;, &#39;&#34;, &#34;&#39;,&#39;&#34;, $ts_arr[1])); if ($r[0] == 65) { Json::msg(205, &#39;二维码已失效&#39;); } elseif ($r[0] == 66) { Json::msg(202, &#39;二维码未失效&#39;); } elseif ($r[0] == 67) { Json::msg(204, &#39;正在验证二维码&#39;); } else { if (strpos($ret, &#39;403&#39;)) Json::msg(306, $ret); } if (strlen($ret) &gt; 1000) { $arr = explode(&#39;;&#39;, $ret); $data = substr($arr[17], strpos($arr[17], &#39;=o&#39;) + 2, strlen($arr[17])); if (empty($data)) { Json::msg(400, &#39;请切换二维码&#39; . $ret); } $qq = ltrim($data, &#39;0&#39;); // $qq是qq号，下面写你接下来需要处理的语句 } } private function get_curl($url, $post = 0, $referer = 0, $cookie = 0, $header = 0, $ua = 0, $nobaody = 0, $split = 0) { $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $url); $httpheader[] = &#34;Accept:*/*&#34;; $httpheader[] = &#34;Accept-Encoding:gzip,deflate,sdch&#34;; $httpheader[] = &#34;Accept-Language:zh-CN,zh;q=0.8&#34;; $httpheader[] = &#34;Connection:close&#34;; curl_setopt($ch, CURLOPT_HTTPHEADER, $httpheader); if ($post) { curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_POSTFIELDS, $post); } if ($header) { curl_setopt($ch, CURLOPT_HEADER, TRUE); } if ($cookie) { curl_setopt($ch, CURLOPT_COOKIE, $cookie); } if ($referer) { curl_setopt($ch, CURLOPT_REFERER, $referer); } if ($ua) { curl_setopt($ch, CURLOPT_USERAGENT, $ua); } else { curl_setopt($ch, CURLOPT_USERAGENT, &#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36&#39;); } if ($nobaody) { curl_setopt($ch, CURLOPT_NOBODY, 1); } curl_setopt($ch, CURLOPT_ENCODING, &#34;gzip&#34;); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $ret = curl_exec($ch); if ($split) { $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE); $header = substr($ret, 0, $headerSize); $body = substr($ret, $headerSize); $ret = array(); $ret[&#39;header&#39;] = $header; $ret[&#39;body&#39;] = $body; } curl_close($ch); return $ret; } 前端js\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/372.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1343,6 +1343,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

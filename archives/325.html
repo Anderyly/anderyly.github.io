@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/325.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="解决fedora下chrome播放音乐没有声音">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="解决fedora下chrome播放音乐没有声音">
 <meta property='og:description' content="因为版权，非开源等原因，官方未打包一些解码器，所以刚安装的chrome没法播放网页上的音乐\n解决方案就是安装解码器，不过需要添加rpmfusion的源\n1.进入rpmfusion官网( https://rpmfusion.org/Configuration )，可以看到两种安装方式，一种是Graphical Setup via Firefox web browser（通过firefox下载rpm包安装），另外一种是Command Line Setup using rpm（命令行安装），选一种安装即可。安装完成可以在/etc/yum.repos.d中看到如下的源：\nrpmfusion-free.repo rpmfusion-nonfree.repo\nrpmfusion-free-updates.repo rpmfusion-nonfree-updates.repo\nrpmfusion-free-updates-testing.repo rpmfusion-nonfree-updates-testing.repo\n2.安装解码器:执行以下命令即可：\n1 $ sudo dnf install gstreamer1-libav gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld gstreamer1-vaapi 或者直接用以下命令\n1 dnf install pavucontrol ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/325.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1105,6 +1105,34 @@ rpmfusion-free-updates-testing.repo rpmfusion-nonfree-updates-testing.repo</p>
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

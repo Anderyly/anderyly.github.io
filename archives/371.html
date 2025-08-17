@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/371.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="PHP实现file_get_contents发送post请求">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="PHP实现file_get_contents发送post请求">
 <meta property='og:description' content="最近按照客户需求写一个支付异步回调通知url的需求,本想用curl写的,后来想想用file_get_contens是否可以实现,果然可以\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $data = array( &#39;name&#39; =&gt; &#39;anderyly&#39;, &#39;age&#39; =&gt; &#39;19&#39;, &#39;grade&#39; =&gt; &#39;boy&#39;, ); $query = http_build_query($data); $options[&#39;http&#39;] = array( &#39;timeout&#39; =&gt; 60, &#39;method&#39; =&gt; &#39;POST&#39;, &#39;header&#39; =&gt; &#39;Content-type:application/x-www-form-urlencoded&#39;, &#39;content&#39; =&gt; $query ); $url = &#34;https://blog.aaayun/cc/&#34;; $context = stream_context_create($options); $result = @file_get_contents($url, false, $context); ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/371.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1121,6 +1121,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

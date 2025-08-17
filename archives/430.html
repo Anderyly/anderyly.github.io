@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/430.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="PHP上解决cookie跨域问题">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="PHP上解决cookie跨域问题">
 <meta property='og:description' content="正常情况下，cookie只能在一个应用中共享，即一个cookie只能有创建它的应用程序共享，实现cookie跨域是为了统一应用平台\n下面来看一下，使用P3P协议实现简单的cookie跨域请求：\n1 2 header( &#39;P3P: CP=&#34;CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR&#34;&#39; ); setcookie( &#39;code&#39;, $code, time() + 3600, &#39;/&#39;, &#39;.aaayun.cc&#39; ); ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/430.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1092,6 +1092,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/366.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="golang配置文件加载">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="golang配置文件加载">
 <meta property='og:description' content="最近在研究golang,由于需要采集很多分类的数据配置文件写死不合适,何况还要编译成exe,查看了一下大佬以及官方文档,发现实现并不难\n1.首先导入包\n1 2 3 4 5 import( &#34;fmt&#34; &#34;os&#34; &#34;github.com/tidwall/gjson&#34; ) 2.获取config.ini配置json的文件\n1 2 3 4 5 6 fp, _ := os.Open(&#34;config.ini&#34;) // 获取文件指针 defer fp.Close() fileInfo, _ := fp.Stat() buffer := make([]byte, fileInfo.Size()) _, _ = fp.Read(buffer) // 文件内容读取到buffer中 config := string(buffer) 3.获取json值,这里双引号的是与json相对应的,如果外面还有一层加个.就行啦\n1 2 page := gjson.Get(conf, &#34;page&#34;) fmt.Println(page.String()) 附上我的json\n1 2 3 4 5 6 7 8 9 10 11 { &#34;page&#34;:&#34;281&#34;, &#34;sleep&#34;:&#34;2&#34;, &#34;type&#34;:&#34;10&#34;, &#34;user&#34; = &#34;root&#34;, &#34;pass&#34; = &#34;root&#34;, &#34;network&#34; = &#34;tcp&#34;, &#34;host&#34; = &#34;localhost&#34;, &#34;port&#34; = &#34;3306&#34;, &#34;database&#34; = &#34;pjs&#34; } ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/366.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1155,6 +1155,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

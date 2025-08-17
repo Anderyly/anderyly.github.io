@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/129.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="一次差点放弃的抓包">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="一次差点放弃的抓包">
 <meta property='og:description' content="本人好友(骚木)给了一个网站发现视频资源不错，准备给扒下来\n准备编辑器、fd、浏览器\n1.启动fd，访问视频站，看一段视频，让它发送包，先放着不动\n2.查看源码执行ctrl+f输入video查找，播放器src指向.m3u8文件\n3.下载后用编辑器打开，咦，这是什么格式，查阅google资料，原来是hls视频\n4.看一下抓的包，原来是把第3步最后一行作为参数，继续去浏览器下载，果然如此，把.ts文件全部下载本地就能整合成视频了\n5.仔细看了一下发送的请求并返回的包，咦，这是什么，怎么有一行字符串，返回第4步看了一下差点漏了这一行：\nEXT-X-KEY:METHOD=AES-128,URI=&ldquo;key.key&rdquo; 上帝请原谅我看不懂，大概意思是经过aes-128加密的，那一行字符串应该就是秘钥\n抓包到此结束接下来用python获取文件并多线程下载，下载完成后用秘钥解密整合ts就成mp4啦\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/129.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1130,6 +1130,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

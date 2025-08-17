@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/943.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="centos7系统安装php8">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="centos7系统安装php8">
 <meta property='og:description' content="前言 centos7默认源的php版本只有5.4，版本太老，而mediawiki需要的php版本为7.4以上，所以本文直接升级到php8.0。\n步骤 卸载所有已安装的php\n1 yum remove -y php* 添加remi源（可能需要提前安装epel-release）\n1 2 3 4 yum install -y https://rpms.remirepo.net/enterprise/remi-release-7.rpm # 此处若是无法下载 可用 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://rpms.remirepo.net/enterprise/remi-release-7.rpm 单独启用php80的源（没有yum-config-manager命令的话需要安装yum-utils）\n1 2 yum-config-manager --disable &amp;#039;remi-php*&amp;#039; yum-config-manager --enable remi-php80 安装php及其拓展\n1 yum install -y php php-bcmath php-cli php-common php-devel php-fpm php-gd php-intl php-ldap php-mbstring php-mysqlnd php-odbc php-pdo php-pear php-pecl-xmlrpc php-pecl-zip php-process php-snmp php-soap php-sodium php-xml 版本验证\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/943.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1178,6 +1178,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

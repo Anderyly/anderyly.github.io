@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/768.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="deepin下开机自启脚本">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="deepin下开机自启脚本">
 <meta property='og:description' content="利用 rc.local 文件实现脚本开机自启: 新建 /etc/rc.local 文件 1 vim /etc/rc.local 粘贴以下模板 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #!/bin/sh -e # # rc.local # # This script is executed at the end of each multiuser runlevel. # Make sure that the script will &#34;exit 0&#34; on success or any other # value on error. # # In order to enable or disable this script just change the execution # bits. # # By default this script does nothing. exit 0 在 exit 0 上方插入你需要自启的命令(一行一个)后保存文件\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/768.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1195,6 +1195,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

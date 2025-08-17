@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/303.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="php根据出生日期计算星座">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="php根据出生日期计算星座">
 <meta property='og:description' content="话说，今天做项目要求计算星座\n日期格式为2019-1-22\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 function get_xz($birthday) { $arr_day = explode(&#39;-&#39;, $birthday); $month = $arr_day[1]; $day = $arr_day[2]; if($month &lt; 1 or $month &gt; 12 or $day &lt; 1 or $day &gt; 31) return false; $xz_array = array( array(&#34;20&#34; =&gt; &#34;水瓶座&#34;), array(&#34;19&#34; =&gt; &#34;双鱼座&#34;), array(&#34;21&#34; =&gt; &#34;白羊座&#34;), array(&#34;20&#34; =&gt; &#34;金牛座&#34;), array(&#34;21&#34; =&gt; &#34;双子座&#34;), array(&#34;22&#34; =&gt; &#34;巨蟹座&#34;), array(&#34;23&#34; =&gt; &#34;狮子座&#34;), array(&#34;23&#34; =&gt; &#34;处女座&#34;), array(&#34;23&#34; =&gt; &#34;天秤座&#34;), array(&#34;24&#34; =&gt; &#34;天蝎座&#34;), array(&#34;22&#34;=&gt;&#34;射手座&#34;), array(&#34;22&#34;=&gt;&#34;摩羯座&#34;) ); foreach ($xz_array[(int)$month-1] as $xz_key =&gt; $xz_name); if ($day &lt; $xz_key) : foreach ($xz_array[($month-2 &lt; 0)?$month = 11:$month -= 2] as $xz_key =&gt; $xz_name); endif; return $xz_name; } ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/303.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1140,6 +1140,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

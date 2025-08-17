@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/674.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="gin渲染多层目录下模板">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="gin渲染多层目录下模板">
 <meta property='og:description' content="试着学习一下go的gin框架，相比php来说，坑太多了\n在模板里面如果 不定义define 则相同文件名会被 覆盖 ，必须定义\n项目结构：\nlayout/header.html文件\n(1)任何文件要以{{define “layout/header&quot;}} 开始，最后{{end}}结束\n(2)公共头部 define\n1 2 3 {{define &#34;layout/header&#34;}} header {{end}} admin/index.html\n（1）文件要以{{define “admin/index.html&quot;}} 开始，最后{{end}}结束，这里的index可以加文件后缀，index.html\n（2）需要通过{{template “layout/header&quot; .}} 最后面有个【点】，它的意思是要把当前页面的变量传递到head.html中\n1 2 3 4 {{define &#34;admin/index.html&#34;}} {{template &#34;layout/header&#34; .}} admin {{end}} 输出模板代码\n1 c.HTML(http.StatusOK, &#34;admin/index.html&#34;, gin.H{}) 模板渲染设置\n1 r.LoadHTMLGlob(&#34;views/**/*&#34;) ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/674.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1141,6 +1141,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

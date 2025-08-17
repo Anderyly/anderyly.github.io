@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/321.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="fedora29安装wps">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="fedora29安装wps">
 <meta property='og:description' content="点我下载rpm包\n进入命令行执行\n1 # dnf localinstall wps-office-10.1.0.6757-1.x86_64.rpm 这里我使用dnf localinstall而不使用rpm，因为需要解决依赖关系\n打开word会提示缺失字体，点击这里下载缺失的字体\n1 2 3 4 5 # mv wps_symbol_fonts /usr/share/fonts/ # cd /usr/share/fonts/ # mkfontscale # mkfontdir # fc-cache 完成后寻找.doc/.docx/.ppt/.pptx/.exl/.exlx文件，右击属性 -&gt;打开方式选择默认打开方式为WPS并设置为默认。至于其他缺少的黑体宋体楷体等等字体，从其他windows电脑的的字体文件夹里复制字体，粘贴到/usr/share/fonts/，重新执行上一步。\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/321.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1111,6 +1111,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

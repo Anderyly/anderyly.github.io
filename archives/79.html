@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/79.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="php显示html源代码函数">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="php显示html源代码函数">
 <meta property='og:description' content="如果你想在后台更改页面底部代码，而其中有html代码，输入框显示不出源代码，pre标签又没有用，那么你不防试试下面的函数\n1 2 3 4 5 6 7 8 9 function UNHTML($content){ $content=htmlspecialchars($content); $content=str_ireplace(chr(13),&#34;&lt;br&gt;&#34;,$content); $content=str_ireplace(chr(32),&#34; &#34;,$content); $content=str_ireplace(&#34;[_[&#34;,&#34;&lt;&#34;,$content); $content=str_ireplace(&#34;)_)&#34;,&#34;&gt;&#34;,$content); $content=str_ireplace(&#34;|_|&#34;,&#34; &#34;,$content); return trim($content); } ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/79.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1103,6 +1103,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

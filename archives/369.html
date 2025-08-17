@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/369.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="分享一个PHP环信服务端操作类">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="分享一个PHP环信服务端操作类">
 <meta property='og:description' content="之前做直播系统,需要用到通信这一块,由于官方文档没有sdk,博主本人也是google的,顺便修改了一下\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 &lt;?php namespace hx; class Hx { private $app_key = &#39;1106196338107043#bfzb&#39;; private $client_id = &#39;YXA68gwqIDr4Eem08DO8sr_xCA&#39;; private $client_secret = &#39;YXA57if_NzYCtL_96DktWsvILrlcU24&#39;; private $url = &#34;https://a1.easemob.com/1106190228107043/bfzb&#34;; /* * 获取APP管理员Token */ public function __construct() { $url = $this-&gt;url . &#34;/token&#34;; $data = array( &#39;grant_type&#39; =&gt; &#39;client_credentials&#39;, &#39;client_id&#39; =&gt; $this-&gt;client_id, &#39;client_secret&#39; =&gt; $this-&gt;client_secret ); $rs = json_decode($this-&gt;curl($url, $data), true); $this-&gt;token = $rs[&#39;access_token&#39;]; } /* * 注册IM用户(授权注册) */ public function hx_register($username, $password, $nickname) { $url = $this-&gt;url . &#34;/users&#34;; $data = array( &#39;username&#39; =&gt; $username, &#39;password&#39; =&gt; $password, &#39;nickname&#39; =&gt; $nickname ); $header = array( &#39;Content-Type: application/json&#39;, &#39;Authorization: Bearer &#39; . $this-&gt;token ); return $this-&gt;curl($url, $data, $header, &#34;POST&#34;); } /* * 给IM用户的添加好友 */ public function hx_contacts($owner_username, $friend_username) { $url = $this-&gt;url . &#34;/users/${owner_username}/contacts/users/${friend_username}&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); return $this-&gt;curl($url, &#34;&#34;, $header, &#34;POST&#34;); } /* * 解除IM用户的好友关系 */ public function hx_contacts_delete($owner_username, $friend_username) { $url = $this-&gt;url . &#34;/users/${owner_username}/contacts/users/${friend_username}&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); return $this-&gt;curl($url, &#34;&#34;, $header, &#34;DELETE&#34;); } /* * 查看好友 */ public function hx_contacts_user($owner_username) { $url = $this-&gt;url . &#34;/users/${owner_username}/contacts/users&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); return $this-&gt;curl($url, &#34;&#34;, $header, &#34;GET&#34;); } /* 发送文本消息 */ public function hx_send($sender, $receiver, $msg) { $url = $this-&gt;url . &#34;/messages&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); $data = array( &#39;target_type&#39; =&gt; &#39;users&#39;, &#39;target&#39; =&gt; array( &#39;0&#39; =&gt; $receiver ), &#39;msg&#39; =&gt; array( &#39;type&#39; =&gt; &#34;txt&#34;, &#39;msg&#39; =&gt; $msg ), &#39;from&#39; =&gt; $sender, &#39;ext&#39; =&gt; array( &#39;attr1&#39; =&gt; &#39;v1&#39;, &#39;attr2&#39; =&gt; &#34;v2&#34; ) ); return $this-&gt;curl($url, $data, $header, &#34;POST&#34;); } /* 查询离线消息数 获取一个IM用户的离线消息数 */ public function hx_msg_count($owner_username) { $url = $this-&gt;url . &#34;/users/${owner_username}/offline_msg_count&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); return $this-&gt;curl($url, &#34;&#34;, $header, &#34;GET&#34;); } /* * 获取IM用户[单个] */ public function hx_user_info($username) { $url = $this-&gt;url . &#34;/users/${username}&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); return $this-&gt;curl($url, &#34;&#34;, $header, &#34;GET&#34;); } /* * 获取IM用户[批量] */ public function hx_user_infos($limit) { $url = $this-&gt;url . &#34;/users?${limit}&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); return $this-&gt;curl($url, &#34;&#34;, $header, &#34;GET&#34;); } /* * 重置IM用户密码 */ public function hx_user_update_password($username, $newpassword) { $url = $this-&gt;url . &#34;/users/${username}/password&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); $data[&#39;newpassword&#39;] = $newpassword; return $this-&gt;curl($url, $data, $header, &#34;PUT&#34;); } /* * 删除IM用户[单个] */ public function hx_user_delete($username) { $url = $this-&gt;url . &#34;/users/${username}&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); return $this-&gt;curl($url, &#34;&#34;, $header, &#34;DELETE&#34;); } /* * 修改用户昵称 */ public function hx_user_update_nickname($username, $nickname) { $url = $this-&gt;url . &#34;/users/${username}&#34;; $header = array( &#39;Authorization: Bearer &#39; . $this-&gt;token ); $data[&#39;nickname&#39;] = $nickname; return $this-&gt;curl($url, $data, $header, &#34;PUT&#34;); } /* * * curl */ private function curl($url, $data, $header = false, $method = &#34;POST&#34;) { $ch = curl_init($url); curl_setopt($ch, CURLOPT_URL, $url); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); if ($header) { curl_setopt($ch, CURLOPT_HTTPHEADER, $header); } curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method); if ($data) { curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); } curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); $ret = curl_exec($ch); return $ret; } } $rs = new Hx(); // 注册的用户 echo $rs-&gt;hx_register(&#39;qwerasd&#39;, &#39;qazwsx&#39;, &#39;福州123&#39;); // 给IM用户的添加好友 // echo $rs-&gt;hx_contacts(&#39;admin888&#39;, &#39;qwerasd&#39;); /* 发送文本消息 */ // echo $rs-&gt;hx_send(&#39;213123&#39;,&#39;admin888&#39;,&#39;dfadsr214wefaedf&#39;); /* 消息数统计 */ // echo $rs-&gt;hx_msg_count(&#39;admin888&#39;); /* 获取IM用户[单个] */ // echo $rs-&gt;hx_user_info(&#39;admin888&#39;); /* 获取IM用户[批量] */ // echo $rs-&gt;hx_user_infos(&#39;20&#39;); /* 删除IM用户[单个] */ // echo $rs-&gt;hx_user_delete(&#39;wwwwww&#39;); /* 修改用户昵称 */ // echo $rs-&gt;hx_user_update_nickname(&#39;asaxcfasdd&#39;,&#39;网络科技&#39;); /* 重置IM用户密码 */ // echo $rs-&gt;hx_user_update_password(&#39;asaxcfasdd&#39;,&#39;asdad&#39;); /* 解除IM用户的好友关系 */ // echo $rs-&gt;hx_contacts_delete(&#39;admin888&#39;, &#39;qqqqqqqq&#39;); /* 查看好友 */ //echo $rs-&gt;hx_contacts_user(&#39;admin888&#39;); ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/369.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1531,6 +1531,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

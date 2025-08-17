@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/791.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="Centos7一键安装pptp脚本">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="Centos7一键安装pptp脚本">
 <meta property='og:description' content="废话不多说直接上脚本 1 2 3 wget https://uss.aaayun.cc/typecho/uploads/2022/05/3296326676.txt -O CentOS7-pptp-host1plus.sh chmod +x ./CentOS7-pptp-host1plus.sh ./CentOS7-pptp-host1plus.sh -u your_username -p your_password 可在-u、-p后随意更改自己的登录用户名和密码。但密码长度必须大于8个 ASCII字符，否则为了安全，脚本将会随机生成密码。\n脚本命令及配置 设置账号 1 vim /etc/ppp/chap-secrets 修改dns(ms_dns) 1 vim /etc/ppp/options.pptpd 重启服务 1 /bin/systemctl restart pptpd.service 连不上VPN 检查是否开放了 1723 端口，一般是因为这个原因吧\n打不开网页 1 vim /etc/ppp/ip-up 在 exit 0 前写入 : ifconfig $1 mtu 1500\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/791.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1173,6 +1173,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

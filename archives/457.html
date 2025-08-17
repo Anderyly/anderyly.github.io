@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/457.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="centos7下svn常用命令详解">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="centos7下svn常用命令详解">
 <meta property='og:description' content="1、SVN的安装：\n1 yum install subversion 2、服务端命令\nsvnserver — 控制svn系统服务的启动等\nsvnadmin — 版本库的创建、导出、导入、删除等\nsvnlook — 查看版本库的信息等\n3、客户端命令\nsvn – 版本库的检出、更新、提交、重定向等\n4、版本库的创建\n1 svnadmin create /svn/ay 5、版本库的删除\n1 rm -rvf /svn/ay 6、svn服务自动启动\n编辑/etc/rc.local 文件，在文件中\n添加以下内容：\n1 svnserve -d -r /svn/ay 注意：“/svn/ay”为版本库的路径，添加位置必须在 “exit 0”语句之前。\n7、常见SVN客户端命令\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 svn checkout - 检出 svn add - 添加到版本控制 svn commit - 提交修改到服务端（创建一个新的版本号） svn update - 更新工作副本 svn delete - 从版本库中删除文件或目录 svn diff - 版本差异比较 svn mkdir - 创建目录并增加到版本控制 svn cat - 不检出工作副本直接查看指定文件 ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/457.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1164,6 +1164,34 @@ svnlook — 查看版本库的信息等</p>
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

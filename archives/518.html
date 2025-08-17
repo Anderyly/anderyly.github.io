@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/518.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="Linux Navicat15 破解">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="Linux Navicat15 破解">
 <meta property='og:description' content="查看了很多教程花了半小时才弄好可真不容易\u00a0参考：https://gitee.com/andisolo/navicat-keygen\n注意：安装使用 Navicat Premium v15.0.3\n先去官网下载navicat 你会得到一个AppImage文件\n例如 navicat15-premium-cs.AppImage重命名为 navicat.AppImage\n1.提取AppImage文件到文件夹里\n1 2 3 4 5 6 su mkdir navicat15-premium-cs mount -o loop navicat.AppImage navicat15-premium-cs cp -r navicat15-premium-cs navicat umount navicat15-premium-cs rm -rf navicat15-premium-cs 2.编译安装（如果你觉得git下载太慢 keystone-master.zip）\n1 2 3 4 5 6 7 8 9 10 apt install libcapstone-dev apt install cmake git clone https://github.com/keystone-engine/keystone.git cd keystone mkdir build cd build ../make-share.sh sudo make install sudo ldconfig apt install rapidjson-dev 3.生成私钥 (下载navicat-patcher和navicat-keygen 激活工具.zip)\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/518.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1169,6 +1169,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

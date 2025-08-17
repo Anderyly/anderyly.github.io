@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/610.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="记一次centos7在断网环境下编译安装nginx1.6+php7.2">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="记一次centos7在断网环境下编译安装nginx1.6+php7.2">
 <meta property='og:description' content="记一次centos7在断网环境下编译安装nginx1.6+php7.2 下载我们用到的依赖包文件 nginx1.6&amp;php7.2.zip\nunzip解压下载的包\n1 unzip nginx+php7.2.zip 安装依赖\n1 rpm -Uvh *.rpm tar解压nginx\n1 tar -zxvf nginx-1.6.0.tar.gz -C /usr/local/ngnix 编译nginx\n1 2 3 4 cd /usr/local/nginx ./configure mske &amp;&amp; make install whereis nginx 启动nginx\n1 cd /usr/local/nginx/sbin/nginx 测试nginx\n重启nginx进程\n1 2 /usr/local/nginx/sbin/nginx -s reload ps -ef | grep nginx 未完待续\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/610.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1188,6 +1188,34 @@ unzip解压下载的包</p>
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

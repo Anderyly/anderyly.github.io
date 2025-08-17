@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/139.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="deepin15.7上安装mysql(解决不提示设置密码的问题)">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="deepin15.7上安装mysql(解决不提示设置密码的问题)">
 <meta property='og:description' content="mysql已经安装完毕，但安装过程没有让你填写密码，链接错误，那么就来看看以下命令吧\n1.首先获取root权限\n1 anderyly@anderyly-PC:～*su 2.检查mysql是否已运行\n1 root@anderyly-PC:～#netstat -tap | grep mysql 3.查询默认的用户名和密码,user是用户名，password后面的是密码\n1 root@anderyly-PC:～#vim /etc/mysql/debian.cnf 4.利用默认账号密码登录\n1 mysql -u debian-sys-maint -pBIDVYLyCzwpNgK4H 5.更改密码设置\n1 update mysql.user set plugin=&#34;mysql_native_password&#34; where user=&#34;root&#34;; 6.设置root的密码\n1 update mysql.user set authentication_string=password(&#39;这里是你的密码&#39;) where user=&#39;root&#39;and Host = &#39;localhost&#39;; 7.退出数据库\n1 exit; 8.重启mysql\n1 root@anderyly-PC:~#service mysql restart ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/139.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1156,6 +1156,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

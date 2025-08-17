@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/183.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="PHP百度随机壁纸图片接口，PHP随机图片API">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="PHP百度随机壁纸图片接口，PHP随机图片API">
 <meta property='og:description' content="接口地址：https://api.aaayun.cc/?type=Image&file=BaiDuRand&class=美女&sub=写真\n参数sub可不填写\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 function image($class, $sub = &#39;&#39;, $rand = 1000) { $i = rand(0, $rand); $url = &#34;http://image.baidu.com/data/imgs?pn=0&amp;rn=18&amp;col=%E5%A3%81%E7%BA%B8&amp;tag={$class}&amp;tag3={$sub}&amp;width=0&amp;height=0&amp;ic={$i}&amp;ie=utf8&amp;oe=utf-8&amp;image_id=&amp;fr=channel&amp;p=channel&amp;from=1&amp;app=img.browse.channel.wallpaper&amp;t=0.08688646721576121&#34;; $content = file_get_contents($url); $Json = json_decode($content, 1); $Num = count($Json[&#39;imgs&#39;]); $Arrnum = rand(0,$Num-2); return $Json[&#39;imgs&#39;][$Arrnum][&#39;imageUrl&#39;]; } $img = image(&#39;动漫美女&#39;); $suff = ltrim(strrchr($img, &#39;.&#39;), &#39;.&#39;); header(&#34;content-type:image/{$suff}&#34;); echo file_get_contents($img); ">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/183.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1135,6 +1135,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>

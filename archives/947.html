@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.aaayun.cc/archives/947.html'>
 
-<link rel="stylesheet" href="/scss/style.min.2b31efb30b7cfeccbda4541891df6ee30b9897d24380828a6097e50cbf7a792f.css"><meta property='og:title' content="最好用的完全开源的内网穿透工具frps">
+<link rel="stylesheet" href="/scss/style.min.adaae9fde4eb6d1fbfaae34a8225de332c35159f48e320de4f38cff128a672d1.css"><meta property='og:title' content="最好用的完全开源的内网穿透工具frps">
 <meta property='og:description' content="前期准备： 首先你要有一台云服务器或者VPS，有公网ip或域名都可以，内网主机（自己的电脑）一台。\n本文所用的服务端是我用阿里云的Linux系统，客户端是windows11系统。\n服务端(Linux)搭建步骤 下载服务端的frp\n使用tar命令解压下载成功的压缩包文件:\n1 tar -zxvf frp_0.45.0_linux_arm64.tar.gz 使用cd命令进入解压出来的文件夹: 1 mv frp_0.45.0_linux_arm64 frp &amp;&amp; cd frp 修改服务器配置文件(frps.ini): 1 2 3 4 5 6 7 8 9 10 11 12 13 vim fros.ini # 编辑 [common] bind_port = 7000 vhost_http_port = 88 vhost_https_port = 89 #与客户端通信的令牌 token = 57854 dashboard_user = admin #dashboard 密码 dashboard_pwd = admin #dashboard 端口，启动成功后可通过浏览器访问如http://ip:7500 dashboard_port = 7500 启动frp服务端，让frp在后台运行: 1 nohup ./frps -c frps.ini &amp; &gt; frp.log 这样即使关掉了SSH，frp依然在后台运行中。到此，服务端的搭建已经完成。\n">
 <meta property='og:url' content='http://blog.aaayun.cc/archives/947.html'>
 <meta property='og:site_name' content='轻风云'>
@@ -1292,6 +1292,34 @@
                 }, 500);
             };
         </script>
+
+
+
+
+
+
+
+
+        <script src=http://blog.aaayun.cc/background/sakura.js></script>
+
+        <div id="particles-js"></div>
+
+        <script src=http://blog.aaayun.cc/background/particles.min.js></script>
+        <script>
+            particlesJS.load('particles-js', "http://blog.aaayun.cc/background/particlesjs-config.json", function() {
+                console.log('particles.js loaded - callback');
+            });
+        </script>
+
+        <style>
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        </style>
 
     </body>
 </html>
